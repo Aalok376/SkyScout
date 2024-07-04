@@ -125,7 +125,7 @@ border-bottom-right-radius:12%;</string>
                   <string notr="true">color:black;</string>
                  </property>
                  <property name="text">
-                  <string>rainy</string>
+                  <string/>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>
