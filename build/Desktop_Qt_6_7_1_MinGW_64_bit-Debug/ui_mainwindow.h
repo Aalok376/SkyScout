@@ -42,10 +42,10 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
-    QLabel *label_3;
-    QLabel *label_2;
-    QLabel *label_4;
-    QLabel *label_5;
+    QLabel *label_currentWeather;
+    QLabel *label_alert;
+    QLabel *label_temp;
+    QLabel *label_weatherIcon;
     QFrame *frame_2;
     QHBoxLayout *horizontalLayout_6;
     QVBoxLayout *verticalLayout_5;
@@ -169,35 +169,42 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName("verticalLayout");
-        label_3 = new QLabel(frame);
-        label_3->setObjectName("label_3");
-        sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
-        label_3->setSizePolicy(sizePolicy);
+        label_currentWeather = new QLabel(frame);
+        label_currentWeather->setObjectName("label_currentWeather");
+        sizePolicy.setHeightForWidth(label_currentWeather->sizePolicy().hasHeightForWidth());
+        label_currentWeather->setSizePolicy(sizePolicy);
         QFont font;
-        font.setPointSize(24);
-        label_3->setFont(font);
-        label_3->setStyleSheet(QString::fromUtf8("color:black;"));
-        label_3->setAlignment(Qt::AlignCenter);
+        font.setFamilies({QString::fromUtf8("Segoe UI")});
+        font.setPointSize(30);
+        font.setBold(false);
+        font.setItalic(false);
+        label_currentWeather->setFont(font);
+        label_currentWeather->setStyleSheet(QString::fromUtf8("font: 30pt \"Segoe UI\";\n"
+"color:rgb(0, 0, 0);"));
+        label_currentWeather->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(label_3);
+        verticalLayout->addWidget(label_currentWeather);
 
-        label_2 = new QLabel(frame);
-        label_2->setObjectName("label_2");
-        label_2->setStyleSheet(QString::fromUtf8("color:black;"));
-        label_2->setAlignment(Qt::AlignCenter);
+        label_alert = new QLabel(frame);
+        label_alert->setObjectName("label_alert");
+        label_alert->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_alert->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(label_2);
+        verticalLayout->addWidget(label_alert);
 
-        label_4 = new QLabel(frame);
-        label_4->setObjectName("label_4");
+        label_temp = new QLabel(frame);
+        label_temp->setObjectName("label_temp");
         QFont font1;
-        font1.setPointSize(26);
+        font1.setFamilies({QString::fromUtf8("Segoe UI")});
+        font1.setPointSize(38);
         font1.setBold(false);
-        label_4->setFont(font1);
-        label_4->setStyleSheet(QString::fromUtf8("color:black"));
-        label_4->setAlignment(Qt::AlignCenter);
+        font1.setItalic(false);
+        label_temp->setFont(font1);
+        label_temp->setStyleSheet(QString::fromUtf8("font: 38pt \"Segoe UI\";\n"
+"color:rgb(0, 0, 0);"));
+        label_temp->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(label_4);
+        verticalLayout->addWidget(label_temp);
 
         verticalLayout->setStretch(0, 2);
         verticalLayout->setStretch(1, 1);
@@ -205,10 +212,10 @@ public:
 
         horizontalLayout->addLayout(verticalLayout);
 
-        label_5 = new QLabel(frame);
-        label_5->setObjectName("label_5");
+        label_weatherIcon = new QLabel(frame);
+        label_weatherIcon->setObjectName("label_weatherIcon");
 
-        horizontalLayout->addWidget(label_5);
+        horizontalLayout->addWidget(label_weatherIcon);
 
 
         horizontalLayout_2->addLayout(horizontalLayout);
@@ -525,15 +532,15 @@ public:
         pushButton_search->setText(QString());
         label->setText(QCoreApplication::translate("MainWindow", "Recent location searched ", nullptr));
 #if QT_CONFIG(tooltip)
-        label_3->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
+        label_currentWeather->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
-        label_3->setText(QCoreApplication::translate("MainWindow", "rainy", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "bring umbrella with you", nullptr));
+        label_currentWeather->setText(QString());
+        label_alert->setText(QString());
 #if QT_CONFIG(tooltip)
-        label_4->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">36</p></body></html>", nullptr));
+        label_temp->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">36</p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
-        label_4->setText(QCoreApplication::translate("MainWindow", "35K", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        label_temp->setText(QString());
+        label_weatherIcon->setText(QString());
         label_10->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
         label_11->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         label_12->setText(QCoreApplication::translate("MainWindow", "time", nullptr));

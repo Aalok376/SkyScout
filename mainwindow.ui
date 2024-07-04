@@ -106,7 +106,7 @@ border-bottom-right-radius:12%;</string>
              <item>
               <layout class="QVBoxLayout" name="verticalLayout" stretch="2,1,5">
                <item>
-                <widget class="QLabel" name="label_3">
+                <widget class="QLabel" name="label_currentWeather">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -115,12 +115,29 @@ border-bottom-right-radius:12%;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <pointsize>24</pointsize>
+                   <family>Segoe UI</family>
+                   <pointsize>30</pointsize>
+                   <italic>false</italic>
+                   <bold>false</bold>
                   </font>
                  </property>
                  <property name="toolTip">
                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true">font: 30pt &quot;Segoe UI&quot;;
+color:rgb(0, 0, 0);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_alert">
                  <property name="styleSheet">
                   <string notr="true">color:black;</string>
                  </property>
@@ -133,23 +150,12 @@ border-bottom-right-radius:12%;</string>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_2">
-                 <property name="styleSheet">
-                  <string notr="true">color:black;</string>
-                 </property>
-                 <property name="text">
-                  <string>bring umbrella with you</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_4">
+                <widget class="QLabel" name="label_temp">
                  <property name="font">
                   <font>
-                   <pointsize>26</pointsize>
+                   <family>Segoe UI</family>
+                   <pointsize>38</pointsize>
+                   <italic>false</italic>
                    <bold>false</bold>
                   </font>
                  </property>
@@ -157,10 +163,11 @@ border-bottom-right-radius:12%;</string>
                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;36&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">color:black</string>
+                  <string notr="true">font: 38pt &quot;Segoe UI&quot;;
+color:rgb(0, 0, 0);</string>
                  </property>
                  <property name="text">
-                  <string>35K</string>
+                  <string/>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>
@@ -170,9 +177,9 @@ border-bottom-right-radius:12%;</string>
               </layout>
              </item>
              <item>
-              <widget class="QLabel" name="label_5">
+              <widget class="QLabel" name="label_weatherIcon">
                <property name="text">
-                <string>icon</string>
+                <string/>
                </property>
               </widget>
              </item>
