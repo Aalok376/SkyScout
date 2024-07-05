@@ -84,9 +84,9 @@ border-bottom-right-radius:12%;</string>
            </layout>
           </item>
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="label_recentSearch">
             <property name="text">
-             <string>Recent location searched </string>
+             <string/>
             </property>
            </widget>
           </item>
@@ -94,6 +94,9 @@ border-bottom-right-radius:12%;</string>
         </item>
         <item>
          <widget class="QFrame" name="frame">
+          <property name="styleSheet">
+           <string notr="true">border:ignore</string>
+          </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
           </property>
@@ -180,6 +183,9 @@ color:rgb(0, 0, 0);</string>
               <widget class="QLabel" name="label_weatherIcon">
                <property name="text">
                 <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                </property>
               </widget>
              </item>

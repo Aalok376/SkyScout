@@ -37,7 +37,7 @@ public:
     QHBoxLayout *horizontalLayout_7;
     QPushButton *pushButton_search;
     QLineEdit *lineEdit_searchbar;
-    QLabel *label;
+    QLabel *label_recentSearch;
     QFrame *frame;
     QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout;
@@ -151,16 +151,17 @@ public:
 
         verticalLayout_9->addLayout(horizontalLayout_7);
 
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
+        label_recentSearch = new QLabel(centralwidget);
+        label_recentSearch->setObjectName("label_recentSearch");
 
-        verticalLayout_9->addWidget(label);
+        verticalLayout_9->addWidget(label_recentSearch);
 
 
         verticalLayout_10->addLayout(verticalLayout_9);
 
         frame = new QFrame(centralwidget);
         frame->setObjectName("frame");
+        frame->setStyleSheet(QString::fromUtf8("border:ignore"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         horizontalLayout_2 = new QHBoxLayout(frame);
@@ -214,6 +215,7 @@ public:
 
         label_weatherIcon = new QLabel(frame);
         label_weatherIcon->setObjectName("label_weatherIcon");
+        label_weatherIcon->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout->addWidget(label_weatherIcon);
 
@@ -530,7 +532,7 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         pushButton_search->setText(QString());
-        label->setText(QCoreApplication::translate("MainWindow", "Recent location searched ", nullptr));
+        label_recentSearch->setText(QString());
 #if QT_CONFIG(tooltip)
         label_currentWeather->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)

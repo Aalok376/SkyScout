@@ -6,6 +6,7 @@
 #include<QMessageBox>
 #include<QJsonArray>
 #include<QPixmap>
+QString location;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow),networkManager(new QNetworkAccessManager(this))
@@ -21,14 +22,12 @@ MainWindow::MainWindow(QWidget *parent)
    ui->pushButton_flag->setIconSize(QSize(x,y));
     connect(networkManager,&QNetworkAccessManager::finished ,this , &MainWindow::onWeatherDataRecieved);
 }
-
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
 {
-
     if(reply->error()==QNetworkReply::NoError)
     {
         QByteArray responseData = reply->readAll();
@@ -54,7 +53,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     int height= ui->label_weatherIcon->height();
                     QIcon icon(":/new/prefix1/image/cloudy.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("possibility of rain");
+                    ui->label_alert->setText("It's a bit cloudy today. \n A good day for a walk in the park");
                 }
                 if(weatherStatus=="Thunderstorm")
                 {
@@ -62,7 +61,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     int height= ui->label_weatherIcon->height();
                     QIcon icon(":/new/prefix1/image/icons8-storm-94.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("Stay at home as possible ");
+                    ui->label_alert->setText("Thunderstorms expected \n Avoid outdoor activities if possible");
                 }
                 if(weatherStatus=="Drizzle")
                 {
@@ -70,7 +69,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     int height= ui->label_weatherIcon->height();
                     QIcon icon(":/new/prefix1/image/weather.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("Don't forget to bring umbrella ");
+                    ui->label_alert->setText("Light drizzle outside \n Don't forget your raincoat");
                 }
                 if(weatherStatus=="Mist" || weatherStatus=="Haze" || weatherStatus=="Fog")
                 {
@@ -78,7 +77,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     int height= ui->label_weatherIcon->height();
                     QIcon icon(":/new/prefix1/image/haze.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("Don't forget to bring umbrella ");
+                    ui->label_alert->setText("Visibility is low \n take precautions");
                 }
                 if(weatherStatus=="Rain")
                 {
@@ -86,7 +85,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     int height= ui->label_weatherIcon->height();
                     QIcon icon(":/new/prefix1/image/rainy-day.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("Don't forget to bring umbrella ");
+                    ui->label_alert->setText("Don't forget your umbrella ! ");
                 }
                 if(weatherStatus=="Clear")
                 {
@@ -94,7 +93,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     int height= ui->label_weatherIcon->height();
                     QIcon icon(":/new/prefix1/image/sun.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("Don't forget to bring umbrella ");
+                    ui->label_alert->setText("It's a clear day! \n Enjoy the beautiful weather");
                 }
                 if(weatherStatus=="Smoke")
                 {
@@ -102,7 +101,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     int height= ui->label_weatherIcon->height();
                     QIcon icon(":/new/prefix1/image/icons8-smoke-100.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("Don't forget to bring umbrella ");
+                    ui->label_alert->setText("Don't forget your mask !");
                 }
                 if(weatherStatus=="Snow")
                 {
@@ -110,7 +109,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     int height= ui->label_weatherIcon->height();
                     QIcon icon(":/new/prefix1/image/icons8-snow-94.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("Don't forget to bring umbrella ");
+                    ui->label_alert->setText("Snow is falling! \n Time for some winter fun.");
                 }
                 if(weatherStatus=="Dust" || weatherStatus=="Sand" || weatherStatus=="Ash")
                 {
@@ -118,7 +117,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     int height= ui->label_weatherIcon->height();
                     QIcon icon(":/new/prefix1/image/dust.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("Don't forget to bring umbrella ");
+                    ui->label_alert->setText("Consider wearing a mask \n if you're heading out");
                 }
                 if(weatherStatus=="Tornado")
                 {
@@ -126,7 +125,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     int height= ui->label_weatherIcon->height();
                     QIcon icon(":/new/prefix1/image/icons8-tornado-96.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("Don't forget to bring umbrella ");
+                    ui->label_alert->setText("Tornado alert! stay indoors");
                 }
                 if(weatherStatus=="Squall")
                 {
@@ -134,10 +133,15 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     int height= ui->label_weatherIcon->height();
                     QIcon icon(":/new/prefix1/image/icons8-air-96.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("Don't forget to bring umbrella ");
+                    ui->label_alert->setText("A squall is approaching \n Expect strong winds and rain");
                 }
 
             }
+            else
+            {
+                QMessageBox::information(this ,"SkyScout","error to display weather");
+            }
+            ui->label_recentSearch->setText("recently searched location : "+location);
         }
         else
         {
@@ -165,7 +169,7 @@ void MainWindow::on_pushButton_flag_clicked()
 }
 void MainWindow::on_lineEdit_searchbar_returnPressed()
 {
-    QString location=ui->lineEdit_searchbar->text();
+   location=ui->lineEdit_searchbar->text();
      ui->lineEdit_searchbar->clear();
     QString apiKey="410680a363d4c095792d7e19b0bf49cb";
     QString urlstring=QString("https://api.openweathermap.org/data/2.5/weather?q=%1&appid=%2").arg(location, apiKey);
