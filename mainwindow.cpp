@@ -6,6 +6,8 @@
 #include<QMessageBox>
 #include<QJsonArray>
 #include<QPixmap>
+#include<QDebug>
+QIcon icon ;
 QString location;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -21,6 +23,9 @@ MainWindow::MainWindow(QWidget *parent)
     int y =ui->pushButton_flag->height();
    ui->pushButton_flag->setIconSize(QSize(x,y));
     connect(networkManager,&QNetworkAccessManager::finished ,this , &MainWindow::onWeatherDataRecieved);
+   //setting fixed size
+    resize(800,600);
+    setFixedSize(size());
 }
 MainWindow::~MainWindow()
 {
@@ -42,7 +47,15 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
             QJsonObject sysObj = JsonObj.value("sys").toObject();
             int sunrise = sysObj.value("sunrise").toInt();
             int sunset = sysObj.value("sunset").toInt();
-            int currentTime = JsonObj.value("id").toInt();
+            int universalTime = JsonObj.value("dt").toInt(); // dt represents universal time
+            int timezoneOffset= JsonObj.value("timezone").toInt();
+            int currentTime=universalTime+timezoneOffset; // local time of a place = universal time + timezoneOffset and local time is compared with sunrise and sunset to pridict day and night
+            // Debug output
+            qDebug() << "Sunrise:" << sunrise;
+            qDebug() << "Sunset:" << sunset;
+            qDebug() << "Universal Time:" << universalTime;
+            qDebug() << "Timezone Offset:" << timezoneOffset;
+            qDebug() << "Current Time:" << currentTime;
             QJsonArray weatherarr = JsonObj.value("weather").toArray();
             if (!weatherarr.isEmpty())
             { // code to display the current weather status and set icons based on current weather
@@ -53,7 +66,6 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon ;
                     if (sunrise<=currentTime && currentTime<sunset)
                     {
                       icon= QIcon(":/new/prefix1/image/cloudy.png");
@@ -70,7 +82,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon(":/new/prefix1/image/icons8-storm-94.png");
+                    icon=QIcon(":/new/prefix1/image/icons8-storm-94.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
                     ui->label_alert->setText("Thunderstorms expected \n Avoid outdoor activities if possible");
                 }
@@ -78,7 +90,6 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon;
                     if(sunrise<=currentTime && currentTime<sunset)
                     {
                         icon=QIcon(":/new/prefix1/image/weather.png");
@@ -94,7 +105,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon(":/new/prefix1/image/haze.png");
+                   icon =QIcon(":/new/prefix1/image/haze.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
                     ui->label_alert->setText("Visibility is low \n take precautions");
                 }
@@ -102,7 +113,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon(":/new/prefix1/image/rainy-day.png");
+                    icon=QIcon(":/new/prefix1/image/rainy-day.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
                     ui->label_alert->setText("Don't forget your umbrella ! ");
                 }
@@ -110,7 +121,6 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon;
                     if (sunrise<=currentTime && currentTime<sunset)
                     {
                          icon=QIcon(":/new/prefix1/image/sun.png");
@@ -127,7 +137,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon(":/new/prefix1/image/icons8-smoke-100.png");
+                    icon=QIcon(":/new/prefix1/image/icons8-smoke-100.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
                     ui->label_alert->setText("Don't forget your mask !");
                 }
@@ -135,7 +145,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon(":/new/prefix1/image/icons8-snow-94.png");
+                    icon=QIcon(":/new/prefix1/image/icons8-snow-94.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
                     ui->label_alert->setText("Snow is falling! \n Time for some winter fun.");
                 }
@@ -143,7 +153,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon(":/new/prefix1/image/dust.png");
+                    icon=QIcon(":/new/prefix1/image/dust.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
                     ui->label_alert->setText("Consider wearing a mask \n if you're heading out");
                 }
@@ -151,7 +161,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon(":/new/prefix1/image/icons8-tornado-96.png");
+                    icon=QIcon(":/new/prefix1/image/icons8-tornado-96.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
                     ui->label_alert->setText("Tornado alert! stay indoors");
                 }
@@ -159,7 +169,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon(":/new/prefix1/image/icons8-air-96.png");
+                    icon=QIcon(":/new/prefix1/image/icons8-air-96.png");
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
                     ui->label_alert->setText("A squall is approaching \n Expect strong winds and rain");
                 }
@@ -205,10 +215,17 @@ void MainWindow::on_lineEdit_searchbar_returnPressed()
     QNetworkRequest request(url);
     networkManager->get(request);
 }
-
-
 void MainWindow::on_pushButton_search_clicked()
 {
-    ui->lineEdit_searchbar->clear();
+    on_lineEdit_searchbar_returnPressed();
 }
+// void MainWindow:: resizeEvent(QResizeEvent *event)
+// {
+//     // calling the base class implementation
+//     QMainWindow::resizeEvent(event);
+//     // Adjust the size of the weather icon
+//     if (!icon.isNull()) {
+//      you can recall with the same location id
+//     }
+// }
 

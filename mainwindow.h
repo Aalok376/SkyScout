@@ -13,6 +13,8 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+protected:
+   // void resizeEvent(QResizeEvent *event) override ;
 
 public:
     MainWindow(QWidget *parent = nullptr);
