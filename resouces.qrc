@@ -15,5 +15,8 @@
         <file>image/icons8-tornado-96.png</file>
         <file>image/dust.png</file>
         <file>image/icons8-air-96.png</file>
+        <file>image/full-moon.png</file>
+        <file>image/cloudy-night.png</file>
+        <file>image/drizzle.png</file>
     </qresource>
 </RCC>

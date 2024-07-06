@@ -104,7 +104,9 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_resouces.cpp
 debug/qrc_resouces.cpp: ../../resouces.qrc \
 		C:/Qt/6.7.1/mingw_64/bin/rcc.exe \
+		../../image/full-moon.png \
 		../../image/icons8-snow-94.png \
+		../../image/cloudy-night.png \
 		../../image/dust.png \
 		../../image/projectLogo.png \
 		../../image/weather.png \
@@ -114,6 +116,7 @@ debug/qrc_resouces.cpp: ../../resouces.qrc \
 		../../image/icons8-storm-94.png \
 		../../image/rainy-day.png \
 		../../image/united-states-icon-96x72-b3zh47b5.png \
+		../../image/drizzle.png \
 		../../image/np.png \
 		../../image/icons8-smoke-100.png \
 		../../image/search--v1.png \

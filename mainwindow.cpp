@@ -35,25 +35,36 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
         if(!Jdoc.isNull())
         {
             QJsonObject JsonObj=Jdoc.object();
-            { // code to set the current temperature
+             // code to set the current temperature
             QJsonObject mainObj=JsonObj.value("main").toObject();
             double temp=mainObj.value("temp").toDouble();
             ui->label_temp->setText(QString::number(temp-273.15)+"°C");
-            }
+            QJsonObject sysObj = JsonObj.value("sys").toObject();
+            int sunrise = sysObj.value("sunrise").toInt();
+            int sunset = sysObj.value("sunset").toInt();
+            int currentTime = JsonObj.value("id").toInt();
             QJsonArray weatherarr = JsonObj.value("weather").toArray();
             if (!weatherarr.isEmpty())
             { // code to display the current weather status and set icons based on current weather
                 QJsonObject weatherobj = weatherarr.at(0).toObject();
                 QString weatherStatus = weatherobj.value("main").toString();
                 ui->label_currentWeather->setText(weatherStatus);
-
                 if(weatherStatus=="Clouds")
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon(":/new/prefix1/image/cloudy.png");
+                    QIcon icon ;
+                    if (sunrise<=currentTime && currentTime<sunset)
+                    {
+                      icon= QIcon(":/new/prefix1/image/cloudy.png");
+                         ui->label_alert->setText("It's a bit cloudy today. \n A good day for a walk in the park");
+                    }
+                    else
+                    {
+                        icon= QIcon(":/new/prefix1/image/cloudy-night.png");
+                         ui->label_alert->setText("Cloudy night ahead. \n Drive safely ");
+                    }
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("It's a bit cloudy today. \n A good day for a walk in the park");
                 }
                 if(weatherStatus=="Thunderstorm")
                 {
@@ -67,7 +78,15 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon(":/new/prefix1/image/weather.png");
+                    QIcon icon;
+                    if(sunrise<=currentTime && currentTime<sunset)
+                    {
+                        icon=QIcon(":/new/prefix1/image/weather.png");
+                    }
+                    else
+                    {
+                        icon=QIcon(":/new/prefix1/image/drizzle.png");
+                    }
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
                     ui->label_alert->setText("Light drizzle outside \n Don't forget your raincoat");
                 }
@@ -91,9 +110,18 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 {
                     int width=ui->label_weatherIcon->width();
                     int height= ui->label_weatherIcon->height();
-                    QIcon icon(":/new/prefix1/image/sun.png");
+                    QIcon icon;
+                    if (sunrise<=currentTime && currentTime<sunset)
+                    {
+                         icon=QIcon(":/new/prefix1/image/sun.png");
+                        ui->label_alert->setText("It's a clear day! \n Enjoy the beautiful weather");
+                    }
+                    else
+                    {
+                         icon=QIcon(":/new/prefix1/image/full-moon.png");
+                        ui->label_alert->setText("Clear skies tonight \n Ideal for stargazing!");
+                    }
                     ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
-                    ui->label_alert->setText("It's a clear day! \n Enjoy the beautiful weather");
                 }
                 if(weatherStatus=="Smoke")
                 {
