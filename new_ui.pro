@@ -13,6 +13,7 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    fetchcurrentaddress.h \
     mainwindow.h
 
 FORMS += \

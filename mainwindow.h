@@ -15,19 +15,17 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 protected:
    // void resizeEvent(QResizeEvent *event) override ;
-
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
     void on_pushButton_flag_clicked();
-
     void on_lineEdit_searchbar_returnPressed();
 
     void on_pushButton_search_clicked();
     void onWeatherDataRecieved(QNetworkReply *reply);
-
+    void onCurrentLocationFetched(QString);
 private:
     Ui::MainWindow *ui;
     bool check =true;
