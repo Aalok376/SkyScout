@@ -119,6 +119,7 @@ release/qrc_resouces.cpp: ../../resouces.qrc \
 		../../image/full-moon.png \
 		../../image/icons8-snow-94.png \
 		../../image/cloudy-night.png \
+		../../image/background.png \
 		../../image/dust.png \
 		../../image/projectLogo.png \
 		../../image/weather.png \
@@ -127,6 +128,7 @@ release/qrc_resouces.cpp: ../../resouces.qrc \
 		../../image/icons8-air-96.png \
 		../../image/icons8-storm-94.png \
 		../../image/rainy-day.png \
+		../../image/splash.png \
 		../../image/united-states-icon-96x72-b3zh47b5.png \
 		../../image/drizzle.png \
 		../../image/np.png \
@@ -971,7 +973,10 @@ release/main.o: ../../main.cpp ../../mainwindow.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
 		../../datetime.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QApplication \
-		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qapplication.h
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qapplication.h \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QSplashScreen \
+		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qsplashscreen.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/QTimer
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/main.o ../../main.cpp
 
 release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \

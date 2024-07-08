@@ -22,9 +22,16 @@ void weatherData::insertInformation(QString city, double temp,double humidity,do
     QSqlQuery query;
     //QString countQuery = "SELECT * FROM pastWeather";
 
-    int id=2;
+    query.prepare("SELECT * FROM pastWeather");
+    query.exec();
+    int rowCount=0;
+    while (query.next()) {
+        rowCount++;
+    }
+    int largest = rowCount;
+    int id=largest+1;
     //while()
-    int previousId=id-1;
+    int previousId=largest;
     QString previousCity;
     int prevY;
     int prevM;
@@ -51,7 +58,8 @@ void weatherData::insertInformation(QString city, double temp,double humidity,do
     qDebug()<<prevY;
     qDebug()<<prevM;
     qDebug()<<prevD;
-    if(city!=previousCity){
+    qDebug()<<id;
+    if(city.toUpper()!=previousCity.toUpper()){
         return;
     }
     if(year==prevY && month==prevM && date==prevD) {
@@ -78,12 +86,12 @@ void weatherData::insertInformation(QString city, double temp,double humidity,do
     } else {
         qDebug() << "Data inserted successfully!";
     }
-    query.prepare("SELECT * FROM pastWeather");
-    query.exec();
-    int rowCount=0;
-    while (query.next()) {
-        rowCount++;
-    }
+    // query.prepare("SELECT * FROM pastWeather");
+    // query.exec();
+    // int rowCount=0;
+    // while (query.next()) {
+    //     rowCount++;
+    // }
 
 
     if(rowCount>10) {

@@ -106,7 +106,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
-        MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(151,163,197);"));
+        MainWindow->setStyleSheet(QString::fromUtf8("background-image: url(\":/new/prefix1/image/background.png\");"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         horizontalLayout_13 = new QHBoxLayout(centralwidget);
@@ -153,6 +153,7 @@ public:
 
         label_recentSearch = new QLabel(centralwidget);
         label_recentSearch->setObjectName("label_recentSearch");
+        label_recentSearch->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
         verticalLayout_9->addWidget(label_recentSearch);
 
@@ -161,7 +162,8 @@ public:
 
         frame = new QFrame(centralwidget);
         frame->setObjectName("frame");
-        frame->setStyleSheet(QString::fromUtf8("border:ignore"));
+        frame->setStyleSheet(QString::fromUtf8("border:ignore;\n"
+"background:transparent;"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         horizontalLayout_2 = new QHBoxLayout(frame);
@@ -181,14 +183,16 @@ public:
         font.setItalic(false);
         label_currentWeather->setFont(font);
         label_currentWeather->setStyleSheet(QString::fromUtf8("font: 30pt \"Segoe UI\";\n"
-"color:rgb(0, 0, 0);"));
+"color:rgb(0, 0, 0);\n"
+"background:transparent;"));
         label_currentWeather->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_currentWeather);
 
         label_alert = new QLabel(frame);
         label_alert->setObjectName("label_alert");
-        label_alert->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_alert->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;"));
         label_alert->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_alert);
@@ -202,7 +206,8 @@ public:
         font1.setItalic(false);
         label_temp->setFont(font1);
         label_temp->setStyleSheet(QString::fromUtf8("font: 38pt \"Segoe UI\";\n"
-"color:rgb(0, 0, 0);"));
+"color:rgb(0, 0, 0);\n"
+"background:transparent;"));
         label_temp->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_temp);
@@ -215,6 +220,7 @@ public:
 
         label_weatherIcon = new QLabel(frame);
         label_weatherIcon->setObjectName("label_weatherIcon");
+        label_weatherIcon->setStyleSheet(QString::fromUtf8("background:transparent;"));
         label_weatherIcon->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout->addWidget(label_weatherIcon);
@@ -227,6 +233,7 @@ public:
 
         frame_2 = new QFrame(centralwidget);
         frame_2->setObjectName("frame_2");
+        frame_2->setStyleSheet(QString::fromUtf8("background:transparent;"));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         horizontalLayout_6 = new QHBoxLayout(frame_2);
@@ -387,7 +394,8 @@ public:
 
         label_18 = new QLabel(centralwidget);
         label_18->setObjectName("label_18");
-        label_18->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_18->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;"));
 
         verticalLayout_7->addWidget(label_18);
 
@@ -397,24 +405,28 @@ public:
         horizontalLayout_8->setObjectName("horizontalLayout_8");
         label_22 = new QLabel(centralwidget);
         label_22->setObjectName("label_22");
-        label_22->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_22->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;"));
 
         horizontalLayout_8->addWidget(label_22);
 
         label_19 = new QLabel(centralwidget);
         label_19->setObjectName("label_19");
+        label_19->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
         horizontalLayout_8->addWidget(label_19);
 
         label_23 = new QLabel(centralwidget);
         label_23->setObjectName("label_23");
-        label_23->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_23->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;"));
 
         horizontalLayout_8->addWidget(label_23);
 
         label_24 = new QLabel(centralwidget);
         label_24->setObjectName("label_24");
-        label_24->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_24->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;"));
 
         horizontalLayout_8->addWidget(label_24);
 
@@ -432,24 +444,28 @@ public:
         horizontalLayout_10->setObjectName("horizontalLayout_10");
         label_28 = new QLabel(centralwidget);
         label_28->setObjectName("label_28");
-        label_28->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_28->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;"));
 
         horizontalLayout_10->addWidget(label_28);
 
         label_21 = new QLabel(centralwidget);
         label_21->setObjectName("label_21");
+        label_21->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
         horizontalLayout_10->addWidget(label_21);
 
         label_29 = new QLabel(centralwidget);
         label_29->setObjectName("label_29");
-        label_29->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_29->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;"));
 
         horizontalLayout_10->addWidget(label_29);
 
         label_30 = new QLabel(centralwidget);
         label_30->setObjectName("label_30");
-        label_30->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_30->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;"));
 
         horizontalLayout_10->addWidget(label_30);
 
@@ -467,24 +483,28 @@ public:
         horizontalLayout_9->setObjectName("horizontalLayout_9");
         label_25 = new QLabel(centralwidget);
         label_25->setObjectName("label_25");
-        label_25->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_25->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;"));
 
         horizontalLayout_9->addWidget(label_25);
 
         label_20 = new QLabel(centralwidget);
         label_20->setObjectName("label_20");
+        label_20->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
         horizontalLayout_9->addWidget(label_20);
 
         label_26 = new QLabel(centralwidget);
         label_26->setObjectName("label_26");
-        label_26->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_26->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;"));
 
         horizontalLayout_9->addWidget(label_26);
 
         label_27 = new QLabel(centralwidget);
         label_27->setObjectName("label_27");
-        label_27->setStyleSheet(QString::fromUtf8("color:black;"));
+        label_27->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;"));
 
         horizontalLayout_9->addWidget(label_27);
 
@@ -502,6 +522,7 @@ public:
 
         graphicsView = new QGraphicsView(centralwidget);
         graphicsView->setObjectName("graphicsView");
+        graphicsView->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
         verticalLayout_8->addWidget(graphicsView);
 
@@ -517,7 +538,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 25));
+        menubar->setGeometry(QRect(0, 0, 1247, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
