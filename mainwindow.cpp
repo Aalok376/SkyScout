@@ -1,12 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include<QUrl>
-#include<QJsonDocument>
-#include<QJsonObject>
-#include<QMessageBox>
-#include<QJsonArray>
-#include<QPixmap>
-#include<QDebug>
+
 QIcon icon ;
 QString location;
 MainWindow::MainWindow(QWidget *parent)
@@ -43,13 +37,29 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
              // code to set the current temperature
             QJsonObject mainObj=JsonObj.value("main").toObject();
             double temp=mainObj.value("temp").toDouble();
-            ui->label_temp->setText(QString::number(temp-273.15)+"°C");
+            temp = logicMaths::tempConversion(temp);
+            double humidity=mainObj.value("humidity").toDouble();
+            ui->label_temp->setText(QString::number(temp)+"°C");
+
+            QJsonObject coordObj = JsonObj.value("coord").toObject();
+            double lat = coordObj.value("lat").toDouble();
+            double lon = coordObj.value("lon").toDouble();
+
+
+
             QJsonObject sysObj = JsonObj.value("sys").toObject();
             int sunrise = sysObj.value("sunrise").toInt();
             int sunset = sysObj.value("sunset").toInt();
             int universalTime = JsonObj.value("dt").toInt(); // dt represents universal time
             int timezoneOffset= JsonObj.value("timezone").toInt();
             int currentTime=universalTime+timezoneOffset; // local time of a place = universal time + timezoneOffset and local time is compared with sunrise and sunset to pridict day and night
+            int year = dateTime::currentYear();
+            int month = dateTime::currentMonth();
+            int date = dateTime::currentDate();
+                QString city = JsonObj.value("name").toString();
+           // qDebug()<<city;
+             weatherData::databaseConnection(city,temp,humidity,lat,lon,sunrise,sunset,currentTime,year,month,date);
+
             // Debug output
             qDebug() << "Sunrise:" << sunrise;
             qDebug() << "Sunset:" << sunset;
@@ -190,6 +200,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
     {
         QMessageBox::information(this ,"message","Error:"+reply->errorString());
     }
+
 }
 void MainWindow::on_pushButton_flag_clicked()
 {

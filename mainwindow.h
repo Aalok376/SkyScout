@@ -4,6 +4,18 @@
 
 #include<QNetworkAccessManager> // for sending network request
 #include<QNetworkReply> // for recieving responce
+
+#include<QUrl>
+#include<QJsonDocument>
+#include<QJsonObject>
+#include<QMessageBox>
+#include<QJsonArray>
+#include<QPixmap>
+#include<QDebug>
+
+#include "logicmaths.h"
+#include "weatherdata.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
