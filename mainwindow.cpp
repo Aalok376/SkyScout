@@ -46,17 +46,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-void MainWindow::onCurrentLocationFetched(QString l)
-{
-    location = l;
-   // qDebug() << location;
-    QString apiKey = "410680a363d4c095792d7e19b0bf49cb";
-    QString urlstring = QString("https://api.openweathermap.org/data/2.5/weather?q=%1&appid=%2").arg(location, apiKey);
-    QUrl url(urlstring);
-    QNetworkRequest request(url);
-    networkManager->get(request);
-}
-
 void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
 {
     if (reply->error() == QNetworkReply::NoError)
@@ -245,4 +234,22 @@ void MainWindow::on_pushButton_search_clicked()
 {
     on_lineEdit_searchbar_returnPressed();
 }
-
+// void MainWindow:: resizeEvent(QResizeEvent *event)
+// {
+//     // calling the base class implementation
+//     QMainWindow::resizeEvent(event);
+//     // Adjust the size of the weather icon
+//     if (!icon.isNull()) {
+//      you can recall with the same location id
+//     }
+// }
+void MainWindow::onCurrentLocationFetched(QString l)
+{
+    location = l;
+    // qDebug() << location;
+    QString apiKey = "410680a363d4c095792d7e19b0bf49cb";
+    QString urlstring = QString("https://api.openweathermap.org/data/2.5/weather?q=%1&appid=%2").arg(location, apiKey);
+    QUrl url(urlstring);
+    QNetworkRequest request(url);
+    networkManager->get(request);
+}
