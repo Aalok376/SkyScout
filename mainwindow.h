@@ -13,8 +13,10 @@
 #include<QPixmap>
 #include<QDebug>
 
+#include "datetime.h"
 #include "logicmaths.h"
 #include "weatherdata.h"
+#include "todaysweather.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

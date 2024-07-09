@@ -10,6 +10,8 @@ public:
     static int currentYear();
     static int currentMonth();
     static int currentDate();
+    static int currentHour();
+    static int currentMin();
 };
 
 #endif // DATETIME_H

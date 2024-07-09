@@ -13,6 +13,7 @@ SOURCES += \
     logicmaths.cpp \
     main.cpp \
     mainwindow.cpp \
+    todaysweather.cpp \
     weatherdata.cpp
 
 HEADERS += \
@@ -20,6 +21,7 @@ HEADERS += \
     datetime.h \
     logicmaths.h \
     mainwindow.h \
+    todaysweather.h \
     weatherdata.h
 
 FORMS += \

@@ -74,18 +74,27 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
             int month = dateTime::currentMonth();
             int date = dateTime::currentDate();
             QString city = JsonObj.value("name").toString();
+
+
+            QJsonArray weatherarr = JsonObj.value("weather").toArray();
+            QJsonObject weatherobj = weatherarr.at(0).toObject();
+            QString weatherStatus = weatherobj.value("main").toString();
+            //QJsonObject weatherObj = JsonObj.value("weather").toObject();
+            //QString status = weatherObj.value("main").toString();
+            int hour = dateTime::currentHour();
+            int min = dateTime::currentMin();
             // qDebug()<<city;
             weatherData::databaseConnection(city,temp,humidity,lat,lon,sunrise,sunset,currentTime,year,month,date);
-
+            todaysWeather::databaseConnection(city,temp,humidity,weatherStatus,lat,lon,sunrise,sunset,
+                                              currentTime,year,month,date,hour,min);
             // Debug output
             qDebug() << "Sunrise:" << sunrise;
             qDebug() << "Sunset:" << sunset;
             qDebug() << "Current Time:" << currentTime;
-            QJsonArray weatherarr = JsonObj.value("weather").toArray();
             if (!weatherarr.isEmpty())
             { // code to display the current weather status and set icons based on current weather
-                QJsonObject weatherobj = weatherarr.at(0).toObject();
-                QString weatherStatus = weatherobj.value("main").toString();
+                weatherobj = weatherarr.at(0).toObject();
+                weatherStatus = weatherobj.value("main").toString();
                 ui->label_currentWeather->setText(weatherStatus);
                 if(weatherStatus=="Clouds")
                 {

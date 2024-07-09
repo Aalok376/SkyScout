@@ -22,5 +22,7 @@
         <file>image/background.png</file>
         <file>database/weatherdb.db</file>
         <file>database/weatherdb.sql</file>
+        <file>database/onedaydata.db</file>
+        <file>database/onedaydata.sql</file>
     </qresource>
 </RCC>

@@ -24,3 +24,17 @@ int dateTime::currentDate() {
     return day;
 }
 
+int dateTime::currentHour() {
+    std::time_t now = std::time(0);
+    std::tm* localTime = std::localtime(&now);
+    int hour = localTime->tm_hour;
+    return hour;
+}
+
+int dateTime::currentMin() {
+    std::time_t now = std::time(0);
+    std::tm* localTime = std::localtime(&now);
+    int min = localTime->tm_min;
+    return min;
+}
+
