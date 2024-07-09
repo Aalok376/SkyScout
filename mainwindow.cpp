@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include<QThread>
 QIcon icon ;
 QString location;
 FetchCurrentAddress *addressObj;
@@ -24,11 +24,25 @@ MainWindow::MainWindow(QWidget *parent)
     resize(800,600);
     setFixedSize(size());
         // current location of the user
+   // QThread thread(addressObj->fetchLocation());
     addressObj->fetchLocation();
+}
+void data(void){
+
 }
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+void MainWindow::onCurrentLocationFetched(QString l)
+{
+    location = l;
+    // qDebug() << location;
+    QString apiKey = "410680a363d4c095792d7e19b0bf49cb";
+    QString urlstring = QString("https://api.openweathermap.org/data/2.5/weather?q=%1&appid=%2").arg(location, apiKey);
+    QUrl url(urlstring);
+    QNetworkRequest request(url);
+    networkManager->get(request);
 }
 void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
 {
@@ -55,8 +69,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
             QJsonObject sysObj = JsonObj.value("sys").toObject();
             int sunrise = sysObj.value("sunrise").toInt();
             int sunset = sysObj.value("sunset").toInt();
-            int currentTime = JsonObj.value("dt").toInt(); // dt represents universal time
-            int timezoneOffset= JsonObj.value("timezone").toInt();
+            int currentTime = JsonObj.value("dt").toInt();
             int year = dateTime::currentYear();
             int month = dateTime::currentMonth();
             int date = dateTime::currentDate();
@@ -67,7 +80,6 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
             // Debug output
             qDebug() << "Sunrise:" << sunrise;
             qDebug() << "Sunset:" << sunset;
-            qDebug() << "Timezone Offset:" << timezoneOffset;
             qDebug() << "Current Time:" << currentTime;
             QJsonArray weatherarr = JsonObj.value("weather").toArray();
             if (!weatherarr.isEmpty())
@@ -242,13 +254,3 @@ void MainWindow::on_pushButton_search_clicked()
 //      you can recall with the same location id
 //     }
 // }
-void MainWindow::onCurrentLocationFetched(QString l)
-{
-    location = l;
-    // qDebug() << location;
-    QString apiKey = "410680a363d4c095792d7e19b0bf49cb";
-    QString urlstring = QString("https://api.openweathermap.org/data/2.5/weather?q=%1&appid=%2").arg(location, apiKey);
-    QUrl url(urlstring);
-    QNetworkRequest request(url);
-    networkManager->get(request);
-}

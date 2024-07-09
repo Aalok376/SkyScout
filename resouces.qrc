@@ -18,5 +18,9 @@
         <file>image/full-moon.png</file>
         <file>image/cloudy-night.png</file>
         <file>image/drizzle.png</file>
+        <file>image/splash.png</file>
+        <file>image/background.png</file>
+        <file>database/weatherdb.db</file>
+        <file>database/weatherdb.sql</file>
     </qresource>
 </RCC>

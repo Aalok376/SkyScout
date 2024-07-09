@@ -4,7 +4,7 @@
 
 #include<QNetworkAccessManager> // for sending network request
 #include<QNetworkReply> // for recieving responce
-
+#include<fetchcurrentaddress.h>
 #include<QUrl>
 #include<QJsonDocument>
 #include<QJsonObject>
