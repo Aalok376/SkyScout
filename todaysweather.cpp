@@ -59,27 +59,28 @@ void todaysWeather::insertInformation(QString city, double temp,double humidity,
         // Handle query execution error
         qDebug() << "Query error: " << query.lastError();
     }
-
-    if(year!=prevY || month!=prevM || date!=prevD) {
-        query.prepare("DELETE FROM currentWeather");
-        if(!query.exec()) {
-            qDebug()<<"failed to delete previous day's data";
-        }else{
-            qDebug()<<"previous day's data deleted";
+    if(rowCount>1){
+        if(year!=prevY || month!=prevM || date!=prevD) {
+            query.prepare("DELETE FROM currentWeather");
+            if(!query.exec()) {
+                qDebug()<<"failed to delete previous day's data";
+            }else{
+                qDebug()<<"previous day's data deleted";
+            }
         }
     }
+    if(rowCount>0){
+        if(previousCity!=city){
+            return;
+        }
 
-    if(previousCity!=city){
-        return;
+        if(hour==prevH) {
+            return;
+        }
+        if(temp==prevT){
+            return;
+        }
     }
-
-    if(hour==prevH) {
-        return;
-    }
-    if(temp==prevT){
-        return;
-    }
-
     query.prepare("INSERT INTO currentWeather(id,city,temperature,humidity,status,lat,lon,sunrise,sunset,ctime,year,"
                     "month,date,hour,min)VALUES(:id,:city,:temp,:humidity,:status,:lat,:lon,:sunrise,:sunset,"
                      ":ctime,:year,:month,:date,:hour,:min)");
