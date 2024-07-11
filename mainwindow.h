@@ -42,9 +42,15 @@ private slots:
     void on_pushButton_search_clicked();
     void onWeatherDataRecieved(QNetworkReply *reply);
     void onCurrentLocationFetched(QString);
+
 private:
     Ui::MainWindow *ui;
     bool check =true;
     QNetworkAccessManager *networkManager;
+
+// public:
+//    static Ui* getUi(Ui* ui){
+//         return ui;
+//     }
 };
 #endif // MAINWINDOW_H

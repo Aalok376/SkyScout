@@ -1,0 +1,10 @@
+debug/datetime.o
+debug/logicmaths.o
+debug/main.o
+debug/mainwindow.o
+debug/showcurrentdata.o
+debug/todaysweather.o
+debug/weatherdata.o
+debug/qrc_resouces.o
+debug/moc_fetchcurrentaddress.o
+debug/moc_mainwindow.o

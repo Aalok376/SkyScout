@@ -27,7 +27,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_11">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_10" stretch="1,3,3">
+       <layout class="QVBoxLayout" name="verticalLayout_10" stretch="1,3,0,3">
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_9" stretch="0,0">
           <item>
@@ -205,9 +205,20 @@ background:transparent;</string>
          </widget>
         </item>
         <item>
+         <widget class="Line" name="line_3">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QFrame" name="frame_2">
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">border-top:4px white solid;
+background:transparent;</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -224,7 +235,7 @@ background:transparent;</string>
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_10">
+                <widget class="QLabel" name="icon1">
                  <property name="text">
                   <string>icon</string>
                  </property>
@@ -233,7 +244,7 @@ background:transparent;</string>
                <item>
                 <layout class="QVBoxLayout" name="verticalLayout_3">
                  <item>
-                  <widget class="QLabel" name="label_11">
+                  <widget class="QLabel" name="weather1">
                    <property name="text">
                     <string>weather</string>
                    </property>
@@ -243,7 +254,7 @@ background:transparent;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_12">
+                  <widget class="QLabel" name="time1">
                    <property name="text">
                     <string>time</string>
                    </property>
@@ -255,7 +266,7 @@ background:transparent;</string>
                 </layout>
                </item>
                <item>
-                <widget class="QLabel" name="label_13">
+                <widget class="QLabel" name="temp1">
                  <property name="text">
                   <string>temp</string>
                  </property>
@@ -269,7 +280,7 @@ background:transparent;</string>
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_9">
+                <widget class="QLabel" name="icon2">
                  <property name="text">
                   <string>icon</string>
                  </property>
@@ -278,7 +289,7 @@ background:transparent;</string>
                <item>
                 <layout class="QVBoxLayout" name="verticalLayout_2">
                  <item>
-                  <widget class="QLabel" name="label_7">
+                  <widget class="QLabel" name="weather2">
                    <property name="text">
                     <string>weather</string>
                    </property>
@@ -288,7 +299,7 @@ background:transparent;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_6">
+                  <widget class="QLabel" name="time2">
                    <property name="text">
                     <string>time</string>
                    </property>
@@ -300,7 +311,7 @@ background:transparent;</string>
                 </layout>
                </item>
                <item>
-                <widget class="QLabel" name="label_8">
+                <widget class="QLabel" name="temp2">
                  <property name="text">
                   <string>temp</string>
                  </property>
@@ -314,7 +325,7 @@ background:transparent;</string>
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_14">
+                <widget class="QLabel" name="icon3">
                  <property name="text">
                   <string>icon</string>
                  </property>
@@ -326,7 +337,7 @@ background:transparent;</string>
                   <number>0</number>
                  </property>
                  <item>
-                  <widget class="QLabel" name="label_15">
+                  <widget class="QLabel" name="weather3">
                    <property name="text">
                     <string>weather</string>
                    </property>
@@ -336,7 +347,7 @@ background:transparent;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_16">
+                  <widget class="QLabel" name="time3">
                    <property name="text">
                     <string>time</string>
                    </property>
@@ -348,7 +359,7 @@ background:transparent;</string>
                 </layout>
                </item>
                <item>
-                <widget class="QLabel" name="label_17">
+                <widget class="QLabel" name="temp3">
                  <property name="text">
                   <string>temp</string>
                  </property>

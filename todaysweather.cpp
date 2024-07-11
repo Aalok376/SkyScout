@@ -59,8 +59,8 @@ void todaysWeather::insertInformation(QString city, double temp,double humidity,
         // Handle query execution error
         qDebug() << "Query error: " << query.lastError();
     }
-    if(rowCount>1){
-        if(year!=prevY || month!=prevM || date!=prevD) {
+    if(year!=prevY || month!=prevM || date!=prevD) {
+        if(rowCount>0){
             query.prepare("DELETE FROM currentWeather");
             if(!query.exec()) {
                 qDebug()<<"failed to delete previous day's data";
@@ -70,7 +70,7 @@ void todaysWeather::insertInformation(QString city, double temp,double humidity,
         }
     }
     if(rowCount>0){
-        if(previousCity!=city){
+        if(city.toUpper()!=previousCity.toUpper()){
             return;
         }
 
@@ -118,4 +118,176 @@ void todaysWeather::insertInformation(QString city, double temp,double humidity,
     }
     //label:
     return;
+}
+
+int todaysWeather::findLowestId() {
+    QSqlQuery query;
+    query.prepare("SELECT id FROM currentWeather");
+    query.exec();
+    if(query.next()){
+        return query.value(0).toInt();
+    }else{
+        qDebug()<<"no id found";
+        return -1;
+    }
+}
+
+QString todaysWeather::fetchWeatherStatus(int id) {
+    QSqlQuery query;
+    QString status;
+    query.prepare("SELECT status FROM currentWeather WHERE id = :id");
+    query.bindValue(":id",id);
+    if(query.exec()){
+        if(query.next()){
+            status = query.value(0).toString();
+        }
+    }else{
+        qDebug()<<"error in fetching status";
+    }
+    return status;
+}
+
+double todaysWeather::fetchTemp(int id) {
+    QSqlQuery query;
+    double temp;
+    query.prepare("SELECT temperature FROM currentWeather WHERE id = :id");
+    query.bindValue(":id",id);
+    if(query.exec()){
+        if(query.next()){
+            temp = query.value(0).toDouble();
+        }
+    }else{
+        qDebug()<<"error in fetching temperature";
+    }
+    return temp;
+}
+
+int todaysWeather::fetchHour(int id) {
+    QSqlQuery query;
+    int hour;
+    query.prepare("SELECT hour FROM currentWeather WHERE id = :id");
+    query.bindValue(":id",id);
+    if(query.exec()){
+        if(query.next()){
+            hour = query.value(0).toInt();
+        }
+    }else{
+        qDebug()<<"error in fetching hour";
+    }
+    return hour;
+}
+
+int todaysWeather::fetchMin(int id) {
+    QSqlQuery query;
+    int min;
+    query.prepare("SELECT min FROM currentWeather WHERE id = :id");
+    query.bindValue(":id",id);
+    if(query.exec()){
+        if(query.next()){
+            min = query.value(0).toInt();
+        }
+    }else{
+        qDebug()<<"error in fetching min";
+    }
+    return min;
+}
+
+int todaysWeather::fetchSunrise(int id) {
+    QSqlQuery query;
+    int sunrise;
+    query.prepare("SELECT sunrise FROM currentWeather WHERE id = :id");
+    query.bindValue(":id",id);
+    if(query.exec()){
+        if(query.next()){
+            sunrise = query.value(0).toInt();
+        }
+    }else{
+        qDebug()<<"error in fetching sunrise";
+    }
+    return sunrise;
+}
+
+int todaysWeather::fetchSunset(int id) {
+    QSqlQuery query;
+    int sunset;
+    query.prepare("SELECT sunset FROM currentWeather WHERE id = :id");
+    query.bindValue(":id",id);
+    if(query.exec()){
+        if(query.next()){
+            sunset = query.value(0).toInt();
+        }
+    }else{
+        qDebug()<<"error in fetching sunset";
+    }
+    return sunset;
+}
+
+int todaysWeather::fetchCtime(int id) {
+    QSqlQuery query;
+    int ctime;
+    query.prepare("SELECT ctime FROM currentWeather WHERE id = :id");
+    query.bindValue(":id",id);
+    if(query.exec()){
+        if(query.next()){
+            ctime = query.value(0).toInt();
+        }
+    }else{
+        qDebug()<<"error in fetching ctime";
+    }
+    return ctime;
+}
+
+QIcon todaysWeather::fetchIcon(int id) {
+    QSqlQuery query;
+    QIcon icon;
+    QString status;
+    query.prepare("SELECT status FROM currentWeather WHERE id = :id");
+    query.bindValue(":id",id);
+    if(query.exec()){
+        if(query.next()){
+            status = query.value(0).toString();
+        }
+    }else{
+        qDebug()<<"error in fetching status";
+    }
+
+    if(status=="Clouds") {
+        //int width=ui->label_weatherIcon->width();
+        //int height= ui->label_weatherIcon->height();
+        if (fetchSunrise(id)<=fetchCtime(id) && fetchCtime(id)<fetchSunset(id)) {
+            icon= QIcon(":/new/prefix1/image/cloudy.png");
+        }
+        else {
+            icon= QIcon(":/new/prefix1/image/cloudy-night.png");
+        }
+    }
+    else if(status=="Drizzle") {
+
+        if(fetchSunrise(id)<=fetchCtime(id) && fetchCtime(id)<fetchSunset(id)) {
+            icon=QIcon(":/new/prefix1/image/weather.png");
+        }
+        else {
+            icon=QIcon(":/new/prefix1/image/drizzle.png");
+        }
+    }
+    else if(status=="Mist" || status=="Haze" || status=="Fog") {
+        icon =QIcon(":/new/prefix1/image/haze.png");
+    }
+    else if(status=="Clear") {
+
+        if (fetchSunrise(id)<=fetchCtime(id) && fetchCtime(id)<fetchSunset(id)) {
+            icon=QIcon(":/new/prefix1/image/Clear.png");
+        }
+        else {
+            icon=QIcon(":/new/prefix1/image/full-moon.png");
+        }
+    }
+    else if(status=="Dust" || status=="Sand" || status=="Ash") {
+
+        icon=QIcon(":/new/prefix1/image/dust.png");
+    }
+    else {
+        icon=QIcon(":/new/prefix1/image/"+status+".png");
+    }
+    return icon;
 }

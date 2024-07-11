@@ -123,25 +123,25 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug/qrc_resouces.cpp
 debug/qrc_resouces.cpp: ../../resouces.qrc \
 		D:/Qt/6.7.1/mingw_64/bin/rcc.exe \
+		../../image/Thunderstorm.png \
 		../../image/full-moon.png \
-		../../image/icons8-snow-94.png \
 		../../image/cloudy-night.png \
 		../../image/background.png \
+		../../image/Rain.png \
 		../../image/dust.png \
 		../../image/projectLogo.png \
 		../../image/weather.png \
-		../../image/icons8-tornado-96.png \
-		../../image/sun.png \
-		../../image/icons8-air-96.png \
-		../../image/icons8-storm-94.png \
-		../../image/rainy-day.png \
+		../../image/Squall.png \
+		../../image/Tornado.png \
 		../../image/splash.png \
 		../../image/united-states-icon-96x72-b3zh47b5.png \
+		../../image/Smoke.png \
 		../../image/drizzle.png \
 		../../image/np.png \
-		../../image/icons8-smoke-100.png \
+		../../image/Clear.png \
 		../../image/search--v1.png \
 		../../image/haze.png \
+		../../image/Snow.png \
 		../../image/cloudy.png \
 		../../database/onedaydata.db \
 		../../database/onedaydata.sql \
@@ -788,6 +788,7 @@ debug/moc_mainwindow.cpp: ../../mainwindow.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
 		../../todaysweather.h \
+		D:/Qt/6.7.1/mingw_64/include/QtGui/QIcon \
 		debug/moc_predefs.h \
 		D:/Qt/6.7.1/mingw_64/bin/moc.exe
 	'D:\Qt\6.7.1\mingw_64\bin\moc.exe' $(DEFINES) --include D:/Interessant/qtp/finalProject/build/Desktop_Qt_6_7_1_MinGW_64_bit-Debug/debug/moc_predefs.h -ID:/Qt/6.7.1/mingw_64/mkspecs/win32-g++ -ID:/Interessant/qtp/finalProject -ID:/Qt/6.7.1/mingw_64/include -ID:/Qt/6.7.1/mingw_64/include/QtWidgets -ID:/Qt/6.7.1/mingw_64/include/QtGui -ID:/Qt/6.7.1/mingw_64/include/QtNetwork -ID:/Qt/6.7.1/mingw_64/include/QtSql -ID:/Qt/6.7.1/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ../../mainwindow.h -o debug/moc_mainwindow.cpp
@@ -1218,6 +1219,7 @@ debug/main.o: ../../main.cpp ../../mainwindow.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
 		../../todaysweather.h \
+		D:/Qt/6.7.1/mingw_64/include/QtGui/QIcon \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QApplication \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qapplication.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QSplashScreen \
@@ -1622,6 +1624,7 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
 		../../todaysweather.h \
+		D:/Qt/6.7.1/mingw_64/include/QtGui/QIcon \
 		ui_mainwindow.h \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/QApplication \
 		D:/Qt/6.7.1/mingw_64/include/QtWidgets/qapplication.h \
@@ -2017,6 +2020,7 @@ debug/todaysweather.o: ../../todaysweather.cpp ../../todaysweather.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlDatabase \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
+		D:/Qt/6.7.1/mingw_64/include/QtGui/QIcon \
 		../../datetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug/todaysweather.o ../../todaysweather.cpp
 

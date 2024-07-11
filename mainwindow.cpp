@@ -18,8 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
     int y =ui->pushButton_flag->height();
     ui->pushButton_flag->setIconSize(QSize(x,y));
     addressObj = new FetchCurrentAddress(this);
-    connect(networkManager,&QNetworkAccessManager::finished ,this , &MainWindow::onWeatherDataRecieved);
+
     connect(addressObj, &FetchCurrentAddress::locationFetched, this, &MainWindow::onCurrentLocationFetched);
+    connect(networkManager,&QNetworkAccessManager::finished ,this , &MainWindow::onWeatherDataRecieved);
     //setting fixed size
     resize(800,600);
     setFixedSize(size());
@@ -98,8 +99,8 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 ui->label_currentWeather->setText(weatherStatus);
                 if(weatherStatus=="Clouds")
                 {
-                    int width=ui->label_weatherIcon->width();
-                    int height= ui->label_weatherIcon->height();
+                    //int width=ui->label_weatherIcon->width();
+                    //int height= ui->label_weatherIcon->height();
                     if (sunrise<=currentTime && currentTime<sunset)
                     {
                         icon= QIcon(":/new/prefix1/image/cloudy.png");
@@ -110,20 +111,20 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                         icon= QIcon(":/new/prefix1/image/cloudy-night.png");
                         ui->label_alert->setText("Cloudy night ahead. \n Drive safely ");
                     }
-                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
+                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(182 , 175)));//height , width
                 }
                 if(weatherStatus=="Thunderstorm")
                 {
-                    int width=ui->label_weatherIcon->width();
-                    int height= ui->label_weatherIcon->height();
-                    icon=QIcon(":/new/prefix1/image/icons8-storm-94.png");
-                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
+                    //int width=ui->label_weatherIcon->width();
+                    //int height= ui->label_weatherIcon->height();
+                    icon=QIcon(":/new/prefix1/image/Thunderstorm.png");
+                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(182 , 175)));
                     ui->label_alert->setText("Thunderstorms expected \n Avoid outdoor activities if possible");
                 }
                 if(weatherStatus=="Drizzle")
                 {
-                    int width=ui->label_weatherIcon->width();
-                    int height= ui->label_weatherIcon->height();
+                    //int width=ui->label_weatherIcon->width();
+                    //int height= ui->label_weatherIcon->height();
                     if(sunrise<=currentTime && currentTime<sunset)
                     {
                         icon=QIcon(":/new/prefix1/image/weather.png");
@@ -132,32 +133,32 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     {
                         icon=QIcon(":/new/prefix1/image/drizzle.png");
                     }
-                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
+                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(182 , 175)));
                     ui->label_alert->setText("Light drizzle outside \n Don't forget your raincoat");
                 }
                 if(weatherStatus=="Mist" || weatherStatus=="Haze" || weatherStatus=="Fog")
                 {
-                    int width=ui->label_weatherIcon->width();
-                    int height= ui->label_weatherIcon->height();
+                    //int width=ui->label_weatherIcon->width();
+                    //int height= ui->label_weatherIcon->height();
                     icon =QIcon(":/new/prefix1/image/haze.png");
-                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
+                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(182 , 175)));
                     ui->label_alert->setText("Visibility is low \n take precautions");
                 }
                 if(weatherStatus=="Rain")
                 {
-                    int width=ui->label_weatherIcon->width();
-                    int height= ui->label_weatherIcon->height();
-                    icon=QIcon(":/new/prefix1/image/rainy-day.png");
-                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
+                    //int width=ui->label_weatherIcon->width();
+                    //int height= ui->label_weatherIcon->height();
+                    icon=QIcon(":/new/prefix1/image/Rain.png");
+                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(182 , 175)));
                     ui->label_alert->setText("Don't forget your umbrella ! ");
                 }
                 if(weatherStatus=="Clear")
                 {
-                    int width=ui->label_weatherIcon->width();
-                    int height= ui->label_weatherIcon->height();
+                    //int width=ui->label_weatherIcon->width();
+                    //int height= ui->label_weatherIcon->height();
                     if (sunrise<=currentTime && currentTime<sunset)
                     {
-                        icon=QIcon(":/new/prefix1/image/sun.png");
+                        icon=QIcon(":/new/prefix1/image/Clear.png");
                         ui->label_alert->setText("It's a clear day! \n Enjoy the beautiful weather");
                     }
                     else
@@ -165,46 +166,46 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                         icon=QIcon(":/new/prefix1/image/full-moon.png");
                         ui->label_alert->setText("Clear skies tonight \n Ideal for stargazing!");
                     }
-                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
+                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(182 , 175)));
                 }
                 if(weatherStatus=="Smoke")
                 {
-                    int width=ui->label_weatherIcon->width();
-                    int height= ui->label_weatherIcon->height();
-                    icon=QIcon(":/new/prefix1/image/icons8-smoke-100.png");
-                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
+                    //int width=ui->label_weatherIcon->width();
+                    //int height= ui->label_weatherIcon->height();
+                    icon=QIcon(":/new/prefix1/image/Smoke.png");
+                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(182 , 175)));
                     ui->label_alert->setText("Don't forget your mask !");
                 }
                 if(weatherStatus=="Snow")
                 {
-                    int width=ui->label_weatherIcon->width();
-                    int height= ui->label_weatherIcon->height();
-                    icon=QIcon(":/new/prefix1/image/icons8-snow-94.png");
-                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
+                    //int width=ui->label_weatherIcon->width();
+                    //int height= ui->label_weatherIcon->height();
+                    icon=QIcon(":/new/prefix1/image/Snow.png");
+                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(182 , 175)));
                     ui->label_alert->setText("Snow is falling! \n Time for some winter fun.");
                 }
                 if(weatherStatus=="Dust" || weatherStatus=="Sand" || weatherStatus=="Ash")
                 {
-                    int width=ui->label_weatherIcon->width();
-                    int height= ui->label_weatherIcon->height();
+                    //int width=ui->label_weatherIcon->width();
+                    //int height= ui->label_weatherIcon->height();
                     icon=QIcon(":/new/prefix1/image/dust.png");
-                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
+                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(182 , 175)));
                     ui->label_alert->setText("Consider wearing a mask \n if you're heading out");
                 }
                 if(weatherStatus=="Tornado")
                 {
-                    int width=ui->label_weatherIcon->width();
-                    int height= ui->label_weatherIcon->height();
-                    icon=QIcon(":/new/prefix1/image/icons8-tornado-96.png");
-                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
+                    //int width=ui->label_weatherIcon->width();
+                    //int height= ui->label_weatherIcon->height();
+                    icon=QIcon(":/new/prefix1/image/Tornado.png");
+                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(182 , 175)));
                     ui->label_alert->setText("Tornado alert! stay indoors");
                 }
                 if(weatherStatus=="Squall")
                 {
-                    int width=ui->label_weatherIcon->width();
-                    int height= ui->label_weatherIcon->height();
-                    icon=QIcon(":/new/prefix1/image/icons8-air-96.png");
-                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(width , height)));
+                    //int width=ui->label_weatherIcon->width();
+                    //int height= ui->label_weatherIcon->height();
+                    icon=QIcon(":/new/prefix1/image/Squall.png");
+                    ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(182 , 175)));
                     ui->label_alert->setText("A squall is approaching \n Expect strong winds and rain");
                 }
 
@@ -214,6 +215,72 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 QMessageBox::information(this ,"SkyScout","error to display weather");
             }
             ui->label_recentSearch->setText(location);
+
+
+            //hehe
+
+            int lowestId = todaysWeather::findLowestId();
+            //qDebug()<<"the lowest Id is nothing but "<<lowestId;
+
+            QString weather1 = todaysWeather::fetchWeatherStatus(lowestId);
+            //qDebug()<<"the weather status is "<<weather1;
+            double temp1 = todaysWeather::fetchTemp(lowestId);
+            int hour1 = todaysWeather::fetchHour(lowestId);
+            int min1 = todaysWeather::fetchMin(lowestId);
+            icon = todaysWeather::fetchIcon(lowestId);
+            //qDebug()<<"temperature is "<<temp1;
+            //qDebug()<<"hour is "<<hour1;
+
+            // if(weather1==""){
+            //     goto label;
+            // }
+            ui->icon1->setPixmap(icon.pixmap(QSize(95, 70)));
+            ui->weather1->setText(weather1);
+            ui->temp1->setText(QString::number(temp1)+"°C");
+            ui->time1->setText(QString::number(hour1)+":"+QString::number(min1));
+            //qDebug()<<"minute is "<<min1;
+            //icon =
+
+            //for 2nd
+
+            QString weather2 = todaysWeather::fetchWeatherStatus(lowestId+1);
+            //qDebug()<<"the weather status is "<<weather1;
+            double temp2 = todaysWeather::fetchTemp(lowestId+1);
+            int hour2 = todaysWeather::fetchHour(lowestId+1);
+            int min2 = todaysWeather::fetchMin(lowestId+1);
+            icon = todaysWeather::fetchIcon(lowestId+1);
+            //qDebug()<<"temperature is "<<temp1;
+            //qDebug()<<"hour is "<<hour1;
+
+            // if(weather2==""){
+            //     goto label;
+            // }
+            ui->icon2->setPixmap(icon.pixmap(QSize(95,70)));
+            ui->weather2->setText(weather2);
+            ui->temp2->setText(QString::number(temp2)+"°C");
+            ui->time2->setText(QString::number(hour2)+":"+QString::number(min2));
+            // qDebug()<<"minute is "<<min2;
+
+            //for 3rd
+
+            QString weather3 = todaysWeather::fetchWeatherStatus(lowestId+2);
+            //qDebug()<<"the weather status is "<<weather1;
+            double temp3 = todaysWeather::fetchTemp(lowestId+2);
+            int hour3 = todaysWeather::fetchHour(lowestId+2);
+            int min3 = todaysWeather::fetchMin(lowestId+2);
+            icon = todaysWeather::fetchIcon(lowestId+2);
+            //qDebug()<<"temperature is "<<temp1;
+            //qDebug()<<"hour is "<<hour1;
+
+            // if(weather3==""){
+            //     goto label;
+            // }
+            ui->icon3->setPixmap(icon.pixmap(QSize(95,70)));
+            ui->weather3->setText(weather3);
+            ui->temp3->setText(QString::number(temp3)+"°C");
+            ui->time3->setText(QString::number(hour3)+":"+QString::number(min3));
+            //qDebug()<<"minute is "<<min1;
+
         }
         else
         {

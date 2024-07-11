@@ -46,27 +46,28 @@ public:
     QLabel *label_alert;
     QLabel *label_temp;
     QLabel *label_weatherIcon;
+    QFrame *line_3;
     QFrame *frame_2;
     QHBoxLayout *horizontalLayout_6;
     QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout_4;
-    QLabel *label_10;
+    QLabel *icon1;
     QVBoxLayout *verticalLayout_3;
-    QLabel *label_11;
-    QLabel *label_12;
-    QLabel *label_13;
+    QLabel *weather1;
+    QLabel *time1;
+    QLabel *temp1;
     QHBoxLayout *horizontalLayout_3;
-    QLabel *label_9;
+    QLabel *icon2;
     QVBoxLayout *verticalLayout_2;
-    QLabel *label_7;
-    QLabel *label_6;
-    QLabel *label_8;
+    QLabel *weather2;
+    QLabel *time2;
+    QLabel *temp2;
     QHBoxLayout *horizontalLayout_5;
-    QLabel *label_14;
+    QLabel *icon3;
     QVBoxLayout *verticalLayout_4;
-    QLabel *label_15;
-    QLabel *label_16;
-    QLabel *label_17;
+    QLabel *weather3;
+    QLabel *time3;
+    QLabel *temp3;
     QVBoxLayout *verticalLayout_11;
     QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_7;
@@ -231,9 +232,18 @@ public:
 
         verticalLayout_10->addWidget(frame);
 
+        line_3 = new QFrame(centralwidget);
+        line_3->setObjectName("line_3");
+        line_3->setStyleSheet(QString::fromUtf8(""));
+        line_3->setFrameShape(QFrame::Shape::HLine);
+        line_3->setFrameShadow(QFrame::Shadow::Sunken);
+
+        verticalLayout_10->addWidget(line_3);
+
         frame_2 = new QFrame(centralwidget);
         frame_2->setObjectName("frame_2");
-        frame_2->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        frame_2->setStyleSheet(QString::fromUtf8("border-top:4px white solid;\n"
+"background:transparent;"));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         horizontalLayout_6 = new QHBoxLayout(frame_2);
@@ -243,32 +253,32 @@ public:
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(0);
         horizontalLayout_4->setObjectName("horizontalLayout_4");
-        label_10 = new QLabel(frame_2);
-        label_10->setObjectName("label_10");
+        icon1 = new QLabel(frame_2);
+        icon1->setObjectName("icon1");
 
-        horizontalLayout_4->addWidget(label_10);
+        horizontalLayout_4->addWidget(icon1);
 
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName("verticalLayout_3");
-        label_11 = new QLabel(frame_2);
-        label_11->setObjectName("label_11");
-        label_11->setAlignment(Qt::AlignCenter);
+        weather1 = new QLabel(frame_2);
+        weather1->setObjectName("weather1");
+        weather1->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_3->addWidget(label_11);
+        verticalLayout_3->addWidget(weather1);
 
-        label_12 = new QLabel(frame_2);
-        label_12->setObjectName("label_12");
-        label_12->setAlignment(Qt::AlignCenter);
+        time1 = new QLabel(frame_2);
+        time1->setObjectName("time1");
+        time1->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_3->addWidget(label_12);
+        verticalLayout_3->addWidget(time1);
 
 
         horizontalLayout_4->addLayout(verticalLayout_3);
 
-        label_13 = new QLabel(frame_2);
-        label_13->setObjectName("label_13");
+        temp1 = new QLabel(frame_2);
+        temp1->setObjectName("temp1");
 
-        horizontalLayout_4->addWidget(label_13);
+        horizontalLayout_4->addWidget(temp1);
 
         horizontalLayout_4->setStretch(0, 1);
         horizontalLayout_4->setStretch(1, 5);
@@ -279,32 +289,32 @@ public:
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(0);
         horizontalLayout_3->setObjectName("horizontalLayout_3");
-        label_9 = new QLabel(frame_2);
-        label_9->setObjectName("label_9");
+        icon2 = new QLabel(frame_2);
+        icon2->setObjectName("icon2");
 
-        horizontalLayout_3->addWidget(label_9);
+        horizontalLayout_3->addWidget(icon2);
 
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName("verticalLayout_2");
-        label_7 = new QLabel(frame_2);
-        label_7->setObjectName("label_7");
-        label_7->setAlignment(Qt::AlignCenter);
+        weather2 = new QLabel(frame_2);
+        weather2->setObjectName("weather2");
+        weather2->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_2->addWidget(label_7);
+        verticalLayout_2->addWidget(weather2);
 
-        label_6 = new QLabel(frame_2);
-        label_6->setObjectName("label_6");
-        label_6->setAlignment(Qt::AlignCenter);
+        time2 = new QLabel(frame_2);
+        time2->setObjectName("time2");
+        time2->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_2->addWidget(label_6);
+        verticalLayout_2->addWidget(time2);
 
 
         horizontalLayout_3->addLayout(verticalLayout_2);
 
-        label_8 = new QLabel(frame_2);
-        label_8->setObjectName("label_8");
+        temp2 = new QLabel(frame_2);
+        temp2->setObjectName("temp2");
 
-        horizontalLayout_3->addWidget(label_8);
+        horizontalLayout_3->addWidget(temp2);
 
         horizontalLayout_3->setStretch(0, 1);
         horizontalLayout_3->setStretch(1, 5);
@@ -315,33 +325,33 @@ public:
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(0);
         horizontalLayout_5->setObjectName("horizontalLayout_5");
-        label_14 = new QLabel(frame_2);
-        label_14->setObjectName("label_14");
+        icon3 = new QLabel(frame_2);
+        icon3->setObjectName("icon3");
 
-        horizontalLayout_5->addWidget(label_14);
+        horizontalLayout_5->addWidget(icon3);
 
         verticalLayout_4 = new QVBoxLayout();
         verticalLayout_4->setSpacing(0);
         verticalLayout_4->setObjectName("verticalLayout_4");
-        label_15 = new QLabel(frame_2);
-        label_15->setObjectName("label_15");
-        label_15->setAlignment(Qt::AlignCenter);
+        weather3 = new QLabel(frame_2);
+        weather3->setObjectName("weather3");
+        weather3->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_4->addWidget(label_15);
+        verticalLayout_4->addWidget(weather3);
 
-        label_16 = new QLabel(frame_2);
-        label_16->setObjectName("label_16");
-        label_16->setAlignment(Qt::AlignCenter);
+        time3 = new QLabel(frame_2);
+        time3->setObjectName("time3");
+        time3->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_4->addWidget(label_16);
+        verticalLayout_4->addWidget(time3);
 
 
         horizontalLayout_5->addLayout(verticalLayout_4);
 
-        label_17 = new QLabel(frame_2);
-        label_17->setObjectName("label_17");
+        temp3 = new QLabel(frame_2);
+        temp3->setObjectName("temp3");
 
-        horizontalLayout_5->addWidget(label_17);
+        horizontalLayout_5->addWidget(temp3);
 
         horizontalLayout_5->setStretch(0, 1);
         horizontalLayout_5->setStretch(1, 5);
@@ -357,7 +367,7 @@ public:
 
         verticalLayout_10->setStretch(0, 1);
         verticalLayout_10->setStretch(1, 3);
-        verticalLayout_10->setStretch(2, 3);
+        verticalLayout_10->setStretch(3, 3);
 
         horizontalLayout_11->addLayout(verticalLayout_10);
 
@@ -564,18 +574,18 @@ public:
 #endif // QT_CONFIG(tooltip)
         label_temp->setText(QString());
         label_weatherIcon->setText(QString());
-        label_10->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
-        label_11->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
-        label_12->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
-        label_13->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
-        label_9->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
-        label_7->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
-        label_8->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
-        label_14->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
-        label_15->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
-        label_16->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
-        label_17->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
+        icon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        weather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
+        time1->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
+        temp1->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
+        icon2->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        weather2->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
+        time2->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
+        temp2->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
+        icon3->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        weather3->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
+        time3->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
+        temp3->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         pushButton_flag->setText(QString());
         label_18->setText(QCoreApplication::translate("MainWindow", "3 days forecast", nullptr));
         label_22->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
