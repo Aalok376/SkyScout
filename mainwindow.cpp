@@ -231,15 +231,19 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
             //qDebug()<<"temperature is "<<temp1;
             //qDebug()<<"hour is "<<hour1;
 
-            // if(weather1==""){
-            //     goto label;
-            // }
-            ui->icon1->setPixmap(icon.pixmap(QSize(95, 70)));
-            ui->weather1->setText(weather1);
-            ui->temp1->setText(QString::number(temp1)+"°C");
-            ui->time1->setText(QString::number(hour1)+":"+QString::number(min1));
-            //qDebug()<<"minute is "<<min1;
-            //icon =
+            if(weather1!=""){
+                ui->icon1->setPixmap(icon.pixmap(QSize(95, 70)));
+                ui->weather1->setText(weather1);
+                ui->temp1->setText(QString::number(temp1)+"°C");
+                ui->time1->setText(QString::number(hour1)+":"+QString::number(min1));
+                //qDebug()<<"minute is "<<min1;
+                //icon =
+            }else{
+                ui->icon1->setText("-");
+                ui->weather1->setText("-");
+                ui->temp1->setText("-");
+                ui->time1->setText("-");
+            }
 
             //for 2nd
 
@@ -252,13 +256,17 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
             //qDebug()<<"temperature is "<<temp1;
             //qDebug()<<"hour is "<<hour1;
 
-            // if(weather2==""){
-            //     goto label;
-            // }
-            ui->icon2->setPixmap(icon.pixmap(QSize(95,70)));
-            ui->weather2->setText(weather2);
-            ui->temp2->setText(QString::number(temp2)+"°C");
-            ui->time2->setText(QString::number(hour2)+":"+QString::number(min2));
+            if(weather2!=""){
+                ui->icon2->setPixmap(icon.pixmap(QSize(95,70)));
+                ui->weather2->setText(weather2);
+                ui->temp2->setText(QString::number(temp2)+"°C");
+                ui->time2->setText(QString::number(hour2)+":"+QString::number(min2));
+            }else{
+                ui->icon2->setText("-");
+                ui->weather2->setText("-");
+                ui->temp2->setText("-");
+                ui->time2->setText("-");
+            }
             // qDebug()<<"minute is "<<min2;
 
             //for 3rd
@@ -269,18 +277,22 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
             int hour3 = todaysWeather::fetchHour(lowestId+2);
             int min3 = todaysWeather::fetchMin(lowestId+2);
             icon = todaysWeather::fetchIcon(lowestId+2);
+            // qDebug()<<"weather status is nothing but "<<weather3;
             //qDebug()<<"temperature is "<<temp1;
             //qDebug()<<"hour is "<<hour1;
 
-            // if(weather3==""){
-            //     goto label;
-            // }
-            ui->icon3->setPixmap(icon.pixmap(QSize(95,70)));
-            ui->weather3->setText(weather3);
-            ui->temp3->setText(QString::number(temp3)+"°C");
-            ui->time3->setText(QString::number(hour3)+":"+QString::number(min3));
-            //qDebug()<<"minute is "<<min1;
-
+            if(weather3!=""){
+                ui->icon3->setPixmap(icon.pixmap(QSize(95,70)));
+                ui->weather3->setText(weather3);
+                ui->temp3->setText(QString::number(temp3)+"°C");
+                ui->time3->setText(QString::number(hour3)+":"+QString::number(min3));
+                //qDebug()<<"minute is "<<min1;
+            }else{
+                ui->icon3->setText("-");
+                ui->weather3->setText("-");
+                ui->temp3->setText("-");
+                ui->time3->setText("-");
+            }
         }
         else
         {

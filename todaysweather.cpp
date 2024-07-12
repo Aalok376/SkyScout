@@ -60,7 +60,7 @@ void todaysWeather::insertInformation(QString city, double temp,double humidity,
         qDebug() << "Query error: " << query.lastError();
     }
     if(year!=prevY || month!=prevM || date!=prevD) {
-        if(rowCount>0){
+        if(rowCount>0 &&rowCount!=1){
             query.prepare("DELETE FROM currentWeather");
             if(!query.exec()) {
                 qDebug()<<"failed to delete previous day's data";
