@@ -8,6 +8,7 @@
 #include<QNetworkRequest>
 #include<QUrl>
 #include<QMessageBox>
+#include<QDebug>
 //Parent (QObject or QApplication) -> GeolocationWorker_obj -> QNetworkAccessManager , setting parent child relationship
 class FetchCurrentAddress : public QObject
 {
@@ -41,6 +42,9 @@ private slots:
                 QString cityName = Jsonobj.value("city").toString();
                 emit locationFetched(cityName);
             }
+        }
+        else{
+            qDebug()<<"error in fetching current address";
         }
     }
 };
