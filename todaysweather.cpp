@@ -23,11 +23,19 @@ void todaysWeather::insertInformation(QString city, double temp,double humidity,
     query.prepare("SELECT * FROM currentWeather");
     query.exec();
     int rowCount=0;
+    int largest;
     while (query.next()) {
         rowCount++;
+        largest = query.value(0).toInt();
     }
     qDebug()<<"row count is"<<rowCount;
-    int id = rowCount+1;
+    int id;
+    if(rowCount==0){
+        id=1;
+    }else{
+        id=largest+1;
+    }
+
 
     int previousId = id-1;
     QString previousCity;
@@ -53,14 +61,14 @@ void todaysWeather::insertInformation(QString city, double temp,double humidity,
             prevH = query.value(5).toInt();
         } else {
             // Handle case where no results are returned
-            qDebug() << "No results returned for id:" << id;
+            qDebug() << "No results returned for id no. " << previousId;
         }
     } else {
         // Handle query execution error
         qDebug() << "Query error: " << query.lastError();
     }
     if(year!=prevY || month!=prevM || date!=prevD) {
-        if(rowCount>0 &&rowCount!=1){
+        if(rowCount>0){
             query.prepare("DELETE FROM currentWeather");
             if(!query.exec()) {
                 qDebug()<<"failed to delete previous day's data";

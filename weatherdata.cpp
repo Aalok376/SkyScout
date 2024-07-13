@@ -25,11 +25,17 @@ void weatherData::insertInformation(QString city, double temp,double humidity,do
     query.prepare("SELECT * FROM pastWeather");
     query.exec();
     int rowCount=0;
+    int largest;
     while (query.next()) {
         rowCount++;
+        largest = query.value(0).toInt();
     }
-    int largest = rowCount;
-    int id=largest+1;
+    int id;
+    if(rowCount==0){
+        id=1;
+    }else{
+        id=largest+1;
+    }
     //while()
     int previousId=largest;
     QString previousCity;

@@ -16,4 +16,4 @@
 --   min INT NOT NULL
 -- );
 SELECT * FROM currentWeather;
--- DELETE FROM currentWeather WHERE id=2;
+-- DELETE FROM currentWeather;

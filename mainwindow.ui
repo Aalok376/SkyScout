@@ -254,9 +254,9 @@ background:transparent;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="time1">
+                  <widget class="QLabel" name="temp1">
                    <property name="text">
-                    <string>time</string>
+                    <string>temp</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -266,9 +266,9 @@ background:transparent;</string>
                 </layout>
                </item>
                <item>
-                <widget class="QLabel" name="temp1">
+                <widget class="QLabel" name="time1">
                  <property name="text">
-                  <string>temp</string>
+                  <string>time</string>
                  </property>
                 </widget>
                </item>
@@ -299,9 +299,9 @@ background:transparent;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="time2">
+                  <widget class="QLabel" name="temp2">
                    <property name="text">
-                    <string>time</string>
+                    <string>temp</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -311,9 +311,9 @@ background:transparent;</string>
                 </layout>
                </item>
                <item>
-                <widget class="QLabel" name="temp2">
+                <widget class="QLabel" name="time2">
                  <property name="text">
-                  <string>temp</string>
+                  <string>time</string>
                  </property>
                 </widget>
                </item>
@@ -347,9 +347,9 @@ background:transparent;</string>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="time3">
+                  <widget class="QLabel" name="temp3">
                    <property name="text">
-                    <string>time</string>
+                    <string>temp</string>
                    </property>
                    <property name="alignment">
                     <set>Qt::AlignCenter</set>
@@ -359,9 +359,9 @@ background:transparent;</string>
                 </layout>
                </item>
                <item>
-                <widget class="QLabel" name="temp3">
+                <widget class="QLabel" name="time3">
                  <property name="text">
-                  <string>temp</string>
+                  <string>time</string>
                  </property>
                 </widget>
                </item>
