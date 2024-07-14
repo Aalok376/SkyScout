@@ -17,6 +17,9 @@
 #include "logicmaths.h"
 #include "weatherdata.h"
 #include "todaysweather.h"
+#include "futureweather.h"
+
+// #include "futuredata.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -42,6 +45,7 @@ private slots:
     void on_pushButton_search_clicked();
     void onWeatherDataRecieved(QNetworkReply *reply);
     void onCurrentLocationFetched(QString);
+
 
 private:
     Ui::MainWindow *ui;

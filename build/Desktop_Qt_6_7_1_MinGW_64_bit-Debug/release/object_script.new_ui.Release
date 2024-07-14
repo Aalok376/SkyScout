@@ -1,8 +1,8 @@
 release/datetime.o
+release/futureweather.o
 release/logicmaths.o
 release/main.o
 release/mainwindow.o
-release/showcurrentdata.o
 release/todaysweather.o
 release/weatherdata.o
 release/qrc_resouces.o

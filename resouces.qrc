@@ -24,5 +24,7 @@
         <file>database/weatherdb.sql</file>
         <file>database/onedaydata.db</file>
         <file>database/onedaydata.sql</file>
+        <file>database/futuredata.db</file>
+        <file>database/futuredata.sql</file>
     </qresource>
 </RCC>

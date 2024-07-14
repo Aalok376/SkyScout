@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     datetime.cpp \
+    futureweather.cpp \
     logicmaths.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -19,6 +20,7 @@ SOURCES += \
 HEADERS += \
     fetchcurrentaddress.h \
     datetime.h \
+    futureweather.h \
     logicmaths.h \
     mainwindow.h \
     todaysweather.h \
