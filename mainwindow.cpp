@@ -289,7 +289,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 ui->label_recentSearch->setText(location);
 
 
-                //hehe
+                //currentData
 
                 int lowestId = todaysWeather::findLowestId();
                 //qDebug()<<"the lowest Id is nothing but "<<lowestId;
@@ -365,6 +365,42 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->temp3->setText("-");
                     ui->time3->setText("-");
                 }
+
+                //futureData
+                temp1 = futureWeather::fetchTemp(1);
+                temp2 = futureWeather::fetchTemp(2);
+                temp3 = futureWeather::fetchTemp(3);
+                //qDebug()<<"The future temperature is ";
+                //qDebug()<<temp1<<" "<<temp2<<" "<<temp3;
+
+                weather1 = futureWeather::fetchStatus(1);
+                weather2 = futureWeather::fetchStatus(2);
+                weather3 = futureWeather::fetchStatus(3);
+                //qDebug()<<"future status is";
+                //qDebug()<<weather1<<" "<<weather2<<" "<<weather3;
+
+                QString mon1 = futureWeather::fetchMonth(1);
+                QString mon2 = futureWeather::fetchMonth(2);
+                QString mon3 = futureWeather::fetchMonth(3);
+
+                int date1 = futureWeather::fetchDate(1);
+                int date2 = futureWeather::fetchDate(2);
+                int date3 = futureWeather::fetchDate(3);
+
+                //qDebug()<<mon1<<date1<<mon2<<date2<<mon3<<date3;
+
+                ui->fWeather1->setText(weather1);
+                ui->fTemp1->setText(QString::number(temp1)+"°C");
+                ui->fDate1->setText(mon1+" "+QString::number(date1));
+
+                ui->fWeather2->setText(weather2);
+                ui->fTemp2->setText(QString::number(temp2)+"°C");
+                ui->fDate2->setText(mon2+" "+QString::number(date2));
+
+                ui->fWeather3->setText(weather3);
+                ui->fTemp3->setText(QString::number(temp3)+"°C");
+                ui->fDate3->setText(mon3+" "+QString::number(date3));
+
             }
             else
             {

@@ -12,7 +12,6 @@ void todaysWeather::databaseConnection(QString city, double temp,double humidity
     currentdb.open();
     insertInformation(city,temp,humidity,status,lat,lon,sunrise,sunset,ctime,year,month,date,hour,min);
 
-
     return;
 }
 void todaysWeather::insertInformation(QString city, double temp,double humidity,QString status,double lat,double lon,

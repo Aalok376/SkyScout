@@ -13,6 +13,7 @@
 #include<QIcon>
 
 #include "datetime.h"
+#include "logicmaths.h"
 
 
 class futureWeather
@@ -22,6 +23,10 @@ public:
 
     static void databaseConnection(QString, double,double,QString,int,int,int,int,int,int,int,int);
     static void insertInformation(QString, double,double,QString,int,int,int,int,int,int,int,int);
+    static double fetchTemp(int);
+    static QString fetchStatus(int);
+    static QString fetchMonth(int);
+    static int fetchDate(int);
 };
 
 #endif // FUTUREWEATHER_H

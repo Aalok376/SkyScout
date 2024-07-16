@@ -13,6 +13,8 @@ void futureWeather::databaseConnection(QString city, double temp,double humidity
     futuredb.open();
     insertInformation(city,temp,humidity,status,sunrise,sunset,ctime,year,month,date,hour,min);
 
+    futuredb.close();
+    QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);
     return;
 }
 
@@ -69,4 +71,196 @@ void futureWeather::insertInformation(QString city, double temp,double humidity,
         qDebug() << "Data inserted successfully!";
     }
     return;
+}
+
+double futureWeather::fetchTemp(int count) {
+
+    QSqlDatabase fdb=QSqlDatabase::addDatabase("QSQLITE");
+    fdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
+    fdb.open();
+    QSqlQuery query;
+
+    double tempArray[8];
+    if (count == 1) {
+        for(int id=1;id<=8;id++) {
+            query.prepare("SELECT temperature FROM futureWeather WHERE id = :id");
+            query.bindValue(":id",id);
+            if(query.exec()) {
+                if(query.next()){
+                    tempArray[id-1] = query.value(0).toDouble();
+                }
+            }
+        }
+        double avgTemperature = logicMaths::avgTemp(tempArray,8);
+        avgTemperature = logicMaths::tempConversion(avgTemperature);
+        avgTemperature = logicMaths::twoDecimals(avgTemperature);
+        return avgTemperature;
+    }
+    else if(count == 2) {
+        for(int id=9;id<=16;id++) {
+            query.prepare("SELECT temperature FROM futureWeather WHERE id = :id");
+            query.bindValue(":id",id);
+            if(query.exec()) {
+                if(query.next()){
+                    tempArray[id-9] = query.value(0).toDouble();
+                }
+            }
+        }
+        double avgTemperature = logicMaths::avgTemp(tempArray,8);
+
+        avgTemperature = logicMaths::tempConversion(avgTemperature);
+        avgTemperature = logicMaths::twoDecimals(avgTemperature);
+        return avgTemperature;
+    }
+    else if(count == 3) {
+        for(int id=17;id<=24;id++) {
+            query.prepare("SELECT temperature FROM futureWeather WHERE id = :id");
+            query.bindValue(":id",id);
+            if(query.exec()) {
+                if(query.next()){
+                    tempArray[id-17] = query.value(0).toDouble();
+                }
+            }
+        }
+
+        double avgTemperature = logicMaths::avgTemp(tempArray,8);
+        avgTemperature = logicMaths::tempConversion(avgTemperature);
+        avgTemperature = logicMaths::twoDecimals(avgTemperature);
+        return avgTemperature;
+    }
+}
+
+QString futureWeather::fetchStatus(int count) {
+    QSqlDatabase fdb=QSqlDatabase::addDatabase("QSQLITE");
+    fdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
+    fdb.open();
+    QSqlQuery query;
+
+    QString statusArray[8];
+
+    if(count ==1 ) {
+        for(int id=1;id<=8;id++){
+            query.prepare("SELECT status FROM futureWeather WHERE id = :id");
+            query.bindValue(":id",id);
+            if(query.exec()){
+                if(query.next()){
+                    statusArray[id-1] = query.value(0).toString();
+                }
+            }
+        }
+        QString status = logicMaths::weatherMode(statusArray,8);
+        return status;
+    }
+    else if(count == 2) {
+        for(int id=9;id<=16;id++){
+            query.prepare("SELECT status FROM futureWeather WHERE id = :id");
+            query.bindValue(":id",id);
+            if(query.exec()){
+                if(query.next()){
+                    statusArray[id-9] = query.value(0).toString();
+                }
+            }
+        }
+        QString status = logicMaths::weatherMode(statusArray,8);
+        return status;
+    }
+    else if(count == 3) {
+        for(int id=17;id<=24;id++){
+            query.prepare("SELECT status FROM futureWeather WHERE id = :id");
+            query.bindValue(":id",id);
+            if(query.exec()){
+                if(query.next()){
+                    statusArray[id-17] = query.value(0).toString();
+                }
+            }
+        }
+        QString status = logicMaths::weatherMode(statusArray,8);
+        return status;
+    }
+}
+
+QString futureWeather::fetchMonth(int count) {
+    QSqlDatabase fdb=QSqlDatabase::addDatabase("QSQLITE");
+    fdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
+    fdb.open();
+    QSqlQuery query;
+
+    if(count == 1) {
+        query.prepare("SELECT month FROM futureWeather WHERE id = 1");
+        query.bindValue("1",1);
+        int mon;
+        if(query.exec()){
+            if(query.next()){
+                mon = query.value(0).toInt();
+            }
+        }
+        QString month = logicMaths::nameOfMonth(mon);
+        return month;
+
+    }
+    else if(count == 2) {
+        query.prepare("SELECT month FROM futureWeather WHERE id = 9");
+        query.bindValue("9",9);
+        int mon;
+        if(query.exec()){
+            if(query.next()){
+                mon = query.value(0).toInt();
+            }
+        }
+        QString month = logicMaths::nameOfMonth(mon);
+        return month;
+    }
+    else if(count == 3) {
+        query.prepare("SELECT month FROM futureWeather WHERE id = 17");
+        query.bindValue("17",17);
+        int mon;
+        if(query.exec()){
+            if(query.next()){
+                mon = query.value(0).toInt();
+            }
+        }
+        QString month = logicMaths::nameOfMonth(mon);
+        return month;
+    }
+}
+
+int futureWeather::fetchDate(int count) {
+    QSqlDatabase fdb=QSqlDatabase::addDatabase("QSQLITE");
+    fdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
+    fdb.open();
+    QSqlQuery query;
+
+    if(count == 1) {
+        query.prepare("SELECT date FROM futureWeather WHERE id = 1");
+        query.bindValue("1",1);
+        int date;
+        if(query.exec()){
+            if(query.next()){
+                date = query.value(0).toInt();
+            }
+        }
+        return date;
+    }
+    else if(count == 2) {
+        query.prepare("SELECT date FROM futureWeather WHERE id = 9");
+        query.bindValue("9",9);
+        int date;
+        if(query.exec()){
+            if(query.next()){
+                date = query.value(0).toInt();
+            }
+        }
+        return date;
+    }
+    else if(count == 3) {
+        query.prepare("SELECT date FROM futureWeather WHERE id = 17");
+        query.bindValue("17",17);
+        int date;
+        if(query.exec()){
+            if(query.next()){
+                date = query.value(0).toInt();
+            }
+        }
+        return date;
+    }
 }

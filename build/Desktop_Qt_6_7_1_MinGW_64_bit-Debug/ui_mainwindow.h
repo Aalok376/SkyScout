@@ -77,22 +77,22 @@ public:
     QLabel *label_18;
     QVBoxLayout *verticalLayout_6;
     QHBoxLayout *horizontalLayout_8;
-    QLabel *label_22;
-    QLabel *label_19;
-    QLabel *label_23;
-    QLabel *label_24;
+    QLabel *fIcon1;
+    QLabel *fWeather1;
+    QLabel *fTemp1;
+    QLabel *fDate1;
     QFrame *line;
     QHBoxLayout *horizontalLayout_10;
-    QLabel *label_28;
-    QLabel *label_21;
-    QLabel *label_29;
-    QLabel *label_30;
+    QLabel *fIcon2;
+    QLabel *fWeather2;
+    QLabel *fTemp2;
+    QLabel *fDate2;
     QFrame *line_2;
     QHBoxLayout *horizontalLayout_9;
-    QLabel *label_25;
-    QLabel *label_20;
-    QLabel *label_26;
-    QLabel *label_27;
+    QLabel *fIcon3;
+    QLabel *fWeather3;
+    QLabel *fTemp3;
+    QLabel *fDate3;
     QGraphicsView *graphicsView;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -413,32 +413,32 @@ public:
         verticalLayout_6->setObjectName("verticalLayout_6");
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName("horizontalLayout_8");
-        label_22 = new QLabel(centralwidget);
-        label_22->setObjectName("label_22");
-        label_22->setStyleSheet(QString::fromUtf8("color:black;\n"
+        fIcon1 = new QLabel(centralwidget);
+        fIcon1->setObjectName("fIcon1");
+        fIcon1->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
-        horizontalLayout_8->addWidget(label_22);
+        horizontalLayout_8->addWidget(fIcon1);
 
-        label_19 = new QLabel(centralwidget);
-        label_19->setObjectName("label_19");
-        label_19->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        fWeather1 = new QLabel(centralwidget);
+        fWeather1->setObjectName("fWeather1");
+        fWeather1->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
-        horizontalLayout_8->addWidget(label_19);
+        horizontalLayout_8->addWidget(fWeather1);
 
-        label_23 = new QLabel(centralwidget);
-        label_23->setObjectName("label_23");
-        label_23->setStyleSheet(QString::fromUtf8("color:black;\n"
+        fTemp1 = new QLabel(centralwidget);
+        fTemp1->setObjectName("fTemp1");
+        fTemp1->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
-        horizontalLayout_8->addWidget(label_23);
+        horizontalLayout_8->addWidget(fTemp1);
 
-        label_24 = new QLabel(centralwidget);
-        label_24->setObjectName("label_24");
-        label_24->setStyleSheet(QString::fromUtf8("color:black;\n"
+        fDate1 = new QLabel(centralwidget);
+        fDate1->setObjectName("fDate1");
+        fDate1->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
-        horizontalLayout_8->addWidget(label_24);
+        horizontalLayout_8->addWidget(fDate1);
 
 
         verticalLayout_6->addLayout(horizontalLayout_8);
@@ -452,32 +452,32 @@ public:
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName("horizontalLayout_10");
-        label_28 = new QLabel(centralwidget);
-        label_28->setObjectName("label_28");
-        label_28->setStyleSheet(QString::fromUtf8("color:black;\n"
+        fIcon2 = new QLabel(centralwidget);
+        fIcon2->setObjectName("fIcon2");
+        fIcon2->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
-        horizontalLayout_10->addWidget(label_28);
+        horizontalLayout_10->addWidget(fIcon2);
 
-        label_21 = new QLabel(centralwidget);
-        label_21->setObjectName("label_21");
-        label_21->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        fWeather2 = new QLabel(centralwidget);
+        fWeather2->setObjectName("fWeather2");
+        fWeather2->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
-        horizontalLayout_10->addWidget(label_21);
+        horizontalLayout_10->addWidget(fWeather2);
 
-        label_29 = new QLabel(centralwidget);
-        label_29->setObjectName("label_29");
-        label_29->setStyleSheet(QString::fromUtf8("color:black;\n"
+        fTemp2 = new QLabel(centralwidget);
+        fTemp2->setObjectName("fTemp2");
+        fTemp2->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
-        horizontalLayout_10->addWidget(label_29);
+        horizontalLayout_10->addWidget(fTemp2);
 
-        label_30 = new QLabel(centralwidget);
-        label_30->setObjectName("label_30");
-        label_30->setStyleSheet(QString::fromUtf8("color:black;\n"
+        fDate2 = new QLabel(centralwidget);
+        fDate2->setObjectName("fDate2");
+        fDate2->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
-        horizontalLayout_10->addWidget(label_30);
+        horizontalLayout_10->addWidget(fDate2);
 
 
         verticalLayout_6->addLayout(horizontalLayout_10);
@@ -491,32 +491,32 @@ public:
 
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setObjectName("horizontalLayout_9");
-        label_25 = new QLabel(centralwidget);
-        label_25->setObjectName("label_25");
-        label_25->setStyleSheet(QString::fromUtf8("color:black;\n"
+        fIcon3 = new QLabel(centralwidget);
+        fIcon3->setObjectName("fIcon3");
+        fIcon3->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
-        horizontalLayout_9->addWidget(label_25);
+        horizontalLayout_9->addWidget(fIcon3);
 
-        label_20 = new QLabel(centralwidget);
-        label_20->setObjectName("label_20");
-        label_20->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        fWeather3 = new QLabel(centralwidget);
+        fWeather3->setObjectName("fWeather3");
+        fWeather3->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
-        horizontalLayout_9->addWidget(label_20);
+        horizontalLayout_9->addWidget(fWeather3);
 
-        label_26 = new QLabel(centralwidget);
-        label_26->setObjectName("label_26");
-        label_26->setStyleSheet(QString::fromUtf8("color:black;\n"
+        fTemp3 = new QLabel(centralwidget);
+        fTemp3->setObjectName("fTemp3");
+        fTemp3->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
-        horizontalLayout_9->addWidget(label_26);
+        horizontalLayout_9->addWidget(fTemp3);
 
-        label_27 = new QLabel(centralwidget);
-        label_27->setObjectName("label_27");
-        label_27->setStyleSheet(QString::fromUtf8("color:black;\n"
+        fDate3 = new QLabel(centralwidget);
+        fDate3->setObjectName("fDate3");
+        fDate3->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
-        horizontalLayout_9->addWidget(label_27);
+        horizontalLayout_9->addWidget(fDate3);
 
 
         verticalLayout_6->addLayout(horizontalLayout_9);
@@ -588,18 +588,18 @@ public:
         time3->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
         pushButton_flag->setText(QString());
         label_18->setText(QCoreApplication::translate("MainWindow", "3 days forecast", nullptr));
-        label_22->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_19->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
-        label_23->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_24->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_28->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_21->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
-        label_29->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_30->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_25->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_20->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
-        label_26->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        label_27->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        fIcon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        fWeather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
+        fTemp1->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
+        fDate1->setText(QCoreApplication::translate("MainWindow", "date", nullptr));
+        fIcon2->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        fWeather2->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
+        fTemp2->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
+        fDate2->setText(QCoreApplication::translate("MainWindow", "date", nullptr));
+        fIcon3->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        fWeather3->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
+        fTemp3->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
+        fDate3->setText(QCoreApplication::translate("MainWindow", "date", nullptr));
     } // retranslateUi
 
 };
