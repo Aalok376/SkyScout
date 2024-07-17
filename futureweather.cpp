@@ -264,3 +264,30 @@ int futureWeather::fetchDate(int count) {
         return date;
     }
 }
+
+QIcon futureWeather::fetchIcon(int count) {
+
+    QString status = fetchStatus(count);
+    QIcon icon;
+    if(status=="Clouds") {
+        icon= QIcon(":/new/prefix1/image/cloudy.png");
+    }
+    else if(status=="Drizzle") {
+            icon=QIcon(":/new/prefix1/image/weather.png");
+    }
+    else if(status=="Mist" || status=="Haze" || status=="Fog") {
+        icon =QIcon(":/new/prefix1/image/haze.png");
+    }
+    else if(status=="Clear") {
+            icon=QIcon(":/new/prefix1/image/Clear.png");
+    }
+    else if(status=="Dust" || status=="Sand" || status=="Ash") {
+
+        icon=QIcon(":/new/prefix1/image/dust.png");
+    }
+    else {
+        icon=QIcon(":/new/prefix1/image/"+status+".png");
+    }
+    return icon;
+}
+

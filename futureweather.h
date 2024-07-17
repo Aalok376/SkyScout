@@ -27,6 +27,8 @@ public:
     static QString fetchStatus(int);
     static QString fetchMonth(int);
     static int fetchDate(int);
+
+    static QIcon fetchIcon(int);
 };
 
 #endif // FUTUREWEATHER_H

@@ -304,7 +304,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 //qDebug()<<"hour is "<<hour1;
 
                 if(weather1!=""){
-                    ui->icon1->setPixmap(icon.pixmap(QSize(95, 70)));
+                    ui->icon1->setPixmap(icon.pixmap(QSize(85, 60)));
                     ui->weather1->setText(weather1);
                     ui->temp1->setText(QString::number(temp1)+"°C");
                     ui->time1->setText(QString::number(hour1)+":"+QString::number(min1));
@@ -329,7 +329,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 //qDebug()<<"hour is "<<hour1;
 
                 if(weather2!=""){
-                    ui->icon2->setPixmap(icon.pixmap(QSize(95,70)));
+                    ui->icon2->setPixmap(icon.pixmap(QSize(85,60)));
                     ui->weather2->setText(weather2);
                     ui->temp2->setText(QString::number(temp2)+"°C");
                     ui->time2->setText(QString::number(hour2)+":"+QString::number(min2));
@@ -354,7 +354,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 //qDebug()<<"hour is "<<hour1;
 
                 if(weather3!=""){
-                    ui->icon3->setPixmap(icon.pixmap(QSize(95,70)));
+                    ui->icon3->setPixmap(icon.pixmap(QSize(85,60)));
                     ui->weather3->setText(weather3);
                     ui->temp3->setText(QString::number(temp3)+"°C");
                     ui->time3->setText(QString::number(hour3)+":"+QString::number(min3));
@@ -389,14 +389,21 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
 
                 //qDebug()<<mon1<<date1<<mon2<<date2<<mon3<<date3;
 
+                QIcon icon1 = futureWeather::fetchIcon(1);
+                QIcon icon2 = futureWeather::fetchIcon(2);
+                QIcon icon3 = futureWeather::fetchIcon(3);
+
+                ui->fIcon1->setPixmap(icon1.pixmap(QSize(85,60)));
                 ui->fWeather1->setText(weather1);
                 ui->fTemp1->setText(QString::number(temp1)+"°C");
                 ui->fDate1->setText(mon1+" "+QString::number(date1));
 
+                ui->fIcon2->setPixmap(icon2.pixmap(QSize(85,60)));
                 ui->fWeather2->setText(weather2);
                 ui->fTemp2->setText(QString::number(temp2)+"°C");
                 ui->fDate2->setText(mon2+" "+QString::number(date2));
 
+                ui->fIcon3->setPixmap(icon3.pixmap(QSize(85,60)));
                 ui->fWeather3->setText(weather3);
                 ui->fTemp3->setText(QString::number(temp3)+"°C");
                 ui->fDate3->setText(mon3+" "+QString::number(date3));
