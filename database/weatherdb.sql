@@ -14,4 +14,4 @@
 -- );
   SELECT * FROM pastWeather;
 -- DROP TABLE pastWeather;
--- DELETE  FROM pastWeather WHERE id=3;
+-- DELETE  FROM pastWeather WHERE id=11;

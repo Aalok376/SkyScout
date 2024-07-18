@@ -92,13 +92,13 @@ void weatherData::insertInformation(QString city, double temp,double humidity,do
     } else {
         qDebug() << "Data inserted successfully!";
     }
-    // query.prepare("SELECT * FROM pastWeather");
-    // query.exec();
-    // int rowCount=0;
-    // while (query.next()) {
-    //     rowCount++;
-    // }
 
+    query.prepare("SELECT id FROM pastWeather");
+    query.exec();
+    rowCount=0;
+    while(query.next()) {
+        rowCount++;
+    }
 
     if(rowCount>10) {
         int delId = id-10;
