@@ -11,6 +11,7 @@
 #include <QSqlError>
 #include <QVariant>
 #include<QIcon>
+#include<QCoreApplication>
 
 #include "datetime.h"
 #include "logicmaths.h"

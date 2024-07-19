@@ -10,6 +10,7 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QVariant>
+#include<QCoreApplication>
 
 #include "datetime.h"
 

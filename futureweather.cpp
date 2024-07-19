@@ -7,7 +7,8 @@ futureWeather::futureWeather() {
 void futureWeather::databaseConnection(QString city, double temp,double humidity,QString status,
                                        int sunrise,int sunset,int ctime,int year,int month,int date,int hour,int min) {
     QSqlDatabase futuredb=QSqlDatabase::addDatabase("QSQLITE");
-    futuredb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
+    futuredb.setDatabaseName(QCoreApplication::applicationDirPath()+"/database/futuredata.db");
+    //futuredb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
 
 
     futuredb.open();
@@ -76,7 +77,8 @@ void futureWeather::insertInformation(QString city, double temp,double humidity,
 double futureWeather::fetchTemp(int count) {
 
     QSqlDatabase fdb=QSqlDatabase::addDatabase("QSQLITE");
-    fdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
+    fdb.setDatabaseName(QCoreApplication::applicationDirPath()+"/database/futuredata.db");
+    //fdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
     fdb.open();
     QSqlQuery query;
 
@@ -132,7 +134,8 @@ double futureWeather::fetchTemp(int count) {
 
 QString futureWeather::fetchStatus(int count) {
     QSqlDatabase fdb=QSqlDatabase::addDatabase("QSQLITE");
-    fdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
+    fdb.setDatabaseName(QCoreApplication::applicationDirPath()+"/database/futuredata.db");
+    //fdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
     fdb.open();
     QSqlQuery query;
 
@@ -181,7 +184,8 @@ QString futureWeather::fetchStatus(int count) {
 
 QString futureWeather::fetchMonth(int count) {
     QSqlDatabase fdb=QSqlDatabase::addDatabase("QSQLITE");
-    fdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
+    fdb.setDatabaseName(QCoreApplication::applicationDirPath()+"/database/futuredata.db");
+    //fdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
     fdb.open();
     QSqlQuery query;
 
@@ -226,7 +230,8 @@ QString futureWeather::fetchMonth(int count) {
 
 int futureWeather::fetchDate(int count) {
     QSqlDatabase fdb=QSqlDatabase::addDatabase("QSQLITE");
-    fdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
+    fdb.setDatabaseName(QCoreApplication::applicationDirPath()+"/database/futuredata.db");
+    //fdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/futuredata.db");
     fdb.open();
     QSqlQuery query;
 

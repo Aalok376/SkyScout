@@ -6,7 +6,8 @@ todaysWeather::todaysWeather() {
 void todaysWeather::databaseConnection(QString city, double temp,double humidity,QString status,double lat,double lon,
                                      int sunrise,int sunset,int ctime,int year,int month,int date,int hour,int min) {
     QSqlDatabase currentdb=QSqlDatabase::addDatabase("QSQLITE");
-    currentdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/onedaydata.db");
+    currentdb.setDatabaseName(QCoreApplication::applicationDirPath()+"/database/onedaydata.db");
+    //currentdb.setDatabaseName("D:/Interessant/qtp/finalProject/database/onedaydata.db");
 
 
     currentdb.open();

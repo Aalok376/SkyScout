@@ -6,7 +6,8 @@ weatherData::weatherData() {
 void weatherData::databaseConnection(QString city, double temp,double humidity,double lat,double lon,
                                      int sunrise,int sunset,int ctime,int year,int month,int date) {
     QSqlDatabase mydb=QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("D:/Interessant/qtp/finalProject/database/weatherdb.db");
+    mydb.setDatabaseName(QCoreApplication::applicationDirPath()+"/database/weatherdb.db");
+    //mydb.setDatabaseName("D:/Interessant/qtp/finalProject/database/weatherdb.db");
 
 
     mydb.open();
@@ -59,6 +60,7 @@ void weatherData::insertInformation(QString city, double temp,double humidity,do
         // Handle query execution error
         qDebug() << "Query error: " << query.lastError();
     }
+    qDebug()<<QCoreApplication::applicationDirPath()<<" the apath";
     qDebug()<<previousCity;
     qDebug()<<city;
     qDebug()<<prevY;

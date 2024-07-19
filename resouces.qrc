@@ -20,11 +20,5 @@
         <file>image/drizzle.png</file>
         <file>image/splash.png</file>
         <file>image/background.png</file>
-        <file>database/weatherdb.db</file>
-        <file>database/weatherdb.sql</file>
-        <file>database/onedaydata.db</file>
-        <file>database/onedaydata.sql</file>
-        <file>database/futuredata.db</file>
-        <file>database/futuredata.sql</file>
     </qresource>
 </RCC>

@@ -146,13 +146,7 @@ release/qrc_resouces.cpp: ../../resouces.qrc \
 		../../image/search--v1.png \
 		../../image/haze.png \
 		../../image/Snow.png \
-		../../image/cloudy.png \
-		../../database/onedaydata.db \
-		../../database/futuredata.db \
-		../../database/onedaydata.sql \
-		../../database/futuredata.sql \
-		../../database/weatherdb.sql \
-		../../database/weatherdb.db
+		../../image/cloudy.png
 	'D:\Qt\6.7.1\mingw_64\bin\rcc.exe' -name resouces --no-zstd ../../resouces.qrc -o release/qrc_resouces.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h
@@ -794,6 +788,7 @@ release/moc_mainwindow.cpp: ../../mainwindow.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlDatabase \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/QCoreApplication \
 		../../todaysweather.h \
 		D:/Qt/6.7.1/mingw_64/include/QtGui/QIcon \
 		../../futureweather.h \
@@ -1185,10 +1180,85 @@ release/futureweather.o: ../../futureweather.cpp ../../futureweather.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
 		D:/Qt/6.7.1/mingw_64/include/QtGui/QIcon \
-		../../datetime.h
+		D:/Qt/6.7.1/mingw_64/include/QtCore/QCoreApplication \
+		../../datetime.h \
+		../../logicmaths.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/futureweather.o ../../futureweather.cpp
 
-release/logicmaths.o: ../../logicmaths.cpp ../../logicmaths.h
+release/logicmaths.o: ../../logicmaths.cpp ../../logicmaths.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/QString \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qstring.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qchar.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qglobal.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtversionchecks.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtconfiginclude.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qconfig.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtcore-config.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtconfigmacros.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtcoreexports.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qcompilerdetection.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qprocessordetection.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qsystemdetection.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtdeprecationmarkers.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtpreprocessorsupport.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qassert.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtnoop.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtypes.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtversion.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtclasshelpermacros.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtypeinfo.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qcontainerfwd.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qsysinfo.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qlogging.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qflags.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qcompare_impl.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qatomic.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qbasicatomic.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qatomic_cxx11.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qgenericatomic.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qyieldcpu.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qconstructormacros.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qdarwinhelpers.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qexceptionhandling.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qforeach.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qttypetraits.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qfunctionpointer.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qglobalstatic.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qmalloc.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qminmax.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qnumeric.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qoverload.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qswap.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtenvironmentvariables.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtresource.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qttranslation.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qversiontagging.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qstringview.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qbytearray.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qrefcount.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qnamespace.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qtmetamacros.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qarraydata.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qpair.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qarraydatapointer.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qarraydataops.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qcontainertools_impl.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qxptype_traits.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/q20functional.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/q20memory.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qbytearrayalgorithms.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qbytearrayview.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qstringfwd.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/q20type_traits.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qstringliteral.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qstringalgorithms.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qlatin1stringview.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qanystringview.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qutf8stringview.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qstringtokenizer.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qstringbuilder.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qstringconverter.h \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/qstringconverter_base.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/logicmaths.o ../../logicmaths.cpp
 
 release/main.o: ../../main.cpp ../../mainwindow.h \
@@ -1587,6 +1657,7 @@ release/main.o: ../../main.cpp ../../mainwindow.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlDatabase \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/QCoreApplication \
 		../../todaysweather.h \
 		D:/Qt/6.7.1/mingw_64/include/QtGui/QIcon \
 		../../futureweather.h \
@@ -1993,6 +2064,7 @@ release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlDatabase \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/QCoreApplication \
 		../../todaysweather.h \
 		D:/Qt/6.7.1/mingw_64/include/QtGui/QIcon \
 		../../futureweather.h \
@@ -2392,6 +2464,7 @@ release/todaysweather.o: ../../todaysweather.cpp ../../todaysweather.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
 		D:/Qt/6.7.1/mingw_64/include/QtGui/QIcon \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/QCoreApplication \
 		../../datetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/todaysweather.o ../../todaysweather.cpp
 
@@ -2752,6 +2825,7 @@ release/weatherdata.o: ../../weatherdata.cpp ../../weatherdata.h \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlDatabase \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlQuery \
 		D:/Qt/6.7.1/mingw_64/include/QtSql/QSqlError \
+		D:/Qt/6.7.1/mingw_64/include/QtCore/QCoreApplication \
 		../../datetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release/weatherdata.o ../../weatherdata.cpp
 
