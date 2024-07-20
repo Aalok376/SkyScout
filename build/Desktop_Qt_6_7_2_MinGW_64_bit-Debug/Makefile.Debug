@@ -629,6 +629,10 @@ debug/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QJsonArray \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qjsonarray.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QCompleter \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qcompleter.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringlistmodel.h \
 		../../datetime.h \
 		../../logicmaths.h \
 		../../weatherdata.h \
@@ -644,7 +648,6 @@ debug/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/q23functional.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qanimationgroup.h \
@@ -727,7 +730,6 @@ debug/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qstandardpaths.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qstaticlatin1stringmatcher.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qstorageinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringlistmodel.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qsystemsemaphore.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qtcoreversion.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qtemporarydir.h \
@@ -1498,6 +1500,10 @@ debug/main.o: ../../main.cpp ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QJsonArray \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qjsonarray.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QCompleter \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qcompleter.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringlistmodel.h \
 		../../datetime.h \
 		../../logicmaths.h \
 		../../weatherdata.h \
@@ -1513,7 +1519,6 @@ debug/main.o: ../../main.cpp ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/q23functional.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qanimationgroup.h \
@@ -1596,7 +1601,6 @@ debug/main.o: ../../main.cpp ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qstandardpaths.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qstaticlatin1stringmatcher.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qstorageinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringlistmodel.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qsystemsemaphore.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qtcoreversion.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qtemporarydir.h \
@@ -1905,6 +1909,10 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/QJsonArray \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qjsonarray.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QCompleter \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qcompleter.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringlistmodel.h \
 		../../datetime.h \
 		../../logicmaths.h \
 		../../weatherdata.h \
@@ -1920,7 +1928,6 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/q23functional.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstracteventdispatcher.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qanimationgroup.h \
@@ -2003,7 +2010,6 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qstandardpaths.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qstaticlatin1stringmatcher.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qstorageinfo.h \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/qstringlistmodel.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qsystemsemaphore.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qtcoreversion.h \
 		C:/Qt/6.7.2/mingw_64/include/QtCore/qtemporarydir.h \
@@ -2069,6 +2075,7 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtGui/QIcon \
 		../../futureweather.h \
 		ui_mainwindow.h \
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QLocale \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qapplication.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QFrame \
@@ -2098,6 +2105,7 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QPushButton \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QScrollArea \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QSpacerItem \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QStatusBar \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qstatusbar.h \

@@ -6,7 +6,7 @@ QString location;
 FetchCurrentAddress *addressObj;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow),networkManager(new QNetworkAccessManager(this))
+    , ui(new Ui::MainWindow),networkManager(new QNetworkAccessManager(this)),NetworkManager(new QNetworkAccessManager(this))
 {
     ui->setupUi(this);
     setWindowTitle("Sky Scout");
@@ -21,12 +21,18 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(addressObj, &FetchCurrentAddress::locationFetched, this, &MainWindow::onCurrentLocationFetched);
     connect(networkManager,&QNetworkAccessManager::finished ,this , &MainWindow::onWeatherDataRecieved);
+    connect(NetworkManager, &QNetworkAccessManager::finished , this , &MainWindow::onLocationRecieved);
     //setting fixed size
     resize(800,600);
     setFixedSize(size());
-        // current location of the user
-   // QThread thread(addressObj->fetchLocation());
     addressObj->fetchLocation();
+
+    //setting up model for suggestion feature
+    model=new QStringListModel(this);
+    completer =new QCompleter(model , this);
+    completer->setCaseSensitivity(Qt::CaseInsensitive);
+        completer->setMaxVisibleItems(5);
+    ui->lineEdit_searchbar->setCompleter(completer);
 }
 
 MainWindow::~MainWindow()
@@ -437,7 +443,13 @@ void MainWindow::on_pushButton_flag_clicked()
 }
 void MainWindow::on_lineEdit_searchbar_returnPressed()
 {
-    location=ui->lineEdit_searchbar->text();
+    if (completer->currentCompletion()!=""){
+    location=completer->currentCompletion();
+    }
+    else
+    {
+        location=ui->lineEdit_searchbar->text();
+    }
     ui->lineEdit_searchbar->clear();
     QString apiKey="410680a363d4c095792d7e19b0bf49cb";
     QString urlstring=QString("https://api.openweathermap.org/data/2.5/weather?q=%1&appid=%2").arg(location, apiKey);
@@ -458,3 +470,37 @@ void MainWindow::on_pushButton_search_clicked()
 //      you can recall with the same location id
 //     }
 // }
+
+void MainWindow::on_lineEdit_searchbar_textChanged(const QString &str)
+{
+    QString location = QString("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=%1&key=AIzaSyDZTOjo8YOEFGI7FodHX5fpfteFw_bQ9bg").arg(str);
+    qDebug() <<"location:" << location;
+    QUrl url(location);
+    QNetworkRequest request(url);
+    request.setHeader(QNetworkRequest::UserAgentHeader, "MyApp/1.0 (MyOrganization)");
+    request.setRawHeader("Accept", "application/json");
+    NetworkManager->get(request);
+}
+void MainWindow::onLocationRecieved(QNetworkReply *reply)
+{
+    if(reply->error()==QNetworkReply::NoError)
+    {
+        QStringList locationlist;
+        QByteArray rawdata = reply->readAll();
+        QJsonDocument Jsondoc = QJsonDocument::fromJson(rawdata);
+        if (!Jsondoc.isNull() && Jsondoc.isObject()) {
+            QJsonObject rootObj = Jsondoc.object();
+            if (rootObj.contains("predictions") && rootObj.value("predictions").isArray()) {
+                QJsonArray Jsonarr = rootObj.value("predictions").toArray();
+                for (const QJsonValue &jsonvalue : Jsonarr){
+                    QJsonObject obj = jsonvalue.toObject();
+                    locationlist << obj.value("description").toString();
+                }
+            }
+        }
+        //updating model with new StringList
+        model->setStringList(QStringList());
+        model->setStringList(locationlist);
+    }
+}
+
