@@ -5,6 +5,9 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QPixmap>
+#include <QQuickWidget>
+#include <QQmlContext>
+#include <QQmlEngine>
 
 
 

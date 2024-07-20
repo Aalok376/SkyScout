@@ -21,4 +21,7 @@
         <file>image/splash.png</file>
         <file>image/background.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>MapView.qml</file>
+    </qresource>
 </RCC>

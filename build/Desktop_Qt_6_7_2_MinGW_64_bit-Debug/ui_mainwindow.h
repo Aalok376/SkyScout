@@ -11,6 +11,7 @@
 
 #include <QtCore/QLocale>
 #include <QtCore/QVariant>
+#include <QtQuickWidgets/QQuickWidget>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGraphicsView>
@@ -32,7 +33,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QVBoxLayout *verticalLayout_21;
+    QHBoxLayout *horizontalLayout_14;
     QHBoxLayout *horizontalLayout_11;
     QVBoxLayout *verticalLayout_10;
     QVBoxLayout *verticalLayout_9;
@@ -40,6 +41,7 @@ public:
     QPushButton *pushButton_search;
     QLineEdit *lineEdit_searchbar;
     QLabel *label_recentSearch;
+    QQuickWidget *quickWidget;
     QFrame *frame;
     QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout;
@@ -82,7 +84,6 @@ public:
     QLabel *weather2_2;
     QLabel *temp2_2;
     QLabel *time2_2;
-    QSpacerItem *verticalSpacer;
     QVBoxLayout *verticalLayout_11;
     QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_7;
@@ -125,8 +126,8 @@ public:
         MainWindow->setStyleSheet(QString::fromUtf8("background-image: url(\":/new/prefix1/image/background.png\");"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        verticalLayout_21 = new QVBoxLayout(centralwidget);
-        verticalLayout_21->setObjectName("verticalLayout_21");
+        horizontalLayout_14 = new QHBoxLayout(centralwidget);
+        horizontalLayout_14->setObjectName("horizontalLayout_14");
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setObjectName("horizontalLayout_11");
         verticalLayout_10 = new QVBoxLayout();
@@ -175,6 +176,12 @@ public:
 
 
         verticalLayout_10->addLayout(verticalLayout_9);
+
+        quickWidget = new QQuickWidget(centralwidget);
+        quickWidget->setObjectName("quickWidget");
+        quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
+
+        verticalLayout_10->addWidget(quickWidget);
 
         frame = new QFrame(centralwidget);
         frame->setObjectName("frame");
@@ -261,7 +268,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, -5, 606, 319));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 606, 319));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -465,12 +472,10 @@ public:
 
         verticalLayout_10->addWidget(scrollArea);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        verticalLayout_10->addItem(verticalSpacer);
-
         verticalLayout_10->setStretch(0, 1);
         verticalLayout_10->setStretch(1, 3);
+        verticalLayout_10->setStretch(2, 3);
+        verticalLayout_10->setStretch(3, 3);
 
         horizontalLayout_11->addLayout(verticalLayout_10);
 
@@ -646,7 +651,7 @@ public:
         horizontalLayout_11->addLayout(verticalLayout_11);
 
 
-        verticalLayout_21->addLayout(horizontalLayout_11);
+        horizontalLayout_14->addLayout(horizontalLayout_11);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
