@@ -1,0 +1,10 @@
+release/datetime.o
+release/futureweather.o
+release/logicmaths.o
+release/main.o
+release/mainwindow.o
+release/todaysweather.o
+release/weatherdata.o
+release/qrc_resouces.o
+release/moc_fetchcurrentaddress.o
+release/moc_mainwindow.o
