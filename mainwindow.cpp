@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include<QThread>
+#include<QGeoCoordinate>
 QIcon icon ;
 QString location;
 FetchCurrentAddress *addressObj;
@@ -37,11 +38,11 @@ MainWindow::MainWindow(QWidget *parent)
     // map integration
    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/MapView.qml")));
     ui->quickWidget->show();
+    ui->quickWidget->show();
     int wq=ui->quickWidget->width();
     int hq=ui->quickWidget->height();
     qDebug()<<wq;
     qDebug()<<hq;
-
 }
 
 MainWindow::~MainWindow()

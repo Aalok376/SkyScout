@@ -1,4 +1,4 @@
-QT       += core gui network sql location widgets quick quickwidgets
+QT       += core gui network sql location widgets quick quickwidgets positioning
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 

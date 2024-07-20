@@ -2198,7 +2198,11 @@ release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/qstatusbar.h \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QVBoxLayout \
 		C:/Qt/6.7.2/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.7.2/mingw_64/include/QtCore/QThread
+		C:/Qt/6.7.2/mingw_64/include/QtCore/QThread \
+		C:/Qt/6.7.2/mingw_64/include/QtPositioning/QGeoCoordinate \
+		C:/Qt/6.7.2/mingw_64/include/QtPositioning/qgeocoordinate.h \
+		C:/Qt/6.7.2/mingw_64/include/QtPositioning/qpositioningglobal.h \
+		C:/Qt/6.7.2/mingw_64/include/QtPositioning/qtpositioningexports.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o ..\..\mainwindow.cpp
 
 release/todaysweather.o: ../../todaysweather.cpp ../../todaysweather.h \
