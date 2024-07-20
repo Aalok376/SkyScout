@@ -15,7 +15,6 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
      QPixmap pixmap(":/new/prefix1/image/splash.png");
-
      QSplashScreen splash(pixmap);
      splash.show();
      splash.showMessage(

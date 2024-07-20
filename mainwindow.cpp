@@ -33,6 +33,15 @@ MainWindow::MainWindow(QWidget *parent)
     completer->setCaseSensitivity(Qt::CaseInsensitive);
         completer->setMaxVisibleItems(5);
     ui->lineEdit_searchbar->setCompleter(completer);
+
+    // map integration
+   ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/MapView.qml")));
+    ui->quickWidget->show();
+    int wq=ui->quickWidget->width();
+    int hq=ui->quickWidget->height();
+    qDebug()<<wq;
+    qDebug()<<hq;
+
 }
 
 MainWindow::~MainWindow()
@@ -474,7 +483,7 @@ void MainWindow::on_pushButton_search_clicked()
 void MainWindow::on_lineEdit_searchbar_textChanged(const QString &str)
 {
     QString location = QString("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=%1&key=AIzaSyDZTOjo8YOEFGI7FodHX5fpfteFw_bQ9bg").arg(str);
-    qDebug() <<"location:" << location;
+    //qDebug() <<"location:" << location;
     QUrl url(location);
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::UserAgentHeader, "MyApp/1.0 (MyOrganization)");
