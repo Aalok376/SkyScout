@@ -264,12 +264,12 @@ public:
         scrollArea->setStyleSheet(QString::fromUtf8("border:none;\n"
 "background:transparent;\n"
 ""));
-        scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
         scrollArea->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 609, 271));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 589, 424));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -282,6 +282,7 @@ public:
         icon1->setObjectName("icon1");
         sizePolicy.setHeightForWidth(icon1->sizePolicy().hasHeightForWidth());
         icon1->setSizePolicy(sizePolicy);
+        icon1->setStyleSheet(QString::fromUtf8("font: 32pt \"Segoe UI\";"));
 
         horizontalLayout_4->addWidget(icon1);
 
@@ -324,6 +325,7 @@ public:
         horizontalLayout_3->setObjectName("horizontalLayout_3");
         icon2 = new QLabel(scrollAreaWidgetContents);
         icon2->setObjectName("icon2");
+        icon2->setStyleSheet(QString::fromUtf8("font: 32pt \"Segoe UI\";"));
 
         horizontalLayout_3->addWidget(icon2);
 
@@ -362,6 +364,7 @@ public:
         horizontalLayout_5->setObjectName("horizontalLayout_5");
         icon3 = new QLabel(scrollAreaWidgetContents);
         icon3->setObjectName("icon3");
+        icon3->setStyleSheet(QString::fromUtf8("font: 32pt \"Segoe UI\";"));
 
         horizontalLayout_5->addWidget(icon3);
 
@@ -399,6 +402,7 @@ public:
         horizontalLayout_13->setObjectName("horizontalLayout_13");
         icon4 = new QLabel(scrollAreaWidgetContents);
         icon4->setObjectName("icon4");
+        icon4->setStyleSheet(QString::fromUtf8("font: 32pt \"Segoe UI\";"));
 
         horizontalLayout_13->addWidget(icon4);
 
@@ -435,6 +439,7 @@ public:
         horizontalLayout_6->setObjectName("horizontalLayout_6");
         icon5 = new QLabel(scrollAreaWidgetContents);
         icon5->setObjectName("icon5");
+        icon5->setStyleSheet(QString::fromUtf8("font: 32pt \"Segoe UI\";"));
 
         horizontalLayout_6->addWidget(icon5);
 
@@ -659,7 +664,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 21));
+        menubar->setGeometry(QRect(0, 0, 1247, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -685,23 +690,23 @@ public:
 #endif // QT_CONFIG(tooltip)
         label_temp->setText(QString());
         label_weatherIcon->setText(QString());
-        icon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        icon1->setText(QString());
         weather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp1->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         time1->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
-        icon2->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        icon2->setText(QString());
         weather2->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp2->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         time2->setText(QString());
-        icon3->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        icon3->setText(QString());
         weather3->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp3->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         time3->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
-        icon4->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        icon4->setText(QString());
         weather4->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp4->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         time4->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
-        icon5->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        icon5->setText(QString());
         weather5->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp5->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         time5->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
