@@ -14,7 +14,6 @@
 #include <QtQuickWidgets/QQuickWidget>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -41,7 +40,6 @@ public:
     QPushButton *pushButton_search;
     QLineEdit *lineEdit_searchbar;
     QLabel *label_recentSearch;
-    QQuickWidget *quickWidget;
     QFrame *frame;
     QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout;
@@ -50,6 +48,7 @@ public:
     QLabel *label_alert;
     QLabel *label_temp;
     QLabel *label_weatherIcon;
+    QLabel *label;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QHBoxLayout *horizontalLayout_20;
@@ -109,7 +108,7 @@ public:
     QLabel *fWeather3;
     QLabel *fTemp3;
     QLabel *fDate3;
-    QGraphicsView *graphicsView;
+    QQuickWidget *quickWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -176,12 +175,6 @@ public:
 
 
         verticalLayout_10->addLayout(verticalLayout_9);
-
-        quickWidget = new QQuickWidget(centralwidget);
-        quickWidget->setObjectName("quickWidget");
-        quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
-
-        verticalLayout_10->addWidget(quickWidget);
 
         frame = new QFrame(centralwidget);
         frame->setObjectName("frame");
@@ -254,6 +247,12 @@ public:
 
         verticalLayout_10->addWidget(frame);
 
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setStyleSheet(QString::fromUtf8("background:transparent;"));
+
+        verticalLayout_10->addWidget(label);
+
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName("scrollArea");
         QSizePolicy sizePolicy2(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
@@ -262,6 +261,7 @@ public:
         sizePolicy2.setHeightForWidth(scrollArea->sizePolicy().hasHeightForWidth());
         scrollArea->setSizePolicy(sizePolicy2);
         scrollArea->setStyleSheet(QString::fromUtf8("border:none;\n"
+"background:transparent;\n"
 ""));
         scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         scrollArea->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
@@ -472,9 +472,9 @@ public:
 
         verticalLayout_10->addWidget(scrollArea);
 
-        verticalLayout_10->setStretch(0, 1);
-        verticalLayout_10->setStretch(1, 3);
-        verticalLayout_10->setStretch(2, 3);
+        verticalLayout_10->setStretch(0, 2);
+        verticalLayout_10->setStretch(1, 5);
+        verticalLayout_10->setStretch(2, 1);
         verticalLayout_10->setStretch(3, 3);
 
         horizontalLayout_11->addLayout(verticalLayout_10);
@@ -638,12 +638,15 @@ public:
 
         verticalLayout_8->addLayout(verticalLayout_7);
 
-        graphicsView = new QGraphicsView(centralwidget);
-        graphicsView->setObjectName("graphicsView");
-        graphicsView->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        quickWidget = new QQuickWidget(centralwidget);
+        quickWidget->setObjectName("quickWidget");
+        quickWidget->setStyleSheet(QString::fromUtf8(""));
+        quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
 
-        verticalLayout_8->addWidget(graphicsView);
+        verticalLayout_8->addWidget(quickWidget);
 
+        verticalLayout_8->setStretch(0, 3);
+        verticalLayout_8->setStretch(1, 2);
 
         verticalLayout_11->addLayout(verticalLayout_8);
 
@@ -682,6 +685,7 @@ public:
 #endif // QT_CONFIG(tooltip)
         label_temp->setText(QString());
         label_weatherIcon->setText(QString());
+        label->setText(QCoreApplication::translate("MainWindow", "hourly forecast:", nullptr));
         icon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
         weather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp1->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));

@@ -7,7 +7,6 @@ Rectangle {
     anchors.fill: parent
     property double latitude: 27.7172
     property double longitude: 85.3240
-
     Plugin {
         id: googlemapview
         name: "osm"
