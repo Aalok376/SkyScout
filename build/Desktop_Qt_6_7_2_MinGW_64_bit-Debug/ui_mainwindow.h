@@ -270,7 +270,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 606, 424));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 609, 367));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -283,7 +283,7 @@ public:
         icon1->setObjectName("icon1");
         sizePolicy.setHeightForWidth(icon1->sizePolicy().hasHeightForWidth());
         icon1->setSizePolicy(sizePolicy);
-        icon1->setStyleSheet(QString::fromUtf8("font: 32pt \"Segoe UI\";"));
+        icon1->setStyleSheet(QString::fromUtf8("font: 34pt \"Segoe UI\";"));
 
         horizontalLayout_4->addWidget(icon1);
 
@@ -326,7 +326,7 @@ public:
         horizontalLayout_3->setObjectName("horizontalLayout_3");
         icon2 = new QLabel(scrollAreaWidgetContents);
         icon2->setObjectName("icon2");
-        icon2->setStyleSheet(QString::fromUtf8("font: 32pt \"Segoe UI\";"));
+        icon2->setStyleSheet(QString::fromUtf8("font: 34pt \"Segoe UI\";"));
 
         horizontalLayout_3->addWidget(icon2);
 
@@ -365,7 +365,7 @@ public:
         horizontalLayout_5->setObjectName("horizontalLayout_5");
         icon3 = new QLabel(scrollAreaWidgetContents);
         icon3->setObjectName("icon3");
-        icon3->setStyleSheet(QString::fromUtf8("font: 32pt \"Segoe UI\";"));
+        icon3->setStyleSheet(QString::fromUtf8("font: 34pt \"Segoe UI\";"));
 
         horizontalLayout_5->addWidget(icon3);
 
@@ -403,7 +403,7 @@ public:
         horizontalLayout_13->setObjectName("horizontalLayout_13");
         icon4 = new QLabel(scrollAreaWidgetContents);
         icon4->setObjectName("icon4");
-        icon4->setStyleSheet(QString::fromUtf8("font: 32pt \"Segoe UI\";"));
+        icon4->setStyleSheet(QString::fromUtf8("font: 34pt \"Segoe UI\";"));
 
         horizontalLayout_13->addWidget(icon4);
 
@@ -646,7 +646,7 @@ public:
 
         quickWidget = new QQuickWidget(centralwidget);
         quickWidget->setObjectName("quickWidget");
-        quickWidget->setStyleSheet(QString::fromUtf8(""));
+        quickWidget->setStyleSheet(QString::fromUtf8("border-radius:50%;"));
         quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
 
         verticalLayout_8->addWidget(quickWidget);
@@ -665,7 +665,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 25));
+        menubar->setGeometry(QRect(0, 0, 1247, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -698,7 +698,7 @@ public:
         icon2->setText(QString());
         weather2->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp2->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
-        time2->setText(QString());
+        time2->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
         icon3->setText(QString());
         weather3->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp3->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));

@@ -6,7 +6,7 @@
 --   lat DOUBLE NOT NULL,
 --   lon DOUBLE NOT NULL,
 --   sunrise INT NOT NULL,
---   sunset INT NOT NULL,\
+--   sunset INT NOT NULL,
 --   ctime INT NOT NULL,
 --   year INT NOT NULL,
 --   month INT NOT NULL,

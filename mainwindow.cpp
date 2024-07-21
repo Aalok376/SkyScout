@@ -3,6 +3,7 @@
 #include<QThread>
 #include<QGeoCoordinate>
 #include<QQuickItem>
+#include<QRegion>
 QIcon icon ;
 QString location;
 FetchCurrentAddress *addressObj;
@@ -39,6 +40,12 @@ MainWindow::MainWindow(QWidget *parent)
     // map integration
    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/MapView.qml")));
     ui->quickWidget->show();
+   int dia = 250;
+    ui->quickWidget->setFixedSize(dia, dia);
+    QRegion region(0, 0, dia, dia, QRegion::Ellipse);
+    ui->quickWidget->setMask(region);
+    ui->verticalLayout_8->addWidget(ui->quickWidget, 0, Qt::AlignCenter);
+
   auto rootObject = ui->quickWidget->rootObject();
  connect(this , SIGNAL(updateMap(QVariant,QVariant)) , rootObject , SLOT(updateMap(QVariant,QVariant)));
 }
@@ -551,6 +558,7 @@ void MainWindow::onLocationRecieved(QNetworkReply *reply)
         //updating model with new StringList
         model->setStringList(QStringList());
         model->setStringList(locationlist);
+
     }
 }
 

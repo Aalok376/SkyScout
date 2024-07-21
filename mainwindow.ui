@@ -241,8 +241,8 @@ background:transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>606</width>
-             <height>424</height>
+             <width>609</width>
+             <height>367</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -265,7 +265,7 @@ background:transparent;
                    </sizepolicy>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">font: 32pt &quot;Segoe UI&quot;;</string>
+                   <string notr="true">font: 34pt &quot;Segoe UI&quot;;</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -331,7 +331,7 @@ background:transparent;
                 <item>
                  <widget class="QLabel" name="icon2">
                   <property name="styleSheet">
-                   <string notr="true">font: 32pt &quot;Segoe UI&quot;;</string>
+                   <string notr="true">font: 34pt &quot;Segoe UI&quot;;</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -371,7 +371,7 @@ background:transparent;
                    <number>0</number>
                   </property>
                   <property name="text">
-                   <string/>
+                   <string>time</string>
                   </property>
                  </widget>
                 </item>
@@ -385,7 +385,7 @@ background:transparent;
                 <item>
                  <widget class="QLabel" name="icon3">
                   <property name="styleSheet">
-                   <string notr="true">font: 32pt &quot;Segoe UI&quot;;</string>
+                   <string notr="true">font: 34pt &quot;Segoe UI&quot;;</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -436,7 +436,7 @@ background:transparent;
                 <item>
                  <widget class="QLabel" name="icon4">
                   <property name="styleSheet">
-                   <string notr="true">font: 32pt &quot;Segoe UI&quot;;</string>
+                   <string notr="true">font: 34pt &quot;Segoe UI&quot;;</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -754,7 +754,7 @@ background:transparent;</string>
           <item>
            <widget class="QQuickWidget" name="quickWidget">
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">border-radius:50%;</string>
             </property>
             <property name="resizeMode">
              <enum>QQuickWidget::SizeRootObjectToView</enum>
@@ -775,7 +775,7 @@ background:transparent;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
