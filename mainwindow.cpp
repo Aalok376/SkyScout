@@ -56,7 +56,7 @@ MainWindow::~MainWindow()
 }
 void MainWindow::onCurrentLocationFetched(QString l)
 {
-    location = l;
+    location = l+", Nepal";
     // qDebug() << location;
      QString apiKey = "410680a363d4c095792d7e19b0bf49cb";
     // QString urlstring = QString("https://api.openweathermap.org/data/2.5/weather?q=%1&appid=%2").arg(location, apiKey);
@@ -385,6 +385,45 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->weather3->setText("-");
                     ui->temp3->setText("-");
                     ui->time3->setText("-");
+                }
+
+                QString weather4 = todaysWeather::fetchWeatherStatus(lowestId+3);
+                //qDebug()<<"the weather status is "<<weather1;
+                double temp4 = todaysWeather::fetchTemp(lowestId+3);
+                int hour4 = todaysWeather::fetchHour(lowestId+3);
+                int min4 = todaysWeather::fetchMin(lowestId+3);
+                icon = todaysWeather::fetchIcon(lowestId+3);
+
+                if(weather4!=""){
+                    ui->icon4->setPixmap(icon.pixmap(QSize(85,60)));
+                    ui->weather4->setText(weather4);
+                    ui->temp4->setText(QString::number(temp4)+"°C");
+                    ui->time4->setText(QString::number(hour4)+":"+QString::number(min4));
+                    //qDebug()<<"minute is "<<min1;
+                }else{
+                    ui->icon4->setText("-");
+                    ui->weather4->setText("-");
+                    ui->temp4->setText("-");
+                    ui->time4->setText("-");
+                }
+                QString weather5 = todaysWeather::fetchWeatherStatus(lowestId+4);
+                //qDebug()<<"the weather status is "<<weather1;
+                double temp5 = todaysWeather::fetchTemp(lowestId+4);
+                int hour5 = todaysWeather::fetchHour(lowestId+4);
+                int min5 = todaysWeather::fetchMin(lowestId+4);
+                icon = todaysWeather::fetchIcon(lowestId+4);
+
+                if(weather5!=""){
+                    ui->icon5->setPixmap(icon.pixmap(QSize(85,60)));
+                    ui->weather5->setText(weather5);
+                    ui->temp5->setText(QString::number(temp5)+"°C");
+                    ui->time5->setText(QString::number(hour5)+":"+QString::number(min5));
+                    //qDebug()<<"minute is "<<min1;
+                }else{
+                    ui->icon5->setText("-");
+                    ui->weather5->setText("-");
+                    ui->temp5->setText("-");
+                    ui->time5->setText("-");
                 }
 
                 //futureData

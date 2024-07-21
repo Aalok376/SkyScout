@@ -67,11 +67,13 @@ void weatherData::insertInformation(QString city, double temp,double humidity,do
     qDebug()<<prevM;
     qDebug()<<prevD;
     qDebug()<<id;
-    if(city.toUpper()!=previousCity.toUpper()){
-        return;
-    }
-    if(year==prevY && month==prevM && date==prevD) {
-        return;
+    if(rowCount>0){
+        if(city.toUpper()!=previousCity.toUpper()){
+            return;
+        }
+        if(year==prevY && month==prevM && date==prevD) {
+            return;
+        }
     }
 
     query.prepare("INSERT INTO pastWeather(id,city,temperature,humidity,lat,lon,sunrise,sunset,ctime,year,month,date)"
@@ -90,9 +92,9 @@ void weatherData::insertInformation(QString city, double temp,double humidity,do
     query.bindValue(":date",date);
 
     if (!query.exec()) {
-        qDebug() << "Error inserting data:" << query.lastError();
+        qDebug() << "Error inserting past weather data:" << query.lastError();
     } else {
-        qDebug() << "Data inserted successfully!";
+        qDebug() << " past data inserted successfully!";
     }
 
     query.prepare("SELECT id FROM pastWeather");

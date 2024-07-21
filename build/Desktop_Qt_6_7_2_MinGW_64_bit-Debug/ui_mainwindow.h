@@ -72,17 +72,17 @@ public:
     QLabel *temp3;
     QLabel *time3;
     QHBoxLayout *horizontalLayout_13;
-    QLabel *icon2_3;
+    QLabel *icon4;
     QVBoxLayout *verticalLayout_13;
-    QLabel *weather2_3;
-    QLabel *temp2_3;
-    QLabel *time2_3;
+    QLabel *weather4;
+    QLabel *temp4;
+    QLabel *time4;
     QHBoxLayout *horizontalLayout_6;
-    QLabel *icon2_2;
+    QLabel *icon5;
     QVBoxLayout *verticalLayout_12;
-    QLabel *weather2_2;
-    QLabel *temp2_2;
-    QLabel *time2_2;
+    QLabel *weather5;
+    QLabel *temp5;
+    QLabel *time5;
     QVBoxLayout *verticalLayout_11;
     QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_7;
@@ -268,7 +268,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 606, 319));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 609, 271));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -396,32 +396,32 @@ public:
         horizontalLayout_13 = new QHBoxLayout();
         horizontalLayout_13->setSpacing(0);
         horizontalLayout_13->setObjectName("horizontalLayout_13");
-        icon2_3 = new QLabel(scrollAreaWidgetContents);
-        icon2_3->setObjectName("icon2_3");
+        icon4 = new QLabel(scrollAreaWidgetContents);
+        icon4->setObjectName("icon4");
 
-        horizontalLayout_13->addWidget(icon2_3);
+        horizontalLayout_13->addWidget(icon4);
 
         verticalLayout_13 = new QVBoxLayout();
         verticalLayout_13->setObjectName("verticalLayout_13");
-        weather2_3 = new QLabel(scrollAreaWidgetContents);
-        weather2_3->setObjectName("weather2_3");
-        weather2_3->setAlignment(Qt::AlignCenter);
+        weather4 = new QLabel(scrollAreaWidgetContents);
+        weather4->setObjectName("weather4");
+        weather4->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_13->addWidget(weather2_3);
+        verticalLayout_13->addWidget(weather4);
 
-        temp2_3 = new QLabel(scrollAreaWidgetContents);
-        temp2_3->setObjectName("temp2_3");
-        temp2_3->setAlignment(Qt::AlignCenter);
+        temp4 = new QLabel(scrollAreaWidgetContents);
+        temp4->setObjectName("temp4");
+        temp4->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_13->addWidget(temp2_3);
+        verticalLayout_13->addWidget(temp4);
 
 
         horizontalLayout_13->addLayout(verticalLayout_13);
 
-        time2_3 = new QLabel(scrollAreaWidgetContents);
-        time2_3->setObjectName("time2_3");
+        time4 = new QLabel(scrollAreaWidgetContents);
+        time4->setObjectName("time4");
 
-        horizontalLayout_13->addWidget(time2_3);
+        horizontalLayout_13->addWidget(time4);
 
         horizontalLayout_13->setStretch(0, 1);
         horizontalLayout_13->setStretch(1, 5);
@@ -432,32 +432,32 @@ public:
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setSpacing(0);
         horizontalLayout_6->setObjectName("horizontalLayout_6");
-        icon2_2 = new QLabel(scrollAreaWidgetContents);
-        icon2_2->setObjectName("icon2_2");
+        icon5 = new QLabel(scrollAreaWidgetContents);
+        icon5->setObjectName("icon5");
 
-        horizontalLayout_6->addWidget(icon2_2);
+        horizontalLayout_6->addWidget(icon5);
 
         verticalLayout_12 = new QVBoxLayout();
         verticalLayout_12->setObjectName("verticalLayout_12");
-        weather2_2 = new QLabel(scrollAreaWidgetContents);
-        weather2_2->setObjectName("weather2_2");
-        weather2_2->setAlignment(Qt::AlignCenter);
+        weather5 = new QLabel(scrollAreaWidgetContents);
+        weather5->setObjectName("weather5");
+        weather5->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_12->addWidget(weather2_2);
+        verticalLayout_12->addWidget(weather5);
 
-        temp2_2 = new QLabel(scrollAreaWidgetContents);
-        temp2_2->setObjectName("temp2_2");
-        temp2_2->setAlignment(Qt::AlignCenter);
+        temp5 = new QLabel(scrollAreaWidgetContents);
+        temp5->setObjectName("temp5");
+        temp5->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_12->addWidget(temp2_2);
+        verticalLayout_12->addWidget(temp5);
 
 
         horizontalLayout_6->addLayout(verticalLayout_12);
 
-        time2_2 = new QLabel(scrollAreaWidgetContents);
-        time2_2->setObjectName("time2_2");
+        time5 = new QLabel(scrollAreaWidgetContents);
+        time5->setObjectName("time5");
 
-        horizontalLayout_6->addWidget(time2_2);
+        horizontalLayout_6->addWidget(time5);
 
         horizontalLayout_6->setStretch(0, 1);
         horizontalLayout_6->setStretch(1, 5);
@@ -659,7 +659,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 25));
+        menubar->setGeometry(QRect(0, 0, 1247, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -698,14 +698,14 @@ public:
         weather3->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp3->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         time3->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
-        icon2_3->setText(QString());
-        weather2_3->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
-        temp2_3->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
-        time2_3->setText(QString());
-        icon2_2->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
-        weather2_2->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
-        temp2_2->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
-        time2_2->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
+        icon4->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        weather4->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
+        temp4->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
+        time4->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
+        icon5->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
+        weather5->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
+        temp5->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
+        time5->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
         pushButton_flag->setText(QString());
         label_18->setText(QCoreApplication::translate("MainWindow", "3 days forecast", nullptr));
         fIcon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));

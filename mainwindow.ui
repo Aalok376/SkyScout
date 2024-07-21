@@ -241,8 +241,8 @@ background:transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>606</width>
-             <height>319</height>
+             <width>609</width>
+             <height>271</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -425,16 +425,16 @@ background:transparent;
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="icon2_3">
+                 <widget class="QLabel" name="icon4">
                   <property name="text">
-                   <string/>
+                   <string>icon</string>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_13">
                   <item>
-                   <widget class="QLabel" name="weather2_3">
+                   <widget class="QLabel" name="weather4">
                     <property name="text">
                      <string>weather</string>
                     </property>
@@ -444,7 +444,7 @@ background:transparent;
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="temp2_3">
+                   <widget class="QLabel" name="temp4">
                     <property name="text">
                      <string>temp</string>
                     </property>
@@ -456,9 +456,9 @@ background:transparent;
                  </layout>
                 </item>
                 <item>
-                 <widget class="QLabel" name="time2_3">
+                 <widget class="QLabel" name="time4">
                   <property name="text">
-                   <string/>
+                   <string>time</string>
                   </property>
                  </widget>
                 </item>
@@ -470,7 +470,7 @@ background:transparent;
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="icon2_2">
+                 <widget class="QLabel" name="icon5">
                   <property name="text">
                    <string>icon</string>
                   </property>
@@ -479,7 +479,7 @@ background:transparent;
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_12">
                   <item>
-                   <widget class="QLabel" name="weather2_2">
+                   <widget class="QLabel" name="weather5">
                     <property name="text">
                      <string>weather</string>
                     </property>
@@ -489,7 +489,7 @@ background:transparent;
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="temp2_2">
+                   <widget class="QLabel" name="temp5">
                     <property name="text">
                      <string>temp</string>
                     </property>
@@ -501,7 +501,7 @@ background:transparent;
                  </layout>
                 </item>
                 <item>
-                 <widget class="QLabel" name="time2_2">
+                 <widget class="QLabel" name="time5">
                   <property name="text">
                    <string>time</string>
                   </property>
@@ -760,7 +760,7 @@ background:transparent;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
