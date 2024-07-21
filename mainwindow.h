@@ -14,7 +14,7 @@
 #include<QDebug>
 #include<QCompleter>
 #include<qstringlistmodel.h>
-
+#include<QtCore>
 #include "datetime.h"
 #include "logicmaths.h"
 #include "weatherdata.h"
@@ -38,7 +38,8 @@ protected:
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+signals:
+    void updateMap(QVariant latitude, QVariant longitude);
 private slots:
     void on_pushButton_flag_clicked();
 

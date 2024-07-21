@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include<QThread>
 #include<QGeoCoordinate>
+#include<QQuickItem>
 QIcon icon ;
 QString location;
 FetchCurrentAddress *addressObj;
@@ -38,11 +39,15 @@ MainWindow::MainWindow(QWidget *parent)
     // map integration
    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/MapView.qml")));
     ui->quickWidget->show();
-    ui->quickWidget->show();
-    int wq=ui->quickWidget->width();
-    int hq=ui->quickWidget->height();
-    qDebug()<<wq;
-    qDebug()<<hq;
+  auto rootObject = ui->quickWidget->rootObject();
+ connect(this , SIGNAL(updateMap(QVariant,QVariant)) , rootObject , SLOT(updateMap(QVariant,QVariant)));
+ //  emit updateMap(24.455, 23.44);
+    // }
+    // else
+    // {
+    //     QMessageBox::information(this, "skyScout","error");
+    // }
+
 }
 
 MainWindow::~MainWindow()
@@ -152,8 +157,8 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 QJsonObject coordObj = JsonObj.value("coord").toObject();
                 double lat = coordObj.value("lat").toDouble();
                 double lon = coordObj.value("lon").toDouble();
-
-
+                qDebug()<<"latitude"<<lat;
+               emit updateMap(lat , lon);
 
                 QJsonObject sysObj = JsonObj.value("sys").toObject();
                 int sunrise = sysObj.value("sunrise").toInt();
