@@ -80,7 +80,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
     QUrl url = reply->url();
 
     if(url.toString().contains("/forecast")) {
-        qDebug()<<"hehe it finally worked";
+
         if(reply->error()==QNetworkReply::NoError) {
 
             QByteArray responseData = reply->readAll();
@@ -387,6 +387,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->time3->setText("-");
                 }
 
+                //4th
                 QString weather4 = todaysWeather::fetchWeatherStatus(lowestId+3);
                 //qDebug()<<"the weather status is "<<weather1;
                 double temp4 = todaysWeather::fetchTemp(lowestId+3);
@@ -406,6 +407,8 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->temp4->setText("-");
                     ui->time4->setText("-");
                 }
+
+                //5th
                 QString weather5 = todaysWeather::fetchWeatherStatus(lowestId+4);
                 //qDebug()<<"the weather status is "<<weather1;
                 double temp5 = todaysWeather::fetchTemp(lowestId+4);

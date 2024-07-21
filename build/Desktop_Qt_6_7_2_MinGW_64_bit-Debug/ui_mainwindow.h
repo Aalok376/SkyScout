@@ -48,7 +48,7 @@ public:
     QLabel *label_alert;
     QLabel *label_temp;
     QLabel *label_weatherIcon;
-    QLabel *label;
+    QFrame *line_3;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QHBoxLayout *horizontalLayout_20;
@@ -247,11 +247,12 @@ public:
 
         verticalLayout_10->addWidget(frame);
 
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        line_3 = new QFrame(centralwidget);
+        line_3->setObjectName("line_3");
+        line_3->setFrameShape(QFrame::Shape::HLine);
+        line_3->setFrameShadow(QFrame::Shadow::Sunken);
 
-        verticalLayout_10->addWidget(label);
+        verticalLayout_10->addWidget(line_3);
 
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName("scrollArea");
@@ -474,7 +475,6 @@ public:
 
         verticalLayout_10->setStretch(0, 2);
         verticalLayout_10->setStretch(1, 5);
-        verticalLayout_10->setStretch(2, 1);
         verticalLayout_10->setStretch(3, 3);
 
         horizontalLayout_11->addLayout(verticalLayout_10);
@@ -685,7 +685,6 @@ public:
 #endif // QT_CONFIG(tooltip)
         label_temp->setText(QString());
         label_weatherIcon->setText(QString());
-        label->setText(QCoreApplication::translate("MainWindow", "hourly forecast:", nullptr));
         icon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
         weather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp1->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));

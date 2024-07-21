@@ -39,7 +39,7 @@ void todaysWeather::insertInformation(QString city, double temp,double humidity,
 
     int previousId = id-1;
     QString previousCity;
-    double prevT;
+    //double prevT;
     int prevY;
     int prevM;
     int prevD;
@@ -54,7 +54,7 @@ void todaysWeather::insertInformation(QString city, double temp,double humidity,
     if (query.exec()) {
         if (query.next()) {
             previousCity = query.value(0).toString();
-            prevT = query.value(1).toDouble();
+           // prevT = query.value(1).toDouble();
             prevY = query.value(2).toInt();
             prevM = query.value(3).toInt();
             prevD = query.value(4).toInt();
@@ -85,9 +85,9 @@ void todaysWeather::insertInformation(QString city, double temp,double humidity,
         if(hour==prevH) {
             return;
         }
-        if(temp==prevT){
-            return;
-        }
+        //if(temp==prevT){
+        //    return;
+        //}
     }
     query.prepare("INSERT INTO currentWeather(id,city,temperature,humidity,status,lat,lon,sunrise,sunset,ctime,year,"
                     "month,date,hour,min)VALUES(:id,:city,:temp,:humidity,:status,:lat,:lon,:sunrise,:sunset,"
