@@ -264,12 +264,13 @@ public:
         scrollArea->setStyleSheet(QString::fromUtf8("border:none;\n"
 "background:transparent;\n"
 ""));
-        scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         scrollArea->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 589, 424));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 606, 424));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();

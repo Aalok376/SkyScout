@@ -41,13 +41,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->quickWidget->show();
   auto rootObject = ui->quickWidget->rootObject();
  connect(this , SIGNAL(updateMap(QVariant,QVariant)) , rootObject , SLOT(updateMap(QVariant,QVariant)));
- //  emit updateMap(24.455, 23.44);
-    // }
-    // else
-    // {
-    //     QMessageBox::information(this, "skyScout","error");
-    // }
-
 }
 
 MainWindow::~MainWindow()

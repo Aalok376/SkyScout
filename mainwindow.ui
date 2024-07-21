@@ -225,7 +225,10 @@ background:transparent;
 </string>
           </property>
           <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOn</enum>
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
           </property>
           <property name="sizeAdjustPolicy">
            <enum>QAbstractScrollArea::AdjustIgnored</enum>
@@ -238,7 +241,7 @@ background:transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>589</width>
+             <width>606</width>
              <height>424</height>
             </rect>
            </property>
