@@ -17,3 +17,4 @@
 -- );
 SELECT * FROM currentWeather;
 -- DELETE FROM currentWeather;
+-- DELETE FROM currentWeather WHERE id = 6;

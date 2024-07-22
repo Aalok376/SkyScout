@@ -332,7 +332,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     //qDebug()<<"minute is "<<min1;
                     //icon =
                 }else{
-                    ui->icon1->setText("-");
+                    ui->icon1->setText("");
                     ui->weather1->setText("-");
                     ui->temp1->setText("-");
                     ui->time1->setText("-");
@@ -355,7 +355,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->temp2->setText(QString::number(temp2)+"°C");
                     ui->time2->setText(QString::number(hour2)+":"+QString::number(min2));
                 }else{
-                    ui->icon2->setText("-");
+                    ui->icon2->setText("");
                     ui->weather2->setText("-");
                     ui->temp2->setText("-");
                     ui->time2->setText("-");
@@ -381,7 +381,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->time3->setText(QString::number(hour3)+":"+QString::number(min3));
                     //qDebug()<<"minute is "<<min1;
                 }else{
-                    ui->icon3->setText("-");
+                    ui->icon3->setText("");
                     ui->weather3->setText("-");
                     ui->temp3->setText("-");
                     ui->time3->setText("-");
@@ -402,7 +402,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->time4->setText(QString::number(hour4)+":"+QString::number(min4));
                     //qDebug()<<"minute is "<<min1;
                 }else{
-                    ui->icon4->setText("-");
+                    ui->icon4->setText("");
                     ui->weather4->setText("-");
                     ui->temp4->setText("-");
                     ui->time4->setText("-");
@@ -423,7 +423,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->time5->setText(QString::number(hour5)+":"+QString::number(min5));
                     //qDebug()<<"minute is "<<min1;
                 }else{
-                    ui->icon5->setText("-");
+                    ui->icon5->setText("");
                     ui->weather5->setText("-");
                     ui->temp5->setText("-");
                     ui->time5->setText("-");

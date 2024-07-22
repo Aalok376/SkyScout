@@ -23,7 +23,8 @@ public:
 public slots:
     void fetchLocation(void)
     {
-        QNetworkRequest request(QUrl("http://ip-api.com/json"));
+      QNetworkRequest request(QUrl("http://ip-api.com/json"));
+
         NetworkManager->get(request);
     }
 signals:

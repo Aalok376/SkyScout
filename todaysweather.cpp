@@ -114,6 +114,12 @@ void todaysWeather::insertInformation(QString city, double temp,double humidity,
         qDebug() << "Data inserted successfully!";
     }
 
+    query.prepare("SELECT id FROM currentWeather");
+    query.exec();
+    rowCount=0;
+    while (query.next()) {
+        rowCount++;
+    }
     if(rowCount>5) {
         int delId = id-5;
         query.prepare("DELETE FROM currentWeather WHERE id = :delId");
