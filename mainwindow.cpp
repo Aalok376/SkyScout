@@ -562,3 +562,25 @@ void MainWindow::onLocationRecieved(QNetworkReply *reply)
     }
 }
 
+intermediateWindow *intermediate;
+
+void MainWindow::on_seemore_btn_clicked()
+{
+    //QMessageBox::information(this,"clicked","you clicked");
+    intermediate = new intermediateWindow();
+    connect(intermediate, &intermediateWindow::returnToMainWindow, this, &MainWindow::showMainWindow);
+
+    intermediate->show();
+
+    this->hide();
+
+    return;
+}
+
+void MainWindow::showMainWindow() {
+    this->show();
+    disconnect(intermediate, &intermediateWindow::returnToMainWindow, this, &MainWindow::showMainWindow);
+    intermediate->deleteLater();
+    intermediate = nullptr;
+    return;
+}

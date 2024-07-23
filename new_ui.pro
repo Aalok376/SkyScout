@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     datetime.cpp \
     futureweather.cpp \
+    intermediatewindow.cpp \
     logicmaths.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -21,12 +22,14 @@ HEADERS += \
     fetchcurrentaddress.h \
     datetime.h \
     futureweather.h \
+    intermediatewindow.h \
     logicmaths.h \
     mainwindow.h \
     todaysweather.h \
     weatherdata.h
 
 FORMS += \
+    intermediatewindow.ui \
     mainwindow.ui
 
 # Default rules for deployment.

@@ -241,8 +241,8 @@ background:transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>606</width>
-             <height>448</height>
+             <width>609</width>
+             <height>367</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -562,7 +562,7 @@ background:transparent;
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="4,4">
                 <item>
-                 <widget class="QPushButton" name="pushButton">
+                 <widget class="QPushButton" name="seemore_btn">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -570,11 +570,17 @@ background:transparent;
                    </sizepolicy>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">color:black;
-border:none;</string>
+                   <string notr="true">QPushButton{
+color:black;
+border:none;
+cursor:pointer;
+}
+QPushButton:hover{
+color:white;
+}</string>
                   </property>
                   <property name="text">
-                   <string>see more -&gt;</string>
+                   <string>See More</string>
                   </property>
                  </widget>
                 </item>
@@ -607,7 +613,7 @@ border:none;</string>
 background:transparent;</string>
               </property>
               <property name="text">
-               <string>3 days forecast</string>
+               <string>3 Days Forecast</string>
               </property>
              </widget>
             </item>
@@ -796,7 +802,7 @@ background:transparent;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

@@ -89,7 +89,7 @@ public:
     QHBoxLayout *horizontalLayout_12;
     QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout_14;
-    QPushButton *pushButton;
+    QPushButton *seemore_btn;
     QPushButton *pushButton_flag;
     QLabel *label_18;
     QVBoxLayout *verticalLayout_6;
@@ -272,7 +272,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 606, 448));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 609, 367));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -502,14 +502,20 @@ public:
 
         horizontalLayout_14 = new QHBoxLayout();
         horizontalLayout_14->setObjectName("horizontalLayout_14");
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy);
-        pushButton->setStyleSheet(QString::fromUtf8("color:black;\n"
-"border:none;"));
+        seemore_btn = new QPushButton(centralwidget);
+        seemore_btn->setObjectName("seemore_btn");
+        sizePolicy.setHeightForWidth(seemore_btn->sizePolicy().hasHeightForWidth());
+        seemore_btn->setSizePolicy(sizePolicy);
+        seemore_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"color:black;\n"
+"border:none;\n"
+"cursor:pointer;\n"
+"}\n"
+"QPushButton:hover{\n"
+"color:white;\n"
+"}"));
 
-        horizontalLayout_14->addWidget(pushButton);
+        horizontalLayout_14->addWidget(seemore_btn);
 
         pushButton_flag = new QPushButton(centralwidget);
         pushButton_flag->setObjectName("pushButton_flag");
@@ -683,7 +689,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 25));
+        menubar->setGeometry(QRect(0, 0, 1247, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -729,9 +735,9 @@ public:
         weather5->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp5->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         time5->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "see more ->", nullptr));
+        seemore_btn->setText(QCoreApplication::translate("MainWindow", "See More", nullptr));
         pushButton_flag->setText(QString());
-        label_18->setText(QCoreApplication::translate("MainWindow", "3 days forecast", nullptr));
+        label_18->setText(QCoreApplication::translate("MainWindow", "3 Days Forecast", nullptr));
         fIcon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
         fWeather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         fTemp1->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));

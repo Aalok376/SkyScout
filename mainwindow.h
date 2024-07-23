@@ -20,6 +20,7 @@
 #include "weatherdata.h"
 #include "todaysweather.h"
 #include "futureweather.h"
+#include "intermediatewindow.h"
 
 // #include "futuredata.h"
 
@@ -52,6 +53,9 @@ private slots:
     void onLocationRecieved(QNetworkReply *reply);
     void on_lineEdit_searchbar_textChanged(const QString &arg1);
 
+    void on_seemore_btn_clicked();
+    void showMainWindow();
+
 private:
     Ui::MainWindow *ui;
     bool check =true;
@@ -59,6 +63,7 @@ private:
     QNetworkAccessManager *NetworkManager;
     QCompleter *completer;
     QStringListModel *model;
+    //intermediateWindow *intermediate;
 // public:
 //    static Ui* getUi(Ui* ui){
 //         return ui;
