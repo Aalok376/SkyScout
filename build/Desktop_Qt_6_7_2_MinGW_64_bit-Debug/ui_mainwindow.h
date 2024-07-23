@@ -32,7 +32,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout_14;
+    QHBoxLayout *horizontalLayout_15;
     QHBoxLayout *horizontalLayout_11;
     QVBoxLayout *verticalLayout_10;
     QVBoxLayout *verticalLayout_9;
@@ -88,6 +88,8 @@ public:
     QVBoxLayout *verticalLayout_7;
     QHBoxLayout *horizontalLayout_12;
     QSpacerItem *horizontalSpacer;
+    QHBoxLayout *horizontalLayout_14;
+    QPushButton *pushButton;
     QPushButton *pushButton_flag;
     QLabel *label_18;
     QVBoxLayout *verticalLayout_6;
@@ -125,8 +127,8 @@ public:
         MainWindow->setStyleSheet(QString::fromUtf8("background-image: url(\":/new/prefix1/image/background.png\");"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        horizontalLayout_14 = new QHBoxLayout(centralwidget);
-        horizontalLayout_14->setObjectName("horizontalLayout_14");
+        horizontalLayout_15 = new QHBoxLayout(centralwidget);
+        horizontalLayout_15->setObjectName("horizontalLayout_15");
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setObjectName("horizontalLayout_11");
         verticalLayout_10 = new QVBoxLayout();
@@ -270,7 +272,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 609, 367));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 606, 448));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -498,6 +500,17 @@ public:
 
         horizontalLayout_12->addItem(horizontalSpacer);
 
+        horizontalLayout_14 = new QHBoxLayout();
+        horizontalLayout_14->setObjectName("horizontalLayout_14");
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName("pushButton");
+        sizePolicy.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy);
+        pushButton->setStyleSheet(QString::fromUtf8("color:black;\n"
+"border:none;"));
+
+        horizontalLayout_14->addWidget(pushButton);
+
         pushButton_flag = new QPushButton(centralwidget);
         pushButton_flag->setObjectName("pushButton_flag");
         QSizePolicy sizePolicy3(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::MinimumExpanding);
@@ -509,10 +522,15 @@ public:
 "	border:none;\n"
 "}"));
 
-        horizontalLayout_12->addWidget(pushButton_flag);
+        horizontalLayout_14->addWidget(pushButton_flag);
 
-        horizontalLayout_12->setStretch(0, 5);
-        horizontalLayout_12->setStretch(1, 1);
+        horizontalLayout_14->setStretch(0, 4);
+        horizontalLayout_14->setStretch(1, 4);
+
+        horizontalLayout_12->addLayout(horizontalLayout_14);
+
+        horizontalLayout_12->setStretch(0, 4);
+        horizontalLayout_12->setStretch(1, 5);
 
         verticalLayout_7->addLayout(horizontalLayout_12);
 
@@ -660,12 +678,12 @@ public:
         horizontalLayout_11->addLayout(verticalLayout_11);
 
 
-        horizontalLayout_14->addLayout(horizontalLayout_11);
+        horizontalLayout_15->addLayout(horizontalLayout_11);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 21));
+        menubar->setGeometry(QRect(0, 0, 1247, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -711,6 +729,7 @@ public:
         weather5->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp5->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         time5->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "see more ->", nullptr));
         pushButton_flag->setText(QString());
         label_18->setText(QCoreApplication::translate("MainWindow", "3 days forecast", nullptr));
         fIcon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));

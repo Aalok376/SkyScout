@@ -23,7 +23,7 @@
    <string notr="true">background-image: url(&quot;:/new/prefix1/image/background.png&quot;);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_14">
+   <layout class="QHBoxLayout" name="horizontalLayout_15">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_11">
       <item>
@@ -241,8 +241,8 @@ background:transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>609</width>
-             <height>367</height>
+             <width>606</width>
+             <height>448</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -539,7 +539,7 @@ background:transparent;
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_7" stretch="2,1,4">
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="5,1">
+             <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="4,5">
               <property name="spacing">
                <number>0</number>
               </property>
@@ -560,22 +560,43 @@ background:transparent;
                </spacer>
               </item>
               <item>
-               <widget class="QPushButton" name="pushButton_flag">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton{
+               <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="4,4">
+                <item>
+                 <widget class="QPushButton" name="pushButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:black;
+border:none;</string>
+                  </property>
+                  <property name="text">
+                   <string>see more -&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton_flag">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
 	border:none;
 }</string>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-               </widget>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </item>
              </layout>
             </item>
@@ -775,7 +796,7 @@ background:transparent;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
