@@ -12,8 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
 #include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
@@ -21,10 +23,13 @@ QT_BEGIN_NAMESPACE
 class Ui_presentGraph
 {
 public:
-    QPushButton *return_btn_4;
+    QHBoxLayout *horizontalLayout_2;
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout;
     QLabel *label;
-    QCustomPlot *presentplot;
     QLabel *location;
+    QPushButton *return_btn_4;
+    QCustomPlot *presentplot;
 
     void setupUi(QDialog *presentGraph)
     {
@@ -32,18 +37,47 @@ public:
             presentGraph->setObjectName("presentGraph");
         presentGraph->resize(744, 580);
         presentGraph->setStyleSheet(QString::fromUtf8("background-image: url(\":/new/prefix1/image/background.png\");"));
-        return_btn_4 = new QPushButton(presentGraph);
-        return_btn_4->setObjectName("return_btn_4");
-        return_btn_4->setGeometry(QRect(250, 30, 80, 24));
+        horizontalLayout_2 = new QHBoxLayout(presentGraph);
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(20);
+        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(-1, 20, -1, -1);
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName("horizontalLayout");
         label = new QLabel(presentGraph);
         label->setObjectName("label");
-        label->setGeometry(QRect(20, 20, 151, 41));
-        presentplot = new QCustomPlot(presentGraph);
-        presentplot->setObjectName("presentplot");
-        presentplot->setGeometry(QRect(100, 120, 551, 401));
+
+        horizontalLayout->addWidget(label);
+
         location = new QLabel(presentGraph);
         location->setObjectName("location");
-        location->setGeometry(QRect(420, 50, 221, 41));
+
+        horizontalLayout->addWidget(location);
+
+        return_btn_4 = new QPushButton(presentGraph);
+        return_btn_4->setObjectName("return_btn_4");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(return_btn_4->sizePolicy().hasHeightForWidth());
+        return_btn_4->setSizePolicy(sizePolicy);
+
+        horizontalLayout->addWidget(return_btn_4);
+
+
+        verticalLayout->addLayout(horizontalLayout);
+
+        presentplot = new QCustomPlot(presentGraph);
+        presentplot->setObjectName("presentplot");
+
+        verticalLayout->addWidget(presentplot);
+
+        verticalLayout->setStretch(0, 1);
+        verticalLayout->setStretch(1, 5);
+
+        horizontalLayout_2->addLayout(verticalLayout);
+
 
         retranslateUi(presentGraph);
 
@@ -53,9 +87,9 @@ public:
     void retranslateUi(QDialog *presentGraph)
     {
         presentGraph->setWindowTitle(QCoreApplication::translate("presentGraph", "Dialog", nullptr));
-        return_btn_4->setText(QCoreApplication::translate("presentGraph", "return", nullptr));
         label->setText(QCoreApplication::translate("presentGraph", "present graph", nullptr));
         location->setText(QCoreApplication::translate("presentGraph", "Location:", nullptr));
+        return_btn_4->setText(QCoreApplication::translate("presentGraph", "return", nullptr));
     } // retranslateUi
 
 };

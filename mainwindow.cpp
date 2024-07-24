@@ -29,7 +29,6 @@ MainWindow::MainWindow(QWidget *parent)
     resize(800,600);
     setFixedSize(size());
     addressObj->fetchLocation();
-
     //setting up model for suggestion feature
     model=new QStringListModel(this);
     completer =new QCompleter(model , this);

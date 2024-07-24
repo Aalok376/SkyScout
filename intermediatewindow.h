@@ -6,7 +6,9 @@
 #include "pastgraph.h"
 #include "presentgraph.h"
 #include "futuregraph.h"
-
+#include<QIcon>
+#include<QTimer>
+#include<qstringlist.h>
 namespace Ui {
 class intermediateWindow;
 }
@@ -32,9 +34,14 @@ private slots:
 
     void on_future_data_btn_clicked();
     void showIntermediateWindowF();
+    void updateLabelText(void);
 
 private:
     Ui::intermediateWindow *ui;
+    QTimer *timer;
+    QString str;
+    QStringList word;
+    int CurrentWordIndex;
 };
 
 #endif // INTERMEDIATEWINDOW_H

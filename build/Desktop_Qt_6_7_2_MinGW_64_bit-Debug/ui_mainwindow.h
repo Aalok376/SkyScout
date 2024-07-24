@@ -90,6 +90,7 @@ public:
     QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout_14;
     QPushButton *seemore_btn;
+    QPushButton *pushButton;
     QPushButton *pushButton_flag;
     QLabel *label_18;
     QVBoxLayout *verticalLayout_6;
@@ -272,7 +273,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 609, 367));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 606, 448));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -516,21 +517,34 @@ public:
 
         horizontalLayout_14->addWidget(seemore_btn);
 
-        pushButton_flag = new QPushButton(centralwidget);
-        pushButton_flag->setObjectName("pushButton_flag");
-        QSizePolicy sizePolicy3(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::MinimumExpanding);
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName("pushButton");
+        QSizePolicy sizePolicy3(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
         sizePolicy3.setHorizontalStretch(0);
         sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(pushButton_flag->sizePolicy().hasHeightForWidth());
-        pushButton_flag->setSizePolicy(sizePolicy3);
+        sizePolicy3.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy3);
+        pushButton->setStyleSheet(QString::fromUtf8("color:black;\n"
+"border:none;"));
+
+        horizontalLayout_14->addWidget(pushButton);
+
+        pushButton_flag = new QPushButton(centralwidget);
+        pushButton_flag->setObjectName("pushButton_flag");
+        QSizePolicy sizePolicy4(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::MinimumExpanding);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(pushButton_flag->sizePolicy().hasHeightForWidth());
+        pushButton_flag->setSizePolicy(sizePolicy4);
         pushButton_flag->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	border:none;\n"
 "}"));
 
         horizontalLayout_14->addWidget(pushButton_flag);
 
-        horizontalLayout_14->setStretch(0, 4);
-        horizontalLayout_14->setStretch(1, 4);
+        horizontalLayout_14->setStretch(0, 1);
+        horizontalLayout_14->setStretch(1, 1);
+        horizontalLayout_14->setStretch(2, 1);
 
         horizontalLayout_12->addLayout(horizontalLayout_14);
 
@@ -688,7 +702,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 21));
+        menubar->setGeometry(QRect(0, 0, 1247, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -735,6 +749,7 @@ public:
         temp5->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         time5->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
         seemore_btn->setText(QCoreApplication::translate("MainWindow", "See More", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "mode", nullptr));
         pushButton_flag->setText(QString());
         label_18->setText(QCoreApplication::translate("MainWindow", "3 Days Forecast", nullptr));
         fIcon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));

@@ -12,13 +12,31 @@ intermediateWindow::intermediateWindow(QWidget *parent)
     connect(ui->return_btn, &QPushButton::clicked, this, &intermediateWindow::on_return_btn_clicked);
     resize(800,600);
     setFixedSize(size());
+
+     str="Welcome! \n Stay updated with the current weather.";
+     word = str.split(" ");
+     CurrentWordIndex=0;
+     timer= new QTimer(this);
+     connect(timer ,&QTimer::timeout , this , &intermediateWindow::updateLabelText );
+     timer->start(500);
+
 }
 
 intermediateWindow::~intermediateWindow()
 {
     delete ui;
 }
-
+void intermediateWindow::updateLabelText(void){
+    if(CurrentWordIndex<word.size()){
+        ui->label->setText(ui->label->text()+" "+word[CurrentWordIndex]);
+        CurrentWordIndex++;
+    }
+    else
+    {
+        CurrentWordIndex=0;
+        ui->label->clear();
+    }
+}
 void intermediateWindow::on_return_btn_clicked()
 {
     //MainWindow *mainWindow = new MainWindow();

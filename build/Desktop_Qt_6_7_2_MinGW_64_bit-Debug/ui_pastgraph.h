@@ -12,8 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
 #include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
@@ -21,10 +23,13 @@ QT_BEGIN_NAMESPACE
 class Ui_pastGraph
 {
 public:
-    QLabel *label;
-    QCustomPlot *pastplot;
-    QPushButton *return_btn_2;
+    QHBoxLayout *horizontalLayout_2;
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout;
     QLabel *location;
+    QLabel *label;
+    QPushButton *return_btn_2;
+    QCustomPlot *pastplot;
 
     void setupUi(QDialog *pastGraph)
     {
@@ -32,19 +37,48 @@ public:
             pastGraph->setObjectName("pastGraph");
         pastGraph->resize(750, 550);
         pastGraph->setStyleSheet(QString::fromUtf8("background-image: url(\":/new/prefix1/image/background.png\");"));
-        label = new QLabel(pastGraph);
-        label->setObjectName("label");
-        label->setGeometry(QRect(330, 20, 201, 51));
-        pastplot = new QCustomPlot(pastGraph);
-        pastplot->setObjectName("pastplot");
-        pastplot->setGeometry(QRect(60, 100, 611, 351));
-        pastplot->setStyleSheet(QString::fromUtf8("background:transparent;"));
-        return_btn_2 = new QPushButton(pastGraph);
-        return_btn_2->setObjectName("return_btn_2");
-        return_btn_2->setGeometry(QRect(570, 30, 80, 24));
+        horizontalLayout_2 = new QHBoxLayout(pastGraph);
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(20);
+        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(0, 20, -1, -1);
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName("horizontalLayout");
         location = new QLabel(pastGraph);
         location->setObjectName("location");
-        location->setGeometry(QRect(70, 40, 161, 41));
+
+        horizontalLayout->addWidget(location);
+
+        label = new QLabel(pastGraph);
+        label->setObjectName("label");
+
+        horizontalLayout->addWidget(label);
+
+        return_btn_2 = new QPushButton(pastGraph);
+        return_btn_2->setObjectName("return_btn_2");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(return_btn_2->sizePolicy().hasHeightForWidth());
+        return_btn_2->setSizePolicy(sizePolicy);
+
+        horizontalLayout->addWidget(return_btn_2);
+
+
+        verticalLayout->addLayout(horizontalLayout);
+
+        pastplot = new QCustomPlot(pastGraph);
+        pastplot->setObjectName("pastplot");
+        pastplot->setStyleSheet(QString::fromUtf8("background:transparent;"));
+
+        verticalLayout->addWidget(pastplot);
+
+        verticalLayout->setStretch(0, 1);
+        verticalLayout->setStretch(1, 5);
+
+        horizontalLayout_2->addLayout(verticalLayout);
+
 
         retranslateUi(pastGraph);
 
@@ -54,9 +88,9 @@ public:
     void retranslateUi(QDialog *pastGraph)
     {
         pastGraph->setWindowTitle(QCoreApplication::translate("pastGraph", "Dialog", nullptr));
+        location->setText(QCoreApplication::translate("pastGraph", "Location:", nullptr));
         label->setText(QCoreApplication::translate("pastGraph", "past graph", nullptr));
         return_btn_2->setText(QCoreApplication::translate("pastGraph", "return", nullptr));
-        location->setText(QCoreApplication::translate("pastGraph", "Location:", nullptr));
     } // retranslateUi
 
 };

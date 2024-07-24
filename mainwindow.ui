@@ -241,8 +241,8 @@ background:transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>609</width>
-             <height>367</height>
+             <width>606</width>
+             <height>448</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -560,7 +560,7 @@ background:transparent;
                </spacer>
               </item>
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="4,4">
+               <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="1,1,1">
                 <item>
                  <widget class="QPushButton" name="seemore_btn">
                   <property name="sizePolicy">
@@ -580,6 +580,23 @@ color:white;
                   </property>
                   <property name="text">
                    <string>See More</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:black;
+border:none;</string>
+                  </property>
+                  <property name="text">
+                   <string>mode</string>
                   </property>
                  </widget>
                 </item>
@@ -801,7 +818,7 @@ background:transparent;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

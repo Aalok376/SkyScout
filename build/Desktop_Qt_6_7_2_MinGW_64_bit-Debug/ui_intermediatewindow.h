@@ -12,17 +12,25 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QVBoxLayout>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_intermediateWindow
 {
 public:
-    QPushButton *return_btn;
+    QHBoxLayout *horizontalLayout_3;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label;
+    QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout;
     QPushButton *past_data_btn;
     QPushButton *present_data_btn;
     QPushButton *future_data_btn;
+    QPushButton *return_btn;
 
     void setupUi(QDialog *intermediateWindow)
     {
@@ -30,18 +38,64 @@ public:
             intermediateWindow->setObjectName("intermediateWindow");
         intermediateWindow->resize(753, 434);
         intermediateWindow->setStyleSheet(QString::fromUtf8("background-image: url(\":/new/prefix1/image/background.png\");"));
-        return_btn = new QPushButton(intermediateWindow);
-        return_btn->setObjectName("return_btn");
-        return_btn->setGeometry(QRect(180, 240, 80, 24));
+        horizontalLayout_3 = new QHBoxLayout(intermediateWindow);
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        label = new QLabel(intermediateWindow);
+        label->setObjectName("label");
+        label->setStyleSheet(QString::fromUtf8("color:rgb( 225, 255, 255);\n"
+"font: 12pt \"Segoe UI\";"));
+        label->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_2->addWidget(label);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName("verticalLayout");
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName("horizontalLayout");
         past_data_btn = new QPushButton(intermediateWindow);
         past_data_btn->setObjectName("past_data_btn");
-        past_data_btn->setGeometry(QRect(70, 80, 111, 51));
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(past_data_btn->sizePolicy().hasHeightForWidth());
+        past_data_btn->setSizePolicy(sizePolicy);
+
+        horizontalLayout->addWidget(past_data_btn);
+
         present_data_btn = new QPushButton(intermediateWindow);
         present_data_btn->setObjectName("present_data_btn");
-        present_data_btn->setGeometry(QRect(220, 80, 111, 51));
+        sizePolicy.setHeightForWidth(present_data_btn->sizePolicy().hasHeightForWidth());
+        present_data_btn->setSizePolicy(sizePolicy);
+
+        horizontalLayout->addWidget(present_data_btn);
+
         future_data_btn = new QPushButton(intermediateWindow);
         future_data_btn->setObjectName("future_data_btn");
-        future_data_btn->setGeometry(QRect(410, 100, 111, 41));
+        sizePolicy.setHeightForWidth(future_data_btn->sizePolicy().hasHeightForWidth());
+        future_data_btn->setSizePolicy(sizePolicy);
+
+        horizontalLayout->addWidget(future_data_btn);
+
+
+        verticalLayout->addLayout(horizontalLayout);
+
+        return_btn = new QPushButton(intermediateWindow);
+        return_btn->setObjectName("return_btn");
+        sizePolicy.setHeightForWidth(return_btn->sizePolicy().hasHeightForWidth());
+        return_btn->setSizePolicy(sizePolicy);
+
+        verticalLayout->addWidget(return_btn);
+
+        verticalLayout->setStretch(0, 5);
+        verticalLayout->setStretch(1, 1);
+
+        horizontalLayout_2->addLayout(verticalLayout);
+
+
+        horizontalLayout_3->addLayout(horizontalLayout_2);
+
 
         retranslateUi(intermediateWindow);
 
@@ -51,10 +105,11 @@ public:
     void retranslateUi(QDialog *intermediateWindow)
     {
         intermediateWindow->setWindowTitle(QCoreApplication::translate("intermediateWindow", "Dialog", nullptr));
-        return_btn->setText(QCoreApplication::translate("intermediateWindow", "return", nullptr));
+        label->setText(QString());
         past_data_btn->setText(QCoreApplication::translate("intermediateWindow", "past data", nullptr));
         present_data_btn->setText(QCoreApplication::translate("intermediateWindow", "present data", nullptr));
         future_data_btn->setText(QCoreApplication::translate("intermediateWindow", "future data", nullptr));
+        return_btn->setText(QCoreApplication::translate("intermediateWindow", "return", nullptr));
     } // retranslateUi
 
 };
