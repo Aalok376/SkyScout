@@ -83,3 +83,16 @@ double logicMaths::twoDecimals(double t) {
     return t;
 }
 
+double logicMaths::noOfDays(int mon, int year) {
+    int daysInMonth[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    double days;
+    if (mon == 2) {
+        // Leap year check: divisible by 4, but not divisible by 100 unless also divisible by 400
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            days = 29; // Leap year has 29 days in February
+        }
+    }
+
+    days = daysInMonth[mon - 1];
+    return days;
+}

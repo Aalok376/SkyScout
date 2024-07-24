@@ -29,3 +29,23 @@ void intermediateWindow::on_return_btn_clicked()
     return;
 }
 
+pastGraph *pg;
+void intermediateWindow::on_past_data_btn_clicked()
+{
+    pg = new pastGraph();
+    connect(pg, &pastGraph::returnToIntermediateWindow, this, &intermediateWindow::showIntermediateWindow);
+
+    pg->show();
+
+    this->hide();
+
+    return;
+}
+
+void intermediateWindow::showIntermediateWindow() {
+    this->show();
+    disconnect(pg, &pastGraph::returnToIntermediateWindow, this, &intermediateWindow::showIntermediateWindow);
+    pg->deleteLater();
+    pg = nullptr;
+    return;
+}

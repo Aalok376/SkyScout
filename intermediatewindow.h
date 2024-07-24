@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "mainwindow.h"
+#include "pastgraph.h"
 
 namespace Ui {
 class intermediateWindow;
@@ -20,6 +21,9 @@ signals:
 
 private slots:
     void on_return_btn_clicked();
+
+    void on_past_data_btn_clicked();
+    void showIntermediateWindow();
 
 private:
     Ui::intermediateWindow *ui;

@@ -12,6 +12,7 @@ public:
     static double avgTemp(double*,int);
     static QString weatherMode(QString*,int);
     static QString nameOfMonth(int);
+    static double noOfDays(int,int);
     static double twoDecimals(double);
 };
 

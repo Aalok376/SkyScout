@@ -4,9 +4,13 @@ debug/intermediatewindow.o
 debug/logicmaths.o
 debug/main.o
 debug/mainwindow.o
+debug/pastgraph.o
+debug/qcustomplot.o
 debug/todaysweather.o
 debug/weatherdata.o
 debug/qrc_resouces.o
 debug/moc_fetchcurrentaddress.o
 debug/moc_intermediatewindow.o
 debug/moc_mainwindow.o
+debug/moc_pastgraph.o
+debug/moc_qcustomplot.o

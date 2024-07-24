@@ -12,6 +12,7 @@
 --   month INT NOT NULL,
 --   date INT NOT NULL
 -- );
+-- INSERT INTO pastWeather(id,city,temperature,humidity,lat,lon,sunrise,sunset,ctime,year,month,date)VALUES(5,"Kathmandu",25.12,89,27.7167,85.3167,1721518543,1721567652,1721541174,2024,8,2);
   SELECT * FROM pastWeather;
 -- DROP TABLE pastWeather;
--- DELETE  FROM pastWeather;
+-- DELETE  FROM pastWeather WHERE id = 6;

@@ -427,6 +427,7 @@ Makefile: ../../new_ui.pro D:/Qt/6.7.2/mingw_64/mkspecs/win32-g++/qmake.conf D:/
 		D:/Qt/6.7.2/mingw_64/lib/Qt6QuickWidgets.prl \
 		D:/Qt/6.7.2/mingw_64/lib/Qt6Quick.prl \
 		D:/Qt/6.7.2/mingw_64/lib/Qt6OpenGL.prl \
+		D:/Qt/6.7.2/mingw_64/lib/Qt6PrintSupport.prl \
 		D:/Qt/6.7.2/mingw_64/lib/Qt6Widgets.prl \
 		D:/Qt/6.7.2/mingw_64/lib/Qt6Gui.prl \
 		D:/Qt/6.7.2/mingw_64/lib/Qt6QmlModels.prl \
@@ -797,6 +798,7 @@ D:/Qt/6.7.2/mingw_64/lib/Qt6QuickShapes.prl:
 D:/Qt/6.7.2/mingw_64/lib/Qt6QuickWidgets.prl:
 D:/Qt/6.7.2/mingw_64/lib/Qt6Quick.prl:
 D:/Qt/6.7.2/mingw_64/lib/Qt6OpenGL.prl:
+D:/Qt/6.7.2/mingw_64/lib/Qt6PrintSupport.prl:
 D:/Qt/6.7.2/mingw_64/lib/Qt6Widgets.prl:
 D:/Qt/6.7.2/mingw_64/lib/Qt6Gui.prl:
 D:/Qt/6.7.2/mingw_64/lib/Qt6QmlModels.prl:
