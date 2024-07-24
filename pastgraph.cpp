@@ -88,9 +88,10 @@ pastGraph::pastGraph(QWidget *parent)
     ui->pastplot->replot();
     ui->pastplot->update();
 
+    int lowestId = weatherData::findLowestId();
 
-    query.prepare("SELECT city FROM pastWeather WHERE id = 1");
-    query.bindValue("1",1);
+    query.prepare("SELECT city FROM pastWeather WHERE id = :lowestId");
+    query.bindValue(":lowestId",lowestId);
     query.exec();
     query.next();
     QString city = query.value(0).toString();

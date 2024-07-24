@@ -49,3 +49,46 @@ void intermediateWindow::showIntermediateWindow() {
     pg = nullptr;
     return;
 }
+
+presentGraph *prg;
+void intermediateWindow::on_present_data_btn_clicked()
+{
+    prg = new presentGraph();
+    connect(prg, &presentGraph::returnToIntermediateWindow, this, &intermediateWindow::showIntermediateWindowP);
+
+    prg->show();
+
+    this->hide();
+
+    return;
+}
+
+void intermediateWindow::showIntermediateWindowP() {
+    this->show();
+    disconnect(prg, &presentGraph::returnToIntermediateWindow, this, &intermediateWindow::showIntermediateWindowP);
+    prg->deleteLater();
+    prg = nullptr;
+    return;
+}
+
+futureGraph *fg;
+void intermediateWindow::on_future_data_btn_clicked()
+{
+    fg = new futureGraph();
+    connect(fg, &futureGraph::returnToIntermediateWindow, this, &intermediateWindow::showIntermediateWindowF);
+
+    fg->show();
+
+    this->hide();
+
+    return;
+}
+
+void intermediateWindow::showIntermediateWindowF() {
+    this->show();
+    disconnect(fg, &futureGraph::returnToIntermediateWindow, this, &intermediateWindow::showIntermediateWindowF);
+    fg->deleteLater();
+    fg = nullptr;
+    return;
+}
+

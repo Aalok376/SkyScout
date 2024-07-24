@@ -509,7 +509,6 @@ public:
         seemore_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "color:black;\n"
 "border:none;\n"
-"cursor:pointer;\n"
 "}\n"
 "QPushButton:hover{\n"
 "color:white;\n"

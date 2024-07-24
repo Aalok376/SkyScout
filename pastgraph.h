@@ -18,6 +18,7 @@
 #include<QDebug>
 
 #include "logicmaths.h"
+#include "weatherdata.h"
 
 namespace Ui {
 class pastGraph;

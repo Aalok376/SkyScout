@@ -94,7 +94,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     int dt = ListObj.value("dt").toInt();
                    // qDebug()<<"display dt "<<dt;
                     if(dateTime::fetchDate(dt)-dateTime::currentDate()>0&&
-                        dateTime::fetchDate(dt)-dateTime::currentDate()<4) {
+                        dateTime::fetchDate(dt)-dateTime::currentDate()<5) {
 
                         QJsonObject mainObj = ListObj.value("main").toObject();
                         double temp = mainObj.value("temp").toDouble();

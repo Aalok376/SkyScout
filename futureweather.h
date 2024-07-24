@@ -26,7 +26,9 @@ public:
     static void insertInformation(QString, double,double,QString,int,int,int,int,int,int,int,int);
     static double fetchTemp(int);
     static QString fetchStatus(int);
+    static int fetchYear(int);
     static QString fetchMonth(int);
+    static int fetchIntMonth(int);
     static int fetchDate(int);
 
     static QIcon fetchIcon(int);

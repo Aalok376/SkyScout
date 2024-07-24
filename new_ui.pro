@@ -12,12 +12,14 @@ QMAKE_CXXFLAGS += -Wa,-mbig-obj
 
 SOURCES += \
     datetime.cpp \
+    futuregraph.cpp \
     futureweather.cpp \
     intermediatewindow.cpp \
     logicmaths.cpp \
     main.cpp \
     mainwindow.cpp \
     pastgraph.cpp \
+    presentgraph.cpp \
     qcustomplot.cpp \
     todaysweather.cpp \
     weatherdata.cpp
@@ -25,19 +27,23 @@ SOURCES += \
 HEADERS += \
     fetchcurrentaddress.h \
     datetime.h \
+    futuregraph.h \
     futureweather.h \
     intermediatewindow.h \
     logicmaths.h \
     mainwindow.h \
     pastgraph.h \
+    presentgraph.h \
     qcustomplot.h \
     todaysweather.h \
     weatherdata.h
 
 FORMS += \
+    futuregraph.ui \
     intermediatewindow.ui \
     mainwindow.ui \
-    pastgraph.ui
+    pastgraph.ui \
+    presentgraph.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

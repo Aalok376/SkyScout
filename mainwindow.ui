@@ -573,7 +573,6 @@ background:transparent;
                    <string notr="true">QPushButton{
 color:black;
 border:none;
-cursor:pointer;
 }
 QPushButton:hover{
 color:white;

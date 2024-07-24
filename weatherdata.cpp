@@ -118,3 +118,15 @@ void weatherData::insertInformation(QString city, double temp,double humidity,do
 
     return;
 }
+
+int weatherData::findLowestId() {
+    QSqlQuery query;
+    query.prepare("SELECT id FROM pastWeather");
+    query.exec();
+    if(query.next()){
+        return query.value(0).toInt();
+    }else{
+        qDebug()<<"no id found";
+        return -1;
+    }
+}

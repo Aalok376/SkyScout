@@ -4,6 +4,8 @@
 #include <QDialog>
 #include "mainwindow.h"
 #include "pastgraph.h"
+#include "presentgraph.h"
+#include "futuregraph.h"
 
 namespace Ui {
 class intermediateWindow;
@@ -24,6 +26,12 @@ private slots:
 
     void on_past_data_btn_clicked();
     void showIntermediateWindow();
+
+    void on_present_data_btn_clicked();
+    void showIntermediateWindowP();
+
+    void on_future_data_btn_clicked();
+    void showIntermediateWindowF();
 
 private:
     Ui::intermediateWindow *ui;
