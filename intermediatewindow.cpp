@@ -16,12 +16,12 @@ intermediateWindow::intermediateWindow(QWidget *parent)
 
     if(checkLight==false)
     {
-        ui->label->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
+        ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
     }
     else
     {
 
-        ui->label->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
+        ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
 
     }
 

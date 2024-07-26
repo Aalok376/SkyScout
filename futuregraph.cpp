@@ -17,6 +17,16 @@ futureGraph::futureGraph(QWidget *parent)
     ui->futureplot->graph(0)->setScatterStyle(QCPScatterStyle::ssCircle);
     ui->futureplot->graph(0)->setLineStyle(QCPGraph::lsLine);
 
+    if(checkLight==false)
+    {
+        ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
+    }
+    else
+    {
+
+        ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
+
+    }
     // Set axis labels
     ui->futureplot->xAxis->setLabel("Date");
     ui->futureplot->yAxis->setLabel("Temperature(°C)");

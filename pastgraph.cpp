@@ -30,6 +30,16 @@ pastGraph::pastGraph(QWidget *parent)
     ui->pastplot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
 
 
+    if(checkLight==false)
+    {
+        ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
+    }
+    else
+    {
+
+        ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
+
+    }
     QSqlDatabase pastdb=QSqlDatabase::addDatabase("QSQLITE");
     pastdb.setDatabaseName(QCoreApplication::applicationDirPath()+"/database/weatherdb.db");
     pastdb.open();

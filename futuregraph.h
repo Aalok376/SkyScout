@@ -1,6 +1,6 @@
 #ifndef FUTUREGRAPH_H
 #define FUTUREGRAPH_H
-
+#include"modecheck.h"
 #include <QDialog>
 #include "intermediatewindow.h"
 

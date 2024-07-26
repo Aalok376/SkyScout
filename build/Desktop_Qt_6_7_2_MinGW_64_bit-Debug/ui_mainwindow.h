@@ -32,7 +32,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout_15;
+    QHBoxLayout *horizontalLayout_16;
     QHBoxLayout *horizontalLayout_11;
     QVBoxLayout *verticalLayout_10;
     QVBoxLayout *verticalLayout_9;
@@ -90,6 +90,7 @@ public:
     QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout_14;
     QPushButton *seemore_btn;
+    QHBoxLayout *horizontalLayout_15;
     QPushButton *light_btn;
     QPushButton *pushButton_flag;
     QLabel *label_18;
@@ -128,8 +129,8 @@ public:
         MainWindow->setStyleSheet(QString::fromUtf8("background-image: url(\":/new/prefix1/image/background.png\");"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        horizontalLayout_15 = new QHBoxLayout(centralwidget);
-        horizontalLayout_15->setObjectName("horizontalLayout_15");
+        horizontalLayout_16 = new QHBoxLayout(centralwidget);
+        horizontalLayout_16->setObjectName("horizontalLayout_16");
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setObjectName("horizontalLayout_11");
         verticalLayout_10 = new QVBoxLayout();
@@ -273,7 +274,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 609, 367));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 606, 448));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -518,6 +519,8 @@ public:
 
         horizontalLayout_14->addWidget(seemore_btn);
 
+        horizontalLayout_15 = new QHBoxLayout();
+        horizontalLayout_15->setObjectName("horizontalLayout_15");
         light_btn = new QPushButton(centralwidget);
         light_btn->setObjectName("light_btn");
         QSizePolicy sizePolicy3(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
@@ -529,7 +532,7 @@ public:
 "border:none;\n"
 "background:transparent;"));
 
-        horizontalLayout_14->addWidget(light_btn);
+        horizontalLayout_15->addWidget(light_btn);
 
         pushButton_flag = new QPushButton(centralwidget);
         pushButton_flag->setObjectName("pushButton_flag");
@@ -543,11 +546,15 @@ public:
 "background:transparent;\n"
 "}"));
 
-        horizontalLayout_14->addWidget(pushButton_flag);
+        horizontalLayout_15->addWidget(pushButton_flag);
+
+        horizontalLayout_15->setStretch(0, 1);
+        horizontalLayout_15->setStretch(1, 2);
+
+        horizontalLayout_14->addLayout(horizontalLayout_15);
 
         horizontalLayout_14->setStretch(0, 1);
-        horizontalLayout_14->setStretch(1, 1);
-        horizontalLayout_14->setStretch(2, 1);
+        horizontalLayout_14->setStretch(1, 2);
 
         horizontalLayout_12->addLayout(horizontalLayout_14);
 
@@ -700,12 +707,12 @@ public:
         horizontalLayout_11->addLayout(verticalLayout_11);
 
 
-        horizontalLayout_15->addLayout(horizontalLayout_11);
+        horizontalLayout_16->addLayout(horizontalLayout_11);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 21));
+        menubar->setGeometry(QRect(0, 0, 1247, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");

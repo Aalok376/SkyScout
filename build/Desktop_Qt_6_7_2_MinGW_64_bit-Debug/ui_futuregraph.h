@@ -16,6 +16,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 #include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
@@ -23,6 +24,8 @@ QT_BEGIN_NAMESPACE
 class Ui_futureGraph
 {
 public:
+    QHBoxLayout *horizontalLayout_3;
+    QWidget *centralWidget;
     QHBoxLayout *horizontalLayout_2;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
@@ -37,7 +40,13 @@ public:
             futureGraph->setObjectName("futureGraph");
         futureGraph->resize(712, 542);
         futureGraph->setStyleSheet(QString::fromUtf8("background-image: url(\":/new/prefix1/image/background.png\");"));
-        horizontalLayout_2 = new QHBoxLayout(futureGraph);
+        horizontalLayout_3 = new QHBoxLayout(futureGraph);
+        horizontalLayout_3->setSpacing(0);
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        centralWidget = new QWidget(futureGraph);
+        centralWidget->setObjectName("centralWidget");
+        horizontalLayout_2 = new QHBoxLayout(centralWidget);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(20);
@@ -45,17 +54,17 @@ public:
         verticalLayout->setContentsMargins(-1, 20, -1, -1);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        location = new QLabel(futureGraph);
+        location = new QLabel(centralWidget);
         location->setObjectName("location");
 
         horizontalLayout->addWidget(location);
 
-        label = new QLabel(futureGraph);
+        label = new QLabel(centralWidget);
         label->setObjectName("label");
 
         horizontalLayout->addWidget(label);
 
-        return_btn_3 = new QPushButton(futureGraph);
+        return_btn_3 = new QPushButton(centralWidget);
         return_btn_3->setObjectName("return_btn_3");
         QSizePolicy sizePolicy(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(0);
@@ -68,7 +77,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        futureplot = new QCustomPlot(futureGraph);
+        futureplot = new QCustomPlot(centralWidget);
         futureplot->setObjectName("futureplot");
 
         verticalLayout->addWidget(futureplot);
@@ -77,6 +86,9 @@ public:
         verticalLayout->setStretch(1, 5);
 
         horizontalLayout_2->addLayout(verticalLayout);
+
+
+        horizontalLayout_3->addWidget(centralWidget);
 
 
         retranslateUi(futureGraph);

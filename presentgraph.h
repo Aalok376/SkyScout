@@ -1,6 +1,6 @@
 #ifndef PRESENTGRAPH_H
 #define PRESENTGRAPH_H
-
+#include"modecheck.h"
 #include <QDialog>
 #include "intermediatewindow.h"
 

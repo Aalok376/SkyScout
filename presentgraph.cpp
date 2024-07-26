@@ -28,6 +28,16 @@ presentGraph::presentGraph(QWidget *parent)
     // Set interactions
     ui->presentplot->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom | QCP::iSelectPlottables);
 
+    if(checkLight==false)
+    {
+        ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
+    }
+    else
+    {
+
+        ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
+
+    }
     QVector <double> temp;
     QVector <double> hr;
     QVector <double> min;

@@ -16,12 +16,15 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_intermediateWindow
 {
 public:
+    QHBoxLayout *horizontalLayout_4;
+    QWidget *centralWidget;
     QHBoxLayout *horizontalLayout_3;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label;
@@ -38,11 +41,17 @@ public:
             intermediateWindow->setObjectName("intermediateWindow");
         intermediateWindow->resize(753, 434);
         intermediateWindow->setStyleSheet(QString::fromUtf8("background-image: url(\":/new/prefix1/image/background.png\");"));
-        horizontalLayout_3 = new QHBoxLayout(intermediateWindow);
+        horizontalLayout_4 = new QHBoxLayout(intermediateWindow);
+        horizontalLayout_4->setSpacing(0);
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
+        centralWidget = new QWidget(intermediateWindow);
+        centralWidget->setObjectName("centralWidget");
+        horizontalLayout_3 = new QHBoxLayout(centralWidget);
         horizontalLayout_3->setObjectName("horizontalLayout_3");
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        label = new QLabel(intermediateWindow);
+        label = new QLabel(centralWidget);
         label->setObjectName("label");
         label->setStyleSheet(QString::fromUtf8("color:rgb( 225, 255, 255);\n"
 "font: 12pt \"Segoe UI\";"));
@@ -54,7 +63,7 @@ public:
         verticalLayout->setObjectName("verticalLayout");
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        past_data_btn = new QPushButton(intermediateWindow);
+        past_data_btn = new QPushButton(centralWidget);
         past_data_btn->setObjectName("past_data_btn");
         QSizePolicy sizePolicy(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(0);
@@ -64,14 +73,14 @@ public:
 
         horizontalLayout->addWidget(past_data_btn);
 
-        present_data_btn = new QPushButton(intermediateWindow);
+        present_data_btn = new QPushButton(centralWidget);
         present_data_btn->setObjectName("present_data_btn");
         sizePolicy.setHeightForWidth(present_data_btn->sizePolicy().hasHeightForWidth());
         present_data_btn->setSizePolicy(sizePolicy);
 
         horizontalLayout->addWidget(present_data_btn);
 
-        future_data_btn = new QPushButton(intermediateWindow);
+        future_data_btn = new QPushButton(centralWidget);
         future_data_btn->setObjectName("future_data_btn");
         sizePolicy.setHeightForWidth(future_data_btn->sizePolicy().hasHeightForWidth());
         future_data_btn->setSizePolicy(sizePolicy);
@@ -81,7 +90,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        return_btn = new QPushButton(intermediateWindow);
+        return_btn = new QPushButton(centralWidget);
         return_btn->setObjectName("return_btn");
         sizePolicy.setHeightForWidth(return_btn->sizePolicy().hasHeightForWidth());
         return_btn->setSizePolicy(sizePolicy);
@@ -95,6 +104,9 @@ public:
 
 
         horizontalLayout_3->addLayout(horizontalLayout_2);
+
+
+        horizontalLayout_4->addWidget(centralWidget);
 
 
         retranslateUi(intermediateWindow);

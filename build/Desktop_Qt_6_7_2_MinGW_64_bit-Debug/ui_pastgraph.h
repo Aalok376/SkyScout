@@ -16,6 +16,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 #include "qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
@@ -23,6 +24,8 @@ QT_BEGIN_NAMESPACE
 class Ui_pastGraph
 {
 public:
+    QHBoxLayout *horizontalLayout_3;
+    QWidget *centralWidget;
     QHBoxLayout *horizontalLayout_2;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
@@ -37,7 +40,13 @@ public:
             pastGraph->setObjectName("pastGraph");
         pastGraph->resize(750, 550);
         pastGraph->setStyleSheet(QString::fromUtf8("background-image: url(\":/new/prefix1/image/background.png\");"));
-        horizontalLayout_2 = new QHBoxLayout(pastGraph);
+        horizontalLayout_3 = new QHBoxLayout(pastGraph);
+        horizontalLayout_3->setSpacing(0);
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        centralWidget = new QWidget(pastGraph);
+        centralWidget->setObjectName("centralWidget");
+        horizontalLayout_2 = new QHBoxLayout(centralWidget);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(20);
@@ -45,17 +54,17 @@ public:
         verticalLayout->setContentsMargins(0, 20, -1, -1);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
-        location = new QLabel(pastGraph);
+        location = new QLabel(centralWidget);
         location->setObjectName("location");
 
         horizontalLayout->addWidget(location);
 
-        label = new QLabel(pastGraph);
+        label = new QLabel(centralWidget);
         label->setObjectName("label");
 
         horizontalLayout->addWidget(label);
 
-        return_btn_2 = new QPushButton(pastGraph);
+        return_btn_2 = new QPushButton(centralWidget);
         return_btn_2->setObjectName("return_btn_2");
         QSizePolicy sizePolicy(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(0);
@@ -68,7 +77,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        pastplot = new QCustomPlot(pastGraph);
+        pastplot = new QCustomPlot(centralWidget);
         pastplot->setObjectName("pastplot");
         pastplot->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
@@ -78,6 +87,9 @@ public:
         verticalLayout->setStretch(1, 5);
 
         horizontalLayout_2->addLayout(verticalLayout);
+
+
+        horizontalLayout_3->addWidget(centralWidget);
 
 
         retranslateUi(pastGraph);

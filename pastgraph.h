@@ -1,6 +1,6 @@
 #ifndef PASTGRAPH_H
 #define PASTGRAPH_H
-
+#include"modecheck.h"
 #include <QDialog>
 #include "intermediatewindow.h"
 
