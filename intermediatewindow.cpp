@@ -13,6 +13,18 @@ intermediateWindow::intermediateWindow(QWidget *parent)
     resize(800,600);
     setFixedSize(size());
 
+
+    if(checkLight==false)
+    {
+        ui->label->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
+    }
+    else
+    {
+
+        ui->label->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
+
+    }
+
      str="Welcome! \n Stay updated with the current weather.";
      word = str.split(" ");
      CurrentWordIndex=0;
@@ -68,13 +80,13 @@ void intermediateWindow::showIntermediateWindow() {
     return;
 }
 
-presentGraph *prg;
+presentGraph *pr;
 void intermediateWindow::on_present_data_btn_clicked()
 {
-    prg = new presentGraph();
-    connect(prg, &presentGraph::returnToIntermediateWindow, this, &intermediateWindow::showIntermediateWindowP);
+    pr = new presentGraph();
+    connect(pr, &presentGraph::returnToIntermediateWindow, this, &intermediateWindow::showIntermediateWindowP);
 
-    prg->show();
+    pr->show();
 
     this->hide();
 
@@ -83,9 +95,9 @@ void intermediateWindow::on_present_data_btn_clicked()
 
 void intermediateWindow::showIntermediateWindowP() {
     this->show();
-    disconnect(prg, &presentGraph::returnToIntermediateWindow, this, &intermediateWindow::showIntermediateWindowP);
-    prg->deleteLater();
-    prg = nullptr;
+    disconnect(pr, &presentGraph::returnToIntermediateWindow, this, &intermediateWindow::showIntermediateWindowP);
+    pr->deleteLater();
+    pr = nullptr;
     return;
 }
 

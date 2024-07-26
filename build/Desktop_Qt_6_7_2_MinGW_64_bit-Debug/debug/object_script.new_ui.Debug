@@ -5,6 +5,7 @@ debug/intermediatewindow.o
 debug/logicmaths.o
 debug/main.o
 debug/mainwindow.o
+debug/modecheck.o
 debug/pastgraph.o
 debug/presentgraph.o
 debug/qcustomplot.o

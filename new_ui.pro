@@ -18,6 +18,7 @@ SOURCES += \
     logicmaths.cpp \
     main.cpp \
     mainwindow.cpp \
+    modecheck.cpp \
     pastgraph.cpp \
     presentgraph.cpp \
     qcustomplot.cpp \
@@ -32,6 +33,7 @@ HEADERS += \
     intermediatewindow.h \
     logicmaths.h \
     mainwindow.h \
+    modecheck.h \
     pastgraph.h \
     presentgraph.h \
     qcustomplot.h \

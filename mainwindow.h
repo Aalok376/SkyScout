@@ -11,6 +11,7 @@
 #include<QMessageBox>
 #include<QJsonArray>
 #include<QPixmap>
+#include <QSize>
 #include<QDebug>
 #include<QCompleter>
 #include<qstringlistmodel.h>
@@ -21,6 +22,7 @@
 #include "todaysweather.h"
 #include "futureweather.h"
 #include "intermediatewindow.h"
+#include "modecheck.h"
 
 // #include "futuredata.h"
 
@@ -56,9 +58,11 @@ private slots:
     void on_seemore_btn_clicked();
     void showMainWindow();
 
+    void on_light_btn_clicked();
+
 private:
     Ui::MainWindow *ui;
-    bool check =true;
+    bool check = true;
     QNetworkAccessManager *networkManager;
     QNetworkAccessManager *NetworkManager;
     QCompleter *completer;

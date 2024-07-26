@@ -16,10 +16,18 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowIcon(QIcon(":/new/prefix1/image/projectLogo.png"));
     ui->pushButton_search->setIcon(QIcon(":/new/prefix1/image/search--v1.png"));
     ui->lineEdit_searchbar->setPlaceholderText("enter the location");
+
     ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/np.png"));
     int x= ui->pushButton_flag->width();
     int y =ui->pushButton_flag->height();
     ui->pushButton_flag->setIconSize(QSize(x,y));
+
+    ui->light_btn->setIcon(QIcon(":/new/prefix1/image/dark.svg"));
+    x= ui->light_btn->width();
+    y =ui->light_btn->height();
+    ui->light_btn->setIconSize(QSize(x,y));
+
+
     addressObj = new FetchCurrentAddress(this);
 
     connect(addressObj, &FetchCurrentAddress::locationFetched, this, &MainWindow::onCurrentLocationFetched);
@@ -583,3 +591,20 @@ void MainWindow::showMainWindow() {
     intermediate = nullptr;
     return;
 }
+
+void MainWindow::on_light_btn_clicked()
+{
+    if(checkLight)
+    {
+        ui->light_btn->setIcon(QIcon(":/new/prefix1/image/light.svg"));
+        ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
+        checkLight=false;
+    }
+    else
+    {
+        ui->light_btn->setIcon(QIcon(":/new/prefix1/image/dark.svg"));
+        ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
+        checkLight=true;
+    }
+}
+

@@ -23,8 +23,9 @@ public:
 public slots:
     void fetchLocation(void)
     {
-      QNetworkRequest request(QUrl("http://ip-api.com/json"));
-
+      // QNetworkRequest request(QUrl("http://ip-api.com/json"));
+        QNetworkRequest request(QUrl("https://ipgeolocation.abstractapi.com/v1/?api_key="
+                                     "38c2f7aeba4b40ef862cdc830ec31049&ip_address=103.10.28.236"));
         NetworkManager->get(request);
     }
 signals:

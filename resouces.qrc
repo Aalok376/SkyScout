@@ -20,6 +20,9 @@
         <file>image/drizzle.png</file>
         <file>image/splash.png</file>
         <file>image/background.png</file>
+        <file>image/light.svg</file>
+        <file>image/dark.svg</file>
+        <file>image/dark_bg.png</file>
     </qresource>
     <qresource prefix="/">
         <file>MapView.qml</file>

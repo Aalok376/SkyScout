@@ -241,8 +241,8 @@ background:transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>606</width>
-             <height>448</height>
+             <width>609</width>
+             <height>367</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -573,6 +573,7 @@ background:transparent;
                    <string notr="true">QPushButton{
 color:black;
 border:none;
+background:transparent;
 }
 QPushButton:hover{
 color:white;
@@ -584,7 +585,7 @@ color:white;
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton">
+                 <widget class="QPushButton" name="light_btn">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -593,10 +594,11 @@ color:white;
                   </property>
                   <property name="styleSheet">
                    <string notr="true">color:black;
-border:none;</string>
+border:none;
+background:transparent;</string>
                   </property>
                   <property name="text">
-                   <string>mode</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
@@ -611,6 +613,7 @@ border:none;</string>
                   <property name="styleSheet">
                    <string notr="true">QPushButton{
 	border:none;
+background:transparent;
 }</string>
                   </property>
                   <property name="text">
@@ -818,7 +821,7 @@ background:transparent;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

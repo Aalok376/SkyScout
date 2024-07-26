@@ -6,6 +6,7 @@
 #include "pastgraph.h"
 #include "presentgraph.h"
 #include "futuregraph.h"
+#include "modecheck.h"
 #include<QIcon>
 #include<QTimer>
 #include<qstringlist.h>

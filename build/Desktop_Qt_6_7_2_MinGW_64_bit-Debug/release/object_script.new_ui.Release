@@ -5,6 +5,7 @@ release/intermediatewindow.o
 release/logicmaths.o
 release/main.o
 release/mainwindow.o
+release/modecheck.o
 release/pastgraph.o
 release/presentgraph.o
 release/qcustomplot.o
