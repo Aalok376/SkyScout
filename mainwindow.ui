@@ -24,6 +24,18 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_16">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>9</number>
+    </property>
+    <property name="topMargin">
+     <number>9</number>
+    </property>
+    <property name="bottomMargin">
+     <number>9</number>
+    </property>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_11">
       <item>
@@ -241,8 +253,8 @@ background:transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>606</width>
-             <height>448</height>
+             <width>609</width>
+             <height>367</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -282,6 +294,9 @@ background:transparent;
                       <verstretch>0</verstretch>
                      </sizepolicy>
                     </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
                     <property name="text">
                      <string>weather</string>
                     </property>
@@ -297,6 +312,9 @@ background:transparent;
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
                     </property>
                     <property name="text">
                      <string>temp</string>
@@ -315,6 +333,9 @@ background:transparent;
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
                   </property>
                   <property name="text">
                    <string>time</string>
@@ -342,6 +363,9 @@ background:transparent;
                  <layout class="QVBoxLayout" name="verticalLayout_2">
                   <item>
                    <widget class="QLabel" name="weather2">
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
                     <property name="text">
                      <string>weather</string>
                     </property>
@@ -352,6 +376,9 @@ background:transparent;
                   </item>
                   <item>
                    <widget class="QLabel" name="temp2">
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
                     <property name="text">
                      <string>temp</string>
                     </property>
@@ -364,6 +391,9 @@ background:transparent;
                 </item>
                 <item>
                  <widget class="QLabel" name="time2">
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
                   <property name="locale">
                    <locale language="English" country="UnitedStates"/>
                   </property>
@@ -399,6 +429,9 @@ background:transparent;
                   </property>
                   <item>
                    <widget class="QLabel" name="weather3">
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
                     <property name="text">
                      <string>weather</string>
                     </property>
@@ -409,6 +442,9 @@ background:transparent;
                   </item>
                   <item>
                    <widget class="QLabel" name="temp3">
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
                     <property name="text">
                      <string>temp</string>
                     </property>
@@ -421,6 +457,9 @@ background:transparent;
                 </item>
                 <item>
                  <widget class="QLabel" name="time3">
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
                   <property name="text">
                    <string>time</string>
                   </property>
@@ -447,6 +486,9 @@ background:transparent;
                  <layout class="QVBoxLayout" name="verticalLayout_13">
                   <item>
                    <widget class="QLabel" name="weather4">
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
                     <property name="text">
                      <string>weather</string>
                     </property>
@@ -457,6 +499,9 @@ background:transparent;
                   </item>
                   <item>
                    <widget class="QLabel" name="temp4">
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
                     <property name="text">
                      <string>temp</string>
                     </property>
@@ -469,6 +514,9 @@ background:transparent;
                 </item>
                 <item>
                  <widget class="QLabel" name="time4">
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
                   <property name="text">
                    <string>time</string>
                   </property>
@@ -495,6 +543,9 @@ background:transparent;
                  <layout class="QVBoxLayout" name="verticalLayout_12">
                   <item>
                    <widget class="QLabel" name="weather5">
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
                     <property name="text">
                      <string>weather</string>
                     </property>
@@ -505,6 +556,9 @@ background:transparent;
                   </item>
                   <item>
                    <widget class="QLabel" name="temp5">
+                    <property name="styleSheet">
+                     <string notr="true">color:black;</string>
+                    </property>
                     <property name="text">
                      <string>temp</string>
                     </property>
@@ -517,6 +571,9 @@ background:transparent;
                 </item>
                 <item>
                  <widget class="QLabel" name="time5">
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
                   <property name="text">
                    <string>time</string>
                   </property>
@@ -580,7 +637,7 @@ color:white;
 }</string>
                   </property>
                   <property name="text">
-                   <string>See More</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
@@ -658,7 +715,8 @@ background:transparent;</string>
                 <item>
                  <widget class="QLabel" name="fWeather1">
                   <property name="styleSheet">
-                   <string notr="true">background:transparent;</string>
+                   <string notr="true">background:transparent;
+color:black;</string>
                   </property>
                   <property name="text">
                    <string>weather</string>
@@ -712,7 +770,8 @@ background:transparent;</string>
                 <item>
                  <widget class="QLabel" name="fWeather2">
                   <property name="styleSheet">
-                   <string notr="true">background:transparent;</string>
+                   <string notr="true">background:transparent;
+color:black;</string>
                   </property>
                   <property name="text">
                    <string>weather</string>
@@ -766,7 +825,8 @@ background:transparent;</string>
                 <item>
                  <widget class="QLabel" name="fWeather3">
                   <property name="styleSheet">
-                   <string notr="true">background:transparent;</string>
+                   <string notr="true">background:transparent;
+color:black;</string>
                   </property>
                   <property name="text">
                    <string>weather</string>
@@ -825,7 +885,7 @@ background:transparent;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

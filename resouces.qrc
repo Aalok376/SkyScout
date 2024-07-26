@@ -23,6 +23,7 @@
         <file>image/light.svg</file>
         <file>image/dark.svg</file>
         <file>image/dark_bg.png</file>
+        <file>image/more.png</file>
     </qresource>
     <qresource prefix="/">
         <file>MapView.qml</file>

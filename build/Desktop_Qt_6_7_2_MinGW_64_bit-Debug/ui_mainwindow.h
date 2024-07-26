@@ -130,7 +130,9 @@ public:
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         horizontalLayout_16 = new QHBoxLayout(centralwidget);
+        horizontalLayout_16->setSpacing(6);
         horizontalLayout_16->setObjectName("horizontalLayout_16");
+        horizontalLayout_16->setContentsMargins(9, 9, -1, 9);
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setObjectName("horizontalLayout_11");
         verticalLayout_10 = new QVBoxLayout();
@@ -274,7 +276,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 606, 448));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 609, 367));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -297,6 +299,7 @@ public:
         weather1->setObjectName("weather1");
         sizePolicy.setHeightForWidth(weather1->sizePolicy().hasHeightForWidth());
         weather1->setSizePolicy(sizePolicy);
+        weather1->setStyleSheet(QString::fromUtf8("color:black;"));
         weather1->setAlignment(Qt::AlignCenter);
 
         verticalLayout_3->addWidget(weather1);
@@ -305,6 +308,7 @@ public:
         temp1->setObjectName("temp1");
         sizePolicy.setHeightForWidth(temp1->sizePolicy().hasHeightForWidth());
         temp1->setSizePolicy(sizePolicy);
+        temp1->setStyleSheet(QString::fromUtf8("color:black;"));
         temp1->setAlignment(Qt::AlignCenter);
 
         verticalLayout_3->addWidget(temp1);
@@ -316,6 +320,7 @@ public:
         time1->setObjectName("time1");
         sizePolicy.setHeightForWidth(time1->sizePolicy().hasHeightForWidth());
         time1->setSizePolicy(sizePolicy);
+        time1->setStyleSheet(QString::fromUtf8("color:black;"));
 
         horizontalLayout_4->addWidget(time1);
 
@@ -338,12 +343,14 @@ public:
         verticalLayout_2->setObjectName("verticalLayout_2");
         weather2 = new QLabel(scrollAreaWidgetContents);
         weather2->setObjectName("weather2");
+        weather2->setStyleSheet(QString::fromUtf8("color:black;"));
         weather2->setAlignment(Qt::AlignCenter);
 
         verticalLayout_2->addWidget(weather2);
 
         temp2 = new QLabel(scrollAreaWidgetContents);
         temp2->setObjectName("temp2");
+        temp2->setStyleSheet(QString::fromUtf8("color:black;"));
         temp2->setAlignment(Qt::AlignCenter);
 
         verticalLayout_2->addWidget(temp2);
@@ -353,6 +360,7 @@ public:
 
         time2 = new QLabel(scrollAreaWidgetContents);
         time2->setObjectName("time2");
+        time2->setStyleSheet(QString::fromUtf8("color:black;"));
         time2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         time2->setLineWidth(0);
 
@@ -378,12 +386,14 @@ public:
         verticalLayout_4->setObjectName("verticalLayout_4");
         weather3 = new QLabel(scrollAreaWidgetContents);
         weather3->setObjectName("weather3");
+        weather3->setStyleSheet(QString::fromUtf8("color:black;"));
         weather3->setAlignment(Qt::AlignCenter);
 
         verticalLayout_4->addWidget(weather3);
 
         temp3 = new QLabel(scrollAreaWidgetContents);
         temp3->setObjectName("temp3");
+        temp3->setStyleSheet(QString::fromUtf8("color:black;"));
         temp3->setAlignment(Qt::AlignCenter);
 
         verticalLayout_4->addWidget(temp3);
@@ -393,6 +403,7 @@ public:
 
         time3 = new QLabel(scrollAreaWidgetContents);
         time3->setObjectName("time3");
+        time3->setStyleSheet(QString::fromUtf8("color:black;"));
 
         horizontalLayout_5->addWidget(time3);
 
@@ -415,12 +426,14 @@ public:
         verticalLayout_13->setObjectName("verticalLayout_13");
         weather4 = new QLabel(scrollAreaWidgetContents);
         weather4->setObjectName("weather4");
+        weather4->setStyleSheet(QString::fromUtf8("color:black;"));
         weather4->setAlignment(Qt::AlignCenter);
 
         verticalLayout_13->addWidget(weather4);
 
         temp4 = new QLabel(scrollAreaWidgetContents);
         temp4->setObjectName("temp4");
+        temp4->setStyleSheet(QString::fromUtf8("color:black;"));
         temp4->setAlignment(Qt::AlignCenter);
 
         verticalLayout_13->addWidget(temp4);
@@ -430,6 +443,7 @@ public:
 
         time4 = new QLabel(scrollAreaWidgetContents);
         time4->setObjectName("time4");
+        time4->setStyleSheet(QString::fromUtf8("color:black;"));
 
         horizontalLayout_13->addWidget(time4);
 
@@ -452,12 +466,14 @@ public:
         verticalLayout_12->setObjectName("verticalLayout_12");
         weather5 = new QLabel(scrollAreaWidgetContents);
         weather5->setObjectName("weather5");
+        weather5->setStyleSheet(QString::fromUtf8("color:black;"));
         weather5->setAlignment(Qt::AlignCenter);
 
         verticalLayout_12->addWidget(weather5);
 
         temp5 = new QLabel(scrollAreaWidgetContents);
         temp5->setObjectName("temp5");
+        temp5->setStyleSheet(QString::fromUtf8("color:black;"));
         temp5->setAlignment(Qt::AlignCenter);
 
         verticalLayout_12->addWidget(temp5);
@@ -467,6 +483,7 @@ public:
 
         time5 = new QLabel(scrollAreaWidgetContents);
         time5->setObjectName("time5");
+        time5->setStyleSheet(QString::fromUtf8("color:black;"));
 
         horizontalLayout_6->addWidget(time5);
 
@@ -583,7 +600,8 @@ public:
 
         fWeather1 = new QLabel(centralwidget);
         fWeather1->setObjectName("fWeather1");
-        fWeather1->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        fWeather1->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"color:black;"));
 
         horizontalLayout_8->addWidget(fWeather1);
 
@@ -622,7 +640,8 @@ public:
 
         fWeather2 = new QLabel(centralwidget);
         fWeather2->setObjectName("fWeather2");
-        fWeather2->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        fWeather2->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"color:black;"));
 
         horizontalLayout_10->addWidget(fWeather2);
 
@@ -661,7 +680,8 @@ public:
 
         fWeather3 = new QLabel(centralwidget);
         fWeather3->setObjectName("fWeather3");
-        fWeather3->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        fWeather3->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"color:black;"));
 
         horizontalLayout_9->addWidget(fWeather3);
 
@@ -712,7 +732,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 25));
+        menubar->setGeometry(QRect(0, 0, 1247, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -758,7 +778,7 @@ public:
         weather5->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp5->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         time5->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
-        seemore_btn->setText(QCoreApplication::translate("MainWindow", "See More", nullptr));
+        seemore_btn->setText(QString());
         light_btn->setText(QString());
         pushButton_flag->setText(QString());
         label_18->setText(QCoreApplication::translate("MainWindow", "3 Days Forecast", nullptr));

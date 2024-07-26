@@ -28,6 +28,13 @@ MainWindow::MainWindow(QWidget *parent)
     y =ui->light_btn->height();
     ui->light_btn->setIconSize(QSize(x,y));
 
+    ui->seemore_btn->setIcon(QIcon(":/new/prefix1/image/more.png"));
+
+    x= ui->seemore_btn->width();
+    y =ui->seemore_btn->height();
+    ui->seemore_btn->setIconSize(QSize(x,y));
+
+
 
     addressObj = new FetchCurrentAddress(this);
 
@@ -599,12 +606,94 @@ void MainWindow::on_light_btn_clicked()
     {
         ui->light_btn->setIcon(QIcon(":/new/prefix1/image/light.svg"));
         ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
+
+        ui->label_18->setStyleSheet("color:#F0EFF9; background:transparent;");
+        ui->label_temp->setStyleSheet("color:#F0EFF9;");
+        ui->label_currentWeather->setStyleSheet("color:#F0EFF9;");
+        ui->label_alert->setStyleSheet("color:#F0EFF9;");
+        ui->label_recentSearch->setStyleSheet("color:#F0EFF9; background:transparent;");
+        ui->lineEdit_searchbar->setStyleSheet("background-color: rgb(217, 217, 217);color: #F0EFF9;"
+                                              "border-top-right-radius:12%;border-bottom-right-radius:12%;");
+
+        ui->weather1->setStyleSheet("color:#F0EFF9;");
+        ui->temp1->setStyleSheet("color:#F0EFF9;");
+        ui->time1->setStyleSheet("color:#F0EFF9;");
+
+        ui->weather2->setStyleSheet("color:#F0EFF9;");
+        ui->temp2->setStyleSheet("color:#F0EFF9;");
+        ui->time2->setStyleSheet("color:#F0EFF9;");
+
+        ui->weather3->setStyleSheet("color:#F0EFF9;");
+        ui->temp3->setStyleSheet("color:#F0EFF9;");
+        ui->time3->setStyleSheet("color:#F0EFF9;");
+
+        ui->weather4->setStyleSheet("color:#F0EFF9;");
+        ui->temp4->setStyleSheet("color:#F0EFF9;");
+        ui->time4->setStyleSheet("color:#F0EFF9;");
+
+        ui->weather5->setStyleSheet("color:#F0EFF9;");
+        ui->temp5->setStyleSheet("color:#F0EFF9;");
+        ui->time5->setStyleSheet("color:#F0EFF9;");
+
+        ui->fWeather1->setStyleSheet("color:#F0EFF9; background:transparent;");
+        ui->fTemp1->setStyleSheet("color:#F0EFF9; background:transparent;");
+        ui->fDate1->setStyleSheet("color:#F0EFF9; background:transparent;");
+
+        ui->fWeather2->setStyleSheet("color:#F0EFF9; background:transparent;");
+        ui->fTemp2->setStyleSheet("color:#F0EFF9; background:transparent;");
+        ui->fDate2->setStyleSheet("color:#F0EFF9; background:transparent;");
+
+        ui->fWeather3->setStyleSheet("color:#F0EFF9; background:transparent;");
+        ui->fTemp3->setStyleSheet("color:#F0EFF9; background:transparent;");
+        ui->fDate3->setStyleSheet("color:#F0EFF9; background:transparent;");
+
         checkLight=false;
     }
     else
     {
         ui->light_btn->setIcon(QIcon(":/new/prefix1/image/dark.svg"));
         ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
+
+        ui->label_18->setStyleSheet("color:black; background:transparent;");
+        ui->label_temp->setStyleSheet("color:black;");
+        ui->label_currentWeather->setStyleSheet("color:black;");
+        ui->label_alert->setStyleSheet("color:black;");
+        ui->label_recentSearch->setStyleSheet("color:black; background:transparent;");
+        ui->lineEdit_searchbar->setStyleSheet("background-color: rgb(217, 217, 217);color: black;"
+                                              "border-top-right-radius:12%;border-bottom-right-radius:12%;");
+
+        ui->weather1->setStyleSheet("color:black;");
+        ui->temp1->setStyleSheet("color:black;");
+        ui->time1->setStyleSheet("color:black;");
+
+        ui->weather2->setStyleSheet("color:black;");
+        ui->temp2->setStyleSheet("color:black;");
+        ui->time2->setStyleSheet("color:black;");
+
+        ui->weather3->setStyleSheet("color:black;");
+        ui->temp3->setStyleSheet("color:black;");
+        ui->time3->setStyleSheet("color:black;");
+
+        ui->weather4->setStyleSheet("color:black;");
+        ui->temp4->setStyleSheet("color:black;");
+        ui->time4->setStyleSheet("color:black;");
+
+        ui->weather5->setStyleSheet("color:black;");
+        ui->temp5->setStyleSheet("color:black;");
+        ui->time5->setStyleSheet("color:black;");
+
+        ui->fWeather1->setStyleSheet("color:black; background:transparent;");
+        ui->fTemp1->setStyleSheet("color:black; background:transparent;");
+        ui->fDate1->setStyleSheet("color:black; background:transparent;");
+
+        ui->fWeather2->setStyleSheet("color:black; background:transparent;");
+        ui->fTemp2->setStyleSheet("color:black; background:transparent;");
+        ui->fDate2->setStyleSheet("color:black; background:transparent;");
+
+        ui->fWeather3->setStyleSheet("color:black; background:transparent;");
+        ui->fTemp3->setStyleSheet("color:black; background:transparent;");
+        ui->fDate3->setStyleSheet("color:black; background:transparent;");
+
         checkLight=true;
     }
 }
