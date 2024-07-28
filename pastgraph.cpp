@@ -63,6 +63,19 @@ pastGraph::pastGraph(QWidget *parent)
     //QVector<double> x = {25, 26, 27, 28, 29, 30}; // Use 30 to represent the 1st of the next month
     //QVector<double> y = {5, 3, 4, 7, 8, 5};
 
+    QVector <double> copyDate = date;
+
+    for(int i=0;i<temp.size();i++) {
+        double testDate = date[i];
+        int testMonth = month[i];
+
+        if(testMonth!=month[0]) {
+            testDate = logicMaths::noOfDays(month[0],year[0]) + date[i];
+        }
+
+        date[i] = testDate;
+
+    }
     // Plot data
     ui->pastplot->graph(0)->setData(date, temp);
 
@@ -74,13 +87,13 @@ pastGraph::pastGraph(QWidget *parent)
     QSharedPointer<QCPAxisTickerText> textTicker(new QCPAxisTickerText);
     for(int i=0;i<temp.size();i++) {
         double testDate = date[i];
-        int testMonth = month[i];
+        //int testMonth = month[i];
 
-        if(testMonth!=month[0]) {
-            testDate = logicMaths::noOfDays(month[0],year[0]) + date[i];
-        }
+        // if(testMonth!=month[0]) {
+        //     testDate = logicMaths::noOfDays(month[0],year[0]) + date[i];
+        // }
 
-        textTicker->addTick(testDate, logicMaths::nameOfMonth(month[i])+" "+QString::number(date[i]));
+        textTicker->addTick(testDate, logicMaths::nameOfMonth(month[i])+" "+QString::number(copyDate[i]));
     }
     // textTicker->addTick(25, "July 25");
     // textTicker->addTick(26, "July 26");

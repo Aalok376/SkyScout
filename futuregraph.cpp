@@ -49,6 +49,20 @@ futureGraph::futureGraph(QWidget *parent)
         year.append(futureWeather::fetchYear(i));
     }
 
+    QVector <double> copyDate = date;
+
+    for(int i=0;i<temp.size();i++) {
+        double testDate = date[i];
+        int testMonth = month[i];
+
+        if(testMonth!=month[0]) {
+            testDate = logicMaths::noOfDays(month[0],year[0]) + date[i];
+        }
+
+        date[i] = testDate;
+
+    }
+
     ui->futureplot->graph(0)->setData(date, temp);
 
     // Customize x-axis to show date labels
@@ -58,13 +72,13 @@ futureGraph::futureGraph(QWidget *parent)
     QSharedPointer<QCPAxisTickerText> textTicker(new QCPAxisTickerText);
     for(int i=0;i<temp.size();i++) {
         double testDate = date[i];
-        int testMonth = month[i];
+//        int testMonth = month[i];
 
-        if(testMonth!=month[0]) {
-            testDate = logicMaths::noOfDays(month[0],year[0]) + date[i];
-        }
+        // if(testMonth!=month[0]) {
+        //     testDate = logicMaths::noOfDays(month[0],year[0]) + date[i];
+        // }
 
-        textTicker->addTick(testDate, logicMaths::nameOfMonth(month[i])+" "+QString::number(date[i]));
+        textTicker->addTick(testDate, logicMaths::nameOfMonth(month[i])+" "+QString::number(copyDate[i]));
     }
 
     ui->futureplot->xAxis->setTicker(textTicker);

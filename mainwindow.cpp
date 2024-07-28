@@ -104,12 +104,16 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 QJsonObject JsonObj=Jdoc.object();
                 QJsonArray List = JsonObj.value("list").toArray();
                 //qDebug()<<"the size of the array is "<<weatherArr.size();
-                for(int i=0;i<List.size();i++) {
+                int lim = 32;
+                for(int i=0;i<lim;i++) {
                     QJsonObject ListObj = List.at(i).toObject();
                     int dt = ListObj.value("dt").toInt();
                    // qDebug()<<"display dt "<<dt;
-                    if(dateTime::fetchDate(dt)-dateTime::currentDate()>0&&
-                        dateTime::fetchDate(dt)-dateTime::currentDate()<5) {
+
+                    int ft = dateTime::fetchDate(dt);
+                    int ct = dateTime::currentDate();
+
+                    if(ft!=ct) {
 
                         QJsonObject mainObj = ListObj.value("main").toObject();
                         double temp = mainObj.value("temp").toDouble();
@@ -134,9 +138,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
 
 
                     } else {
-                        if(dateTime::fetchDate(dt)-dateTime::currentDate()!=0){
-                            break;
-                        }
+                        lim++;
                     }
                 }
 

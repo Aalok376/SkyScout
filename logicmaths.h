@@ -13,7 +13,6 @@ public:
     static QString weatherMode(QString*,int);
     static QString nameOfMonth(int);
     static double noOfDays(int,int);
-    static double npOfDays(QString,int);
     static double twoDecimals(double);
 };
 
