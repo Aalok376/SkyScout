@@ -9,6 +9,10 @@ futureGraph::futureGraph(QWidget *parent)
     setWindowTitle("Sky Scout");
     setWindowIcon(QIcon(":/new/prefix1/image/projectLogo.png"));
 
+    ui->return_btn_3->setIcon(QIcon(":/new/prefix1/image/return.png"));
+    int y =ui->return_btn_3->height();
+    ui->return_btn_3->setIconSize(QSize(y,y));
+
     connect(ui->return_btn_3, &QPushButton::clicked, this, &futureGraph::on_return_btn_3_clicked);
     resize(800,600);
     setFixedSize(size());

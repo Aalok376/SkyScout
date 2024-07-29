@@ -56,11 +56,13 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         location = new QLabel(centralWidget);
         location->setObjectName("location");
+        location->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
         horizontalLayout->addWidget(location);
 
         label = new QLabel(centralWidget);
         label->setObjectName("label");
+        label->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
         horizontalLayout->addWidget(label);
 
@@ -71,6 +73,8 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(return_btn_3->sizePolicy().hasHeightForWidth());
         return_btn_3->setSizePolicy(sizePolicy);
+        return_btn_3->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"border:none;"));
 
         horizontalLayout->addWidget(return_btn_3);
 
@@ -101,7 +105,7 @@ public:
         futureGraph->setWindowTitle(QCoreApplication::translate("futureGraph", "Dialog", nullptr));
         location->setText(QCoreApplication::translate("futureGraph", "Location:", nullptr));
         label->setText(QCoreApplication::translate("futureGraph", "future graph", nullptr));
-        return_btn_3->setText(QCoreApplication::translate("futureGraph", "return", nullptr));
+        return_btn_3->setText(QString());
     } // retranslateUi
 
 };

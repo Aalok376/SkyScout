@@ -9,6 +9,10 @@ intermediateWindow::intermediateWindow(QWidget *parent)
     setWindowTitle("Sky Scout");
     setWindowIcon(QIcon(":/new/prefix1/image/projectLogo.png"));
 
+    ui->return_btn->setIcon(QIcon(":/new/prefix1/image/return.png"));
+    int y =ui->return_btn->height();
+    ui->return_btn->setIconSize(QSize(y,y));
+
     connect(ui->return_btn, &QPushButton::clicked, this, &intermediateWindow::on_return_btn_clicked);
     resize(800,600);
     setFixedSize(size());

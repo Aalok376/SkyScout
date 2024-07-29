@@ -172,6 +172,7 @@ debug/qrc_resouces.cpp: ../../resouces.qrc \
 		../../image/weather.png \
 		../../image/more.png \
 		../../image/dark_bg.png \
+		../../image/return.png \
 		../../image/Squall.png \
 		../../image/Tornado.png \
 		../../image/light.svg \

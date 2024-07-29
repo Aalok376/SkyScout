@@ -104,8 +104,12 @@ font: 12pt &quot;Segoe UI&quot;;</string>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+border:none;</string>
+            </property>
             <property name="text">
-             <string>return</string>
+             <string/>
             </property>
            </widget>
           </item>

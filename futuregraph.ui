@@ -47,6 +47,9 @@
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QLabel" name="location">
+            <property name="styleSheet">
+             <string notr="true">background:transparent;</string>
+            </property>
             <property name="text">
              <string>Location:</string>
             </property>
@@ -54,6 +57,9 @@
           </item>
           <item>
            <widget class="QLabel" name="label">
+            <property name="styleSheet">
+             <string notr="true">background:transparent;</string>
+            </property>
             <property name="text">
              <string>future graph</string>
             </property>
@@ -67,8 +73,12 @@
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+border:none;</string>
+            </property>
             <property name="text">
-             <string>return</string>
+             <string/>
             </property>
            </widget>
           </item>

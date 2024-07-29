@@ -94,6 +94,8 @@ public:
         return_btn->setObjectName("return_btn");
         sizePolicy.setHeightForWidth(return_btn->sizePolicy().hasHeightForWidth());
         return_btn->setSizePolicy(sizePolicy);
+        return_btn->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"border:none;"));
 
         verticalLayout->addWidget(return_btn);
 
@@ -121,7 +123,7 @@ public:
         past_data_btn->setText(QCoreApplication::translate("intermediateWindow", "past data", nullptr));
         present_data_btn->setText(QCoreApplication::translate("intermediateWindow", "present data", nullptr));
         future_data_btn->setText(QCoreApplication::translate("intermediateWindow", "future data", nullptr));
-        return_btn->setText(QCoreApplication::translate("intermediateWindow", "return", nullptr));
+        return_btn->setText(QString());
     } // retranslateUi
 
 };
