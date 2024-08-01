@@ -32,7 +32,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout_17;
+    QHBoxLayout *horizontalLayout_18;
     QHBoxLayout *horizontalLayout_11;
     QVBoxLayout *verticalLayout_15;
     QWidget *widget;
@@ -56,6 +56,7 @@ public:
     QLabel *label_alert;
     QLabel *label_temp;
     QLabel *label_weatherIcon;
+    QSpacerItem *verticalSpacer_4;
     QFrame *line_3;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
@@ -92,6 +93,10 @@ public:
     QLabel *temp5;
     QLabel *time5;
     QVBoxLayout *verticalLayout_11;
+    QHBoxLayout *horizontalLayout_17;
+    QVBoxLayout *verticalLayout_17;
+    QSpacerItem *verticalSpacer_3;
+    QQuickWidget *quickWidget;
     QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_7;
     QHBoxLayout *horizontalLayout_12;
@@ -101,6 +106,7 @@ public:
     QHBoxLayout *horizontalLayout_15;
     QPushButton *light_btn;
     QPushButton *pushButton_flag;
+    QSpacerItem *verticalSpacer_2;
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout_16;
     QVBoxLayout *verticalLayout_16;
@@ -123,7 +129,7 @@ public:
     QLabel *fWeather3;
     QLabel *fTemp3;
     QLabel *fDate3;
-    QQuickWidget *quickWidget;
+    QLabel *label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -141,10 +147,8 @@ public:
 ""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        horizontalLayout_17 = new QHBoxLayout(centralwidget);
-        horizontalLayout_17->setSpacing(0);
-        horizontalLayout_17->setObjectName("horizontalLayout_17");
-        horizontalLayout_17->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_18 = new QHBoxLayout(centralwidget);
+        horizontalLayout_18->setObjectName("horizontalLayout_18");
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setObjectName("horizontalLayout_11");
         verticalLayout_15 = new QVBoxLayout();
@@ -358,6 +362,10 @@ public:
 
         verticalLayout_10->addWidget(frame);
 
+        verticalSpacer_4 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        verticalLayout_10->addItem(verticalSpacer_4);
+
         line_3 = new QFrame(centralwidget);
         line_3->setObjectName("line_3");
         line_3->setFrameShape(QFrame::Shape::HLine);
@@ -379,7 +387,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 588, 448));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 314, 448));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -604,14 +612,35 @@ public:
         verticalLayout_10->addWidget(scrollArea);
 
         verticalLayout_10->setStretch(0, 2);
-        verticalLayout_10->setStretch(1, 5);
+        verticalLayout_10->setStretch(1, 6);
         verticalLayout_10->setStretch(2, 3);
-        verticalLayout_10->setStretch(3, 5);
+        verticalLayout_10->setStretch(3, 2);
+        verticalLayout_10->setStretch(4, 7);
 
         horizontalLayout_11->addLayout(verticalLayout_10);
 
         verticalLayout_11 = new QVBoxLayout();
         verticalLayout_11->setObjectName("verticalLayout_11");
+        horizontalLayout_17 = new QHBoxLayout();
+        horizontalLayout_17->setObjectName("horizontalLayout_17");
+        verticalLayout_17 = new QVBoxLayout();
+        verticalLayout_17->setObjectName("verticalLayout_17");
+        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        verticalLayout_17->addItem(verticalSpacer_3);
+
+        quickWidget = new QQuickWidget(centralwidget);
+        quickWidget->setObjectName("quickWidget");
+        quickWidget->setStyleSheet(QString::fromUtf8(""));
+        quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
+
+        verticalLayout_17->addWidget(quickWidget);
+
+        verticalLayout_17->setStretch(0, 1);
+        verticalLayout_17->setStretch(1, 2);
+
+        horizontalLayout_17->addLayout(verticalLayout_17);
+
         verticalLayout_8 = new QVBoxLayout();
         verticalLayout_8->setObjectName("verticalLayout_8");
         verticalLayout_7 = new QVBoxLayout();
@@ -684,6 +713,10 @@ public:
         verticalLayout_7->setStretch(0, 2);
 
         verticalLayout_8->addLayout(verticalLayout_7);
+
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        verticalLayout_8->addItem(verticalSpacer_2);
 
         widget_2 = new QWidget(centralwidget);
         widget_2->setObjectName("widget_2");
@@ -828,27 +861,32 @@ public:
 
         verticalLayout_8->addWidget(widget_2);
 
-        quickWidget = new QQuickWidget(centralwidget);
-        quickWidget->setObjectName("quickWidget");
-        quickWidget->setStyleSheet(QString::fromUtf8(""));
-        quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
-
-        verticalLayout_8->addWidget(quickWidget);
-
         verticalLayout_8->setStretch(0, 1);
-        verticalLayout_8->setStretch(1, 5);
+        verticalLayout_8->setStretch(1, 1);
         verticalLayout_8->setStretch(2, 5);
 
-        verticalLayout_11->addLayout(verticalLayout_8);
+        horizontalLayout_17->addLayout(verticalLayout_8);
 
+        horizontalLayout_17->setStretch(0, 1);
+        horizontalLayout_17->setStretch(1, 1);
+
+        verticalLayout_11->addLayout(horizontalLayout_17);
+
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+
+        verticalLayout_11->addWidget(label);
+
+        verticalLayout_11->setStretch(0, 1);
+        verticalLayout_11->setStretch(1, 1);
 
         horizontalLayout_11->addLayout(verticalLayout_11);
 
         horizontalLayout_11->setStretch(0, 1);
-        horizontalLayout_11->setStretch(1, 13);
+        horizontalLayout_11->setStretch(1, 5);
         horizontalLayout_11->setStretch(2, 13);
 
-        horizontalLayout_17->addLayout(horizontalLayout_11);
+        horizontalLayout_18->addLayout(horizontalLayout_11);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -919,6 +957,7 @@ public:
         fWeather3->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         fTemp3->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         fDate3->setText(QCoreApplication::translate("MainWindow", "date", nullptr));
+        label->setText(QString());
     } // retranslateUi
 
 };
