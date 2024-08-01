@@ -9,6 +9,9 @@
 #include "modecheck.h"
 #include<QIcon>
 #include<QTimer>
+#include <QPropertyAnimation>
+#include <QStackedWidget>
+#include <QParallelAnimationGroup>
 #include<qstringlist.h>
 namespace Ui {
 class intermediateWindow;
@@ -35,7 +38,8 @@ private slots:
 
     void on_future_data_btn_clicked();
     void showIntermediateWindowF();
-    void updateLabelText(void);
+    void slideToPage(int index);
+    //void updateLabelText(void);
 
 private:
     Ui::intermediateWindow *ui;
@@ -43,6 +47,7 @@ private:
     QString str;
     QStringList word;
     int CurrentWordIndex;
+    int currentIndex;
 };
 
 #endif // INTERMEDIATEWINDOW_H

@@ -15,6 +15,7 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -27,6 +28,16 @@ public:
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout_3;
     QHBoxLayout *horizontalLayout_2;
+    QPushButton *btnPast;
+    QStackedWidget *stackedWidget;
+    QWidget *page;
+    QLabel *label_2;
+    QWidget *page_2;
+    QLabel *label_3;
+    QWidget *page_3;
+    QLabel *label_4;
+    QPushButton *btnPresent;
+    QPushButton *btnFuture;
     QLabel *label;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
@@ -51,6 +62,44 @@ public:
         horizontalLayout_3->setObjectName("horizontalLayout_3");
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
+        btnPast = new QPushButton(centralWidget);
+        btnPast->setObjectName("btnPast");
+
+        horizontalLayout_2->addWidget(btnPast);
+
+        stackedWidget = new QStackedWidget(centralWidget);
+        stackedWidget->setObjectName("stackedWidget");
+        page = new QWidget();
+        page->setObjectName("page");
+        label_2 = new QLabel(page);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(40, 70, 49, 16));
+        stackedWidget->addWidget(page);
+        page_2 = new QWidget();
+        page_2->setObjectName("page_2");
+        label_3 = new QLabel(page_2);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(50, 80, 49, 16));
+        stackedWidget->addWidget(page_2);
+        page_3 = new QWidget();
+        page_3->setObjectName("page_3");
+        label_4 = new QLabel(page_3);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(90, 140, 49, 16));
+        stackedWidget->addWidget(page_3);
+
+        horizontalLayout_2->addWidget(stackedWidget);
+
+        btnPresent = new QPushButton(centralWidget);
+        btnPresent->setObjectName("btnPresent");
+
+        horizontalLayout_2->addWidget(btnPresent);
+
+        btnFuture = new QPushButton(centralWidget);
+        btnFuture->setObjectName("btnFuture");
+
+        horizontalLayout_2->addWidget(btnFuture);
+
         label = new QLabel(centralWidget);
         label->setObjectName("label");
         label->setStyleSheet(QString::fromUtf8("color:rgb( 225, 255, 255);\n"
@@ -113,12 +162,21 @@ public:
 
         retranslateUi(intermediateWindow);
 
+        stackedWidget->setCurrentIndex(0);
+
+
         QMetaObject::connectSlotsByName(intermediateWindow);
     } // setupUi
 
     void retranslateUi(QDialog *intermediateWindow)
     {
         intermediateWindow->setWindowTitle(QCoreApplication::translate("intermediateWindow", "Dialog", nullptr));
+        btnPast->setText(QCoreApplication::translate("intermediateWindow", "past", nullptr));
+        label_2->setText(QCoreApplication::translate("intermediateWindow", "1", nullptr));
+        label_3->setText(QCoreApplication::translate("intermediateWindow", "2", nullptr));
+        label_4->setText(QCoreApplication::translate("intermediateWindow", "3", nullptr));
+        btnPresent->setText(QCoreApplication::translate("intermediateWindow", "present", nullptr));
+        btnFuture->setText(QCoreApplication::translate("intermediateWindow", "future", nullptr));
         label->setText(QString());
         past_data_btn->setText(QCoreApplication::translate("intermediateWindow", "past data", nullptr));
         present_data_btn->setText(QCoreApplication::translate("intermediateWindow", "present data", nullptr));
