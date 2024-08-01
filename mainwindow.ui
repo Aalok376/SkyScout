@@ -20,26 +20,170 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(&quot;:/new/prefix1/image/background.png&quot;);</string>
+   <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(135, 206, 235, 255), stop:1 rgb(25, 25, 112));
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_16">
+   <layout class="QHBoxLayout" name="horizontalLayout_17">
     <property name="spacing">
-     <number>6</number>
+     <number>0</number>
     </property>
     <property name="leftMargin">
-     <number>9</number>
+     <number>0</number>
     </property>
     <property name="topMargin">
-     <number>9</number>
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
     </property>
     <property name="bottomMargin">
-     <number>9</number>
+     <number>0</number>
     </property>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_11">
+     <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="1,13,13">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_10" stretch="2,5,0,3">
+       <layout class="QVBoxLayout" name="verticalLayout_15">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QWidget" name="widget" native="true">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(0, 51, 102, 0.8);
+
+</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_14" stretch="1,1,1,1,6">
+           <property name="spacing">
+            <number>20</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>80</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="pushButton_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+border:none;
+background:transparent;
+}
+QPushButton:hover{
+background-color:rgb(65,125,198);
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+border:none;
+background:transparent;
+}
+QPushButton:hover{
+background-color:rgb(65,125,198);
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+border:none;
+background:transparent;
+}
+QPushButton:hover{
+background-color:rgb(65,125,198);
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton{
+border:none;
+background:transparent;
+}
+QPushButton:hover{
+background-color:rgb(65,125,198);
+}</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_10" stretch="2,5,3,5">
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_9" stretch="0,0">
           <item>
@@ -122,8 +266,14 @@ background:transparent;</string>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <item>
               <layout class="QVBoxLayout" name="verticalLayout" stretch="2,1,5">
+               <property name="spacing">
+                <number>0</number>
+               </property>
                <item>
                 <widget class="QLabel" name="label_currentWeather">
                  <property name="sizePolicy">
@@ -146,7 +296,8 @@ background:transparent;</string>
                  <property name="styleSheet">
                   <string notr="true">font: 30pt &quot;Segoe UI&quot;;
 color:rgb(0, 0, 0);
-background:transparent;</string>
+background-color: rgba(255, 255, 255, 0.1);
+border-color: rgba(255, 255, 255, 0.2);</string>
                  </property>
                  <property name="text">
                   <string/>
@@ -160,7 +311,8 @@ background:transparent;</string>
                 <widget class="QLabel" name="label_alert">
                  <property name="styleSheet">
                   <string notr="true">color:black;
-background:transparent;</string>
+background-color: rgba(255, 255, 255, 0.1);
+border-color: rgba(255, 255, 255, 0.2);</string>
                  </property>
                  <property name="text">
                   <string/>
@@ -186,7 +338,8 @@ background:transparent;</string>
                  <property name="styleSheet">
                   <string notr="true">font: 38pt &quot;Segoe UI&quot;;
 color:rgb(0, 0, 0);
-background:transparent;</string>
+background-color: rgba(255, 255, 255, 0.1);
+border-color: rgba(255, 255, 255, 0.2);</string>
                  </property>
                  <property name="text">
                   <string/>
@@ -201,7 +354,8 @@ background:transparent;</string>
              <item>
               <widget class="QLabel" name="label_weatherIcon">
                <property name="styleSheet">
-                <string notr="true">background:transparent;</string>
+                <string notr="true">background-color: rgba(255, 255, 255, 0.1);
+border-color: rgba(255, 255, 255, 0.2);</string>
                </property>
                <property name="text">
                 <string/>
@@ -232,9 +386,7 @@ background:transparent;</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">border:none;
-background:transparent;
-</string>
+           <string notr="true">background:transparent;</string>
           </property>
           <property name="verticalScrollBarPolicy">
            <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -253,8 +405,8 @@ background:transparent;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>609</width>
-             <height>367</height>
+             <width>588</width>
+             <height>448</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -592,9 +744,9 @@ background:transparent;
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_11" stretch="0">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_8" stretch="3,2">
+         <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,5,5">
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_7" stretch="2,1,4">
+           <layout class="QVBoxLayout" name="verticalLayout_7" stretch="2">
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="4,5">
               <property name="spacing">
@@ -686,185 +838,203 @@ background:transparent;
               </item>
              </layout>
             </item>
-            <item>
-             <widget class="QLabel" name="label_18">
-              <property name="styleSheet">
-               <string notr="true">color:black;
-background:transparent;</string>
-              </property>
-              <property name="text">
-               <string>3 Days Forecast</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_6">
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_8">
-                <item>
-                 <widget class="QLabel" name="fIcon1">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string>icon</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="fWeather1">
-                  <property name="styleSheet">
-                   <string notr="true">background:transparent;
-color:black;</string>
-                  </property>
-                  <property name="text">
-                   <string>weather</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="fTemp1">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string>temp</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="fDate1">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string>date</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <widget class="Line" name="line">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_10">
-                <item>
-                 <widget class="QLabel" name="fIcon2">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string>icon</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="fWeather2">
-                  <property name="styleSheet">
-                   <string notr="true">background:transparent;
-color:black;</string>
-                  </property>
-                  <property name="text">
-                   <string>weather</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="fTemp2">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string>temp</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="fDate2">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string>date</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <widget class="Line" name="line_2">
-                <property name="orientation">
-                 <enum>Qt::Horizontal</enum>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_9">
-                <item>
-                 <widget class="QLabel" name="fIcon3">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string>icon</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="fWeather3">
-                  <property name="styleSheet">
-                   <string notr="true">background:transparent;
-color:black;</string>
-                  </property>
-                  <property name="text">
-                   <string>weather</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="fTemp3">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string>temp</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="fDate3">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string>date</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-             </layout>
-            </item>
            </layout>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_2" native="true">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(255, 255, 255, 0.1);
+border -color: rgba(255, 255, 255, 0.2);</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_16">
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_16" stretch="1,5">
+               <item>
+                <widget class="QLabel" name="label_18">
+                 <property name="styleSheet">
+                  <string notr="true">color:black;
+font: 15pt &quot;Segoe UI&quot;;
+background:transparent;</string>
+                 </property>
+                 <property name="text">
+                  <string>3 Days Forecast</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_8">
+                   <item>
+                    <widget class="QLabel" name="fIcon1">
+                     <property name="styleSheet">
+                      <string notr="true">color:black;
+background:transparent;</string>
+                     </property>
+                     <property name="text">
+                      <string>icon</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="fWeather1">
+                     <property name="styleSheet">
+                      <string notr="true">background:transparent;
+color:black;</string>
+                     </property>
+                     <property name="text">
+                      <string>weather</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="fTemp1">
+                     <property name="styleSheet">
+                      <string notr="true">color:black;
+background:transparent;</string>
+                     </property>
+                     <property name="text">
+                      <string>temp</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="fDate1">
+                     <property name="styleSheet">
+                      <string notr="true">color:black;
+background:transparent;</string>
+                     </property>
+                     <property name="text">
+                      <string>date</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="Line" name="line">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_10">
+                   <item>
+                    <widget class="QLabel" name="fIcon2">
+                     <property name="styleSheet">
+                      <string notr="true">color:black;
+background:transparent;</string>
+                     </property>
+                     <property name="text">
+                      <string>icon</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="fWeather2">
+                     <property name="styleSheet">
+                      <string notr="true">background:transparent;
+color:black;</string>
+                     </property>
+                     <property name="text">
+                      <string>weather</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="fTemp2">
+                     <property name="styleSheet">
+                      <string notr="true">color:black;
+background:transparent;</string>
+                     </property>
+                     <property name="text">
+                      <string>temp</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="fDate2">
+                     <property name="styleSheet">
+                      <string notr="true">color:black;
+background:transparent;</string>
+                     </property>
+                     <property name="text">
+                      <string>date</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="Line" name="line_2">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_9">
+                   <item>
+                    <widget class="QLabel" name="fIcon3">
+                     <property name="styleSheet">
+                      <string notr="true">color:black;
+background:transparent;</string>
+                     </property>
+                     <property name="text">
+                      <string>icon</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="fWeather3">
+                     <property name="styleSheet">
+                      <string notr="true">background:transparent;
+color:black;</string>
+                     </property>
+                     <property name="text">
+                      <string>weather</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="fTemp3">
+                     <property name="styleSheet">
+                      <string notr="true">color:black;
+background:transparent;</string>
+                     </property>
+                     <property name="text">
+                      <string>temp</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="fDate3">
+                     <property name="styleSheet">
+                      <string notr="true">color:black;
+background:transparent;</string>
+                     </property>
+                     <property name="text">
+                      <string>date</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
           </item>
           <item>
            <widget class="QQuickWidget" name="quickWidget">
             <property name="styleSheet">
-             <string notr="true">border-radius:50%;</string>
+             <string notr="true"/>
             </property>
             <property name="resizeMode">
              <enum>QQuickWidget::SizeRootObjectToView</enum>
@@ -885,7 +1055,7 @@ background:transparent;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

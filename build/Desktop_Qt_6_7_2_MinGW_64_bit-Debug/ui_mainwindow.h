@@ -32,8 +32,16 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout_16;
+    QHBoxLayout *horizontalLayout_17;
     QHBoxLayout *horizontalLayout_11;
+    QVBoxLayout *verticalLayout_15;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_14;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton;
+    QSpacerItem *verticalSpacer;
     QVBoxLayout *verticalLayout_10;
     QVBoxLayout *verticalLayout_9;
     QHBoxLayout *horizontalLayout_7;
@@ -93,6 +101,9 @@ public:
     QHBoxLayout *horizontalLayout_15;
     QPushButton *light_btn;
     QPushButton *pushButton_flag;
+    QWidget *widget_2;
+    QHBoxLayout *horizontalLayout_16;
+    QVBoxLayout *verticalLayout_16;
     QLabel *label_18;
     QVBoxLayout *verticalLayout_6;
     QHBoxLayout *horizontalLayout_8;
@@ -126,15 +137,103 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
-        MainWindow->setStyleSheet(QString::fromUtf8("background-image: url(\":/new/prefix1/image/background.png\");"));
+        MainWindow->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(135, 206, 235, 255), stop:1 rgb(25, 25, 112));\n"
+""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        horizontalLayout_16 = new QHBoxLayout(centralwidget);
-        horizontalLayout_16->setSpacing(6);
-        horizontalLayout_16->setObjectName("horizontalLayout_16");
-        horizontalLayout_16->setContentsMargins(9, 9, -1, 9);
+        horizontalLayout_17 = new QHBoxLayout(centralwidget);
+        horizontalLayout_17->setSpacing(0);
+        horizontalLayout_17->setObjectName("horizontalLayout_17");
+        horizontalLayout_17->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setObjectName("horizontalLayout_11");
+        verticalLayout_15 = new QVBoxLayout();
+        verticalLayout_15->setSpacing(0);
+        verticalLayout_15->setObjectName("verticalLayout_15");
+        verticalLayout_15->setContentsMargins(0, 0, -1, -1);
+        widget = new QWidget(centralwidget);
+        widget->setObjectName("widget");
+        widget->setStyleSheet(QString::fromUtf8("background-color: rgba(0, 51, 102, 0.8);\n"
+"\n"
+""));
+        verticalLayout_14 = new QVBoxLayout(widget);
+        verticalLayout_14->setSpacing(20);
+        verticalLayout_14->setObjectName("verticalLayout_14");
+        verticalLayout_14->setContentsMargins(0, 80, 0, 0);
+        pushButton_4 = new QPushButton(widget);
+        pushButton_4->setObjectName("pushButton_4");
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
+        pushButton_4->setSizePolicy(sizePolicy1);
+        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border:none;\n"
+"background:transparent;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:rgb(65,125,198);\n"
+"}"));
+
+        verticalLayout_14->addWidget(pushButton_4);
+
+        pushButton_3 = new QPushButton(widget);
+        pushButton_3->setObjectName("pushButton_3");
+        sizePolicy1.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
+        pushButton_3->setSizePolicy(sizePolicy1);
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border:none;\n"
+"background:transparent;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:rgb(65,125,198);\n"
+"}"));
+
+        verticalLayout_14->addWidget(pushButton_3);
+
+        pushButton_2 = new QPushButton(widget);
+        pushButton_2->setObjectName("pushButton_2");
+        sizePolicy1.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
+        pushButton_2->setSizePolicy(sizePolicy1);
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border:none;\n"
+"background:transparent;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:rgb(65,125,198);\n"
+"}"));
+
+        verticalLayout_14->addWidget(pushButton_2);
+
+        pushButton = new QPushButton(widget);
+        pushButton->setObjectName("pushButton");
+        sizePolicy1.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
+        pushButton->setSizePolicy(sizePolicy1);
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"border:none;\n"
+"background:transparent;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color:rgb(65,125,198);\n"
+"}"));
+
+        verticalLayout_14->addWidget(pushButton);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        verticalLayout_14->addItem(verticalSpacer);
+
+        verticalLayout_14->setStretch(0, 1);
+        verticalLayout_14->setStretch(1, 1);
+        verticalLayout_14->setStretch(2, 1);
+        verticalLayout_14->setStretch(3, 1);
+        verticalLayout_14->setStretch(4, 6);
+
+        verticalLayout_15->addWidget(widget);
+
+
+        horizontalLayout_11->addLayout(verticalLayout_15);
+
         verticalLayout_10 = new QVBoxLayout();
         verticalLayout_10->setObjectName("verticalLayout_10");
         verticalLayout_9 = new QVBoxLayout();
@@ -145,11 +244,11 @@ public:
         horizontalLayout_7->setContentsMargins(-1, 5, -1, 5);
         pushButton_search = new QPushButton(centralwidget);
         pushButton_search->setObjectName("pushButton_search");
-        QSizePolicy sizePolicy1(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(pushButton_search->sizePolicy().hasHeightForWidth());
-        pushButton_search->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy2(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(pushButton_search->sizePolicy().hasHeightForWidth());
+        pushButton_search->setSizePolicy(sizePolicy2);
         pushButton_search->setMinimumSize(QSize(1, 2));
         pushButton_search->setStyleSheet(QString::fromUtf8("background-color: rgb(217, 217, 217);\n"
 "border-top-left-radius:12%;\n"
@@ -159,8 +258,8 @@ public:
 
         lineEdit_searchbar = new QLineEdit(centralwidget);
         lineEdit_searchbar->setObjectName("lineEdit_searchbar");
-        sizePolicy1.setHeightForWidth(lineEdit_searchbar->sizePolicy().hasHeightForWidth());
-        lineEdit_searchbar->setSizePolicy(sizePolicy1);
+        sizePolicy2.setHeightForWidth(lineEdit_searchbar->sizePolicy().hasHeightForWidth());
+        lineEdit_searchbar->setSizePolicy(sizePolicy2);
         lineEdit_searchbar->setStyleSheet(QString::fromUtf8("background-color: rgb(217, 217, 217);\n"
 "color: rgb(0, 0, 0);\n"
 "border-top-right-radius:12%;\n"
@@ -191,8 +290,10 @@ public:
         horizontalLayout_2 = new QHBoxLayout(frame);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName("horizontalLayout");
         verticalLayout = new QVBoxLayout();
+        verticalLayout->setSpacing(0);
         verticalLayout->setObjectName("verticalLayout");
         label_currentWeather = new QLabel(frame);
         label_currentWeather->setObjectName("label_currentWeather");
@@ -206,7 +307,8 @@ public:
         label_currentWeather->setFont(font);
         label_currentWeather->setStyleSheet(QString::fromUtf8("font: 30pt \"Segoe UI\";\n"
 "color:rgb(0, 0, 0);\n"
-"background:transparent;"));
+"background-color: rgba(255, 255, 255, 0.1);\n"
+"border-color: rgba(255, 255, 255, 0.2);"));
         label_currentWeather->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_currentWeather);
@@ -214,7 +316,8 @@ public:
         label_alert = new QLabel(frame);
         label_alert->setObjectName("label_alert");
         label_alert->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;"));
+"background-color: rgba(255, 255, 255, 0.1);\n"
+"border-color: rgba(255, 255, 255, 0.2);"));
         label_alert->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_alert);
@@ -229,7 +332,8 @@ public:
         label_temp->setFont(font1);
         label_temp->setStyleSheet(QString::fromUtf8("font: 38pt \"Segoe UI\";\n"
 "color:rgb(0, 0, 0);\n"
-"background:transparent;"));
+"background-color: rgba(255, 255, 255, 0.1);\n"
+"border-color: rgba(255, 255, 255, 0.2);"));
         label_temp->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_temp);
@@ -242,7 +346,8 @@ public:
 
         label_weatherIcon = new QLabel(frame);
         label_weatherIcon->setObjectName("label_weatherIcon");
-        label_weatherIcon->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        label_weatherIcon->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0.1);\n"
+"border-color: rgba(255, 255, 255, 0.2);"));
         label_weatherIcon->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout->addWidget(label_weatherIcon);
@@ -262,21 +367,19 @@ public:
 
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName("scrollArea");
-        QSizePolicy sizePolicy2(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(2);
-        sizePolicy2.setHeightForWidth(scrollArea->sizePolicy().hasHeightForWidth());
-        scrollArea->setSizePolicy(sizePolicy2);
-        scrollArea->setStyleSheet(QString::fromUtf8("border:none;\n"
-"background:transparent;\n"
-""));
+        QSizePolicy sizePolicy3(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(2);
+        sizePolicy3.setHeightForWidth(scrollArea->sizePolicy().hasHeightForWidth());
+        scrollArea->setSizePolicy(sizePolicy3);
+        scrollArea->setStyleSheet(QString::fromUtf8("background:transparent;"));
         scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         scrollArea->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 609, 367));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 588, 448));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -502,7 +605,8 @@ public:
 
         verticalLayout_10->setStretch(0, 2);
         verticalLayout_10->setStretch(1, 5);
-        verticalLayout_10->setStretch(3, 3);
+        verticalLayout_10->setStretch(2, 3);
+        verticalLayout_10->setStretch(3, 5);
 
         horizontalLayout_11->addLayout(verticalLayout_10);
 
@@ -540,11 +644,8 @@ public:
         horizontalLayout_15->setObjectName("horizontalLayout_15");
         light_btn = new QPushButton(centralwidget);
         light_btn->setObjectName("light_btn");
-        QSizePolicy sizePolicy3(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(light_btn->sizePolicy().hasHeightForWidth());
-        light_btn->setSizePolicy(sizePolicy3);
+        sizePolicy1.setHeightForWidth(light_btn->sizePolicy().hasHeightForWidth());
+        light_btn->setSizePolicy(sizePolicy1);
         light_btn->setStyleSheet(QString::fromUtf8("color:black;\n"
 "border:none;\n"
 "background:transparent;"));
@@ -580,39 +681,53 @@ public:
 
         verticalLayout_7->addLayout(horizontalLayout_12);
 
-        label_18 = new QLabel(centralwidget);
+        verticalLayout_7->setStretch(0, 2);
+
+        verticalLayout_8->addLayout(verticalLayout_7);
+
+        widget_2 = new QWidget(centralwidget);
+        widget_2->setObjectName("widget_2");
+        widget_2->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0.1);\n"
+"border -color: rgba(255, 255, 255, 0.2);"));
+        horizontalLayout_16 = new QHBoxLayout(widget_2);
+        horizontalLayout_16->setObjectName("horizontalLayout_16");
+        verticalLayout_16 = new QVBoxLayout();
+        verticalLayout_16->setObjectName("verticalLayout_16");
+        label_18 = new QLabel(widget_2);
         label_18->setObjectName("label_18");
         label_18->setStyleSheet(QString::fromUtf8("color:black;\n"
+"font: 15pt \"Segoe UI\";\n"
 "background:transparent;"));
 
-        verticalLayout_7->addWidget(label_18);
+        verticalLayout_16->addWidget(label_18);
 
         verticalLayout_6 = new QVBoxLayout();
+        verticalLayout_6->setSpacing(0);
         verticalLayout_6->setObjectName("verticalLayout_6");
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName("horizontalLayout_8");
-        fIcon1 = new QLabel(centralwidget);
+        fIcon1 = new QLabel(widget_2);
         fIcon1->setObjectName("fIcon1");
         fIcon1->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
         horizontalLayout_8->addWidget(fIcon1);
 
-        fWeather1 = new QLabel(centralwidget);
+        fWeather1 = new QLabel(widget_2);
         fWeather1->setObjectName("fWeather1");
         fWeather1->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "color:black;"));
 
         horizontalLayout_8->addWidget(fWeather1);
 
-        fTemp1 = new QLabel(centralwidget);
+        fTemp1 = new QLabel(widget_2);
         fTemp1->setObjectName("fTemp1");
         fTemp1->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
         horizontalLayout_8->addWidget(fTemp1);
 
-        fDate1 = new QLabel(centralwidget);
+        fDate1 = new QLabel(widget_2);
         fDate1->setObjectName("fDate1");
         fDate1->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
@@ -622,7 +737,7 @@ public:
 
         verticalLayout_6->addLayout(horizontalLayout_8);
 
-        line = new QFrame(centralwidget);
+        line = new QFrame(widget_2);
         line->setObjectName("line");
         line->setFrameShape(QFrame::Shape::HLine);
         line->setFrameShadow(QFrame::Shadow::Sunken);
@@ -631,28 +746,28 @@ public:
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName("horizontalLayout_10");
-        fIcon2 = new QLabel(centralwidget);
+        fIcon2 = new QLabel(widget_2);
         fIcon2->setObjectName("fIcon2");
         fIcon2->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
         horizontalLayout_10->addWidget(fIcon2);
 
-        fWeather2 = new QLabel(centralwidget);
+        fWeather2 = new QLabel(widget_2);
         fWeather2->setObjectName("fWeather2");
         fWeather2->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "color:black;"));
 
         horizontalLayout_10->addWidget(fWeather2);
 
-        fTemp2 = new QLabel(centralwidget);
+        fTemp2 = new QLabel(widget_2);
         fTemp2->setObjectName("fTemp2");
         fTemp2->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
         horizontalLayout_10->addWidget(fTemp2);
 
-        fDate2 = new QLabel(centralwidget);
+        fDate2 = new QLabel(widget_2);
         fDate2->setObjectName("fDate2");
         fDate2->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
@@ -662,7 +777,7 @@ public:
 
         verticalLayout_6->addLayout(horizontalLayout_10);
 
-        line_2 = new QFrame(centralwidget);
+        line_2 = new QFrame(widget_2);
         line_2->setObjectName("line_2");
         line_2->setFrameShape(QFrame::Shape::HLine);
         line_2->setFrameShadow(QFrame::Shadow::Sunken);
@@ -671,28 +786,28 @@ public:
 
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setObjectName("horizontalLayout_9");
-        fIcon3 = new QLabel(centralwidget);
+        fIcon3 = new QLabel(widget_2);
         fIcon3->setObjectName("fIcon3");
         fIcon3->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
         horizontalLayout_9->addWidget(fIcon3);
 
-        fWeather3 = new QLabel(centralwidget);
+        fWeather3 = new QLabel(widget_2);
         fWeather3->setObjectName("fWeather3");
         fWeather3->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "color:black;"));
 
         horizontalLayout_9->addWidget(fWeather3);
 
-        fTemp3 = new QLabel(centralwidget);
+        fTemp3 = new QLabel(widget_2);
         fTemp3->setObjectName("fTemp3");
         fTemp3->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
 
         horizontalLayout_9->addWidget(fTemp3);
 
-        fDate3 = new QLabel(centralwidget);
+        fDate3 = new QLabel(widget_2);
         fDate3->setObjectName("fDate3");
         fDate3->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;"));
@@ -703,36 +818,42 @@ public:
         verticalLayout_6->addLayout(horizontalLayout_9);
 
 
-        verticalLayout_7->addLayout(verticalLayout_6);
+        verticalLayout_16->addLayout(verticalLayout_6);
 
-        verticalLayout_7->setStretch(0, 2);
-        verticalLayout_7->setStretch(1, 1);
-        verticalLayout_7->setStretch(2, 4);
+        verticalLayout_16->setStretch(0, 1);
+        verticalLayout_16->setStretch(1, 5);
 
-        verticalLayout_8->addLayout(verticalLayout_7);
+        horizontalLayout_16->addLayout(verticalLayout_16);
+
+
+        verticalLayout_8->addWidget(widget_2);
 
         quickWidget = new QQuickWidget(centralwidget);
         quickWidget->setObjectName("quickWidget");
-        quickWidget->setStyleSheet(QString::fromUtf8("border-radius:50%;"));
+        quickWidget->setStyleSheet(QString::fromUtf8(""));
         quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
 
         verticalLayout_8->addWidget(quickWidget);
 
-        verticalLayout_8->setStretch(0, 3);
-        verticalLayout_8->setStretch(1, 2);
+        verticalLayout_8->setStretch(0, 1);
+        verticalLayout_8->setStretch(1, 5);
+        verticalLayout_8->setStretch(2, 5);
 
         verticalLayout_11->addLayout(verticalLayout_8);
 
 
         horizontalLayout_11->addLayout(verticalLayout_11);
 
+        horizontalLayout_11->setStretch(0, 1);
+        horizontalLayout_11->setStretch(1, 13);
+        horizontalLayout_11->setStretch(2, 13);
 
-        horizontalLayout_16->addLayout(horizontalLayout_11);
+        horizontalLayout_17->addLayout(horizontalLayout_11);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 21));
+        menubar->setGeometry(QRect(0, 0, 1247, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -746,6 +867,10 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        pushButton_4->setText(QString());
+        pushButton_3->setText(QString());
+        pushButton_2->setText(QString());
+        pushButton->setText(QString());
         pushButton_search->setText(QString());
         label_recentSearch->setText(QString());
 #if QT_CONFIG(tooltip)
