@@ -25,21 +25,6 @@ background-image: url(&quot;:/new/prefix1/image/background.png&quot;);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_21">
-    <property name="spacing">
-     <number>7</number>
-    </property>
-    <property name="leftMargin">
-     <number>0</number>
-    </property>
-    <property name="topMargin">
-     <number>0</number>
-    </property>
-    <property name="rightMargin">
-     <number>0</number>
-    </property>
-    <property name="bottomMargin">
-     <number>0</number>
-    </property>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="1,7,13">
       <item>
@@ -513,8 +498,8 @@ border-radius:12%;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>409</width>
-             <height>371</height>
+             <width>401</width>
+             <height>357</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -1233,13 +1218,9 @@ font: 10pt 'Segoe UI';</string>
          </layout>
         </item>
         <item>
-         <widget class="QLabel" name="label">
+         <widget class="QWidget" name="widget_3" native="true">
           <property name="styleSheet">
-           <string notr="true">border-radius:12%;
-background:rgba(255,255,255,0.1);</string>
-          </property>
-          <property name="text">
-           <string/>
+           <string notr="true">border-radius:12%</string>
           </property>
          </widget>
         </item>
@@ -1255,7 +1236,7 @@ background:rgba(255,255,255,0.1);</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
