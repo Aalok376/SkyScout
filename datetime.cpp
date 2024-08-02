@@ -98,7 +98,7 @@ int dateTime::getTimeZone(double latitude, double longitude) {
     QObject::connect(&manager, &QNetworkAccessManager::finished, &loop, &QEventLoop::quit);
 
     // TimeZoneDB API endpoint and key
-    QString apiKey = "api key"; // Replace with your API key
+    QString apiKey = "3QS6YF2DXUSX"; // Replace with your API key
     QString requestUrl = QString("http://api.timezonedb.com/v2.1/get-time-zone?key=%1&format=json&by=position&lat=%2&lng=%3")
                              .arg(apiKey)
                              .arg(latitude)

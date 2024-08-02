@@ -359,6 +359,23 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->feelslike1->setText(QString::number(feelsLike)+"°C");
                     ui->windspeed1->setText(QString::number(windSpeed)+"km/h");
 
+                    //bottom right
+                    int chr = dateTime::fetchHour(ts);
+                    int cmin = dateTime::fetchMin(ts);
+                    ui->current_time->setText(QString::number(chr)+":"+QString::number(cmin));
+                    ui->currentlocation->setText(location);
+
+                    QIcon cicon = logicMaths::getStatusIcon(weatherStatus,currentTime,sunrise,sunset);
+                    //int cw = ui->currentsta->width();
+                    //int che = ui->currentsta->height();
+                    //qDebug()<<"hold on wait a minute"<<cw<<" and "<<che;
+                    ui->currentsta->setPixmap(cicon.pixmap(QSize(85,51)));
+
+                    ui->currentTemp_2->setText(QString::number(temp)+"°C");
+                    ui->currentHum_2->setText(QString::number(humidity)+"%");
+                    ui->currentfl_2->setText(QString::number(feelsLike)+"°C");
+                    ui->currentlat_2->setText(QString::number(lat));
+                    ui->currentlon_2->setText(QString::number(lon));
                     //qDebug()<<"the time begins here";
                     //qDebug()<<dateTime::fetchHour(ts);
                     //qDebug()<<dateTime::fetchMin(ts);
@@ -699,6 +716,19 @@ void MainWindow::on_light_btn_clicked()
         ui->fTemp3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
         ui->fDate3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
 
+        ui->currentlocation->setStyleSheet("color:#F0EFF9;background:transparent;font: 16pt 'Segoe UI';");
+        ui->current_time->setStyleSheet("color:#F0EFF9;background:transparent;font: 13pt 'Segoe UI';");
+        ui->currentTemp->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentTemp_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentHum->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentHum_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentfl->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentfl_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentlat->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentlat_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentlon->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentlon_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+
         checkLight=false;
     }
     else
@@ -749,6 +779,19 @@ void MainWindow::on_light_btn_clicked()
         ui->fWeather3->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
         ui->fTemp3->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
         ui->fDate3->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
+
+        ui->currentlocation->setStyleSheet("color:black;background:transparent;font: 16pt 'Segoe UI';");
+        ui->current_time->setStyleSheet("color:black;background:transparent;font: 13pt 'Segoe UI';");
+        ui->currentTemp->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentTemp_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentHum->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentHum_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentfl->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentfl_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentlat->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentlat_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentlon->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentlon_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
 
         checkLight=true;
     }

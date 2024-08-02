@@ -105,3 +105,46 @@ double logicMaths::noOfDays(int mon, int year) {
     days = daysInMonth[mon - 1];
     return days;
 }
+
+QIcon logicMaths::getStatusIcon(QString status,int ctime,int sunrise,int sunset) {
+    QIcon icon;
+    if(status=="Clouds") {
+        //int width=ui->label_weatherIcon->width();
+        //int height= ui->label_weatherIcon->height();
+        if (sunrise<=ctime && ctime<sunset) {
+            icon= QIcon(":/new/prefix1/image/cloudy.png");
+        }
+        else {
+            icon= QIcon(":/new/prefix1/image/cloudy-night.png");
+        }
+    }
+    else if(status=="Drizzle") {
+
+        if(sunrise<=ctime && ctime<sunset) {
+            icon=QIcon(":/new/prefix1/image/weather.png");
+        }
+        else {
+            icon=QIcon(":/new/prefix1/image/drizzle.png");
+        }
+    }
+    else if(status=="Mist" || status=="Haze" || status=="Fog") {
+        icon =QIcon(":/new/prefix1/image/haze.png");
+    }
+    else if(status=="Clear") {
+
+        if (sunrise<=ctime && ctime<sunset) {
+            icon=QIcon(":/new/prefix1/image/Clear.png");
+        }
+        else {
+            icon=QIcon(":/new/prefix1/image/full-moon.png");
+        }
+    }
+    else if(status=="Dust" || status=="Sand" || status=="Ash") {
+
+        icon=QIcon(":/new/prefix1/image/dust.png");
+    }
+    else {
+        icon=QIcon(":/new/prefix1/image/"+status+".png");
+    }
+    return icon;
+}

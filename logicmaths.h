@@ -2,6 +2,7 @@
 #define LOGICMATHS_H
 
 #include<QString>
+#include<QIcon>
 
 class logicMaths
 {
@@ -15,6 +16,7 @@ public:
     static QString nameOfMonth(int);
     static double noOfDays(int,int);
     static double twoDecimals(double);
+    static QIcon getStatusIcon(QString,int,int,int);
 };
 
 #endif // LOGICMATHS_H
