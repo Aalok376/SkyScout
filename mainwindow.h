@@ -14,6 +14,7 @@
 #include <QSize>
 #include<QDebug>
 #include<QCompleter>
+#include <QPainterPath>
 #include<qstringlistmodel.h>
 #include<QtCore>
 #include "datetime.h"

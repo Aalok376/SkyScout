@@ -3,6 +3,15 @@
 
 #include<ctime>
 
+#include <QCoreApplication>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QUrl>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QEventLoop>
+
 class dateTime
 {
 public:
@@ -18,6 +27,9 @@ public:
     static int fetchDate(int);
     static int fetchHour(int);
     static int fetchMin(int);
+
+    static int getTimeZone(double,double);
+
 };
 
 #endif // DATETIME_H

@@ -59,13 +59,13 @@ public:
     QLabel *label_weatherIcon;
     QVBoxLayout *verticalLayout_18;
     QHBoxLayout *horizontalLayout_18;
-    QLabel *label_4;
-    QLabel *label_3;
-    QLabel *label_2;
+    QLabel *humidity;
+    QLabel *feelslike;
+    QLabel *windspeed;
     QHBoxLayout *horizontalLayout_19;
-    QLabel *label_7;
-    QLabel *label_6;
-    QLabel *label_5;
+    QLabel *humidity1;
+    QLabel *feelslike1;
+    QLabel *windspeed1;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QHBoxLayout *horizontalLayout_20;
@@ -382,42 +382,54 @@ public:
         horizontalLayout_18->setSpacing(80);
         horizontalLayout_18->setObjectName("horizontalLayout_18");
         horizontalLayout_18->setContentsMargins(30, -1, 30, -1);
-        label_4 = new QLabel(frame);
-        label_4->setObjectName("label_4");
+        humidity = new QLabel(frame);
+        humidity->setObjectName("humidity");
+        humidity->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
-        horizontalLayout_18->addWidget(label_4);
+        horizontalLayout_18->addWidget(humidity);
 
-        label_3 = new QLabel(frame);
-        label_3->setObjectName("label_3");
+        feelslike = new QLabel(frame);
+        feelslike->setObjectName("feelslike");
+        feelslike->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
-        horizontalLayout_18->addWidget(label_3);
+        horizontalLayout_18->addWidget(feelslike);
 
-        label_2 = new QLabel(frame);
-        label_2->setObjectName("label_2");
+        windspeed = new QLabel(frame);
+        windspeed->setObjectName("windspeed");
+        windspeed->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
-        horizontalLayout_18->addWidget(label_2);
+        horizontalLayout_18->addWidget(windspeed);
 
 
         verticalLayout_18->addLayout(horizontalLayout_18);
 
         horizontalLayout_19 = new QHBoxLayout();
-        horizontalLayout_19->setSpacing(60);
+        horizontalLayout_19->setSpacing(80);
         horizontalLayout_19->setObjectName("horizontalLayout_19");
-        horizontalLayout_19->setContentsMargins(20, -1, 20, -1);
-        label_7 = new QLabel(frame);
-        label_7->setObjectName("label_7");
+        horizontalLayout_19->setContentsMargins(30, -1, 30, -1);
+        humidity1 = new QLabel(frame);
+        humidity1->setObjectName("humidity1");
+        humidity1->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 8pt 'Segoe UI';"));
 
-        horizontalLayout_19->addWidget(label_7);
+        horizontalLayout_19->addWidget(humidity1);
 
-        label_6 = new QLabel(frame);
-        label_6->setObjectName("label_6");
+        feelslike1 = new QLabel(frame);
+        feelslike1->setObjectName("feelslike1");
+        feelslike1->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 8pt 'Segoe UI';"));
 
-        horizontalLayout_19->addWidget(label_6);
+        horizontalLayout_19->addWidget(feelslike1);
 
-        label_5 = new QLabel(frame);
-        label_5->setObjectName("label_5");
+        windspeed1 = new QLabel(frame);
+        windspeed1->setObjectName("windspeed1");
+        windspeed1->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 8pt 'Segoe UI';"));
 
-        horizontalLayout_19->addWidget(label_5);
+        horizontalLayout_19->addWidget(windspeed1);
 
 
         verticalLayout_18->addLayout(horizontalLayout_19);
@@ -450,7 +462,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 408, 367));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 409, 371));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -982,7 +994,8 @@ public:
 
         label = new QLabel(centralwidget);
         label->setObjectName("label");
-        label->setStyleSheet(QString::fromUtf8("border-radius:12%;"));
+        label->setStyleSheet(QString::fromUtf8("border-radius:12%;\n"
+"background:rgba(255,255,255,0.1);"));
 
         verticalLayout_11->addWidget(label);
 
@@ -1000,7 +1013,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 25));
+        menubar->setGeometry(QRect(0, 0, 1247, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -1030,12 +1043,12 @@ public:
 #endif // QT_CONFIG(tooltip)
         label_temp->setText(QString());
         label_weatherIcon->setText(QString());
-        label_4->setText(QString());
-        label_3->setText(QString());
-        label_2->setText(QString());
-        label_7->setText(QString());
-        label_6->setText(QString());
-        label_5->setText(QString());
+        humidity->setText(QString());
+        feelslike->setText(QString());
+        windspeed->setText(QString());
+        humidity1->setText(QString());
+        feelslike1->setText(QString());
+        windspeed1->setText(QString());
         icon1->setText(QString());
         weather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp1->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));

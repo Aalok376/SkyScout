@@ -26,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     int y =ui->pushButton_flag->height();
     ui->pushButton_flag->setIconSize(QSize(x,y));
 
+
     ui->light_btn->setIcon(QIcon(":/new/prefix1/image/dark.svg"));
 
     x= ui->light_btn->width();
@@ -59,9 +60,16 @@ MainWindow::MainWindow(QWidget *parent)
     // map integration
    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/MapView.qml")));
     ui->quickWidget->show();
-   int dia = 200;
-    ui->quickWidget->setFixedSize(dia, dia);
-    QRegion region(0, 0, dia, dia, QRegion::Ellipse);
+   int wid = 200,hei = 200;
+    int radius = 20;
+    ui->quickWidget->setFixedSize(wid, hei);
+    // Create a QPainterPath for the rounded rectangle
+    QPainterPath path;
+    path.addRoundedRect(0, 0, wid, hei, radius, radius);
+
+    // Convert the QPainterPath to a QRegion and set it as the mask
+    QRegion region(path.toFillPolygon().toPolygon());
+
     ui->quickWidget->setMask(region);
   //  ui->verticalLayout_8->addWidget(ui->quickWidget, 0, Qt::AlignCenter);
 
@@ -174,13 +182,22 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 QJsonObject mainObj=JsonObj.value("main").toObject();
                 double temp=mainObj.value("temp").toDouble();
                 temp = logicMaths::tempConversion(temp);
+
                 double humidity=mainObj.value("humidity").toDouble();
+                double feelsLike = mainObj.value("feels_like").toDouble();
+                feelsLike = logicMaths::tempConversion(feelsLike);
+
+                QJsonObject windObj = JsonObj.value("wind").toObject();
+                double windSpeed = windObj.value("speed").toDouble();
+                windSpeed = std::round(windSpeed*3.6);
+
                 ui->label_temp->setText(QString::number(temp)+"°C");
 
                 QJsonObject coordObj = JsonObj.value("coord").toObject();
                 double lat = coordObj.value("lat").toDouble();
                 double lon = coordObj.value("lon").toDouble();
-                qDebug()<<"latitude"<<lat;
+
+                int ts = dateTime::getTimeZone(lat,lon);
                emit updateMap(lat , lon);
 
                 QJsonObject sysObj = JsonObj.value("sys").toObject();
@@ -324,6 +341,28 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                         ui->label_weatherIcon->setPixmap(icon.pixmap(QSize(wt , ht)));
                         ui->label_alert->setText("A squall is \n approaching");
                     }
+
+                    //small icons
+                    int iWidth = 32;
+                    int iHeight = 30;
+                    QPixmap smallIcon(":/new/prefix1/image/Humidity.png");
+                    ui->humidity->setPixmap(smallIcon.scaled(iWidth,
+                                             iHeight, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+                    smallIcon.load(":/new/prefix1/image/FeelsLike.png");
+                    ui->feelslike->setPixmap(smallIcon.scaled(iWidth,
+                                             iHeight, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+                    smallIcon.load(":/new/prefix1/image/WindSpeed.png");
+                    ui->windspeed->setPixmap(smallIcon.scaled(iWidth,
+                                             iHeight, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+                    ui->humidity1->setText(QString::number(humidity)+"%");
+                    ui->feelslike1->setText(QString::number(feelsLike)+"°C");
+                    ui->windspeed1->setText(QString::number(windSpeed)+"km/h");
+
+                    //qDebug()<<"the time begins here";
+                    //qDebug()<<dateTime::fetchHour(ts);
+                    //qDebug()<<dateTime::fetchMin(ts);
+
 
                 }
                 else
@@ -623,6 +662,11 @@ void MainWindow::on_light_btn_clicked()
         ui->lineEdit_searchbar->setStyleSheet("background-color: rgb(217, 217, 217);color: #F0EFF9;"
                                               "border-top-right-radius:12%;border-bottom-right-radius:12%;");
 
+        ui->humidity1->setStyleSheet("color:#F0EFF9;background:transparent;font: 8pt 'Segoe UI';");
+        ui->feelslike1->setStyleSheet("color:#F0EFF9;background:transparent;font: 8pt 'Segoe UI';");
+        ui->windspeed1->setStyleSheet("color:#F0EFF9;background:transparent;font: 8pt 'Segoe UI';");
+
+
         ui->weather1->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
         ui->temp1->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
         ui->time1->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
@@ -669,6 +713,10 @@ void MainWindow::on_light_btn_clicked()
         ui->label_recentSearch->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI'");
         ui->lineEdit_searchbar->setStyleSheet("background-color: rgb(217, 217, 217);color: black;"
                                               "border-top-right-radius:12%;border-bottom-right-radius:12%;");
+
+        ui->humidity1->setStyleSheet("color:black;background:transparent;font: 8pt 'Segoe UI';");
+        ui->feelslike1->setStyleSheet("color:black;background:transparent;font: 8pt 'Segoe UI';");
+        ui->windspeed1->setStyleSheet("color:black;background:transparent;font: 8pt 'Segoe UI';");
 
         ui->weather1->setStyleSheet("color:black;  background:transparent; font: 10pt 'Segoe UI';");
         ui->temp1->setStyleSheet("color:black;  background:transparent; font: 10pt 'Segoe UI';");

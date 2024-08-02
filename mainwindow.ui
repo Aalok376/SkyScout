@@ -395,21 +395,30 @@ border-bottom-right-radius:12%;</string>
                   <number>30</number>
                  </property>
                  <item>
-                  <widget class="QLabel" name="label_4">
+                  <widget class="QLabel" name="humidity">
+                   <property name="styleSheet">
+                    <string notr="true">background:transparent;</string>
+                   </property>
                    <property name="text">
                     <string/>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_3">
+                  <widget class="QLabel" name="feelslike">
+                   <property name="styleSheet">
+                    <string notr="true">background:transparent;</string>
+                   </property>
                    <property name="text">
                     <string/>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_2">
+                  <widget class="QLabel" name="windspeed">
+                   <property name="styleSheet">
+                    <string notr="true">background:transparent;</string>
+                   </property>
                    <property name="text">
                     <string/>
                    </property>
@@ -420,30 +429,45 @@ border-bottom-right-radius:12%;</string>
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_19">
                  <property name="spacing">
-                  <number>60</number>
+                  <number>80</number>
                  </property>
                  <property name="leftMargin">
-                  <number>20</number>
+                  <number>30</number>
                  </property>
                  <property name="rightMargin">
-                  <number>20</number>
+                  <number>30</number>
                  </property>
                  <item>
-                  <widget class="QLabel" name="label_7">
+                  <widget class="QLabel" name="humidity1">
+                   <property name="styleSheet">
+                    <string notr="true">color:black;
+background:transparent;
+font: 8pt 'Segoe UI';</string>
+                   </property>
                    <property name="text">
                     <string/>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_6">
+                  <widget class="QLabel" name="feelslike1">
+                   <property name="styleSheet">
+                    <string notr="true">color:black;
+background:transparent;
+font: 8pt 'Segoe UI';</string>
+                   </property>
                    <property name="text">
                     <string/>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="label_5">
+                  <widget class="QLabel" name="windspeed1">
+                   <property name="styleSheet">
+                    <string notr="true">color:black;
+background:transparent;
+font: 8pt 'Segoe UI';</string>
+                   </property>
                    <property name="text">
                     <string/>
                    </property>
@@ -489,8 +513,8 @@ border-radius:12%;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>408</width>
-             <height>367</height>
+             <width>409</width>
+             <height>371</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -1211,7 +1235,8 @@ font: 10pt 'Segoe UI';</string>
         <item>
          <widget class="QLabel" name="label">
           <property name="styleSheet">
-           <string notr="true">border-radius:12%;</string>
+           <string notr="true">border-radius:12%;
+background:rgba(255,255,255,0.1);</string>
           </property>
           <property name="text">
            <string/>
@@ -1230,7 +1255,7 @@ font: 10pt 'Segoe UI';</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

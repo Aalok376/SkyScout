@@ -92,3 +92,44 @@ int dateTime::fetchMin(int t) {
     return min;
 }
 
+int dateTime::getTimeZone(double latitude, double longitude) {
+    QNetworkAccessManager manager;
+    QEventLoop loop;
+    QObject::connect(&manager, &QNetworkAccessManager::finished, &loop, &QEventLoop::quit);
+
+    // TimeZoneDB API endpoint and key
+    QString apiKey = "api key"; // Replace with your API key
+    QString requestUrl = QString("http://api.timezonedb.com/v2.1/get-time-zone?key=%1&format=json&by=position&lat=%2&lng=%3")
+                             .arg(apiKey)
+                             .arg(latitude)
+                             .arg(longitude);
+
+    // Create QUrl and QNetworkRequest
+    QUrl url(requestUrl);
+    QNetworkRequest request(url);
+
+    // Make the network request
+    QNetworkReply *reply = manager.get(request);
+    loop.exec(); // Wait for the request to finish
+    int timestamp;
+    // Parse the response
+    if (reply->error() == QNetworkReply::NoError) {
+        QByteArray response_data = reply->readAll();
+        QJsonDocument jsonResponse = QJsonDocument::fromJson(response_data);
+        QJsonObject jsonObject = jsonResponse.object();
+
+        //QString timeZone = jsonObject["zoneName"].toString();
+        //QString datetime = jsonObject["formatted"].toString();
+        timestamp = jsonObject["timestamp"].toInt();
+
+        //std::cout << "Time Zone: " << timeZone.toStdString() << std::endl;
+        //qDebug() << "Local Time: " << datetime;
+    } else {
+        //std::cout << "Error: " << reply->errorString().toStdString() << std::endl;
+        qDebug()<<"ahahaha";
+        return -1;
+    }
+    reply->deleteLater();
+    return timestamp;
+
+}
