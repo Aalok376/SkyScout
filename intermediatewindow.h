@@ -7,11 +7,24 @@
 #include "presentgraph.h"
 #include "futuregraph.h"
 #include "modecheck.h"
+#include "logicmaths.h"
 #include<QIcon>
 #include<QTimer>
-#include <QPropertyAnimation>
-#include <QStackedWidget>
-#include <QParallelAnimationGroup>
+
+#include<QtSql>
+#include<QtDebug>
+#include<QFileInfo>
+#include <QSqlDatabase>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QVariant>
+#include<QIcon>
+#include<QCoreApplication>
+#include <QVector>
+
+//#include <QPropertyAnimation>
+//#include <QStackedWidget>
+//#include <QParallelAnimationGroup>
 #include<qstringlist.h>
 namespace Ui {
 class intermediateWindow;

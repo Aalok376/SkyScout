@@ -3,7 +3,7 @@
 weatherData::weatherData() {
 
 }
-void weatherData::databaseConnection(QString city, double temp,double humidity,double lat,double lon,
+void weatherData::databaseConnection(QString city, double temp,double humidity,QString status,double lat,double lon,
                                      int sunrise,int sunset,int ctime,int year,int month,int date) {
     QSqlDatabase mydb=QSqlDatabase::addDatabase("QSQLITE");
     mydb.setDatabaseName(QCoreApplication::applicationDirPath()+"/database/weatherdb.db");
@@ -11,14 +11,14 @@ void weatherData::databaseConnection(QString city, double temp,double humidity,d
 
 
     mydb.open();
-    insertInformation(city,temp,humidity,lat,lon,sunrise,sunset,ctime,year,month,date);
+    insertInformation(city,temp,humidity,status,lat,lon,sunrise,sunset,ctime,year,month,date);
 
 
     return;
 }
 
 
-void weatherData::insertInformation(QString city, double temp,double humidity,double lat,double lon,
+void weatherData::insertInformation(QString city, double temp,double humidity,QString status,double lat,double lon,
                                     int sunrise,int sunset,int ctime,int year,int month,int date) {
     QSqlQuery query;
     //QString countQuery = "SELECT * FROM pastWeather";
@@ -76,8 +76,9 @@ void weatherData::insertInformation(QString city, double temp,double humidity,do
         }
     }
 
-    query.prepare("INSERT INTO pastWeather(id,city,temperature,humidity,lat,lon,sunrise,sunset,ctime,year,month,date)"
-                  "VALUES(:id,:city,:temp,:humidity,:lat,:lon,:sunrise,:sunset,:ctime,:year,:month,:date)");
+    query.prepare("INSERT INTO pastWeather(id,city,temperature,humidity,lat,lon,sunrise,sunset,ctime,year,month,date"
+                  ",status)"
+                  "VALUES(:id,:city,:temp,:humidity,:lat,:lon,:sunrise,:sunset,:ctime,:year,:month,:date,:status)");
     query.bindValue(":id",id);
     query.bindValue(":temp", temp);
     query.bindValue(":humidity", humidity);
@@ -90,6 +91,7 @@ void weatherData::insertInformation(QString city, double temp,double humidity,do
     query.bindValue(":year",year);
     query.bindValue(":month",month);
     query.bindValue(":date",date);
+    query.bindValue(":status",status);
 
     if (!query.exec()) {
         qDebug() << "Error inserting past weather data:" << query.lastError();

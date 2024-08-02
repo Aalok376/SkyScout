@@ -57,7 +57,6 @@ public:
     QLabel *label_temp;
     QLabel *label_weatherIcon;
     QSpacerItem *verticalSpacer_4;
-    QFrame *line_3;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QHBoxLayout *horizontalLayout_20;
@@ -143,12 +142,14 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
-        MainWindow->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(135, 206, 235, 255), stop:1 rgb(25, 25, 112));\n"
-""));
+        MainWindow->setStyleSheet(QString::fromUtf8("/*background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(135, 206, 235, 255), stop:1 rgb(25, 25, 112));*/\n"
+"background-image: url(\":/new/prefix1/image/background.png\");"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         horizontalLayout_18 = new QHBoxLayout(centralwidget);
+        horizontalLayout_18->setSpacing(6);
         horizontalLayout_18->setObjectName("horizontalLayout_18");
+        horizontalLayout_18->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setObjectName("horizontalLayout_11");
         verticalLayout_15 = new QVBoxLayout();
@@ -157,7 +158,9 @@ public:
         verticalLayout_15->setContentsMargins(0, 0, -1, -1);
         widget = new QWidget(centralwidget);
         widget->setObjectName("widget");
-        widget->setStyleSheet(QString::fromUtf8("background-color: rgba(0, 51, 102, 0.8);\n"
+        widget->setStyleSheet(QString::fromUtf8("/*background-color: rgba(0, 51, 102, 0.8);*/\n"
+"background: rgba(255, 255, 255, 0.1);\n"
+"border-color: rgba(255, 255, 255, 0.2);\n"
 "\n"
 ""));
         verticalLayout_14 = new QVBoxLayout(widget);
@@ -278,7 +281,8 @@ public:
 
         label_recentSearch = new QLabel(centralwidget);
         label_recentSearch->setObjectName("label_recentSearch");
-        label_recentSearch->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        label_recentSearch->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
 
         verticalLayout_9->addWidget(label_recentSearch);
 
@@ -287,8 +291,9 @@ public:
 
         frame = new QFrame(centralwidget);
         frame->setObjectName("frame");
-        frame->setStyleSheet(QString::fromUtf8("border:ignore;\n"
-"background:transparent;"));
+        frame->setStyleSheet(QString::fromUtf8("background: rgba(255, 255, 255, 0.1);\n"
+"border -color: rgba(255, 255, 255, 0.2);\n"
+"border-radius:12%;"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         horizontalLayout_2 = new QHBoxLayout(frame);
@@ -305,14 +310,15 @@ public:
         label_currentWeather->setSizePolicy(sizePolicy);
         QFont font;
         font.setFamilies({QString::fromUtf8("Segoe UI")});
-        font.setPointSize(30);
+        font.setPointSize(15);
         font.setBold(false);
         font.setItalic(false);
         label_currentWeather->setFont(font);
-        label_currentWeather->setStyleSheet(QString::fromUtf8("font: 30pt \"Segoe UI\";\n"
+        label_currentWeather->setStyleSheet(QString::fromUtf8("font: 15pt \"Segoe UI\";\n"
 "color:rgb(0, 0, 0);\n"
-"background-color: rgba(255, 255, 255, 0.1);\n"
-"border-color: rgba(255, 255, 255, 0.2);"));
+"\n"
+"background: transparent;\n"
+"/*border-top-left-radius:12%;*/"));
         label_currentWeather->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_currentWeather);
@@ -320,38 +326,37 @@ public:
         label_alert = new QLabel(frame);
         label_alert->setObjectName("label_alert");
         label_alert->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background-color: rgba(255, 255, 255, 0.1);\n"
-"border-color: rgba(255, 255, 255, 0.2);"));
+"font: 7pt \"Segoe UI\";\n"
+"background: transparent;\n"
+"/*background-color: rgba(255, 255, 255, 0.1);\n"
+"border-color: rgba(255, 255, 255, 0.2);*/"));
         label_alert->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_alert);
 
         label_temp = new QLabel(frame);
         label_temp->setObjectName("label_temp");
-        QFont font1;
-        font1.setFamilies({QString::fromUtf8("Segoe UI")});
-        font1.setPointSize(38);
-        font1.setBold(false);
-        font1.setItalic(false);
-        label_temp->setFont(font1);
-        label_temp->setStyleSheet(QString::fromUtf8("font: 38pt \"Segoe UI\";\n"
+        label_temp->setFont(font);
+        label_temp->setStyleSheet(QString::fromUtf8("font: 15pt \"Segoe UI\";\n"
 "color:rgb(0, 0, 0);\n"
-"background-color: rgba(255, 255, 255, 0.1);\n"
-"border-color: rgba(255, 255, 255, 0.2);"));
+"\n"
+"background: transparent;\n"
+"/*border-bottom-left-radius:12%;*/"));
         label_temp->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_temp);
 
         verticalLayout->setStretch(0, 2);
-        verticalLayout->setStretch(1, 1);
-        verticalLayout->setStretch(2, 5);
+        verticalLayout->setStretch(1, 2);
+        verticalLayout->setStretch(2, 3);
 
         horizontalLayout->addLayout(verticalLayout);
 
         label_weatherIcon = new QLabel(frame);
         label_weatherIcon->setObjectName("label_weatherIcon");
-        label_weatherIcon->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0.1);\n"
-"border-color: rgba(255, 255, 255, 0.2);"));
+        label_weatherIcon->setStyleSheet(QString::fromUtf8("background: transparent;\n"
+"border-top-right-radius:12%;\n"
+"border-bottom-right-radius:12%;"));
         label_weatherIcon->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout->addWidget(label_weatherIcon);
@@ -366,13 +371,6 @@ public:
 
         verticalLayout_10->addItem(verticalSpacer_4);
 
-        line_3 = new QFrame(centralwidget);
-        line_3->setObjectName("line_3");
-        line_3->setFrameShape(QFrame::Shape::HLine);
-        line_3->setFrameShadow(QFrame::Shadow::Sunken);
-
-        verticalLayout_10->addWidget(line_3);
-
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName("scrollArea");
         QSizePolicy sizePolicy3(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
@@ -380,14 +378,17 @@ public:
         sizePolicy3.setVerticalStretch(2);
         sizePolicy3.setHeightForWidth(scrollArea->sizePolicy().hasHeightForWidth());
         scrollArea->setSizePolicy(sizePolicy3);
-        scrollArea->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        scrollArea->setStyleSheet(QString::fromUtf8("/*background-color: rgba(255, 255, 255, .1);*/\n"
+"border -color: rgba(255, 255, 255, .2);\n"
+"background:rgba(255, 255, 255, .06);\n"
+"border-radius:12%;"));
         scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         scrollArea->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 314, 448));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 409, 367));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -400,7 +401,8 @@ public:
         icon1->setObjectName("icon1");
         sizePolicy.setHeightForWidth(icon1->sizePolicy().hasHeightForWidth());
         icon1->setSizePolicy(sizePolicy);
-        icon1->setStyleSheet(QString::fromUtf8("font: 34pt \"Segoe UI\";"));
+        icon1->setStyleSheet(QString::fromUtf8("font: 34pt \"Segoe UI\";\n"
+"background:transparent;"));
 
         horizontalLayout_4->addWidget(icon1);
 
@@ -410,7 +412,9 @@ public:
         weather1->setObjectName("weather1");
         sizePolicy.setHeightForWidth(weather1->sizePolicy().hasHeightForWidth());
         weather1->setSizePolicy(sizePolicy);
-        weather1->setStyleSheet(QString::fromUtf8("color:black;"));
+        weather1->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
         weather1->setAlignment(Qt::AlignCenter);
 
         verticalLayout_3->addWidget(weather1);
@@ -419,7 +423,9 @@ public:
         temp1->setObjectName("temp1");
         sizePolicy.setHeightForWidth(temp1->sizePolicy().hasHeightForWidth());
         temp1->setSizePolicy(sizePolicy);
-        temp1->setStyleSheet(QString::fromUtf8("color:black;"));
+        temp1->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
         temp1->setAlignment(Qt::AlignCenter);
 
         verticalLayout_3->addWidget(temp1);
@@ -431,7 +437,9 @@ public:
         time1->setObjectName("time1");
         sizePolicy.setHeightForWidth(time1->sizePolicy().hasHeightForWidth());
         time1->setSizePolicy(sizePolicy);
-        time1->setStyleSheet(QString::fromUtf8("color:black;"));
+        time1->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout_4->addWidget(time1);
 
@@ -446,7 +454,8 @@ public:
         horizontalLayout_3->setObjectName("horizontalLayout_3");
         icon2 = new QLabel(scrollAreaWidgetContents);
         icon2->setObjectName("icon2");
-        icon2->setStyleSheet(QString::fromUtf8("font: 34pt \"Segoe UI\";"));
+        icon2->setStyleSheet(QString::fromUtf8("font: 34pt \"Segoe UI\";\n"
+"background:transparent;"));
 
         horizontalLayout_3->addWidget(icon2);
 
@@ -454,14 +463,18 @@ public:
         verticalLayout_2->setObjectName("verticalLayout_2");
         weather2 = new QLabel(scrollAreaWidgetContents);
         weather2->setObjectName("weather2");
-        weather2->setStyleSheet(QString::fromUtf8("color:black;"));
+        weather2->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
         weather2->setAlignment(Qt::AlignCenter);
 
         verticalLayout_2->addWidget(weather2);
 
         temp2 = new QLabel(scrollAreaWidgetContents);
         temp2->setObjectName("temp2");
-        temp2->setStyleSheet(QString::fromUtf8("color:black;"));
+        temp2->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
         temp2->setAlignment(Qt::AlignCenter);
 
         verticalLayout_2->addWidget(temp2);
@@ -471,7 +484,9 @@ public:
 
         time2 = new QLabel(scrollAreaWidgetContents);
         time2->setObjectName("time2");
-        time2->setStyleSheet(QString::fromUtf8("color:black;"));
+        time2->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
         time2->setLocale(QLocale(QLocale::English, QLocale::UnitedStates));
         time2->setLineWidth(0);
 
@@ -488,7 +503,8 @@ public:
         horizontalLayout_5->setObjectName("horizontalLayout_5");
         icon3 = new QLabel(scrollAreaWidgetContents);
         icon3->setObjectName("icon3");
-        icon3->setStyleSheet(QString::fromUtf8("font: 34pt \"Segoe UI\";"));
+        icon3->setStyleSheet(QString::fromUtf8("font: 34pt \"Segoe UI\";\n"
+"background:transparent;"));
 
         horizontalLayout_5->addWidget(icon3);
 
@@ -497,14 +513,18 @@ public:
         verticalLayout_4->setObjectName("verticalLayout_4");
         weather3 = new QLabel(scrollAreaWidgetContents);
         weather3->setObjectName("weather3");
-        weather3->setStyleSheet(QString::fromUtf8("color:black;"));
+        weather3->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
         weather3->setAlignment(Qt::AlignCenter);
 
         verticalLayout_4->addWidget(weather3);
 
         temp3 = new QLabel(scrollAreaWidgetContents);
         temp3->setObjectName("temp3");
-        temp3->setStyleSheet(QString::fromUtf8("color:black;"));
+        temp3->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
         temp3->setAlignment(Qt::AlignCenter);
 
         verticalLayout_4->addWidget(temp3);
@@ -514,7 +534,9 @@ public:
 
         time3 = new QLabel(scrollAreaWidgetContents);
         time3->setObjectName("time3");
-        time3->setStyleSheet(QString::fromUtf8("color:black;"));
+        time3->setStyleSheet(QString::fromUtf8("color:black;\n"
+"font: 10pt 'Segoe UI';\n"
+"background:transparent;"));
 
         horizontalLayout_5->addWidget(time3);
 
@@ -529,7 +551,8 @@ public:
         horizontalLayout_13->setObjectName("horizontalLayout_13");
         icon4 = new QLabel(scrollAreaWidgetContents);
         icon4->setObjectName("icon4");
-        icon4->setStyleSheet(QString::fromUtf8("font: 34pt \"Segoe UI\";"));
+        icon4->setStyleSheet(QString::fromUtf8("font: 34pt \"Segoe UI\";\n"
+"background:transparent;"));
 
         horizontalLayout_13->addWidget(icon4);
 
@@ -537,14 +560,18 @@ public:
         verticalLayout_13->setObjectName("verticalLayout_13");
         weather4 = new QLabel(scrollAreaWidgetContents);
         weather4->setObjectName("weather4");
-        weather4->setStyleSheet(QString::fromUtf8("color:black;"));
+        weather4->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
         weather4->setAlignment(Qt::AlignCenter);
 
         verticalLayout_13->addWidget(weather4);
 
         temp4 = new QLabel(scrollAreaWidgetContents);
         temp4->setObjectName("temp4");
-        temp4->setStyleSheet(QString::fromUtf8("color:black;"));
+        temp4->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
         temp4->setAlignment(Qt::AlignCenter);
 
         verticalLayout_13->addWidget(temp4);
@@ -554,7 +581,9 @@ public:
 
         time4 = new QLabel(scrollAreaWidgetContents);
         time4->setObjectName("time4");
-        time4->setStyleSheet(QString::fromUtf8("color:black;"));
+        time4->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout_13->addWidget(time4);
 
@@ -569,7 +598,8 @@ public:
         horizontalLayout_6->setObjectName("horizontalLayout_6");
         icon5 = new QLabel(scrollAreaWidgetContents);
         icon5->setObjectName("icon5");
-        icon5->setStyleSheet(QString::fromUtf8("font: 32pt \"Segoe UI\";"));
+        icon5->setStyleSheet(QString::fromUtf8("font: 32pt \"Segoe UI\";\n"
+"background:transparent;"));
 
         horizontalLayout_6->addWidget(icon5);
 
@@ -577,14 +607,18 @@ public:
         verticalLayout_12->setObjectName("verticalLayout_12");
         weather5 = new QLabel(scrollAreaWidgetContents);
         weather5->setObjectName("weather5");
-        weather5->setStyleSheet(QString::fromUtf8("color:black;"));
+        weather5->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
         weather5->setAlignment(Qt::AlignCenter);
 
         verticalLayout_12->addWidget(weather5);
 
         temp5 = new QLabel(scrollAreaWidgetContents);
         temp5->setObjectName("temp5");
-        temp5->setStyleSheet(QString::fromUtf8("color:black;"));
+        temp5->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
         temp5->setAlignment(Qt::AlignCenter);
 
         verticalLayout_12->addWidget(temp5);
@@ -594,7 +628,9 @@ public:
 
         time5 = new QLabel(scrollAreaWidgetContents);
         time5->setObjectName("time5");
-        time5->setStyleSheet(QString::fromUtf8("color:black;"));
+        time5->setStyleSheet(QString::fromUtf8("color:black;\n"
+"font: 10pt 'Segoe UI';\n"
+"background:transparent;"));
 
         horizontalLayout_6->addWidget(time5);
 
@@ -614,8 +650,7 @@ public:
         verticalLayout_10->setStretch(0, 2);
         verticalLayout_10->setStretch(1, 6);
         verticalLayout_10->setStretch(2, 3);
-        verticalLayout_10->setStretch(3, 2);
-        verticalLayout_10->setStretch(4, 7);
+        verticalLayout_10->setStretch(3, 7);
 
         horizontalLayout_11->addLayout(verticalLayout_10);
 
@@ -720,8 +755,9 @@ public:
 
         widget_2 = new QWidget(centralwidget);
         widget_2->setObjectName("widget_2");
-        widget_2->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 0.1);\n"
-"border -color: rgba(255, 255, 255, 0.2);"));
+        widget_2->setStyleSheet(QString::fromUtf8("background: rgba(255, 255, 255, 0.1);\n"
+"border -color: rgba(255, 255, 255, 0.2);\n"
+"border-radius:12%;"));
         horizontalLayout_16 = new QHBoxLayout(widget_2);
         horizontalLayout_16->setObjectName("horizontalLayout_16");
         verticalLayout_16 = new QVBoxLayout();
@@ -742,28 +778,32 @@ public:
         fIcon1 = new QLabel(widget_2);
         fIcon1->setObjectName("fIcon1");
         fIcon1->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;"));
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout_8->addWidget(fIcon1);
 
         fWeather1 = new QLabel(widget_2);
         fWeather1->setObjectName("fWeather1");
         fWeather1->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"color:black;"));
+"color:black;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout_8->addWidget(fWeather1);
 
         fTemp1 = new QLabel(widget_2);
         fTemp1->setObjectName("fTemp1");
         fTemp1->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;"));
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout_8->addWidget(fTemp1);
 
         fDate1 = new QLabel(widget_2);
         fDate1->setObjectName("fDate1");
         fDate1->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;"));
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout_8->addWidget(fDate1);
 
@@ -782,28 +822,32 @@ public:
         fIcon2 = new QLabel(widget_2);
         fIcon2->setObjectName("fIcon2");
         fIcon2->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;"));
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout_10->addWidget(fIcon2);
 
         fWeather2 = new QLabel(widget_2);
         fWeather2->setObjectName("fWeather2");
         fWeather2->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"color:black;"));
+"color:black;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout_10->addWidget(fWeather2);
 
         fTemp2 = new QLabel(widget_2);
         fTemp2->setObjectName("fTemp2");
         fTemp2->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;"));
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout_10->addWidget(fTemp2);
 
         fDate2 = new QLabel(widget_2);
         fDate2->setObjectName("fDate2");
         fDate2->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;"));
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout_10->addWidget(fDate2);
 
@@ -822,28 +866,32 @@ public:
         fIcon3 = new QLabel(widget_2);
         fIcon3->setObjectName("fIcon3");
         fIcon3->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;"));
+"background:transparent;\n"
+"font: 10pt \"Segoe UI\";"));
 
         horizontalLayout_9->addWidget(fIcon3);
 
         fWeather3 = new QLabel(widget_2);
         fWeather3->setObjectName("fWeather3");
         fWeather3->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"color:black;"));
+"color:black;\n"
+"font: 10pt \"Segoe UI\";"));
 
         horizontalLayout_9->addWidget(fWeather3);
 
         fTemp3 = new QLabel(widget_2);
         fTemp3->setObjectName("fTemp3");
         fTemp3->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;"));
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout_9->addWidget(fTemp3);
 
         fDate3 = new QLabel(widget_2);
         fDate3->setObjectName("fDate3");
         fDate3->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;"));
+"background:transparent;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout_9->addWidget(fDate3);
 
@@ -883,7 +931,7 @@ public:
         horizontalLayout_11->addLayout(verticalLayout_11);
 
         horizontalLayout_11->setStretch(0, 1);
-        horizontalLayout_11->setStretch(1, 5);
+        horizontalLayout_11->setStretch(1, 7);
         horizontalLayout_11->setStretch(2, 13);
 
         horizontalLayout_18->addLayout(horizontalLayout_11);
@@ -891,7 +939,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 25));
+        menubar->setGeometry(QRect(0, 0, 1247, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");

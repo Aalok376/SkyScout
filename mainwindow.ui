@@ -20,11 +20,26 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(135, 206, 235, 255), stop:1 rgb(25, 25, 112));
-</string>
+   <string notr="true">/*background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(135, 206, 235, 255), stop:1 rgb(25, 25, 112));*/
+background-image: url(&quot;:/new/prefix1/image/background.png&quot;);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_18">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="1,7,13">
       <item>
@@ -41,7 +56,9 @@
         <item>
          <widget class="QWidget" name="widget" native="true">
           <property name="styleSheet">
-           <string notr="true">background-color: rgba(0, 51, 102, 0.8);
+           <string notr="true">/*background-color: rgba(0, 51, 102, 0.8);*/
+background: rgba(255, 255, 255, 0.1);
+border-color: rgba(255, 255, 255, 0.2);
 
 </string>
           </property>
@@ -168,7 +185,7 @@ background-color:rgb(65,125,198);
        </layout>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_10" stretch="2,6,3,2,7">
+       <layout class="QVBoxLayout" name="verticalLayout_10" stretch="2,6,3,7">
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_9" stretch="0,0">
           <item>
@@ -227,7 +244,8 @@ border-bottom-right-radius:12%;</string>
           <item>
            <widget class="QLabel" name="label_recentSearch">
             <property name="styleSheet">
-             <string notr="true">background:transparent;</string>
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
             </property>
             <property name="text">
              <string/>
@@ -239,8 +257,9 @@ border-bottom-right-radius:12%;</string>
         <item>
          <widget class="QFrame" name="frame">
           <property name="styleSheet">
-           <string notr="true">border:ignore;
-background:transparent;</string>
+           <string notr="true">background: rgba(255, 255, 255, 0.1);
+border -color: rgba(255, 255, 255, 0.2);
+border-radius:12%;</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -281,9 +300,9 @@ background:transparent;</string>
                  <property name="styleSheet">
                   <string notr="true">font: 15pt &quot;Segoe UI&quot;;
 color:rgb(0, 0, 0);
-background-color: rgba(255, 255, 255, 0.1);
-border-color: rgba(255, 255, 255, 0.2);
-border-top-left-radius:12%;</string>
+
+background: transparent;
+/*border-top-left-radius:12%;*/</string>
                  </property>
                  <property name="text">
                   <string/>
@@ -298,8 +317,9 @@ border-top-left-radius:12%;</string>
                  <property name="styleSheet">
                   <string notr="true">color:black;
 font: 7pt &quot;Segoe UI&quot;;
-background-color: rgba(255, 255, 255, 0.1);
-border-color: rgba(255, 255, 255, 0.2);</string>
+background: transparent;
+/*background-color: rgba(255, 255, 255, 0.1);
+border-color: rgba(255, 255, 255, 0.2);*/</string>
                  </property>
                  <property name="text">
                   <string/>
@@ -325,9 +345,9 @@ border-color: rgba(255, 255, 255, 0.2);</string>
                  <property name="styleSheet">
                   <string notr="true">font: 15pt &quot;Segoe UI&quot;;
 color:rgb(0, 0, 0);
-background-color: rgba(255, 255, 255, 0.1);
-border-color: rgba(255, 255, 255, 0.2);
-border-bottom-left-radius:12%;</string>
+
+background: transparent;
+/*border-bottom-left-radius:12%;*/</string>
                  </property>
                  <property name="text">
                   <string/>
@@ -342,8 +362,7 @@ border-bottom-left-radius:12%;</string>
              <item>
               <widget class="QLabel" name="label_weatherIcon">
                <property name="styleSheet">
-                <string notr="true">background-color: rgba(255, 255, 255, 0.1);
-border-color: rgba(255, 255, 255, 0.2);
+                <string notr="true">background: transparent;
 border-top-right-radius:12%;
 border-bottom-right-radius:12%;</string>
                </property>
@@ -374,13 +393,6 @@ border-bottom-right-radius:12%;</string>
          </spacer>
         </item>
         <item>
-         <widget class="Line" name="line_3">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QScrollArea" name="scrollArea">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -389,7 +401,10 @@ border-bottom-right-radius:12%;</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">background:transparent;</string>
+           <string notr="true">/*background-color: rgba(255, 255, 255, .1);*/
+border -color: rgba(255, 255, 255, .2);
+background:rgba(255, 255, 255, .06);
+border-radius:12%;</string>
           </property>
           <property name="verticalScrollBarPolicy">
            <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -408,8 +423,8 @@ border-bottom-right-radius:12%;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>399</width>
-             <height>448</height>
+             <width>409</width>
+             <height>367</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -432,7 +447,8 @@ border-bottom-right-radius:12%;</string>
                    </sizepolicy>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">font: 34pt &quot;Segoe UI&quot;;</string>
+                   <string notr="true">font: 34pt &quot;Segoe UI&quot;;
+background:transparent;</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -450,7 +466,9 @@ border-bottom-right-radius:12%;</string>
                      </sizepolicy>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color:black;</string>
+                     <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                     </property>
                     <property name="text">
                      <string>weather</string>
@@ -469,7 +487,9 @@ border-bottom-right-radius:12%;</string>
                      </sizepolicy>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true">color:black;</string>
+                     <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                     </property>
                     <property name="text">
                      <string>temp</string>
@@ -490,7 +510,9 @@ border-bottom-right-radius:12%;</string>
                    </sizepolicy>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">color:black;</string>
+                   <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                   </property>
                   <property name="text">
                    <string>time</string>
@@ -507,7 +529,8 @@ border-bottom-right-radius:12%;</string>
                 <item>
                  <widget class="QLabel" name="icon2">
                   <property name="styleSheet">
-                   <string notr="true">font: 34pt &quot;Segoe UI&quot;;</string>
+                   <string notr="true">font: 34pt &quot;Segoe UI&quot;;
+background:transparent;</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -519,7 +542,9 @@ border-bottom-right-radius:12%;</string>
                   <item>
                    <widget class="QLabel" name="weather2">
                     <property name="styleSheet">
-                     <string notr="true">color:black;</string>
+                     <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                     </property>
                     <property name="text">
                      <string>weather</string>
@@ -532,7 +557,9 @@ border-bottom-right-radius:12%;</string>
                   <item>
                    <widget class="QLabel" name="temp2">
                     <property name="styleSheet">
-                     <string notr="true">color:black;</string>
+                     <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                     </property>
                     <property name="text">
                      <string>temp</string>
@@ -547,7 +574,9 @@ border-bottom-right-radius:12%;</string>
                 <item>
                  <widget class="QLabel" name="time2">
                   <property name="styleSheet">
-                   <string notr="true">color:black;</string>
+                   <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                   </property>
                   <property name="locale">
                    <locale language="English" country="UnitedStates"/>
@@ -570,7 +599,8 @@ border-bottom-right-radius:12%;</string>
                 <item>
                  <widget class="QLabel" name="icon3">
                   <property name="styleSheet">
-                   <string notr="true">font: 34pt &quot;Segoe UI&quot;;</string>
+                   <string notr="true">font: 34pt &quot;Segoe UI&quot;;
+background:transparent;</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -585,7 +615,9 @@ border-bottom-right-radius:12%;</string>
                   <item>
                    <widget class="QLabel" name="weather3">
                     <property name="styleSheet">
-                     <string notr="true">color:black;</string>
+                     <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                     </property>
                     <property name="text">
                      <string>weather</string>
@@ -598,7 +630,9 @@ border-bottom-right-radius:12%;</string>
                   <item>
                    <widget class="QLabel" name="temp3">
                     <property name="styleSheet">
-                     <string notr="true">color:black;</string>
+                     <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                     </property>
                     <property name="text">
                      <string>temp</string>
@@ -613,7 +647,9 @@ border-bottom-right-radius:12%;</string>
                 <item>
                  <widget class="QLabel" name="time3">
                   <property name="styleSheet">
-                   <string notr="true">color:black;</string>
+                   <string notr="true">color:black;
+font: 10pt 'Segoe UI';
+background:transparent;</string>
                   </property>
                   <property name="text">
                    <string>time</string>
@@ -630,7 +666,8 @@ border-bottom-right-radius:12%;</string>
                 <item>
                  <widget class="QLabel" name="icon4">
                   <property name="styleSheet">
-                   <string notr="true">font: 34pt &quot;Segoe UI&quot;;</string>
+                   <string notr="true">font: 34pt &quot;Segoe UI&quot;;
+background:transparent;</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -642,7 +679,9 @@ border-bottom-right-radius:12%;</string>
                   <item>
                    <widget class="QLabel" name="weather4">
                     <property name="styleSheet">
-                     <string notr="true">color:black;</string>
+                     <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                     </property>
                     <property name="text">
                      <string>weather</string>
@@ -655,7 +694,9 @@ border-bottom-right-radius:12%;</string>
                   <item>
                    <widget class="QLabel" name="temp4">
                     <property name="styleSheet">
-                     <string notr="true">color:black;</string>
+                     <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                     </property>
                     <property name="text">
                      <string>temp</string>
@@ -670,7 +711,9 @@ border-bottom-right-radius:12%;</string>
                 <item>
                  <widget class="QLabel" name="time4">
                   <property name="styleSheet">
-                   <string notr="true">color:black;</string>
+                   <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                   </property>
                   <property name="text">
                    <string>time</string>
@@ -687,7 +730,8 @@ border-bottom-right-radius:12%;</string>
                 <item>
                  <widget class="QLabel" name="icon5">
                   <property name="styleSheet">
-                   <string notr="true">font: 32pt &quot;Segoe UI&quot;;</string>
+                   <string notr="true">font: 32pt &quot;Segoe UI&quot;;
+background:transparent;</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -699,7 +743,9 @@ border-bottom-right-radius:12%;</string>
                   <item>
                    <widget class="QLabel" name="weather5">
                     <property name="styleSheet">
-                     <string notr="true">color:black;</string>
+                     <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                     </property>
                     <property name="text">
                      <string>weather</string>
@@ -712,7 +758,9 @@ border-bottom-right-radius:12%;</string>
                   <item>
                    <widget class="QLabel" name="temp5">
                     <property name="styleSheet">
-                     <string notr="true">color:black;</string>
+                     <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                     </property>
                     <property name="text">
                      <string>temp</string>
@@ -727,7 +775,9 @@ border-bottom-right-radius:12%;</string>
                 <item>
                  <widget class="QLabel" name="time5">
                   <property name="styleSheet">
-                   <string notr="true">color:black;</string>
+                   <string notr="true">color:black;
+font: 10pt 'Segoe UI';
+background:transparent;</string>
                   </property>
                   <property name="text">
                    <string>time</string>
@@ -888,7 +938,7 @@ background:transparent;
             <item>
              <widget class="QWidget" name="widget_2" native="true">
               <property name="styleSheet">
-               <string notr="true">background-color: rgba(255, 255, 255, 0.1);
+               <string notr="true">background: rgba(255, 255, 255, 0.1);
 border -color: rgba(255, 255, 255, 0.2);
 border-radius:12%;</string>
               </property>
@@ -918,7 +968,8 @@ background:transparent;</string>
                       <widget class="QLabel" name="fIcon1">
                        <property name="styleSheet">
                         <string notr="true">color:black;
-background:transparent;</string>
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                        </property>
                        <property name="text">
                         <string>icon</string>
@@ -929,7 +980,8 @@ background:transparent;</string>
                       <widget class="QLabel" name="fWeather1">
                        <property name="styleSheet">
                         <string notr="true">background:transparent;
-color:black;</string>
+color:black;
+font: 10pt 'Segoe UI';</string>
                        </property>
                        <property name="text">
                         <string>weather</string>
@@ -940,7 +992,8 @@ color:black;</string>
                       <widget class="QLabel" name="fTemp1">
                        <property name="styleSheet">
                         <string notr="true">color:black;
-background:transparent;</string>
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                        </property>
                        <property name="text">
                         <string>temp</string>
@@ -951,7 +1004,8 @@ background:transparent;</string>
                       <widget class="QLabel" name="fDate1">
                        <property name="styleSheet">
                         <string notr="true">color:black;
-background:transparent;</string>
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                        </property>
                        <property name="text">
                         <string>date</string>
@@ -973,7 +1027,8 @@ background:transparent;</string>
                       <widget class="QLabel" name="fIcon2">
                        <property name="styleSheet">
                         <string notr="true">color:black;
-background:transparent;</string>
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                        </property>
                        <property name="text">
                         <string>icon</string>
@@ -984,7 +1039,8 @@ background:transparent;</string>
                       <widget class="QLabel" name="fWeather2">
                        <property name="styleSheet">
                         <string notr="true">background:transparent;
-color:black;</string>
+color:black;
+font: 10pt 'Segoe UI';</string>
                        </property>
                        <property name="text">
                         <string>weather</string>
@@ -995,7 +1051,8 @@ color:black;</string>
                       <widget class="QLabel" name="fTemp2">
                        <property name="styleSheet">
                         <string notr="true">color:black;
-background:transparent;</string>
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                        </property>
                        <property name="text">
                         <string>temp</string>
@@ -1006,7 +1063,8 @@ background:transparent;</string>
                       <widget class="QLabel" name="fDate2">
                        <property name="styleSheet">
                         <string notr="true">color:black;
-background:transparent;</string>
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                        </property>
                        <property name="text">
                         <string>date</string>
@@ -1028,7 +1086,8 @@ background:transparent;</string>
                       <widget class="QLabel" name="fIcon3">
                        <property name="styleSheet">
                         <string notr="true">color:black;
-background:transparent;</string>
+background:transparent;
+font: 10pt &quot;Segoe UI&quot;;</string>
                        </property>
                        <property name="text">
                         <string>icon</string>
@@ -1039,7 +1098,8 @@ background:transparent;</string>
                       <widget class="QLabel" name="fWeather3">
                        <property name="styleSheet">
                         <string notr="true">background:transparent;
-color:black;</string>
+color:black;
+font: 10pt &quot;Segoe UI&quot;;</string>
                        </property>
                        <property name="text">
                         <string>weather</string>
@@ -1050,7 +1110,8 @@ color:black;</string>
                       <widget class="QLabel" name="fTemp3">
                        <property name="styleSheet">
                         <string notr="true">color:black;
-background:transparent;</string>
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                        </property>
                        <property name="text">
                         <string>temp</string>
@@ -1061,7 +1122,8 @@ background:transparent;</string>
                       <widget class="QLabel" name="fDate3">
                        <property name="styleSheet">
                         <string notr="true">color:black;
-background:transparent;</string>
+background:transparent;
+font: 10pt 'Segoe UI';</string>
                        </property>
                        <property name="text">
                         <string>date</string>
@@ -1100,7 +1162,7 @@ background:transparent;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

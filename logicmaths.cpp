@@ -16,6 +16,15 @@ double logicMaths::avgTemp(double *tempArray, int size) {
     return avg;
 }
 
+double logicMaths::avgHumidity(double *humidArray, int size) {
+    double total = 0;
+    for(int i=0;i<size;i++) {
+        total+=humidArray[i];
+    }
+    double avg = total/size;
+    return avg;
+}
+
 QString logicMaths::weatherMode(QString *statusArray, int size) {
     QString mode = statusArray[0];
     int count =0;

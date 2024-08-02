@@ -16,3 +16,6 @@
   SELECT * FROM pastWeather;
 -- DROP TABLE pastWeather;
 -- DELETE  FROM pastWeather WHERE id = 1;
+-- ALTER TABLE pastWeather
+-- ADD status TEXT NOT NULL DEFAULT 0;
+

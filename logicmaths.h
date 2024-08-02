@@ -10,6 +10,7 @@ public:
     //private slots:
     static double tempConversion(double);
     static double avgTemp(double*,int);
+    static double avgHumidity(double*,int);
     static QString weatherMode(QString*,int);
     static QString nameOfMonth(int);
     static double noOfDays(int,int);

@@ -18,8 +18,8 @@ class weatherData
 {
 public:
     weatherData();
-    static void databaseConnection(QString, double,double,double,double,int,int,int,int,int,int);
-    static void insertInformation(QString, double,double,double,double,int,int,int,int,int,int);
+    static void databaseConnection(QString, double,double,QString,double,double,int,int,int,int,int,int);
+    static void insertInformation(QString, double,double,QString,double,double,int,int,int,int,int,int);
 
     static int findLowestId();
 };

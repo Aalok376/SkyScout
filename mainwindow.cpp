@@ -61,6 +61,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->quickWidget->setMask(region);
     ui->verticalLayout_8->addWidget(ui->quickWidget, 0, Qt::AlignCenter);
 
+
+
   auto rootObject = ui->quickWidget->rootObject();
  connect(this , SIGNAL(updateMap(QVariant,QVariant)) , rootObject , SLOT(updateMap(QVariant,QVariant)));
 }
@@ -195,7 +197,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 int hour = dateTime::currentHour();
                 int min = dateTime::currentMin();
                 // qDebug()<<city;
-                weatherData::databaseConnection(city,temp,humidity,lat,lon,sunrise,sunset,currentTime,year,month,date);
+                weatherData::databaseConnection(city,temp,humidity,weatherStatus,lat,lon,sunrise,sunset,currentTime,year,month,date);
                 todaysWeather::databaseConnection(city,temp,humidity,weatherStatus,lat,lon,sunrise,sunset,
                                                   currentTime,year,month,date,hour,min);
                 // Debug output
@@ -609,45 +611,45 @@ void MainWindow::on_light_btn_clicked()
         ui->light_btn->setIcon(QIcon(":/new/prefix1/image/light.svg"));
         ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
 
-        ui->label_18->setStyleSheet("color:#F0EFF9; background:transparent;");
-        ui->label_temp->setStyleSheet("color:#F0EFF9;");
-        ui->label_currentWeather->setStyleSheet("color:#F0EFF9;");
-        ui->label_alert->setStyleSheet("color:#F0EFF9;");
-        ui->label_recentSearch->setStyleSheet("color:#F0EFF9; background:transparent;");
+        ui->label_18->setStyleSheet("color:#F0EFF9; background:transparent; font: 15pt 'Segoe UI';");
+        ui->label_temp->setStyleSheet("color:#F0EFF9; background:transparent; font: 15pt 'Segoe UI'");
+        ui->label_currentWeather->setStyleSheet("color:#F0EFF9; background:transparent; font: 15pt 'Segoe UI'");
+        ui->label_alert->setStyleSheet("color:#F0EFF9; background:transparent; font: 7pt 'Segoe UI'");
+        ui->label_recentSearch->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI'");
         ui->lineEdit_searchbar->setStyleSheet("background-color: rgb(217, 217, 217);color: #F0EFF9;"
                                               "border-top-right-radius:12%;border-bottom-right-radius:12%;");
 
-        ui->weather1->setStyleSheet("color:#F0EFF9;");
-        ui->temp1->setStyleSheet("color:#F0EFF9;");
-        ui->time1->setStyleSheet("color:#F0EFF9;");
+        ui->weather1->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->temp1->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->time1->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->weather2->setStyleSheet("color:#F0EFF9;");
-        ui->temp2->setStyleSheet("color:#F0EFF9;");
-        ui->time2->setStyleSheet("color:#F0EFF9;");
+        ui->weather2->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->temp2->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->time2->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->weather3->setStyleSheet("color:#F0EFF9;");
-        ui->temp3->setStyleSheet("color:#F0EFF9;");
-        ui->time3->setStyleSheet("color:#F0EFF9;");
+        ui->weather3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->temp3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->time3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->weather4->setStyleSheet("color:#F0EFF9;");
-        ui->temp4->setStyleSheet("color:#F0EFF9;");
-        ui->time4->setStyleSheet("color:#F0EFF9;");
+        ui->weather4->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->temp4->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->time4->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->weather5->setStyleSheet("color:#F0EFF9;");
-        ui->temp5->setStyleSheet("color:#F0EFF9;");
-        ui->time5->setStyleSheet("color:#F0EFF9;");
+        ui->weather5->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->temp5->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->time5->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->fWeather1->setStyleSheet("color:#F0EFF9; background:transparent;");
-        ui->fTemp1->setStyleSheet("color:#F0EFF9; background:transparent;");
-        ui->fDate1->setStyleSheet("color:#F0EFF9; background:transparent;");
+        ui->fWeather1->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->fTemp1->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->fDate1->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->fWeather2->setStyleSheet("color:#F0EFF9; background:transparent;");
-        ui->fTemp2->setStyleSheet("color:#F0EFF9; background:transparent;");
-        ui->fDate2->setStyleSheet("color:#F0EFF9; background:transparent;");
+        ui->fWeather2->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->fTemp2->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->fDate2->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->fWeather3->setStyleSheet("color:#F0EFF9; background:transparent;");
-        ui->fTemp3->setStyleSheet("color:#F0EFF9; background:transparent;");
-        ui->fDate3->setStyleSheet("color:#F0EFF9; background:transparent;");
+        ui->fWeather3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->fTemp3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
+        ui->fDate3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
 
         checkLight=false;
     }
@@ -656,45 +658,45 @@ void MainWindow::on_light_btn_clicked()
         ui->light_btn->setIcon(QIcon(":/new/prefix1/image/dark.svg"));
         ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
 
-        ui->label_18->setStyleSheet("color:black; background:transparent;");
-        ui->label_temp->setStyleSheet("color:black;");
-        ui->label_currentWeather->setStyleSheet("color:black;");
-        ui->label_alert->setStyleSheet("color:black;");
-        ui->label_recentSearch->setStyleSheet("color:black; background:transparent;");
+        ui->label_18->setStyleSheet("color:black; background:transparent; font: 15pt 'Segoe UI';");
+        ui->label_temp->setStyleSheet("color:black; background:transparent; font: 15pt 'Segoe UI'");
+        ui->label_currentWeather->setStyleSheet("color:black; background:transparent; font: 15pt 'Segoe UI'");
+        ui->label_alert->setStyleSheet("color:black; background:transparent; font: 7pt 'Segoe UI'");
+        ui->label_recentSearch->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI'");
         ui->lineEdit_searchbar->setStyleSheet("background-color: rgb(217, 217, 217);color: black;"
                                               "border-top-right-radius:12%;border-bottom-right-radius:12%;");
 
-        ui->weather1->setStyleSheet("color:black;");
-        ui->temp1->setStyleSheet("color:black;");
-        ui->time1->setStyleSheet("color:black;");
+        ui->weather1->setStyleSheet("color:black;  background:transparent; font: 10pt 'Segoe UI';");
+        ui->temp1->setStyleSheet("color:black;  background:transparent; font: 10pt 'Segoe UI';");
+        ui->time1->setStyleSheet("color:black;  background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->weather2->setStyleSheet("color:black;");
-        ui->temp2->setStyleSheet("color:black;");
-        ui->time2->setStyleSheet("color:black;");
+        ui->weather2->setStyleSheet("color:black;  background:transparent; font: 10pt 'Segoe UI';");
+        ui->temp2->setStyleSheet("color:black;  background:transparent; font: 10pt 'Segoe UI';");
+        ui->time2->setStyleSheet("color:black;  background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->weather3->setStyleSheet("color:black;");
-        ui->temp3->setStyleSheet("color:black;");
-        ui->time3->setStyleSheet("color:black;");
+        ui->weather3->setStyleSheet("color:black;  background:transparent; font: 10pt 'Segoe UI';");
+        ui->temp3->setStyleSheet("color:black;  background:transparent; font: 10pt 'Segoe UI';");
+        ui->time3->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->weather4->setStyleSheet("color:black;");
-        ui->temp4->setStyleSheet("color:black;");
-        ui->time4->setStyleSheet("color:black;");
+        ui->weather4->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
+        ui->temp4->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
+        ui->time4->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->weather5->setStyleSheet("color:black;");
-        ui->temp5->setStyleSheet("color:black;");
-        ui->time5->setStyleSheet("color:black;");
+        ui->weather5->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
+        ui->temp5->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
+        ui->time5->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->fWeather1->setStyleSheet("color:black; background:transparent;");
-        ui->fTemp1->setStyleSheet("color:black; background:transparent;");
-        ui->fDate1->setStyleSheet("color:black; background:transparent;");
+        ui->fWeather1->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
+        ui->fTemp1->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
+        ui->fDate1->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->fWeather2->setStyleSheet("color:black; background:transparent;");
-        ui->fTemp2->setStyleSheet("color:black; background:transparent;");
-        ui->fDate2->setStyleSheet("color:black; background:transparent;");
+        ui->fWeather2->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
+        ui->fTemp2->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
+        ui->fDate2->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->fWeather3->setStyleSheet("color:black; background:transparent;");
-        ui->fTemp3->setStyleSheet("color:black; background:transparent;");
-        ui->fDate3->setStyleSheet("color:black; background:transparent;");
+        ui->fWeather3->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
+        ui->fTemp3->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
+        ui->fDate3->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
 
         checkLight=true;
     }

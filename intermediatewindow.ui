@@ -58,6 +58,9 @@ border:none;</string>
           </item>
           <item>
            <widget class="QPushButton" name="btnPast">
+            <property name="styleSheet">
+             <string notr="true">background:transparent;</string>
+            </property>
             <property name="text">
              <string>past</string>
             </property>
@@ -81,30 +84,21 @@ border:none;</string>
         </item>
         <item>
          <widget class="QStackedWidget" name="stackedWidget">
+          <property name="styleSheet">
+           <string notr="true">background:rgba(255,255,255,0.1);
+border-radius:12%;</string>
+          </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="page">
-           <widget class="QLabel" name="label_2">
-            <property name="geometry">
-             <rect>
-              <x>40</x>
-              <y>70</y>
-              <width>49</width>
-              <height>16</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>1</string>
-            </property>
-           </widget>
            <widget class="QPushButton" name="past_data_btn">
             <property name="geometry">
              <rect>
-              <x>110</x>
-              <y>20</y>
-              <width>171</width>
-              <height>221</height>
+              <x>560</x>
+              <y>30</y>
+              <width>141</width>
+              <height>51</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -112,33 +106,318 @@ border:none;</string>
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 10pt 'Segoe UI';</string>
             </property>
             <property name="text">
              <string>past data</string>
             </property>
            </widget>
-          </widget>
-          <widget class="QWidget" name="page_2">
-           <widget class="QLabel" name="label_3">
+           <widget class="Line" name="line">
             <property name="geometry">
              <rect>
-              <x>50</x>
-              <y>80</y>
-              <width>51</width>
-              <height>41</height>
+              <x>30</x>
+              <y>100</y>
+              <width>671</width>
+              <height>4</height>
              </rect>
             </property>
-            <property name="text">
-             <string>2</string>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
            </widget>
+           <widget class="Line" name="line_2">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>140</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_3">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>180</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_4">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>220</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_5">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>260</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_6">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>300</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_7">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>340</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="QLabel" name="pastLocation">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>110</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Location</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="pastTemp">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>150</y>
+              <width>81</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Temperature</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="pastHumidity">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>190</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 10pt 'Segoe UI';
+background:transparent;</string>
+            </property>
+            <property name="text">
+             <string>Humidity</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="pastLat">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>270</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Latitude</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="pastLon">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>310</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Longitude</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="pastStatus">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>230</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Status</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="pastLocation_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>110</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="pastTemp_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>150</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="pastHumidity_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>190</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 10pt 'Segoe UI';
+background:transparent;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="pastStatus_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>230</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="pastLat_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>270</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="pastLon_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>310</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="page_2">
            <widget class="QPushButton" name="present_data_btn">
             <property name="geometry">
              <rect>
-              <x>130</x>
+              <x>560</x>
               <y>30</y>
-              <width>131</width>
-              <height>191</height>
+              <width>141</width>
+              <height>51</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -146,33 +425,318 @@ border:none;</string>
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 10pt 'Segoe UI';</string>
             </property>
             <property name="text">
              <string>present data</string>
             </property>
            </widget>
-          </widget>
-          <widget class="QWidget" name="page_3">
-           <widget class="QLabel" name="label_4">
+           <widget class="Line" name="line_8">
             <property name="geometry">
              <rect>
-              <x>48</x>
-              <y>115</y>
-              <width>31</width>
+              <x>30</x>
+              <y>100</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_9">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>140</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_10">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>180</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_11">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>220</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_12">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>260</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_13">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>300</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_14">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>340</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="QLabel" name="presentLocation">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>110</y>
+              <width>71</width>
               <height>21</height>
              </rect>
             </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
             <property name="text">
-             <string>3</string>
+             <string>Location</string>
             </property>
            </widget>
+           <widget class="QLabel" name="presentTemp">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>150</y>
+              <width>81</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Temperature</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="presentHumidity">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>190</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Humidity</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="presentStatus">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>230</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Status</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="presentLat">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>270</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Latitude</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="presentLon">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>310</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Longitude</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="presentLocation_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>110</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="presentTemp_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>150</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="presentHumidity_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>190</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="presentStatus_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>230</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="presentLat_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>270</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="presentLon_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>310</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="page_3">
            <widget class="QPushButton" name="future_data_btn">
             <property name="geometry">
              <rect>
-              <x>120</x>
-              <y>0</y>
-              <width>159</width>
-              <height>255</height>
+              <x>558</x>
+              <y>30</y>
+              <width>141</width>
+              <height>51</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -181,8 +745,306 @@ border:none;</string>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="styleSheet">
+             <string notr="true">font: 10pt 'Segoe UI';</string>
+            </property>
             <property name="text">
              <string>future data</string>
+            </property>
+           </widget>
+           <widget class="Line" name="line_15">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>100</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_16">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>140</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_17">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>180</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_18">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>220</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_19">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>260</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_20">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>300</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="Line" name="line_21">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>340</y>
+              <width>671</width>
+              <height>4</height>
+             </rect>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+           <widget class="QLabel" name="futureLocation">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>110</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Location</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="futureTemp">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>150</y>
+              <width>81</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Temperature</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="futureHumidity">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>190</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Humidity</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="futureStatus">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>230</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Status</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="futureLat">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>270</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Latitude</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="futureLon">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>310</y>
+              <width>71</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string>Longitude</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="futureLocation_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>110</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="futureTemp_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>150</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="futureHumidity_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>190</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="futureStatus_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>230</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="futureLat_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>270</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="futureLon_2">
+            <property name="geometry">
+             <rect>
+              <x>600</x>
+              <y>310</y>
+              <width>91</width>
+              <height>21</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
             </property>
            </widget>
           </widget>
