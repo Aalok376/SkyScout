@@ -18,6 +18,7 @@
 #include<QDebug>
 
 #include "todaysweather.h"
+#include "logicmaths.h"
 
 
 namespace Ui {

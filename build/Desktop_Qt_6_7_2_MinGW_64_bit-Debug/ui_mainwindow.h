@@ -149,24 +149,24 @@ public:
     QVBoxLayout *verticalLayout_21;
     QFrame *line_8;
     QHBoxLayout *horizontalLayout_26;
-    QLabel *currentlon;
-    QLabel *currentlon_2;
+    QLabel *currentTemp;
+    QLabel *currentTemp_2;
     QFrame *line_3;
     QHBoxLayout *horizontalLayout_22;
-    QLabel *currentTemp_2;
-    QLabel *currentTemp;
+    QLabel *currentHum;
+    QLabel *currentHum_2;
     QFrame *line_4;
     QHBoxLayout *horizontalLayout_24;
     QLabel *currentfl;
     QLabel *currentfl_2;
     QFrame *line_5;
     QHBoxLayout *horizontalLayout_23;
-    QLabel *currentHum_2;
-    QLabel *currentHum;
-    QFrame *line_6;
-    QHBoxLayout *horizontalLayout_25;
     QLabel *currentlat;
     QLabel *currentlat_2;
+    QFrame *line_6;
+    QHBoxLayout *horizontalLayout_25;
+    QLabel *currentlon;
+    QLabel *currentlon_2;
     QFrame *line_7;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -493,7 +493,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 306, 388));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 307, 392));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -1044,7 +1044,8 @@ public:
         current_time->setObjectName("current_time");
         current_time->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
-"font: 13pt \"Segoe UI\";"));
+"font: 13pt \"Segoe UI\";\n"
+"padding-left:20px;"));
 
         verticalLayout_20->addWidget(current_time);
 
@@ -1052,7 +1053,8 @@ public:
         currentlocation->setObjectName("currentlocation");
         currentlocation->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
-"font: 16pt \"Segoe UI\";"));
+"font: 16pt \"Segoe UI\";\n"
+"padding-left:15px;"));
 
         verticalLayout_20->addWidget(currentlocation);
 
@@ -1085,21 +1087,22 @@ public:
 
         horizontalLayout_26 = new QHBoxLayout();
         horizontalLayout_26->setObjectName("horizontalLayout_26");
-        currentlon = new QLabel(widget_3);
-        currentlon->setObjectName("currentlon");
-        currentlon->setStyleSheet(QString::fromUtf8("color:black;\n"
+        currentTemp = new QLabel(widget_3);
+        currentTemp->setObjectName("currentTemp");
+        currentTemp->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
 "font: 10pt \"Segoe UI\";"));
 
-        horizontalLayout_26->addWidget(currentlon);
+        horizontalLayout_26->addWidget(currentTemp);
 
-        currentlon_2 = new QLabel(widget_3);
-        currentlon_2->setObjectName("currentlon_2");
-        currentlon_2->setStyleSheet(QString::fromUtf8("color:black;\n"
+        currentTemp_2 = new QLabel(widget_3);
+        currentTemp_2->setObjectName("currentTemp_2");
+        currentTemp_2->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
+"font: 10pt \"Segoe UI\";\n"
+"padding-left:220px;"));
 
-        horizontalLayout_26->addWidget(currentlon_2);
+        horizontalLayout_26->addWidget(currentTemp_2);
 
 
         verticalLayout_21->addLayout(horizontalLayout_26);
@@ -1113,21 +1116,22 @@ public:
 
         horizontalLayout_22 = new QHBoxLayout();
         horizontalLayout_22->setObjectName("horizontalLayout_22");
-        currentTemp_2 = new QLabel(widget_3);
-        currentTemp_2->setObjectName("currentTemp_2");
-        currentTemp_2->setStyleSheet(QString::fromUtf8("color:black;\n"
+        currentHum = new QLabel(widget_3);
+        currentHum->setObjectName("currentHum");
+        currentHum->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
 "font: 10pt \"Segoe UI\";"));
 
-        horizontalLayout_22->addWidget(currentTemp_2);
+        horizontalLayout_22->addWidget(currentHum);
 
-        currentTemp = new QLabel(widget_3);
-        currentTemp->setObjectName("currentTemp");
-        currentTemp->setStyleSheet(QString::fromUtf8("color:black;\n"
+        currentHum_2 = new QLabel(widget_3);
+        currentHum_2->setObjectName("currentHum_2");
+        currentHum_2->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
+"font: 10pt \"Segoe UI\";\n"
+"padding-left:220px;"));
 
-        horizontalLayout_22->addWidget(currentTemp);
+        horizontalLayout_22->addWidget(currentHum_2);
 
 
         verticalLayout_21->addLayout(horizontalLayout_22);
@@ -1153,7 +1157,8 @@ public:
         currentfl_2->setObjectName("currentfl_2");
         currentfl_2->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
+"font: 10pt \"Segoe UI\";\n"
+"padding-left:220px;"));
 
         horizontalLayout_24->addWidget(currentfl_2);
 
@@ -1169,21 +1174,22 @@ public:
 
         horizontalLayout_23 = new QHBoxLayout();
         horizontalLayout_23->setObjectName("horizontalLayout_23");
-        currentHum_2 = new QLabel(widget_3);
-        currentHum_2->setObjectName("currentHum_2");
-        currentHum_2->setStyleSheet(QString::fromUtf8("color:black;\n"
+        currentlat = new QLabel(widget_3);
+        currentlat->setObjectName("currentlat");
+        currentlat->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
 "font: 10pt \"Segoe UI\";"));
 
-        horizontalLayout_23->addWidget(currentHum_2);
+        horizontalLayout_23->addWidget(currentlat);
 
-        currentHum = new QLabel(widget_3);
-        currentHum->setObjectName("currentHum");
-        currentHum->setStyleSheet(QString::fromUtf8("color:black;\n"
+        currentlat_2 = new QLabel(widget_3);
+        currentlat_2->setObjectName("currentlat_2");
+        currentlat_2->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
+"font: 10pt \"Segoe UI\";\n"
+"padding-left:220px;"));
 
-        horizontalLayout_23->addWidget(currentHum);
+        horizontalLayout_23->addWidget(currentlat_2);
 
 
         verticalLayout_21->addLayout(horizontalLayout_23);
@@ -1197,21 +1203,22 @@ public:
 
         horizontalLayout_25 = new QHBoxLayout();
         horizontalLayout_25->setObjectName("horizontalLayout_25");
-        currentlat = new QLabel(widget_3);
-        currentlat->setObjectName("currentlat");
-        currentlat->setStyleSheet(QString::fromUtf8("color:black;\n"
+        currentlon = new QLabel(widget_3);
+        currentlon->setObjectName("currentlon");
+        currentlon->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
 "font: 10pt \"Segoe UI\";"));
 
-        horizontalLayout_25->addWidget(currentlat);
+        horizontalLayout_25->addWidget(currentlon);
 
-        currentlat_2 = new QLabel(widget_3);
-        currentlat_2->setObjectName("currentlat_2");
-        currentlat_2->setStyleSheet(QString::fromUtf8("color:black;\n"
+        currentlon_2 = new QLabel(widget_3);
+        currentlon_2->setObjectName("currentlon_2");
+        currentlon_2->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
+"font: 10pt \"Segoe UI\";\n"
+"padding-left:220px;"));
 
-        horizontalLayout_25->addWidget(currentlat_2);
+        horizontalLayout_25->addWidget(currentlon_2);
 
 
         verticalLayout_21->addLayout(horizontalLayout_25);
@@ -1246,7 +1253,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 25));
+        menubar->setGeometry(QRect(0, 0, 1247, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -1320,19 +1327,19 @@ public:
         fWeather3->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         fTemp3->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         fDate3->setText(QCoreApplication::translate("MainWindow", "date", nullptr));
-        current_time->setText(QCoreApplication::translate("MainWindow", "Time", nullptr));
-        currentlocation->setText(QCoreApplication::translate("MainWindow", "Location", nullptr));
+        current_time->setText(QCoreApplication::translate("MainWindow", "      Time", nullptr));
+        currentlocation->setText(QCoreApplication::translate("MainWindow", "    Location", nullptr));
         currentsta->setText(QCoreApplication::translate("MainWindow", "Status", nullptr));
-        currentlon->setText(QCoreApplication::translate("MainWindow", "Longitude", nullptr));
-        currentlon_2->setText(QCoreApplication::translate("MainWindow", "Longitude", nullptr));
-        currentTemp_2->setText(QCoreApplication::translate("MainWindow", "Temperature", nullptr));
-        currentTemp->setText(QCoreApplication::translate("MainWindow", "Temperature", nullptr));
-        currentfl->setText(QCoreApplication::translate("MainWindow", "Feels Like", nullptr));
-        currentfl_2->setText(QCoreApplication::translate("MainWindow", "Feels Like", nullptr));
-        currentHum_2->setText(QCoreApplication::translate("MainWindow", "Humidity", nullptr));
-        currentHum->setText(QCoreApplication::translate("MainWindow", "Humidity", nullptr));
-        currentlat->setText(QCoreApplication::translate("MainWindow", "Latitude", nullptr));
-        currentlat_2->setText(QCoreApplication::translate("MainWindow", "Latitude", nullptr));
+        currentTemp->setText(QCoreApplication::translate("MainWindow", "      Temperature", nullptr));
+        currentTemp_2->setText(QCoreApplication::translate("MainWindow", "                                                                        Temperature", nullptr));
+        currentHum->setText(QCoreApplication::translate("MainWindow", "      Humidity", nullptr));
+        currentHum_2->setText(QCoreApplication::translate("MainWindow", "                                                                         Humidity", nullptr));
+        currentfl->setText(QCoreApplication::translate("MainWindow", "      Feels Like", nullptr));
+        currentfl_2->setText(QCoreApplication::translate("MainWindow", "                                                                         Feels Like", nullptr));
+        currentlat->setText(QCoreApplication::translate("MainWindow", "      Latitude", nullptr));
+        currentlat_2->setText(QCoreApplication::translate("MainWindow", "                                                                         Latitude", nullptr));
+        currentlon->setText(QCoreApplication::translate("MainWindow", "      Longitude", nullptr));
+        currentlon_2->setText(QCoreApplication::translate("MainWindow", "                                                                         Longitude", nullptr));
     } // retranslateUi
 
 };

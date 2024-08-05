@@ -89,7 +89,7 @@ border:none;</string>
 border-radius:12%;</string>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="page">
            <widget class="QPushButton" name="past_data_btn">
@@ -404,6 +404,40 @@ font: 10pt 'Segoe UI';</string>
             <property name="styleSheet">
              <string notr="true">background:transparent;
 font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="locationpast">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>40</y>
+              <width>191</width>
+              <height>51</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 16pt 'Segoe UI';
+color:black;</string>
+            </property>
+            <property name="text">
+             <string>Location</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="iconpast">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>20</y>
+              <width>151</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;</string>
             </property>
             <property name="text">
              <string/>
@@ -728,6 +762,41 @@ font: 10pt 'Segoe UI';</string>
              <string/>
             </property>
            </widget>
+           <widget class="QLabel" name="locationpresent">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>40</y>
+              <width>151</width>
+              <height>51</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 16pt 'Segoe UI';
+color:black;</string>
+            </property>
+            <property name="text">
+             <string>Location</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="iconpresent">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>20</y>
+              <width>151</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
           </widget>
           <widget class="QWidget" name="page_3">
            <widget class="QPushButton" name="future_data_btn">
@@ -1042,6 +1111,40 @@ font: 10pt 'Segoe UI';</string>
             <property name="styleSheet">
              <string notr="true">background:transparent;
 font: 10pt 'Segoe UI';</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="locationfuture">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>40</y>
+              <width>161</width>
+              <height>51</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;
+font: 16pt 'Segoe UI';
+color:black;</string>
+            </property>
+            <property name="text">
+             <string>Location</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="iconfuture">
+            <property name="geometry">
+             <rect>
+              <x>180</x>
+              <y>20</y>
+              <width>151</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background:transparent;</string>
             </property>
             <property name="text">
              <string/>

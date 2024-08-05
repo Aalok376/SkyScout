@@ -73,8 +73,9 @@ presentGraph::presentGraph(QWidget *parent)
 
     QSharedPointer<QCPAxisTickerText> textTicker(new QCPAxisTickerText);
     for(int i=0;i<temp.size();i++) {
-
-        textTicker->addTick(preciseHr[i], QString::number(hr[i])+":"+QString::number(min[i]));
+        QString check_hr = logicMaths::checkDigit(hr[i]);
+        QString check_min = logicMaths::checkDigit(min[i]);
+        textTicker->addTick(preciseHr[i], check_hr+":"+check_min);
     }
 
     ui->presentplot->xAxis->setTicker(textTicker);

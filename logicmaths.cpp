@@ -148,3 +148,39 @@ QIcon logicMaths::getStatusIcon(QString status,int ctime,int sunrise,int sunset)
     }
     return icon;
 }
+
+QIcon logicMaths::getStatusIcon(QString status) {
+    QIcon icon;
+    if(status=="Clouds") {
+            icon= QIcon(":/new/prefix1/image/cloudy.png");
+    }
+    else if(status=="Drizzle") {
+
+            icon=QIcon(":/new/prefix1/image/weather.png");
+    }
+    else if(status=="Mist" || status=="Haze" || status=="Fog") {
+        icon =QIcon(":/new/prefix1/image/haze.png");
+    }
+    else if(status=="Clear") {
+
+            icon=QIcon(":/new/prefix1/image/Clear.png");
+    }
+    else if(status=="Dust" || status=="Sand" || status=="Ash") {
+
+        icon=QIcon(":/new/prefix1/image/dust.png");
+    }
+    else {
+        icon=QIcon(":/new/prefix1/image/"+status+".png");
+    }
+    return icon;
+}
+
+QString logicMaths::checkDigit(int t){
+    QString ts;
+    if(t<10){
+        ts = "0"+QString::number(t);
+    }else{
+        ts = QString::number(t);
+    }
+    return ts;
+}

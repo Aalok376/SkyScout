@@ -176,6 +176,10 @@ intermediateWindow::intermediateWindow(QWidget *parent)
     double h = logicMaths::avgHumidity(hum,humidity.size());
     QString s = logicMaths::weatherMode(sta,status.size());
 
+    ui->locationpast->setText(city);
+    QIcon icon = logicMaths::getStatusIcon(s);
+    ui->iconpast->setPixmap(icon.pixmap(QSize(85,51)));
+
     ui->pastLocation_2->setText(city);
     t = logicMaths::twoDecimals(t);
     h = logicMaths::twoDecimals(h);
@@ -230,6 +234,10 @@ intermediateWindow::intermediateWindow(QWidget *parent)
     h = logicMaths::twoDecimals(h);
      s = logicMaths::weatherMode(sta0,status2.size());
 
+    ui->locationpresent->setText(city);
+    icon = logicMaths::getStatusIcon(s);
+    ui->iconpresent->setPixmap(icon.pixmap(QSize(85,51)));
+
     ui->presentLocation_2->setText(city);
     ui->presentTemp_2->setText(QString::number(t)+"°C");
     ui->presentHumidity_2->setText(QString::number(h)+"%");
@@ -281,6 +289,10 @@ intermediateWindow::intermediateWindow(QWidget *parent)
     h = logicMaths::avgHumidity(hum1,humidity3.size());
     h = logicMaths::twoDecimals(h);
      s = logicMaths::weatherMode(sta1,status3.size());
+
+    ui->locationfuture->setText(city);
+    icon = logicMaths::getStatusIcon(s);
+    ui->iconfuture->setPixmap(icon.pixmap(QSize(85,51)));
 
     ui->futureLocation_2->setText(city);
     ui->futureTemp_2->setText(QString::number(t)+"°C");

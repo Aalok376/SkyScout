@@ -17,6 +17,8 @@ public:
     static double noOfDays(int,int);
     static double twoDecimals(double);
     static QIcon getStatusIcon(QString,int,int,int);
+    static QIcon getStatusIcon(QString);
+    static QString checkDigit(int);
 };
 
 #endif // LOGICMATHS_H

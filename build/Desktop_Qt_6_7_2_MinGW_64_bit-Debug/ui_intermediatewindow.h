@@ -56,6 +56,8 @@ public:
     QLabel *pastStatus_2;
     QLabel *pastLat_2;
     QLabel *pastLon_2;
+    QLabel *locationpast;
+    QLabel *iconpast;
     QWidget *page_2;
     QPushButton *present_data_btn;
     QFrame *line_8;
@@ -77,6 +79,8 @@ public:
     QLabel *presentStatus_2;
     QLabel *presentLat_2;
     QLabel *presentLon_2;
+    QLabel *locationpresent;
+    QLabel *iconpresent;
     QWidget *page_3;
     QPushButton *future_data_btn;
     QFrame *line_15;
@@ -98,6 +102,8 @@ public:
     QLabel *futureStatus_2;
     QLabel *futureLat_2;
     QLabel *futureLon_2;
+    QLabel *locationfuture;
+    QLabel *iconfuture;
 
     void setupUi(QDialog *intermediateWindow)
     {
@@ -259,6 +265,16 @@ public:
         pastLon_2->setGeometry(QRect(600, 310, 91, 21));
         pastLon_2->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "font: 10pt 'Segoe UI';"));
+        locationpast = new QLabel(page);
+        locationpast->setObjectName("locationpast");
+        locationpast->setGeometry(QRect(40, 40, 191, 51));
+        locationpast->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"font: 16pt 'Segoe UI';\n"
+"color:black;"));
+        iconpast = new QLabel(page);
+        iconpast->setObjectName("iconpast");
+        iconpast->setGeometry(QRect(180, 20, 151, 71));
+        iconpast->setStyleSheet(QString::fromUtf8("background:transparent;"));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
         page_2->setObjectName("page_2");
@@ -363,6 +379,17 @@ public:
         presentLon_2->setGeometry(QRect(600, 310, 91, 21));
         presentLon_2->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "font: 10pt 'Segoe UI';"));
+        locationpresent = new QLabel(page_2);
+        locationpresent->setObjectName("locationpresent");
+        locationpresent->setGeometry(QRect(40, 40, 151, 51));
+        locationpresent->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"font: 16pt 'Segoe UI';\n"
+"color:black;"));
+        iconpresent = new QLabel(page_2);
+        iconpresent->setObjectName("iconpresent");
+        iconpresent->setGeometry(QRect(180, 20, 151, 71));
+        iconpresent->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+""));
         stackedWidget->addWidget(page_2);
         page_3 = new QWidget();
         page_3->setObjectName("page_3");
@@ -467,6 +494,16 @@ public:
         futureLon_2->setGeometry(QRect(600, 310, 91, 21));
         futureLon_2->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "font: 10pt 'Segoe UI';"));
+        locationfuture = new QLabel(page_3);
+        locationfuture->setObjectName("locationfuture");
+        locationfuture->setGeometry(QRect(40, 40, 161, 51));
+        locationfuture->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"font: 16pt 'Segoe UI';\n"
+"color:black;"));
+        iconfuture = new QLabel(page_3);
+        iconfuture->setObjectName("iconfuture");
+        iconfuture->setGeometry(QRect(180, 20, 151, 71));
+        iconfuture->setStyleSheet(QString::fromUtf8("background:transparent;"));
         stackedWidget->addWidget(page_3);
 
         verticalLayout_2->addWidget(stackedWidget);
@@ -480,7 +517,7 @@ public:
 
         retranslateUi(intermediateWindow);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(intermediateWindow);
@@ -506,6 +543,8 @@ public:
         pastStatus_2->setText(QString());
         pastLat_2->setText(QString());
         pastLon_2->setText(QString());
+        locationpast->setText(QCoreApplication::translate("intermediateWindow", "Location", nullptr));
+        iconpast->setText(QString());
         present_data_btn->setText(QCoreApplication::translate("intermediateWindow", "present data", nullptr));
         presentLocation->setText(QCoreApplication::translate("intermediateWindow", "Location", nullptr));
         presentTemp->setText(QCoreApplication::translate("intermediateWindow", "Temperature", nullptr));
@@ -519,6 +558,8 @@ public:
         presentStatus_2->setText(QString());
         presentLat_2->setText(QString());
         presentLon_2->setText(QString());
+        locationpresent->setText(QCoreApplication::translate("intermediateWindow", "Location", nullptr));
+        iconpresent->setText(QString());
         future_data_btn->setText(QCoreApplication::translate("intermediateWindow", "future data", nullptr));
         futureLocation->setText(QCoreApplication::translate("intermediateWindow", "Location", nullptr));
         futureTemp->setText(QCoreApplication::translate("intermediateWindow", "Temperature", nullptr));
@@ -532,6 +573,8 @@ public:
         futureStatus_2->setText(QString());
         futureLat_2->setText(QString());
         futureLon_2->setText(QString());
+        locationfuture->setText(QCoreApplication::translate("intermediateWindow", "Location", nullptr));
+        iconfuture->setText(QString());
     } // retranslateUi
 
 };

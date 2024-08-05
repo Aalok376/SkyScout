@@ -67,23 +67,23 @@ MainWindow::MainWindow(QWidget *parent)
  // //   map integration
    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/MapView.qml")));
     ui->quickWidget->show();
- //   // int wid = 400,hei = 200;
- //     int radius = 20;
- //    int wid=ui->widget_2->width();
- //     int hei=ui->widget_2->height();
+    int wid = 400,hei = 200;
+      int radius = 12;
+     //int wid=ui->widget_2->width();
+      //int hei=ui->widget_2->height();
  //   qDebug()<<wid<<"skdfksdsjfksdfjsdkjfdskj";
  //     qDebug()<<hei;
 
- //   ui->quickWidget->setFixedSize(wid, hei);
+    ui->quickWidget->setFixedSize(wid, hei);
  //  //  Create a QPainterPath for the rounded rectangle
- //    QPainterPath path;
- //   path.addRoundedRect(0, 0, wid, hei, radius, radius);
+     QPainterPath path;
+    path.addRoundedRect(0, 0, wid, hei, radius, radius);
 
  // //    // Convert the QPainterPath to a QRegion and set it as the mask
- //    QRegion region(path.toFillPolygon().toPolygon());
+     QRegion region(path.toFillPolygon().toPolygon());
 
- //    ui->quickWidget->setMask(region);
- //  ui->horizontalLayout_28->addWidget(ui->quickWidget, 0, Qt::AlignCenter);
+     ui->quickWidget->setMask(region);
+   //ui->horizontalLayout_28->addWidget(ui->quickWidget, 0, Qt::AlignCenter);
 
 
 
@@ -355,8 +355,8 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     }
 
                     //small icons
-                    int iWidth = 10;
-                    int iHeight = 10;
+                    int iWidth = 27;
+                    int iHeight = 25;
                     QPixmap smallIcon(":/new/prefix1/image/Humidity.png");
                     ui->humidity->setPixmap(smallIcon.scaled(iWidth,
                                              iHeight, Qt::KeepAspectRatio, Qt::SmoothTransformation));
@@ -373,8 +373,12 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
 
                     //bottom right
                     int chr = dateTime::fetchHour(ts);
+                    QString current_hour = logicMaths::checkDigit(chr);
+
                     int cmin = dateTime::fetchMin(ts);
-                    ui->current_time->setText(QString::number(chr)+":"+QString::number(cmin));
+                    QString current_min = logicMaths::checkDigit(cmin);
+
+                    ui->current_time->setText(current_hour+":"+current_min);
                     ui->currentlocation->setText(location);
 
                     QIcon cicon = logicMaths::getStatusIcon(weatherStatus,currentTime,sunrise,sunset);
@@ -419,7 +423,10 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->icon1->setPixmap(icon.pixmap(QSize(W, H)));
                     ui->weather1->setText(weather1);
                     ui->temp1->setText(QString::number(temp1)+"°C");
-                    ui->time1->setText(QString::number(hour1)+":"+QString::number(min1));
+
+                    QString h1 = logicMaths::checkDigit(hour1);
+                    QString m1 = logicMaths::checkDigit(min1);
+                    ui->time1->setText(h1+":"+m1);
                     //qDebug()<<"minute is "<<min1;
                     //icon =
                 }else{
@@ -444,7 +451,10 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->icon2->setPixmap(icon.pixmap(QSize(W,H)));
                     ui->weather2->setText(weather2);
                     ui->temp2->setText(QString::number(temp2)+"°C");
-                    ui->time2->setText(QString::number(hour2)+":"+QString::number(min2));
+
+                    QString h2 = logicMaths::checkDigit(hour2);
+                    QString m2 = logicMaths::checkDigit(min2);
+                    ui->time2->setText(h2+":"+m2);
                 }else{
                     ui->icon2->setText("");
                     ui->weather2->setText("-");
@@ -469,7 +479,10 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->icon3->setPixmap(icon.pixmap(QSize(W,H)));
                     ui->weather3->setText(weather3);
                     ui->temp3->setText(QString::number(temp3)+"°C");
-                    ui->time3->setText(QString::number(hour3)+":"+QString::number(min3));
+
+                    QString h3 = logicMaths::checkDigit(hour3);
+                    QString m3 = logicMaths::checkDigit(min3);
+                    ui->time3->setText(h3+":"+m3);
                     //qDebug()<<"minute is "<<min1;
                 }else{
                     ui->icon3->setText("");
@@ -490,8 +503,11 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->icon4->setPixmap(icon.pixmap(QSize(W,H)));
                     ui->weather4->setText(weather4);
                     ui->temp4->setText(QString::number(temp4)+"°C");
-                    ui->time4->setText(QString::number(hour4)+":"+QString::number(min4));
-                    //qDebug()<<"minute is "<<min1;
+
+                    QString h4 = logicMaths::checkDigit(hour4);
+                    QString m4 = logicMaths::checkDigit(min4);
+                    ui->time4->setText(h4+":"+m4);
+
                 }else{
                     ui->icon4->setText("");
                     ui->weather4->setText("-");
@@ -511,8 +527,10 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     ui->icon5->setPixmap(icon.pixmap(QSize(W,H)));
                     ui->weather5->setText(weather5);
                     ui->temp5->setText(QString::number(temp5)+"°C");
-                    ui->time5->setText(QString::number(hour5)+":"+QString::number(min5));
-                    //qDebug()<<"minute is "<<min1;
+
+                    QString h5 = logicMaths::checkDigit(hour5);
+                    QString m5 = logicMaths::checkDigit(min5);
+                    ui->time5->setText(h5+":"+m5);
                 }else{
                     ui->icon5->setText("");
                     ui->weather5->setText("-");
@@ -728,18 +746,18 @@ void MainWindow::on_light_btn_clicked()
         ui->fTemp3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
         ui->fDate3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->currentlocation->setStyleSheet("color:#F0EFF9;background:transparent;font: 16pt 'Segoe UI';");
-        ui->current_time->setStyleSheet("color:#F0EFF9;background:transparent;font: 13pt 'Segoe UI';");
+        ui->currentlocation->setStyleSheet("color:#F0EFF9;background:transparent;font: 16pt 'Segoe UI';padding-left:15px;");
+        ui->current_time->setStyleSheet("color:#F0EFF9;background:transparent;font: 13pt 'Segoe UI';padding-left:20px;");
         ui->currentTemp->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
-        ui->currentTemp_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentTemp_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
         ui->currentHum->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
-        ui->currentHum_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentHum_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
         ui->currentfl->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
-        ui->currentfl_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentfl_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
         ui->currentlat->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
-        ui->currentlat_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentlat_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
         ui->currentlon->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
-        ui->currentlon_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentlon_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
 
         checkLight=false;
     }
@@ -792,18 +810,18 @@ void MainWindow::on_light_btn_clicked()
         ui->fTemp3->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
         ui->fDate3->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->currentlocation->setStyleSheet("color:black;background:transparent;font: 16pt 'Segoe UI';");
-        ui->current_time->setStyleSheet("color:black;background:transparent;font: 13pt 'Segoe UI';");
+        ui->currentlocation->setStyleSheet("color:black;background:transparent;font: 16pt 'Segoe UI';padding-left:15px;");
+        ui->current_time->setStyleSheet("color:black;background:transparent;font: 13pt 'Segoe UI';padding-left:20px;");
         ui->currentTemp->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
-        ui->currentTemp_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentTemp_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
         ui->currentHum->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
-        ui->currentHum_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentHum_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
         ui->currentfl->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
-        ui->currentfl_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentfl_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
         ui->currentlat->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
-        ui->currentlat_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentlat_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
         ui->currentlon->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
-        ui->currentlon_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+        ui->currentlon_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
 
         checkLight=true;
     }

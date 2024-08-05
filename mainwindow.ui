@@ -510,8 +510,8 @@ border-radius:12%;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>306</width>
-             <height>388</height>
+             <width>307</width>
+             <height>392</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -1258,10 +1258,11 @@ background:rgba(255,255,255,.1);</string>
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
-font: 13pt &quot;Segoe UI&quot;;</string>
+font: 13pt &quot;Segoe UI&quot;;
+padding-left:20px;</string>
                    </property>
                    <property name="text">
-                    <string>Time</string>
+                    <string>      Time</string>
                    </property>
                   </widget>
                  </item>
@@ -1270,10 +1271,11 @@ font: 13pt &quot;Segoe UI&quot;;</string>
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
-font: 16pt &quot;Segoe UI&quot;;</string>
+font: 16pt &quot;Segoe UI&quot;;
+padding-left:15px;</string>
                    </property>
                    <property name="text">
-                    <string>Location</string>
+                    <string>    Location</string>
                    </property>
                   </widget>
                  </item>
@@ -1321,26 +1323,27 @@ font: 10pt &quot;Segoe UI&quot;;</string>
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_26">
                  <item>
-                  <widget class="QLabel" name="currentlon">
+                  <widget class="QLabel" name="currentTemp">
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
 font: 10pt &quot;Segoe UI&quot;;</string>
                    </property>
                    <property name="text">
-                    <string>Longitude</string>
+                    <string>      Temperature</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="currentlon_2">
+                  <widget class="QLabel" name="currentTemp_2">
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
-font: 10pt &quot;Segoe UI&quot;;</string>
+font: 10pt &quot;Segoe UI&quot;;
+padding-left:220px;</string>
                    </property>
                    <property name="text">
-                    <string>Longitude</string>
+                    <string>                                                                        Temperature</string>
                    </property>
                   </widget>
                  </item>
@@ -1356,26 +1359,27 @@ font: 10pt &quot;Segoe UI&quot;;</string>
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_22">
                  <item>
-                  <widget class="QLabel" name="currentTemp_2">
+                  <widget class="QLabel" name="currentHum">
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
 font: 10pt &quot;Segoe UI&quot;;</string>
                    </property>
                    <property name="text">
-                    <string>Temperature</string>
+                    <string>      Humidity</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="currentTemp">
+                  <widget class="QLabel" name="currentHum_2">
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
-font: 10pt &quot;Segoe UI&quot;;</string>
+font: 10pt &quot;Segoe UI&quot;;
+padding-left:220px;</string>
                    </property>
                    <property name="text">
-                    <string>Temperature</string>
+                    <string>                                                                         Humidity</string>
                    </property>
                   </widget>
                  </item>
@@ -1398,7 +1402,7 @@ background:transparent;
 font: 10pt &quot;Segoe UI&quot;;</string>
                    </property>
                    <property name="text">
-                    <string>Feels Like</string>
+                    <string>      Feels Like</string>
                    </property>
                   </widget>
                  </item>
@@ -1407,10 +1411,11 @@ font: 10pt &quot;Segoe UI&quot;;</string>
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
-font: 10pt &quot;Segoe UI&quot;;</string>
+font: 10pt &quot;Segoe UI&quot;;
+padding-left:220px;</string>
                    </property>
                    <property name="text">
-                    <string>Feels Like</string>
+                    <string>                                                                         Feels Like</string>
                    </property>
                   </widget>
                  </item>
@@ -1426,26 +1431,27 @@ font: 10pt &quot;Segoe UI&quot;;</string>
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_23">
                  <item>
-                  <widget class="QLabel" name="currentHum_2">
+                  <widget class="QLabel" name="currentlat">
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
 font: 10pt &quot;Segoe UI&quot;;</string>
                    </property>
                    <property name="text">
-                    <string>Humidity</string>
+                    <string>      Latitude</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="currentHum">
+                  <widget class="QLabel" name="currentlat_2">
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
-font: 10pt &quot;Segoe UI&quot;;</string>
+font: 10pt &quot;Segoe UI&quot;;
+padding-left:220px;</string>
                    </property>
                    <property name="text">
-                    <string>Humidity</string>
+                    <string>                                                                         Latitude</string>
                    </property>
                   </widget>
                  </item>
@@ -1461,26 +1467,27 @@ font: 10pt &quot;Segoe UI&quot;;</string>
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_25">
                  <item>
-                  <widget class="QLabel" name="currentlat">
+                  <widget class="QLabel" name="currentlon">
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
 font: 10pt &quot;Segoe UI&quot;;</string>
                    </property>
                    <property name="text">
-                    <string>Latitude</string>
+                    <string>      Longitude</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="currentlat_2">
+                  <widget class="QLabel" name="currentlon_2">
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
-font: 10pt &quot;Segoe UI&quot;;</string>
+font: 10pt &quot;Segoe UI&quot;;
+padding-left:220px;</string>
                    </property>
                    <property name="text">
-                    <string>Latitude</string>
+                    <string>                                                                         Longitude</string>
                    </property>
                   </widget>
                  </item>
@@ -1512,7 +1519,7 @@ font: 10pt &quot;Segoe UI&quot;;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
