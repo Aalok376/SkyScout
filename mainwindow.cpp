@@ -34,7 +34,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->light_btn->setIconSize(QSize(x,y));
 
     ui->seemore_btn->setIcon(QIcon(":/new/prefix1/image/more.png"));
-
     x= ui->seemore_btn->width();
     y =ui->seemore_btn->height();
     ui->seemore_btn->setIconSize(QSize(x,y));
@@ -47,7 +46,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(networkManager,&QNetworkAccessManager::finished ,this , &MainWindow::onWeatherDataRecieved);
     connect(NetworkManager, &QNetworkAccessManager::finished , this , &MainWindow::onLocationRecieved);
     //setting fixed size
-    resize(800,600);
+    resize(900,600);
     setFixedSize(size());
     addressObj->fetchLocation();
     //setting up model for suggestion feature
@@ -57,21 +56,26 @@ MainWindow::MainWindow(QWidget *parent)
         completer->setMaxVisibleItems(5);
     ui->lineEdit_searchbar->setCompleter(completer);
 
-    // map integration
+ // //   map integration
    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/MapView.qml")));
     ui->quickWidget->show();
-   int wid = 200,hei = 200;
-    int radius = 20;
-    ui->quickWidget->setFixedSize(wid, hei);
-    // Create a QPainterPath for the rounded rectangle
-    QPainterPath path;
-    path.addRoundedRect(0, 0, wid, hei, radius, radius);
+ //   // int wid = 400,hei = 200;
+ //     int radius = 20;
+ //    int wid=ui->widget_2->width();
+ //     int hei=ui->widget_2->height();
+ //   qDebug()<<wid<<"skdfksdsjfksdfjsdkjfdskj";
+ //     qDebug()<<hei;
 
-    // Convert the QPainterPath to a QRegion and set it as the mask
-    QRegion region(path.toFillPolygon().toPolygon());
+ //   ui->quickWidget->setFixedSize(wid, hei);
+ //  //  Create a QPainterPath for the rounded rectangle
+ //    QPainterPath path;
+ //   path.addRoundedRect(0, 0, wid, hei, radius, radius);
 
-    ui->quickWidget->setMask(region);
-  //  ui->verticalLayout_8->addWidget(ui->quickWidget, 0, Qt::AlignCenter);
+ // //    // Convert the QPainterPath to a QRegion and set it as the mask
+ //    QRegion region(path.toFillPolygon().toPolygon());
+
+ //    ui->quickWidget->setMask(region);
+ //  ui->horizontalLayout_28->addWidget(ui->quickWidget, 0, Qt::AlignCenter);
 
 
 
@@ -343,8 +347,8 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     }
 
                     //small icons
-                    int iWidth = 32;
-                    int iHeight = 30;
+                    int iWidth = 10;
+                    int iHeight = 10;
                     QPixmap smallIcon(":/new/prefix1/image/Humidity.png");
                     ui->humidity->setPixmap(smallIcon.scaled(iWidth,
                                              iHeight, Qt::KeepAspectRatio, Qt::SmoothTransformation));

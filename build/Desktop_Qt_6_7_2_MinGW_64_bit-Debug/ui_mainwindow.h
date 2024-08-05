@@ -32,7 +32,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout_21;
+    QHBoxLayout *horizontalLayout_17;
     QHBoxLayout *horizontalLayout_11;
     QVBoxLayout *verticalLayout_15;
     QWidget *widget;
@@ -101,11 +101,6 @@ public:
     QLabel *temp5;
     QLabel *time5;
     QVBoxLayout *verticalLayout_11;
-    QHBoxLayout *horizontalLayout_17;
-    QVBoxLayout *verticalLayout_17;
-    QSpacerItem *verticalSpacer_3;
-    QQuickWidget *quickWidget;
-    QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_7;
     QHBoxLayout *horizontalLayout_12;
     QSpacerItem *horizontalSpacer;
@@ -115,6 +110,8 @@ public:
     QPushButton *light_btn;
     QPushButton *pushButton_flag;
     QSpacerItem *verticalSpacer_2;
+    QHBoxLayout *horizontalLayout_28;
+    QQuickWidget *quickWidget;
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout_16;
     QVBoxLayout *verticalLayout_16;
@@ -138,25 +135,36 @@ public:
     QLabel *fTemp3;
     QLabel *fDate3;
     QWidget *widget_3;
+    QHBoxLayout *horizontalLayout_27;
+    QVBoxLayout *verticalLayout_22;
+    QHBoxLayout *horizontalLayout_21;
+    QVBoxLayout *verticalLayout_20;
     QLabel *current_time;
-    QFrame *line_3;
-    QFrame *line_4;
-    QFrame *line_5;
-    QFrame *line_6;
-    QFrame *line_7;
-    QFrame *line_8;
     QLabel *currentlocation;
-    QLabel *currentHum;
-    QLabel *currentfl;
-    QLabel *currentlat;
-    QLabel *currentlon;
-    QLabel *currentTemp;
-    QLabel *currentTemp_2;
-    QLabel *currentHum_2;
-    QLabel *currentfl_2;
-    QLabel *currentlat_2;
-    QLabel *currentlon_2;
     QLabel *currentsta;
+    QSpacerItem *horizontalSpacer_2;
+    QVBoxLayout *verticalLayout_21;
+    QFrame *line_8;
+    QHBoxLayout *horizontalLayout_26;
+    QLabel *currentlon;
+    QLabel *currentlon_2;
+    QFrame *line_3;
+    QHBoxLayout *horizontalLayout_22;
+    QLabel *currentTemp_2;
+    QLabel *currentTemp;
+    QFrame *line_4;
+    QHBoxLayout *horizontalLayout_24;
+    QLabel *currentfl;
+    QLabel *currentfl_2;
+    QFrame *line_5;
+    QHBoxLayout *horizontalLayout_23;
+    QLabel *currentHum_2;
+    QLabel *currentHum;
+    QFrame *line_6;
+    QHBoxLayout *horizontalLayout_25;
+    QLabel *currentlat;
+    QLabel *currentlat_2;
+    QFrame *line_7;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -174,8 +182,8 @@ public:
 "background-image: url(\":/new/prefix1/image/background.png\");"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        horizontalLayout_21 = new QHBoxLayout(centralwidget);
-        horizontalLayout_21->setObjectName("horizontalLayout_21");
+        horizontalLayout_17 = new QHBoxLayout(centralwidget);
+        horizontalLayout_17->setObjectName("horizontalLayout_17");
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setObjectName("horizontalLayout_11");
         verticalLayout_15 = new QVBoxLayout();
@@ -396,7 +404,7 @@ public:
         verticalLayout_18->setSpacing(0);
         verticalLayout_18->setObjectName("verticalLayout_18");
         horizontalLayout_18 = new QHBoxLayout();
-        horizontalLayout_18->setSpacing(80);
+        horizontalLayout_18->setSpacing(20);
         horizontalLayout_18->setObjectName("horizontalLayout_18");
         horizontalLayout_18->setContentsMargins(30, -1, 30, -1);
         humidity = new QLabel(frame);
@@ -421,7 +429,7 @@ public:
         verticalLayout_18->addLayout(horizontalLayout_18);
 
         horizontalLayout_19 = new QHBoxLayout();
-        horizontalLayout_19->setSpacing(80);
+        horizontalLayout_19->setSpacing(20);
         horizontalLayout_19->setObjectName("horizontalLayout_19");
         horizontalLayout_19->setContentsMargins(30, -1, 30, -1);
         humidity1 = new QLabel(frame);
@@ -451,11 +459,13 @@ public:
 
         verticalLayout_18->addLayout(horizontalLayout_19);
 
+        verticalLayout_18->setStretch(0, 5);
+        verticalLayout_18->setStretch(1, 4);
 
         verticalLayout_19->addLayout(verticalLayout_18);
 
-        verticalLayout_19->setStretch(0, 5);
-        verticalLayout_19->setStretch(1, 2);
+        verticalLayout_19->setStretch(0, 2);
+        verticalLayout_19->setStretch(1, 1);
 
         horizontalLayout_2->addLayout(verticalLayout_19);
 
@@ -479,7 +489,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 403, 363));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 301, 378));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -534,7 +544,7 @@ public:
         horizontalLayout_4->addWidget(time1);
 
         horizontalLayout_4->setStretch(0, 1);
-        horizontalLayout_4->setStretch(1, 5);
+        horizontalLayout_4->setStretch(1, 2);
         horizontalLayout_4->setStretch(2, 1);
 
         verticalLayout_5->addLayout(horizontalLayout_4);
@@ -583,7 +593,7 @@ public:
         horizontalLayout_3->addWidget(time2);
 
         horizontalLayout_3->setStretch(0, 1);
-        horizontalLayout_3->setStretch(1, 5);
+        horizontalLayout_3->setStretch(1, 2);
         horizontalLayout_3->setStretch(2, 1);
 
         verticalLayout_5->addLayout(horizontalLayout_3);
@@ -631,7 +641,7 @@ public:
         horizontalLayout_5->addWidget(time3);
 
         horizontalLayout_5->setStretch(0, 1);
-        horizontalLayout_5->setStretch(1, 5);
+        horizontalLayout_5->setStretch(1, 2);
         horizontalLayout_5->setStretch(2, 1);
 
         verticalLayout_5->addLayout(horizontalLayout_5);
@@ -678,7 +688,7 @@ public:
         horizontalLayout_13->addWidget(time4);
 
         horizontalLayout_13->setStretch(0, 1);
-        horizontalLayout_13->setStretch(1, 5);
+        horizontalLayout_13->setStretch(1, 2);
         horizontalLayout_13->setStretch(2, 1);
 
         verticalLayout_5->addLayout(horizontalLayout_13);
@@ -725,7 +735,7 @@ public:
         horizontalLayout_6->addWidget(time5);
 
         horizontalLayout_6->setStretch(0, 1);
-        horizontalLayout_6->setStretch(1, 5);
+        horizontalLayout_6->setStretch(1, 2);
         horizontalLayout_6->setStretch(2, 1);
 
         verticalLayout_5->addLayout(horizontalLayout_6);
@@ -738,35 +748,13 @@ public:
         verticalLayout_10->addWidget(scrollArea);
 
         verticalLayout_10->setStretch(0, 3);
-        verticalLayout_10->setStretch(1, 7);
+        verticalLayout_10->setStretch(1, 6);
         verticalLayout_10->setStretch(2, 8);
 
         horizontalLayout_11->addLayout(verticalLayout_10);
 
         verticalLayout_11 = new QVBoxLayout();
         verticalLayout_11->setObjectName("verticalLayout_11");
-        horizontalLayout_17 = new QHBoxLayout();
-        horizontalLayout_17->setObjectName("horizontalLayout_17");
-        verticalLayout_17 = new QVBoxLayout();
-        verticalLayout_17->setObjectName("verticalLayout_17");
-        verticalSpacer_3 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
-
-        verticalLayout_17->addItem(verticalSpacer_3);
-
-        quickWidget = new QQuickWidget(centralwidget);
-        quickWidget->setObjectName("quickWidget");
-        quickWidget->setStyleSheet(QString::fromUtf8(""));
-        quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
-
-        verticalLayout_17->addWidget(quickWidget);
-
-        verticalLayout_17->setStretch(0, 1);
-        verticalLayout_17->setStretch(1, 2);
-
-        horizontalLayout_17->addLayout(verticalLayout_17);
-
-        verticalLayout_8 = new QVBoxLayout();
-        verticalLayout_8->setObjectName("verticalLayout_8");
         verticalLayout_7 = new QVBoxLayout();
         verticalLayout_7->setObjectName("verticalLayout_7");
         horizontalLayout_12 = new QHBoxLayout();
@@ -834,13 +822,18 @@ public:
 
         verticalLayout_7->addLayout(horizontalLayout_12);
 
-        verticalLayout_7->setStretch(0, 2);
-
-        verticalLayout_8->addLayout(verticalLayout_7);
-
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        verticalLayout_8->addItem(verticalSpacer_2);
+        verticalLayout_7->addItem(verticalSpacer_2);
+
+        horizontalLayout_28 = new QHBoxLayout();
+        horizontalLayout_28->setObjectName("horizontalLayout_28");
+        quickWidget = new QQuickWidget(centralwidget);
+        quickWidget->setObjectName("quickWidget");
+        quickWidget->setStyleSheet(QString::fromUtf8(""));
+        quickWidget->setResizeMode(QQuickWidget::SizeRootObjectToView);
+
+        horizontalLayout_28->addWidget(quickWidget);
 
         widget_2 = new QWidget(centralwidget);
         widget_2->setObjectName("widget_2");
@@ -996,149 +989,236 @@ public:
         horizontalLayout_16->addLayout(verticalLayout_16);
 
 
-        verticalLayout_8->addWidget(widget_2);
+        horizontalLayout_28->addWidget(widget_2);
 
-        verticalLayout_8->setStretch(0, 1);
-        verticalLayout_8->setStretch(1, 1);
-        verticalLayout_8->setStretch(2, 5);
 
-        horizontalLayout_17->addLayout(verticalLayout_8);
+        verticalLayout_7->addLayout(horizontalLayout_28);
 
-        horizontalLayout_17->setStretch(0, 1);
-        horizontalLayout_17->setStretch(1, 1);
+        verticalLayout_7->setStretch(0, 3);
+        verticalLayout_7->setStretch(1, 2);
+        verticalLayout_7->setStretch(2, 11);
 
-        verticalLayout_11->addLayout(horizontalLayout_17);
+        verticalLayout_11->addLayout(verticalLayout_7);
 
         widget_3 = new QWidget(centralwidget);
         widget_3->setObjectName("widget_3");
         widget_3->setStyleSheet(QString::fromUtf8("border-radius:12%;\n"
 "background:rgba(255,255,255,.1);"));
+        horizontalLayout_27 = new QHBoxLayout(widget_3);
+        horizontalLayout_27->setObjectName("horizontalLayout_27");
+        verticalLayout_22 = new QVBoxLayout();
+        verticalLayout_22->setObjectName("verticalLayout_22");
+        horizontalLayout_21 = new QHBoxLayout();
+        horizontalLayout_21->setObjectName("horizontalLayout_21");
+        verticalLayout_20 = new QVBoxLayout();
+        verticalLayout_20->setObjectName("verticalLayout_20");
         current_time = new QLabel(widget_3);
         current_time->setObjectName("current_time");
-        current_time->setGeometry(QRect(40, 20, 91, 41));
         current_time->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
 "font: 13pt \"Segoe UI\";"));
-        line_3 = new QFrame(widget_3);
-        line_3->setObjectName("line_3");
-        line_3->setGeometry(QRect(20, 100, 701, 3));
-        line_3->setFrameShape(QFrame::Shape::HLine);
-        line_3->setFrameShadow(QFrame::Shadow::Sunken);
-        line_4 = new QFrame(widget_3);
-        line_4->setObjectName("line_4");
-        line_4->setGeometry(QRect(20, 140, 701, 3));
-        line_4->setFrameShape(QFrame::Shape::HLine);
-        line_4->setFrameShadow(QFrame::Shadow::Sunken);
-        line_5 = new QFrame(widget_3);
-        line_5->setObjectName("line_5");
-        line_5->setGeometry(QRect(20, 180, 701, 3));
-        line_5->setFrameShape(QFrame::Shape::HLine);
-        line_5->setFrameShadow(QFrame::Shadow::Sunken);
-        line_6 = new QFrame(widget_3);
-        line_6->setObjectName("line_6");
-        line_6->setGeometry(QRect(20, 220, 701, 3));
-        line_6->setFrameShape(QFrame::Shape::HLine);
-        line_6->setFrameShadow(QFrame::Shadow::Sunken);
-        line_7 = new QFrame(widget_3);
-        line_7->setObjectName("line_7");
-        line_7->setGeometry(QRect(20, 260, 701, 3));
-        line_7->setFrameShape(QFrame::Shape::HLine);
-        line_7->setFrameShadow(QFrame::Shadow::Sunken);
-        line_8 = new QFrame(widget_3);
-        line_8->setObjectName("line_8");
-        line_8->setGeometry(QRect(20, 300, 701, 3));
-        line_8->setFrameShape(QFrame::Shape::HLine);
-        line_8->setFrameShadow(QFrame::Shadow::Sunken);
+
+        verticalLayout_20->addWidget(current_time);
+
         currentlocation = new QLabel(widget_3);
         currentlocation->setObjectName("currentlocation");
-        currentlocation->setGeometry(QRect(40, 60, 121, 31));
         currentlocation->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
 "font: 16pt \"Segoe UI\";"));
-        currentHum = new QLabel(widget_3);
-        currentHum->setObjectName("currentHum");
-        currentHum->setGeometry(QRect(40, 150, 91, 31));
-        currentHum->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
-        currentfl = new QLabel(widget_3);
-        currentfl->setObjectName("currentfl");
-        currentfl->setGeometry(QRect(40, 190, 91, 31));
-        currentfl->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
-        currentlat = new QLabel(widget_3);
-        currentlat->setObjectName("currentlat");
-        currentlat->setGeometry(QRect(40, 230, 91, 31));
-        currentlat->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
-        currentlon = new QLabel(widget_3);
-        currentlon->setObjectName("currentlon");
-        currentlon->setGeometry(QRect(40, 270, 91, 31));
-        currentlon->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
-        currentTemp = new QLabel(widget_3);
-        currentTemp->setObjectName("currentTemp");
-        currentTemp->setGeometry(QRect(40, 110, 91, 31));
-        currentTemp->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
-        currentTemp_2 = new QLabel(widget_3);
-        currentTemp_2->setObjectName("currentTemp_2");
-        currentTemp_2->setGeometry(QRect(230, 110, 91, 31));
-        currentTemp_2->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
-        currentHum_2 = new QLabel(widget_3);
-        currentHum_2->setObjectName("currentHum_2");
-        currentHum_2->setGeometry(QRect(260, 150, 91, 31));
-        currentHum_2->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
-        currentfl_2 = new QLabel(widget_3);
-        currentfl_2->setObjectName("currentfl_2");
-        currentfl_2->setGeometry(QRect(250, 190, 91, 31));
-        currentfl_2->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
-        currentlat_2 = new QLabel(widget_3);
-        currentlat_2->setObjectName("currentlat_2");
-        currentlat_2->setGeometry(QRect(260, 230, 91, 31));
-        currentlat_2->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
-        currentlon_2 = new QLabel(widget_3);
-        currentlon_2->setObjectName("currentlon_2");
-        currentlon_2->setGeometry(QRect(240, 270, 91, 31));
-        currentlon_2->setStyleSheet(QString::fromUtf8("color:black;\n"
-"background:transparent;\n"
-"font: 10pt \"Segoe UI\";"));
+
+        verticalLayout_20->addWidget(currentlocation);
+
+
+        horizontalLayout_21->addLayout(verticalLayout_20);
+
         currentsta = new QLabel(widget_3);
         currentsta->setObjectName("currentsta");
-        currentsta->setGeometry(QRect(190, 40, 91, 51));
         currentsta->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
 "font: 10pt \"Segoe UI\";"));
 
+        horizontalLayout_21->addWidget(currentsta);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout_21->addItem(horizontalSpacer_2);
+
+
+        verticalLayout_22->addLayout(horizontalLayout_21);
+
+        verticalLayout_21 = new QVBoxLayout();
+        verticalLayout_21->setObjectName("verticalLayout_21");
+        line_8 = new QFrame(widget_3);
+        line_8->setObjectName("line_8");
+        line_8->setFrameShape(QFrame::Shape::HLine);
+        line_8->setFrameShadow(QFrame::Shadow::Sunken);
+
+        verticalLayout_21->addWidget(line_8);
+
+        horizontalLayout_26 = new QHBoxLayout();
+        horizontalLayout_26->setObjectName("horizontalLayout_26");
+        currentlon = new QLabel(widget_3);
+        currentlon->setObjectName("currentlon");
+        currentlon->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt \"Segoe UI\";"));
+
+        horizontalLayout_26->addWidget(currentlon);
+
+        currentlon_2 = new QLabel(widget_3);
+        currentlon_2->setObjectName("currentlon_2");
+        currentlon_2->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt \"Segoe UI\";"));
+
+        horizontalLayout_26->addWidget(currentlon_2);
+
+
+        verticalLayout_21->addLayout(horizontalLayout_26);
+
+        line_3 = new QFrame(widget_3);
+        line_3->setObjectName("line_3");
+        line_3->setFrameShape(QFrame::Shape::HLine);
+        line_3->setFrameShadow(QFrame::Shadow::Sunken);
+
+        verticalLayout_21->addWidget(line_3);
+
+        horizontalLayout_22 = new QHBoxLayout();
+        horizontalLayout_22->setObjectName("horizontalLayout_22");
+        currentTemp_2 = new QLabel(widget_3);
+        currentTemp_2->setObjectName("currentTemp_2");
+        currentTemp_2->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt \"Segoe UI\";"));
+
+        horizontalLayout_22->addWidget(currentTemp_2);
+
+        currentTemp = new QLabel(widget_3);
+        currentTemp->setObjectName("currentTemp");
+        currentTemp->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt \"Segoe UI\";"));
+
+        horizontalLayout_22->addWidget(currentTemp);
+
+
+        verticalLayout_21->addLayout(horizontalLayout_22);
+
+        line_4 = new QFrame(widget_3);
+        line_4->setObjectName("line_4");
+        line_4->setFrameShape(QFrame::Shape::HLine);
+        line_4->setFrameShadow(QFrame::Shadow::Sunken);
+
+        verticalLayout_21->addWidget(line_4);
+
+        horizontalLayout_24 = new QHBoxLayout();
+        horizontalLayout_24->setObjectName("horizontalLayout_24");
+        currentfl = new QLabel(widget_3);
+        currentfl->setObjectName("currentfl");
+        currentfl->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt \"Segoe UI\";"));
+
+        horizontalLayout_24->addWidget(currentfl);
+
+        currentfl_2 = new QLabel(widget_3);
+        currentfl_2->setObjectName("currentfl_2");
+        currentfl_2->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt \"Segoe UI\";"));
+
+        horizontalLayout_24->addWidget(currentfl_2);
+
+
+        verticalLayout_21->addLayout(horizontalLayout_24);
+
+        line_5 = new QFrame(widget_3);
+        line_5->setObjectName("line_5");
+        line_5->setFrameShape(QFrame::Shape::HLine);
+        line_5->setFrameShadow(QFrame::Shadow::Sunken);
+
+        verticalLayout_21->addWidget(line_5);
+
+        horizontalLayout_23 = new QHBoxLayout();
+        horizontalLayout_23->setObjectName("horizontalLayout_23");
+        currentHum_2 = new QLabel(widget_3);
+        currentHum_2->setObjectName("currentHum_2");
+        currentHum_2->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt \"Segoe UI\";"));
+
+        horizontalLayout_23->addWidget(currentHum_2);
+
+        currentHum = new QLabel(widget_3);
+        currentHum->setObjectName("currentHum");
+        currentHum->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt \"Segoe UI\";"));
+
+        horizontalLayout_23->addWidget(currentHum);
+
+
+        verticalLayout_21->addLayout(horizontalLayout_23);
+
+        line_6 = new QFrame(widget_3);
+        line_6->setObjectName("line_6");
+        line_6->setFrameShape(QFrame::Shape::HLine);
+        line_6->setFrameShadow(QFrame::Shadow::Sunken);
+
+        verticalLayout_21->addWidget(line_6);
+
+        horizontalLayout_25 = new QHBoxLayout();
+        horizontalLayout_25->setObjectName("horizontalLayout_25");
+        currentlat = new QLabel(widget_3);
+        currentlat->setObjectName("currentlat");
+        currentlat->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt \"Segoe UI\";"));
+
+        horizontalLayout_25->addWidget(currentlat);
+
+        currentlat_2 = new QLabel(widget_3);
+        currentlat_2->setObjectName("currentlat_2");
+        currentlat_2->setStyleSheet(QString::fromUtf8("color:black;\n"
+"background:transparent;\n"
+"font: 10pt \"Segoe UI\";"));
+
+        horizontalLayout_25->addWidget(currentlat_2);
+
+
+        verticalLayout_21->addLayout(horizontalLayout_25);
+
+        line_7 = new QFrame(widget_3);
+        line_7->setObjectName("line_7");
+        line_7->setFrameShape(QFrame::Shape::HLine);
+        line_7->setFrameShadow(QFrame::Shadow::Sunken);
+
+        verticalLayout_21->addWidget(line_7);
+
+
+        verticalLayout_22->addLayout(verticalLayout_21);
+
+
+        horizontalLayout_27->addLayout(verticalLayout_22);
+
+
         verticalLayout_11->addWidget(widget_3);
 
-        verticalLayout_11->setStretch(0, 6);
-        verticalLayout_11->setStretch(1, 5);
+        verticalLayout_11->setStretch(0, 7);
+        verticalLayout_11->setStretch(1, 6);
 
         horizontalLayout_11->addLayout(verticalLayout_11);
 
         horizontalLayout_11->setStretch(0, 1);
-        horizontalLayout_11->setStretch(1, 7);
-        horizontalLayout_11->setStretch(2, 13);
+        horizontalLayout_11->setStretch(1, 6);
+        horizontalLayout_11->setStretch(2, 17);
 
-        horizontalLayout_21->addLayout(horizontalLayout_11);
+        horizontalLayout_17->addLayout(horizontalLayout_11);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 21));
+        menubar->setGeometry(QRect(0, 0, 1247, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -1161,7 +1241,7 @@ public:
 #if QT_CONFIG(tooltip)
         label_currentWeather->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
-        label_currentWeather->setText(QString());
+        label_currentWeather->setText(QCoreApplication::translate("MainWindow", "clouds", nullptr));
         label_alert->setText(QString());
 #if QT_CONFIG(tooltip)
         label_temp->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">36</p></body></html>", nullptr));
@@ -1212,17 +1292,17 @@ public:
         fDate3->setText(QCoreApplication::translate("MainWindow", "date", nullptr));
         current_time->setText(QCoreApplication::translate("MainWindow", "Time", nullptr));
         currentlocation->setText(QCoreApplication::translate("MainWindow", "Location", nullptr));
-        currentHum->setText(QCoreApplication::translate("MainWindow", "Humidity", nullptr));
-        currentfl->setText(QCoreApplication::translate("MainWindow", "Feels Like", nullptr));
-        currentlat->setText(QCoreApplication::translate("MainWindow", "Latitude", nullptr));
-        currentlon->setText(QCoreApplication::translate("MainWindow", "Longitude", nullptr));
-        currentTemp->setText(QCoreApplication::translate("MainWindow", "Temperature", nullptr));
-        currentTemp_2->setText(QCoreApplication::translate("MainWindow", "Temperature", nullptr));
-        currentHum_2->setText(QCoreApplication::translate("MainWindow", "Humidity", nullptr));
-        currentfl_2->setText(QCoreApplication::translate("MainWindow", "Feels Like", nullptr));
-        currentlat_2->setText(QCoreApplication::translate("MainWindow", "Latitude", nullptr));
-        currentlon_2->setText(QCoreApplication::translate("MainWindow", "Longitude", nullptr));
         currentsta->setText(QCoreApplication::translate("MainWindow", "Status", nullptr));
+        currentlon->setText(QCoreApplication::translate("MainWindow", "Longitude", nullptr));
+        currentlon_2->setText(QCoreApplication::translate("MainWindow", "Longitude", nullptr));
+        currentTemp_2->setText(QCoreApplication::translate("MainWindow", "Temperature", nullptr));
+        currentTemp->setText(QCoreApplication::translate("MainWindow", "Temperature", nullptr));
+        currentfl->setText(QCoreApplication::translate("MainWindow", "Feels Like", nullptr));
+        currentfl_2->setText(QCoreApplication::translate("MainWindow", "Feels Like", nullptr));
+        currentHum_2->setText(QCoreApplication::translate("MainWindow", "Humidity", nullptr));
+        currentHum->setText(QCoreApplication::translate("MainWindow", "Humidity", nullptr));
+        currentlat->setText(QCoreApplication::translate("MainWindow", "Latitude", nullptr));
+        currentlat_2->setText(QCoreApplication::translate("MainWindow", "Latitude", nullptr));
     } // retranslateUi
 
 };
