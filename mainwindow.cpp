@@ -38,6 +38,14 @@ MainWindow::MainWindow(QWidget *parent)
     y =ui->seemore_btn->height();
     ui->seemore_btn->setIconSize(QSize(x,y));
 
+    /////// animation
+    gifAnimation= new QMovie(":/new/prefix1/image/icons8-notification.gif");
+    gifAnimation->setScaledSize(QSize(30,30));
+    ui->label_gif->setMovie(gifAnimation);
+    qDebug()<< ui->label_gif->height()<<"skfskdfskdfdskfkddskfksfdsjkkkkkkkk";
+    qDebug()<< ui->label_gif->width()<<"skfskdfskdfdskfkddskfksfdsjkkkkkkkk";
+    gifAnimation->start();
+
 
 
     addressObj = new FetchCurrentAddress(this);

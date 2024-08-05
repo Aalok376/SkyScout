@@ -28,6 +28,7 @@
         <file>image/Humidity.png</file>
         <file>image/FeelsLike.png</file>
         <file>image/WindSpeed.png</file>
+        <file>image/icons8-notification.gif</file>
     </qresource>
     <qresource prefix="/">
         <file>MapView.qml</file>

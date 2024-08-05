@@ -17,6 +17,7 @@
 #include <QPainterPath>
 #include<qstringlistmodel.h>
 #include<QtCore>
+#include<QMovie>
 #include "datetime.h"
 #include "logicmaths.h"
 #include "weatherdata.h"
@@ -68,6 +69,7 @@ private:
     QNetworkAccessManager *NetworkManager;
     QCompleter *completer;
     QStringListModel *model;
+    QMovie *gifAnimation ;
     //intermediateWindow *intermediate;
 // public:
 //    static Ui* getUi(Ui* ui){

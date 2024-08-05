@@ -24,7 +24,7 @@
 background-image: url(&quot;:/new/prefix1/image/background.png&quot;);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_17">
+   <layout class="QHBoxLayout" name="horizontalLayout_29">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -883,7 +883,7 @@ background:transparent;</string>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_11" stretch="7,6">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_7" stretch="3,2,11">
+         <layout class="QVBoxLayout" name="verticalLayout_7" stretch="2,2,9">
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="4,5">
             <property name="spacing">
@@ -976,17 +976,49 @@ background:transparent;
            </layout>
           </item>
           <item>
-           <spacer name="verticalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
+           <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="6,5,1">
+            <property name="spacing">
+             <number>0</number>
             </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
+            <property name="rightMargin">
+             <number>20</number>
             </property>
-           </spacer>
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="styleSheet">
+               <string notr="true">border-top-left-radius:12%;
+border-bottom-left-radius:12%;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_gif">
+              <property name="styleSheet">
+               <string notr="true">border-top-right-radius:12%;
+border-bottom-right-radius:12%;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_28" stretch="0,0">
@@ -1214,7 +1246,7 @@ font: 10pt 'Segoe UI';</string>
            <string notr="true">border-radius:12%;
 background:rgba(255,255,255,.1);</string>
           </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_27">
+          <layout class="QHBoxLayout" name="horizontalLayout_27" stretch="0">
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_22">
              <item>

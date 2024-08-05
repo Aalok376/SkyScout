@@ -32,7 +32,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout_17;
+    QHBoxLayout *horizontalLayout_29;
     QHBoxLayout *horizontalLayout_11;
     QVBoxLayout *verticalLayout_15;
     QWidget *widget;
@@ -109,7 +109,10 @@ public:
     QHBoxLayout *horizontalLayout_15;
     QPushButton *light_btn;
     QPushButton *pushButton_flag;
-    QSpacerItem *verticalSpacer_2;
+    QHBoxLayout *horizontalLayout_17;
+    QSpacerItem *horizontalSpacer_3;
+    QLabel *label;
+    QLabel *label_gif;
     QHBoxLayout *horizontalLayout_28;
     QQuickWidget *quickWidget;
     QWidget *widget_2;
@@ -182,8 +185,9 @@ public:
 "background-image: url(\":/new/prefix1/image/background.png\");"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        horizontalLayout_17 = new QHBoxLayout(centralwidget);
-        horizontalLayout_17->setObjectName("horizontalLayout_17");
+        horizontalLayout_29 = new QHBoxLayout(centralwidget);
+        horizontalLayout_29->setObjectName("horizontalLayout_29");
+        horizontalLayout_29->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setObjectName("horizontalLayout_11");
         verticalLayout_15 = new QVBoxLayout();
@@ -489,7 +493,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 301, 378));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 306, 388));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -822,9 +826,33 @@ public:
 
         verticalLayout_7->addLayout(horizontalLayout_12);
 
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+        horizontalLayout_17 = new QHBoxLayout();
+        horizontalLayout_17->setSpacing(0);
+        horizontalLayout_17->setObjectName("horizontalLayout_17");
+        horizontalLayout_17->setContentsMargins(-1, -1, 20, -1);
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        verticalLayout_7->addItem(verticalSpacer_2);
+        horizontalLayout_17->addItem(horizontalSpacer_3);
+
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setStyleSheet(QString::fromUtf8("border-top-left-radius:12%;\n"
+"border-bottom-left-radius:12%;"));
+
+        horizontalLayout_17->addWidget(label);
+
+        label_gif = new QLabel(centralwidget);
+        label_gif->setObjectName("label_gif");
+        label_gif->setStyleSheet(QString::fromUtf8("border-top-right-radius:12%;\n"
+"border-bottom-right-radius:12%;"));
+
+        horizontalLayout_17->addWidget(label_gif);
+
+        horizontalLayout_17->setStretch(0, 6);
+        horizontalLayout_17->setStretch(1, 5);
+        horizontalLayout_17->setStretch(2, 1);
+
+        verticalLayout_7->addLayout(horizontalLayout_17);
 
         horizontalLayout_28 = new QHBoxLayout();
         horizontalLayout_28->setObjectName("horizontalLayout_28");
@@ -994,9 +1022,9 @@ public:
 
         verticalLayout_7->addLayout(horizontalLayout_28);
 
-        verticalLayout_7->setStretch(0, 3);
+        verticalLayout_7->setStretch(0, 2);
         verticalLayout_7->setStretch(1, 2);
-        verticalLayout_7->setStretch(2, 11);
+        verticalLayout_7->setStretch(2, 9);
 
         verticalLayout_11->addLayout(verticalLayout_7);
 
@@ -1213,7 +1241,7 @@ public:
         horizontalLayout_11->setStretch(1, 6);
         horizontalLayout_11->setStretch(2, 17);
 
-        horizontalLayout_17->addLayout(horizontalLayout_11);
+        horizontalLayout_29->addLayout(horizontalLayout_11);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -1277,6 +1305,8 @@ public:
         seemore_btn->setText(QString());
         light_btn->setText(QString());
         pushButton_flag->setText(QString());
+        label->setText(QString());
+        label_gif->setText(QString());
         label_18->setText(QCoreApplication::translate("MainWindow", "3 Days Forecast", nullptr));
         fIcon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
         fWeather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
