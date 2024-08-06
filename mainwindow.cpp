@@ -54,7 +54,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(networkManager,&QNetworkAccessManager::finished ,this , &MainWindow::onWeatherDataRecieved);
     connect(NetworkManager, &QNetworkAccessManager::finished , this , &MainWindow::onLocationRecieved);
     //setting fixed size
-    resize(900,600);
+    resize(920,600);
     setFixedSize(size());
     addressObj->fetchLocation();
     //setting up model for suggestion feature
@@ -67,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
  // //   map integration
    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/MapView.qml")));
     ui->quickWidget->show();
-    int wid = 400,hei = 200;
+    int wid = 350,hei = 180;
       int radius = 12;
      //int wid=ui->widget_2->width();
       //int hei=ui->widget_2->height();

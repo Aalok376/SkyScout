@@ -189,7 +189,9 @@ public:
         horizontalLayout_29->setObjectName("horizontalLayout_29");
         horizontalLayout_29->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setSpacing(20);
         horizontalLayout_11->setObjectName("horizontalLayout_11");
+        horizontalLayout_11->setContentsMargins(-1, -1, 20, 0);
         verticalLayout_15 = new QVBoxLayout();
         verticalLayout_15->setSpacing(0);
         verticalLayout_15->setObjectName("verticalLayout_15");
@@ -280,7 +282,9 @@ public:
         horizontalLayout_11->addLayout(verticalLayout_15);
 
         verticalLayout_10 = new QVBoxLayout();
+        verticalLayout_10->setSpacing(20);
         verticalLayout_10->setObjectName("verticalLayout_10");
+        verticalLayout_10->setContentsMargins(-1, 20, -1, 20);
         verticalLayout_9 = new QVBoxLayout();
         verticalLayout_9->setObjectName("verticalLayout_9");
         horizontalLayout_7 = new QHBoxLayout();
@@ -297,7 +301,8 @@ public:
         pushButton_search->setMinimumSize(QSize(1, 2));
         pushButton_search->setStyleSheet(QString::fromUtf8("background-color: rgb(217, 217, 217);\n"
 "border-top-left-radius:12%;\n"
-"border-bottom-left-radius:12%;"));
+"border-bottom-left-radius:12%;\n"
+"border:none;"));
 
         horizontalLayout_7->addWidget(pushButton_search);
 
@@ -493,7 +498,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 307, 392));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 289, 358));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -758,7 +763,9 @@ public:
         horizontalLayout_11->addLayout(verticalLayout_10);
 
         verticalLayout_11 = new QVBoxLayout();
+        verticalLayout_11->setSpacing(20);
         verticalLayout_11->setObjectName("verticalLayout_11");
+        verticalLayout_11->setContentsMargins(-1, 20, -1, 20);
         verticalLayout_7 = new QVBoxLayout();
         verticalLayout_7->setObjectName("verticalLayout_7");
         horizontalLayout_12 = new QHBoxLayout();
@@ -855,6 +862,7 @@ public:
         verticalLayout_7->addLayout(horizontalLayout_17);
 
         horizontalLayout_28 = new QHBoxLayout();
+        horizontalLayout_28->setSpacing(20);
         horizontalLayout_28->setObjectName("horizontalLayout_28");
         quickWidget = new QQuickWidget(centralwidget);
         quickWidget->setObjectName("quickWidget");
@@ -1073,6 +1081,9 @@ public:
 
         horizontalLayout_21->addItem(horizontalSpacer_2);
 
+        horizontalLayout_21->setStretch(0, 3);
+        horizontalLayout_21->setStretch(1, 2);
+        horizontalLayout_21->setStretch(2, 6);
 
         verticalLayout_22->addLayout(horizontalLayout_21);
 
@@ -1253,7 +1264,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 21));
+        menubar->setGeometry(QRect(0, 0, 1247, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -1329,7 +1340,7 @@ public:
         fDate3->setText(QCoreApplication::translate("MainWindow", "date", nullptr));
         current_time->setText(QCoreApplication::translate("MainWindow", "      Time", nullptr));
         currentlocation->setText(QCoreApplication::translate("MainWindow", "    Location", nullptr));
-        currentsta->setText(QCoreApplication::translate("MainWindow", "Status", nullptr));
+        currentsta->setText(QString());
         currentTemp->setText(QCoreApplication::translate("MainWindow", "      Temperature", nullptr));
         currentTemp_2->setText(QCoreApplication::translate("MainWindow", "                                                                        Temperature", nullptr));
         currentHum->setText(QCoreApplication::translate("MainWindow", "      Humidity", nullptr));

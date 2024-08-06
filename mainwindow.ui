@@ -39,6 +39,15 @@ background-image: url(&quot;:/new/prefix1/image/background.png&quot;);</string>
     </property>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="1,6,17">
+      <property name="spacing">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_15">
         <property name="spacing">
@@ -183,6 +192,15 @@ background-color:rgb(65,125,198);
       </item>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_10" stretch="3,6,8">
+        <property name="spacing">
+         <number>20</number>
+        </property>
+        <property name="topMargin">
+         <number>20</number>
+        </property>
+        <property name="bottomMargin">
+         <number>20</number>
+        </property>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_9" stretch="0,0">
           <item>
@@ -213,7 +231,8 @@ background-color:rgb(65,125,198);
               <property name="styleSheet">
                <string notr="true">background-color: rgb(217, 217, 217);
 border-top-left-radius:12%;
-border-bottom-left-radius:12%;</string>
+border-bottom-left-radius:12%;
+border:none;</string>
               </property>
               <property name="text">
                <string/>
@@ -510,8 +529,8 @@ border-radius:12%;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>307</width>
-             <height>392</height>
+             <width>289</width>
+             <height>358</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -882,6 +901,15 @@ background:transparent;</string>
       </item>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_11" stretch="7,6">
+        <property name="spacing">
+         <number>20</number>
+        </property>
+        <property name="topMargin">
+         <number>20</number>
+        </property>
+        <property name="bottomMargin">
+         <number>20</number>
+        </property>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_7" stretch="2,2,9">
           <item>
@@ -1022,6 +1050,9 @@ border-bottom-right-radius:12%;</string>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_28" stretch="0,0">
+            <property name="spacing">
+             <number>20</number>
+            </property>
             <item>
              <widget class="QQuickWidget" name="quickWidget">
               <property name="styleSheet">
@@ -1250,7 +1281,7 @@ background:rgba(255,255,255,.1);</string>
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_22">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_21">
+              <layout class="QHBoxLayout" name="horizontalLayout_21" stretch="3,2,6">
                <item>
                 <layout class="QVBoxLayout" name="verticalLayout_20">
                  <item>
@@ -1289,7 +1320,7 @@ background:transparent;
 font: 10pt &quot;Segoe UI&quot;;</string>
                  </property>
                  <property name="text">
-                  <string>Status</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
@@ -1519,7 +1550,7 @@ padding-left:220px;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
