@@ -699,7 +699,7 @@ void MainWindow::on_light_btn_clicked()
     if(checkLight)
     {
         ui->light_btn->setIcon(QIcon(":/new/prefix1/image/light.svg"));
-        ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
+        ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/maindarkbackground.png');");
 
         ui->label_18->setStyleSheet("color:#F0EFF9; background:transparent; font: 15pt 'Segoe UI';");
         ui->label_temp->setStyleSheet("color:#F0EFF9; background:transparent; font: 15pt 'Segoe UI'");
@@ -747,7 +747,7 @@ void MainWindow::on_light_btn_clicked()
         ui->fDate3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
 
         ui->currentlocation->setStyleSheet("color:#F0EFF9;background:transparent;font: 16pt 'Segoe UI';padding-left:15px;");
-        ui->current_time->setStyleSheet("color:#F0EFF9;background:transparent;font: 13pt 'Segoe UI';padding-left:20px;");
+        ui->current_time->setStyleSheet("color:#F0EFF9;background:transparent;font: 15pt 'Segoe UI';padding-left:20px;");
         ui->currentTemp->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->currentTemp_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
         ui->currentHum->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
@@ -764,7 +764,7 @@ void MainWindow::on_light_btn_clicked()
     else
     {
         ui->light_btn->setIcon(QIcon(":/new/prefix1/image/dark.svg"));
-        ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
+        ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/mainbackground.png');");
 
         ui->label_18->setStyleSheet("color:black; background:transparent; font: 15pt 'Segoe UI';");
         ui->label_temp->setStyleSheet("color:black; background:transparent; font: 15pt 'Segoe UI'");
@@ -811,7 +811,7 @@ void MainWindow::on_light_btn_clicked()
         ui->fDate3->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
 
         ui->currentlocation->setStyleSheet("color:black;background:transparent;font: 16pt 'Segoe UI';padding-left:15px;");
-        ui->current_time->setStyleSheet("color:black;background:transparent;font: 13pt 'Segoe UI';padding-left:20px;");
+        ui->current_time->setStyleSheet("color:black;background:transparent;font: 15pt 'Segoe UI';padding-left:20px;");
         ui->currentTemp->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->currentTemp_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
         ui->currentHum->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");

@@ -160,7 +160,7 @@ public:
 
         stackedWidget = new QStackedWidget(centralWidget);
         stackedWidget->setObjectName("stackedWidget");
-        stackedWidget->setStyleSheet(QString::fromUtf8("background:rgba(255,255,255,0.1);\n"
+        stackedWidget->setStyleSheet(QString::fromUtf8("background:rgba(255,255,255,0.05);\n"
 "border-radius:12%;"));
         page = new QWidget();
         page->setObjectName("page");
@@ -273,7 +273,7 @@ public:
 "color:black;"));
         iconpast = new QLabel(page);
         iconpast->setObjectName("iconpast");
-        iconpast->setGeometry(QRect(180, 20, 151, 71));
+        iconpast->setGeometry(QRect(220, 20, 151, 71));
         iconpast->setStyleSheet(QString::fromUtf8("background:transparent;"));
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
@@ -381,13 +381,13 @@ public:
 "font: 10pt 'Segoe UI';"));
         locationpresent = new QLabel(page_2);
         locationpresent->setObjectName("locationpresent");
-        locationpresent->setGeometry(QRect(40, 40, 151, 51));
+        locationpresent->setGeometry(QRect(40, 40, 181, 51));
         locationpresent->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "font: 16pt 'Segoe UI';\n"
 "color:black;"));
         iconpresent = new QLabel(page_2);
         iconpresent->setObjectName("iconpresent");
-        iconpresent->setGeometry(QRect(180, 20, 151, 71));
+        iconpresent->setGeometry(QRect(220, 20, 151, 71));
         iconpresent->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 ""));
         stackedWidget->addWidget(page_2);
@@ -496,13 +496,13 @@ public:
 "font: 10pt 'Segoe UI';"));
         locationfuture = new QLabel(page_3);
         locationfuture->setObjectName("locationfuture");
-        locationfuture->setGeometry(QRect(40, 40, 161, 51));
+        locationfuture->setGeometry(QRect(40, 40, 171, 51));
         locationfuture->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "font: 16pt 'Segoe UI';\n"
 "color:black;"));
         iconfuture = new QLabel(page_3);
         iconfuture->setObjectName("iconfuture");
-        iconfuture->setGeometry(QRect(180, 20, 151, 71));
+        iconfuture->setGeometry(QRect(220, 20, 151, 71));
         iconfuture->setStyleSheet(QString::fromUtf8("background:transparent;"));
         stackedWidget->addWidget(page_3);
 
@@ -517,7 +517,7 @@ public:
 
         retranslateUi(intermediateWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(intermediateWindow);

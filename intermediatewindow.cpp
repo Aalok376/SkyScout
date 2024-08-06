@@ -22,6 +22,8 @@ intermediateWindow::intermediateWindow(QWidget *parent)
     {
         ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
 
+
+        ui->locationpast->setStyleSheet("background:transparent;font: 16pt 'Segoe UI';color:#F0EFF9;");
         ui->pastLocation->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->pastLocation_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->pastTemp->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
@@ -35,6 +37,7 @@ intermediateWindow::intermediateWindow(QWidget *parent)
         ui->pastLon->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->pastLon_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
 
+        ui->locationpresent->setStyleSheet("background:transparent;font: 16pt 'Segoe UI';color:#F0EFF9;");
         ui->presentLocation->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->presentLocation_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->presentTemp->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
@@ -48,6 +51,7 @@ intermediateWindow::intermediateWindow(QWidget *parent)
         ui->presentLon->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->presentLon_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
 
+        ui->locationfuture->setStyleSheet("background:transparent;font: 16pt 'Segoe UI';color:#F0EFF9;");
         ui->futureLocation->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->futureLocation_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->futureTemp->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
@@ -69,6 +73,7 @@ intermediateWindow::intermediateWindow(QWidget *parent)
 
         ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
 
+        ui->locationpast->setStyleSheet("background:transparent;font: 16pt 'Segoe UI';color:black;");
         ui->pastLocation->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->pastLocation_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->pastTemp->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
@@ -82,6 +87,7 @@ intermediateWindow::intermediateWindow(QWidget *parent)
         ui->pastLon->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->pastLon_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
 
+        ui->locationpresent->setStyleSheet("background:transparent;font: 16pt 'Segoe UI';color:black;");
         ui->presentLocation->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->presentLocation_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->presentTemp->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
@@ -95,6 +101,7 @@ intermediateWindow::intermediateWindow(QWidget *parent)
         ui->presentLon->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->presentLon_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
 
+        ui->locationfuture->setStyleSheet("background:transparent;font: 16pt 'Segoe UI';color:black;");
         ui->futureLocation->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->futureLocation_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->futureTemp->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
@@ -176,7 +183,7 @@ intermediateWindow::intermediateWindow(QWidget *parent)
     double h = logicMaths::avgHumidity(hum,humidity.size());
     QString s = logicMaths::weatherMode(sta,status.size());
 
-    ui->locationpast->setText(city);
+    ui->locationpast->setText(city+", Nepal");
     QIcon icon = logicMaths::getStatusIcon(s);
     ui->iconpast->setPixmap(icon.pixmap(QSize(85,51)));
 
@@ -234,7 +241,7 @@ intermediateWindow::intermediateWindow(QWidget *parent)
     h = logicMaths::twoDecimals(h);
      s = logicMaths::weatherMode(sta0,status2.size());
 
-    ui->locationpresent->setText(city);
+    ui->locationpresent->setText(city+", Nepal");
     icon = logicMaths::getStatusIcon(s);
     ui->iconpresent->setPixmap(icon.pixmap(QSize(85,51)));
 
@@ -290,7 +297,7 @@ intermediateWindow::intermediateWindow(QWidget *parent)
     h = logicMaths::twoDecimals(h);
      s = logicMaths::weatherMode(sta1,status3.size());
 
-    ui->locationfuture->setText(city);
+    ui->locationfuture->setText(city+", Nepal");
     icon = logicMaths::getStatusIcon(s);
     ui->iconfuture->setPixmap(icon.pixmap(QSize(85,51)));
 

@@ -21,7 +21,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">/*background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(135, 206, 235, 255), stop:1 rgb(25, 25, 112));*/
-background-image: url(&quot;:/new/prefix1/image/background.png&quot;);</string>
+background-image: url(&quot;:/new/prefix1/image/mainbackground.png&quot;);
+background-size: cover;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_29">
@@ -261,7 +262,8 @@ border-bottom-right-radius:12%;</string>
            <widget class="QLabel" name="label_recentSearch">
             <property name="styleSheet">
              <string notr="true">background:transparent;
-font: 10pt 'Segoe UI';</string>
+font: 10pt 'Segoe UI';
+color:black;</string>
             </property>
             <property name="text">
              <string/>
@@ -529,8 +531,8 @@ border-radius:12%;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>289</width>
-             <height>358</height>
+             <width>295</width>
+             <height>361</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -1028,7 +1030,8 @@ background:transparent;
              <widget class="QLabel" name="label">
               <property name="styleSheet">
                <string notr="true">border-top-left-radius:12%;
-border-bottom-left-radius:12%;</string>
+border-bottom-left-radius:12%;
+background:transparent;</string>
               </property>
               <property name="text">
                <string/>
@@ -1039,7 +1042,8 @@ border-bottom-left-radius:12%;</string>
              <widget class="QLabel" name="label_gif">
               <property name="styleSheet">
                <string notr="true">border-top-right-radius:12%;
-border-bottom-right-radius:12%;</string>
+border-bottom-right-radius:12%;
+background:transparent;</string>
               </property>
               <property name="text">
                <string/>
@@ -1289,7 +1293,7 @@ background:rgba(255,255,255,.1);</string>
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
-font: 13pt &quot;Segoe UI&quot;;
+font: 15pt &quot;Segoe UI&quot;;
 padding-left:20px;</string>
                    </property>
                    <property name="text">
@@ -1550,7 +1554,7 @@ padding-left:220px;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

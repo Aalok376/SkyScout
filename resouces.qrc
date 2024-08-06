@@ -29,6 +29,9 @@
         <file>image/FeelsLike.png</file>
         <file>image/WindSpeed.png</file>
         <file>image/icons8-notification.gif</file>
+        <file>image/mainbackground.png</file>
+        <file>image/maindarkbackground.png</file>
+        <file>image/topIcon.png</file>
     </qresource>
     <qresource prefix="/">
         <file>MapView.qml</file>

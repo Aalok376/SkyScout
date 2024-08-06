@@ -85,11 +85,11 @@ border:none;</string>
         <item>
          <widget class="QStackedWidget" name="stackedWidget">
           <property name="styleSheet">
-           <string notr="true">background:rgba(255,255,255,0.1);
+           <string notr="true">background:rgba(255,255,255,0.05);
 border-radius:12%;</string>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="page">
            <widget class="QPushButton" name="past_data_btn">
@@ -430,7 +430,7 @@ color:black;</string>
            <widget class="QLabel" name="iconpast">
             <property name="geometry">
              <rect>
-              <x>180</x>
+              <x>220</x>
               <y>20</y>
               <width>151</width>
               <height>71</height>
@@ -767,7 +767,7 @@ font: 10pt 'Segoe UI';</string>
              <rect>
               <x>40</x>
               <y>40</y>
-              <width>151</width>
+              <width>181</width>
               <height>51</height>
              </rect>
             </property>
@@ -783,7 +783,7 @@ color:black;</string>
            <widget class="QLabel" name="iconpresent">
             <property name="geometry">
              <rect>
-              <x>180</x>
+              <x>220</x>
               <y>20</y>
               <width>151</width>
               <height>71</height>
@@ -1121,7 +1121,7 @@ font: 10pt 'Segoe UI';</string>
              <rect>
               <x>40</x>
               <y>40</y>
-              <width>161</width>
+              <width>171</width>
               <height>51</height>
              </rect>
             </property>
@@ -1137,7 +1137,7 @@ color:black;</string>
            <widget class="QLabel" name="iconfuture">
             <property name="geometry">
              <rect>
-              <x>180</x>
+              <x>220</x>
               <y>20</y>
               <width>151</width>
               <height>71</height>

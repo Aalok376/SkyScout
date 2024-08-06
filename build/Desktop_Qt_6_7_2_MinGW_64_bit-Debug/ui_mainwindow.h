@@ -182,7 +182,8 @@ public:
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setStyleSheet(QString::fromUtf8("/*background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(135, 206, 235, 255), stop:1 rgb(25, 25, 112));*/\n"
-"background-image: url(\":/new/prefix1/image/background.png\");"));
+"background-image: url(\":/new/prefix1/image/mainbackground.png\");\n"
+"background-size: cover;"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         horizontalLayout_29 = new QHBoxLayout(centralwidget);
@@ -325,7 +326,8 @@ public:
         label_recentSearch = new QLabel(centralwidget);
         label_recentSearch->setObjectName("label_recentSearch");
         label_recentSearch->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"font: 10pt 'Segoe UI';"));
+"font: 10pt 'Segoe UI';\n"
+"color:black;"));
 
         verticalLayout_9->addWidget(label_recentSearch);
 
@@ -498,7 +500,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 289, 358));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 295, 361));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -844,14 +846,16 @@ public:
         label = new QLabel(centralwidget);
         label->setObjectName("label");
         label->setStyleSheet(QString::fromUtf8("border-top-left-radius:12%;\n"
-"border-bottom-left-radius:12%;"));
+"border-bottom-left-radius:12%;\n"
+"background:transparent;"));
 
         horizontalLayout_17->addWidget(label);
 
         label_gif = new QLabel(centralwidget);
         label_gif->setObjectName("label_gif");
         label_gif->setStyleSheet(QString::fromUtf8("border-top-right-radius:12%;\n"
-"border-bottom-right-radius:12%;"));
+"border-bottom-right-radius:12%;\n"
+"background:transparent;"));
 
         horizontalLayout_17->addWidget(label_gif);
 
@@ -1052,7 +1056,7 @@ public:
         current_time->setObjectName("current_time");
         current_time->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
-"font: 13pt \"Segoe UI\";\n"
+"font: 15pt \"Segoe UI\";\n"
 "padding-left:20px;"));
 
         verticalLayout_20->addWidget(current_time);
@@ -1264,7 +1268,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 25));
+        menubar->setGeometry(QRect(0, 0, 1247, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
