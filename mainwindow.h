@@ -25,6 +25,7 @@
 #include "futureweather.h"
 #include "intermediatewindow.h"
 #include "modecheck.h"
+#include "worldmap.h"
 
 // #include "futuredata.h"
 
@@ -61,6 +62,9 @@ private slots:
     void showMainWindow();
 
     void on_light_btn_clicked();
+
+    void on_map_btn_clicked();
+    void showMainWindowM();
 
 private:
     Ui::MainWindow *ui;

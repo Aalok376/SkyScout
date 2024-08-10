@@ -21,10 +21,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButton_search->setIcon(QIcon(":/new/prefix1/image/search--v1.png"));
     ui->lineEdit_searchbar->setPlaceholderText("enter the location");
 
-    ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/np.png"));
+    ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Nepal.svg"));
     int x= ui->pushButton_flag->width();
     int y =ui->pushButton_flag->height();
-    ui->pushButton_flag->setIconSize(QSize(y,y));
+    ui->pushButton_flag->setIconSize(QSize(y-4,y-4));
 
 
     ui->light_btn->setIcon(QIcon(":/new/prefix1/image/dark.svg"));
@@ -33,10 +33,18 @@ MainWindow::MainWindow(QWidget *parent)
     y =ui->light_btn->height();
     ui->light_btn->setIconSize(QSize(x,y));
 
-    ui->seemore_btn->setIcon(QIcon(":/new/prefix1/image/more.png"));
+    ui->seemore_btn->setIcon(QIcon(":/new/prefix1/image/more.svg"));
     //x= ui->seemore_btn->width();
     y =ui->seemore_btn->height();
     ui->seemore_btn->setIconSize(QSize(y,y));
+
+    //sidebar
+    QIcon wIcon = QIcon(":/new/prefix1/image/skyscout.png");
+    ui->wIcon->setPixmap(wIcon.pixmap(QSize(27 , 25)));
+
+    ui->map_btn->setIcon(QIcon(":/new/prefix1/image/mapIcon.svg"));
+    y = ui->map_btn->height();
+    ui->map_btn->setIconSize(QSize(y-4,y-4));
 
     /////// animation
     gifAnimation= new QMovie(":/new/prefix1/image/icons8-notification.gif");
@@ -409,6 +417,8 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
 
                 int lowestId = todaysWeather::findLowestId();
                 //qDebug()<<"the lowest Id is nothing but "<<lowestId;
+                QString todaysLocation = todaysWeather::fetchCity(lowestId);
+                ui->todaysLocation->setText(todaysLocation+", Nepal");
 
                 QString weather1 = todaysWeather::fetchWeatherStatus(lowestId);
                 //qDebug()<<"the weather status is "<<weather1;
@@ -597,12 +607,12 @@ void MainWindow::on_pushButton_flag_clicked()
 {
     if(check)
     {
-        ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/united-states-icon-96x72-b3zh47b5.png"));
+        ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Usa.svg"));
         check=false;
     }
     else
     {
-        ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/np.png"));
+        ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Nepal.svg"));
         check=true;
     }
 
@@ -702,8 +712,8 @@ void MainWindow::on_light_btn_clicked()
         ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/maindarkbackground.png');");
 
         ui->label_18->setStyleSheet("color:#F0EFF9; background:transparent; font: 13pt 'Segoe UI';");
-        ui->label_temp->setStyleSheet("color:#F0EFF9; background:transparent; font: 13pt 'Segoe UI'");
-        ui->label_currentWeather->setStyleSheet("color:#F0EFF9; background:transparent; font: 13pt 'Segoe UI'");
+        ui->label_temp->setStyleSheet("color:#F0EFF9; background:transparent; font: 15pt 'Segoe UI'");
+        ui->label_currentWeather->setStyleSheet("color:#F0EFF9; background:transparent; font: 15pt 'Segoe UI'");
         ui->label_alert->setStyleSheet("color:#F0EFF9; background:transparent; font: 9pt 'Segoe UI'");
         ui->label_recentSearch->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI'");
         ui->lineEdit_searchbar->setStyleSheet("background-color: rgb(217, 217, 217);color: #F0EFF9;"
@@ -712,6 +722,10 @@ void MainWindow::on_light_btn_clicked()
         ui->humidity1->setStyleSheet("color:#F0EFF9;background:transparent;font: 8pt 'Segoe UI';");
         ui->feelslike1->setStyleSheet("color:#F0EFF9;background:transparent;font: 8pt 'Segoe UI';");
         ui->windspeed1->setStyleSheet("color:#F0EFF9;background:transparent;font: 8pt 'Segoe UI';");
+
+        ui->todaysLocation->setStyleSheet("border-top-left-radius:12%;"
+            "border-top-right-radius:12%;border -color: rgba(255, 255, 255, .2);background:rgba(255, 255, 255, .07);"
+                                          "font: 10pt 'Segoe UI';color:#F0EFF9;padding-left:10px;");
 
 
         ui->weather1->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
@@ -767,7 +781,7 @@ void MainWindow::on_light_btn_clicked()
         ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/mainbackground.png');");
 
         ui->label_18->setStyleSheet("color:black; background:transparent; font: 13pt 'Segoe UI';");
-        ui->label_temp->setStyleSheet("color:black; background:transparent; font: 13pt 'Segoe UI'");
+        ui->label_temp->setStyleSheet("color:black; background:transparent; font: 15pt 'Segoe UI'");
         ui->label_currentWeather->setStyleSheet("color:black; background:transparent; font: 15pt 'Segoe UI'");
         ui->label_alert->setStyleSheet("color:black; background:transparent; font: 9pt 'Segoe UI'");
         ui->label_recentSearch->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI'");
@@ -777,6 +791,10 @@ void MainWindow::on_light_btn_clicked()
         ui->humidity1->setStyleSheet("color:black;background:transparent;font: 8pt 'Segoe UI';");
         ui->feelslike1->setStyleSheet("color:black;background:transparent;font: 8pt 'Segoe UI';");
         ui->windspeed1->setStyleSheet("color:black;background:transparent;font: 8pt 'Segoe UI';");
+
+        ui->todaysLocation->setStyleSheet("border-top-left-radius:12%;"
+    "border-top-right-radius:12%;border -color: rgba(255, 255, 255, .2);background:rgba(255, 255, 255, .07);"
+                                          "font: 10pt 'Segoe UI';color:rgb(0, 0, 0);padding-left:10px;");
 
         ui->weather1->setStyleSheet("color:black;  background:transparent; font: 10pt 'Segoe UI';");
         ui->temp1->setStyleSheet("color:black;  background:transparent; font: 10pt 'Segoe UI';");
@@ -827,3 +845,25 @@ void MainWindow::on_light_btn_clicked()
     }
 }
 
+worldMap *wm;
+void MainWindow::on_map_btn_clicked()
+{
+        wm = new worldMap();
+        connect(wm, &worldMap::returnToMainWindow, this, &MainWindow::showMainWindowM);
+
+        wm->show();
+
+        this->hide();
+
+        return;
+
+
+}
+
+void MainWindow::showMainWindowM() {
+    this->show();
+    disconnect(wm, &worldMap::returnToMainWindow, this, &MainWindow::showMainWindowM);
+    wm->deleteLater();
+    wm = nullptr;
+    return;
+}

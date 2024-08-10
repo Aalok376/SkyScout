@@ -9,7 +9,7 @@ intermediateWindow::intermediateWindow(QWidget *parent)
     setWindowTitle("Sky Scout");
     setWindowIcon(QIcon(":/new/prefix1/image/projectLogo.png"));
 
-    ui->return_btn->setIcon(QIcon(":/new/prefix1/image/return.png"));
+    ui->return_btn->setIcon(QIcon(":/new/prefix1/image/return.svg"));
     int y =ui->return_btn->height();
     ui->return_btn->setIconSize(QSize(y,y));
 
@@ -22,6 +22,13 @@ intermediateWindow::intermediateWindow(QWidget *parent)
     {
         ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
 
+        ui->btnPast->setStyleSheet("QPushButton{font: 10pt 'Segoe UI';color:#F0EFF9;"
+                                    "background:rgba(255,255,255,.1);border-radius:12%;}"
+                                   "QPushButton:hover{background:rgba(255,255,255,.3);}");
+
+        ui->past_data_btn->setStyleSheet("QPushButton{ font: 10pt 'Segoe UI';color:#F0EFF9;"
+                                         "background:rgba(255,255,255,.1);}"
+                                         "QPushButton:hover{background:rgba(255,255,255,.3);}");
 
         ui->locationpast->setStyleSheet("background:transparent;font: 16pt 'Segoe UI';color:#F0EFF9;");
         ui->pastLocation->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
@@ -37,6 +44,15 @@ intermediateWindow::intermediateWindow(QWidget *parent)
         ui->pastLon->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->pastLon_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
 
+        ui->btnPresent->setStyleSheet("QPushButton{font: 10pt 'Segoe UI';color:#F0EFF9;"
+                                   "background:rgba(255,255,255,.1);border-radius:12%;}"
+                                   "QPushButton:hover{background:rgba(255,255,255,.3);}");
+
+
+        ui->present_data_btn->setStyleSheet("QPushButton{ font: 10pt 'Segoe UI';color:#F0EFF9;"
+                                         "background:rgba(255,255,255,.1);}"
+                                         "QPushButton:hover{background:rgba(255,255,255,.3);}");
+
         ui->locationpresent->setStyleSheet("background:transparent;font: 16pt 'Segoe UI';color:#F0EFF9;");
         ui->presentLocation->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->presentLocation_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
@@ -50,6 +66,15 @@ intermediateWindow::intermediateWindow(QWidget *parent)
         ui->presentLat_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->presentLon->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->presentLon_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
+
+        ui->btnFuture->setStyleSheet("QPushButton{font: 10pt 'Segoe UI';color:#F0EFF9;"
+                                   "background:rgba(255,255,255,.1);border-radius:12%;}"
+                                   "QPushButton:hover{background:rgba(255,255,255,.3);}");
+
+
+        ui->future_data_btn->setStyleSheet("QPushButton{ font: 10pt 'Segoe UI';color:#F0EFF9;"
+                                         "background:rgba(255,255,255,.1);}"
+                                         "QPushButton:hover{background:rgba(255,255,255,.3);}");
 
         ui->locationfuture->setStyleSheet("background:transparent;font: 16pt 'Segoe UI';color:#F0EFF9;");
         ui->futureLocation->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
@@ -73,6 +98,15 @@ intermediateWindow::intermediateWindow(QWidget *parent)
 
         ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
 
+        ui->btnPast->setStyleSheet("QPushButton{font: 10pt 'Segoe UI';color:black;"
+                                   "background:rgba(255,255,255,.1);border-radius:12%;}"
+                                   "QPushButton:hover{background:rgba(255,255,255,.3);}");
+
+
+        ui->past_data_btn->setStyleSheet("QPushButton{ font: 10pt 'Segoe UI';color:black;"
+                                         "background:rgba(255,255,255,.1);}"
+                                         "QPushButton:hover{background:rgba(255,255,255,.3);}");
+
         ui->locationpast->setStyleSheet("background:transparent;font: 16pt 'Segoe UI';color:black;");
         ui->pastLocation->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->pastLocation_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
@@ -87,6 +121,16 @@ intermediateWindow::intermediateWindow(QWidget *parent)
         ui->pastLon->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->pastLon_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
 
+        ui->btnPresent->setStyleSheet("QPushButton{font: 10pt 'Segoe UI';color:black;"
+                                   "background:rgba(255,255,255,.1);border-radius:12%;}"
+                                   "QPushButton:hover{background:rgba(255,255,255,.3);}");
+
+
+        ui->past_data_btn->setStyleSheet("QPushButton{ font: 10pt 'Segoe UI';color:black;"
+                                         "background:rgba(255,255,255,.1);}"
+                                         "QPushButton:hover{background:rgba(255,255,255,.3);}");
+
+
         ui->locationpresent->setStyleSheet("background:transparent;font: 16pt 'Segoe UI';color:black;");
         ui->presentLocation->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->presentLocation_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
@@ -100,6 +144,16 @@ intermediateWindow::intermediateWindow(QWidget *parent)
         ui->presentLat_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->presentLon->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->presentLon_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
+
+        ui->btnFuture->setStyleSheet("QPushButton{font: 10pt 'Segoe UI';color:black;"
+                                   "background:rgba(255,255,255,.1);border-radius:12%;}"
+                                   "QPushButton:hover{background:rgba(255,255,255,.3);}");
+
+
+        ui->past_data_btn->setStyleSheet("QPushButton{ font: 10pt 'Segoe UI';color:black;"
+                                         "background:rgba(255,255,255,.1);}"
+                                         "QPushButton:hover{background:rgba(255,255,255,.3);}");
+
 
         ui->locationfuture->setStyleSheet("background:transparent;font: 16pt 'Segoe UI';color:black;");
         ui->futureLocation->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");

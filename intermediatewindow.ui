@@ -48,8 +48,13 @@
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">background:transparent;
-border:none;</string>
+             <string notr="true">QPushButton{
+	background:rgba(255,255,255,.1);
+	border-radius:12%;
+}
+QPushButton:hover{
+	background:rgba(255,255,255,.3);
+}</string>
             </property>
             <property name="text">
              <string/>
@@ -59,24 +64,54 @@ border:none;</string>
           <item>
            <widget class="QPushButton" name="btnPast">
             <property name="styleSheet">
-             <string notr="true">background:transparent;</string>
+             <string notr="true">QPushButton{
+	font: 10pt 'Segoe UI';
+	color:black;
+	background:rgba(255,255,255,.1);
+	border-radius:12%;
+}
+QPushButton:hover{
+	background:rgba(255,255,255,.3);
+}</string>
             </property>
             <property name="text">
-             <string>past</string>
+             <string>Past Weather</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="btnPresent">
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	font: 10pt 'Segoe UI';
+	color:black;
+	background:rgba(255,255,255,.1);
+	border-radius:12%;
+}
+QPushButton:hover{
+	background:rgba(255,255,255,.3);
+}</string>
+            </property>
             <property name="text">
-             <string>present</string>
+             <string>Present Weather</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="btnFuture">
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+	font: 10pt 'Segoe UI';
+	color:black;
+	background:rgba(255,255,255,.1);
+	border-radius:12%;
+}
+QPushButton:hover{
+	background:rgba(255,255,255,.3);
+}</string>
+            </property>
             <property name="text">
-             <string>future</string>
+             <string>Future Weather</string>
             </property>
            </widget>
           </item>
@@ -89,7 +124,7 @@ border:none;</string>
 border-radius:12%;</string>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="page">
            <widget class="QPushButton" name="past_data_btn">
@@ -108,10 +143,17 @@ border-radius:12%;</string>
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 10pt 'Segoe UI';</string>
+             <string notr="true">QPushButton{
+	font: 10pt 'Segoe UI';
+	color:black;
+	background:rgba(255,255,255,.1);
+}
+QPushButton:hover{
+	background:rgba(255,255,255,.3);
+}</string>
             </property>
             <property name="text">
-             <string>past data</string>
+             <string>View Insights</string>
             </property>
            </widget>
            <widget class="Line" name="line">
@@ -461,10 +503,17 @@ color:black;</string>
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 10pt 'Segoe UI';</string>
+             <string notr="true">QPushButton{
+	font: 10pt 'Segoe UI';
+	color:black;
+	background:rgba(255,255,255,.1);
+}
+QPushButton:hover{
+	background:rgba(255,255,255,.3);
+}</string>
             </property>
             <property name="text">
-             <string>present data</string>
+             <string>View Insights</string>
             </property>
            </widget>
            <widget class="Line" name="line_8">
@@ -815,10 +864,17 @@ color:black;</string>
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 10pt 'Segoe UI';</string>
+             <string notr="true">QPushButton{
+	font: 10pt 'Segoe UI';
+	color:black;
+	background:rgba(255,255,255,.1);
+}
+QPushButton:hover{
+	background:rgba(255,255,255,.3);
+}</string>
             </property>
             <property name="text">
-             <string>future data</string>
+             <string>View Insights</string>
             </property>
            </widget>
            <widget class="Line" name="line_15">

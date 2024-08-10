@@ -9,7 +9,7 @@ presentGraph::presentGraph(QWidget *parent)
     setWindowTitle("Sky Scout");
     setWindowIcon(QIcon(":/new/prefix1/image/projectLogo.png"));
 
-    ui->return_btn_4->setIcon(QIcon(":/new/prefix1/image/return.png"));
+    ui->return_btn_4->setIcon(QIcon(":/new/prefix1/image/return.svg"));
     int y =ui->return_btn_4->height();
     ui->return_btn_4->setIconSize(QSize(y,y));
 

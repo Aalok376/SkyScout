@@ -23,8 +23,8 @@
         <file>image/light.svg</file>
         <file>image/dark.svg</file>
         <file>image/dark_bg.png</file>
-        <file>image/more.png</file>
-        <file>image/return.png</file>
+        <file>image/more.svg</file>
+        <file>image/return.svg</file>
         <file>image/Humidity.png</file>
         <file>image/FeelsLike.png</file>
         <file>image/WindSpeed.png</file>
@@ -32,6 +32,10 @@
         <file>image/mainbackground.png</file>
         <file>image/maindarkbackground.png</file>
         <file>image/topIcon.png</file>
+        <file>image/skyscout.png</file>
+        <file>image/mapIcon.svg</file>
+        <file>image/Usa.svg</file>
+        <file>image/Nepal.svg</file>
     </qresource>
     <qresource prefix="/">
         <file>MapView.qml</file>

@@ -130,24 +130,55 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(return_btn->sizePolicy().hasHeightForWidth());
         return_btn->setSizePolicy(sizePolicy);
-        return_btn->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"border:none;"));
+        return_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background:rgba(255,255,255,.1);\n"
+"	border-radius:12%;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background:rgba(255,255,255,.3);\n"
+"}"));
 
         horizontalLayout_4->addWidget(return_btn);
 
         btnPast = new QPushButton(centralWidget);
         btnPast->setObjectName("btnPast");
-        btnPast->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        btnPast->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	font: 10pt 'Segoe UI';\n"
+"	color:black;\n"
+"	background:rgba(255,255,255,.1);\n"
+"	border-radius:12%;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background:rgba(255,255,255,.3);\n"
+"}"));
 
         horizontalLayout_4->addWidget(btnPast);
 
         btnPresent = new QPushButton(centralWidget);
         btnPresent->setObjectName("btnPresent");
+        btnPresent->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	font: 10pt 'Segoe UI';\n"
+"	color:black;\n"
+"	background:rgba(255,255,255,.1);\n"
+"	border-radius:12%;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background:rgba(255,255,255,.3);\n"
+"}"));
 
         horizontalLayout_4->addWidget(btnPresent);
 
         btnFuture = new QPushButton(centralWidget);
         btnFuture->setObjectName("btnFuture");
+        btnFuture->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	font: 10pt 'Segoe UI';\n"
+"	color:black;\n"
+"	background:rgba(255,255,255,.1);\n"
+"	border-radius:12%;\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background:rgba(255,255,255,.3);\n"
+"}"));
 
         horizontalLayout_4->addWidget(btnFuture);
 
@@ -169,7 +200,14 @@ public:
         past_data_btn->setGeometry(QRect(560, 30, 141, 51));
         sizePolicy.setHeightForWidth(past_data_btn->sizePolicy().hasHeightForWidth());
         past_data_btn->setSizePolicy(sizePolicy);
-        past_data_btn->setStyleSheet(QString::fromUtf8("font: 10pt 'Segoe UI';"));
+        past_data_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	font: 10pt 'Segoe UI';\n"
+"	color:black;\n"
+"	background:rgba(255,255,255,.1);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background:rgba(255,255,255,.3);\n"
+"}"));
         line = new QFrame(page);
         line->setObjectName("line");
         line->setGeometry(QRect(30, 100, 671, 4));
@@ -283,7 +321,14 @@ public:
         present_data_btn->setGeometry(QRect(560, 30, 141, 51));
         sizePolicy.setHeightForWidth(present_data_btn->sizePolicy().hasHeightForWidth());
         present_data_btn->setSizePolicy(sizePolicy);
-        present_data_btn->setStyleSheet(QString::fromUtf8("font: 10pt 'Segoe UI';"));
+        present_data_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	font: 10pt 'Segoe UI';\n"
+"	color:black;\n"
+"	background:rgba(255,255,255,.1);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background:rgba(255,255,255,.3);\n"
+"}"));
         line_8 = new QFrame(page_2);
         line_8->setObjectName("line_8");
         line_8->setGeometry(QRect(30, 100, 671, 4));
@@ -398,7 +443,14 @@ public:
         future_data_btn->setGeometry(QRect(558, 30, 141, 51));
         sizePolicy.setHeightForWidth(future_data_btn->sizePolicy().hasHeightForWidth());
         future_data_btn->setSizePolicy(sizePolicy);
-        future_data_btn->setStyleSheet(QString::fromUtf8("font: 10pt 'Segoe UI';"));
+        future_data_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	font: 10pt 'Segoe UI';\n"
+"	color:black;\n"
+"	background:rgba(255,255,255,.1);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background:rgba(255,255,255,.3);\n"
+"}"));
         line_15 = new QFrame(page_3);
         line_15->setObjectName("line_15");
         line_15->setGeometry(QRect(30, 100, 671, 4));
@@ -517,7 +569,7 @@ public:
 
         retranslateUi(intermediateWindow);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(intermediateWindow);
@@ -527,10 +579,10 @@ public:
     {
         intermediateWindow->setWindowTitle(QCoreApplication::translate("intermediateWindow", "Dialog", nullptr));
         return_btn->setText(QString());
-        btnPast->setText(QCoreApplication::translate("intermediateWindow", "past", nullptr));
-        btnPresent->setText(QCoreApplication::translate("intermediateWindow", "present", nullptr));
-        btnFuture->setText(QCoreApplication::translate("intermediateWindow", "future", nullptr));
-        past_data_btn->setText(QCoreApplication::translate("intermediateWindow", "past data", nullptr));
+        btnPast->setText(QCoreApplication::translate("intermediateWindow", "Past Weather", nullptr));
+        btnPresent->setText(QCoreApplication::translate("intermediateWindow", "Present Weather", nullptr));
+        btnFuture->setText(QCoreApplication::translate("intermediateWindow", "Future Weather", nullptr));
+        past_data_btn->setText(QCoreApplication::translate("intermediateWindow", "View Insights", nullptr));
         pastLocation->setText(QCoreApplication::translate("intermediateWindow", "Location", nullptr));
         pastTemp->setText(QCoreApplication::translate("intermediateWindow", "Temperature", nullptr));
         pastHumidity->setText(QCoreApplication::translate("intermediateWindow", "Humidity", nullptr));
@@ -545,7 +597,7 @@ public:
         pastLon_2->setText(QString());
         locationpast->setText(QCoreApplication::translate("intermediateWindow", "Location", nullptr));
         iconpast->setText(QString());
-        present_data_btn->setText(QCoreApplication::translate("intermediateWindow", "present data", nullptr));
+        present_data_btn->setText(QCoreApplication::translate("intermediateWindow", "View Insights", nullptr));
         presentLocation->setText(QCoreApplication::translate("intermediateWindow", "Location", nullptr));
         presentTemp->setText(QCoreApplication::translate("intermediateWindow", "Temperature", nullptr));
         presentHumidity->setText(QCoreApplication::translate("intermediateWindow", "Humidity", nullptr));
@@ -560,7 +612,7 @@ public:
         presentLon_2->setText(QString());
         locationpresent->setText(QCoreApplication::translate("intermediateWindow", "Location", nullptr));
         iconpresent->setText(QString());
-        future_data_btn->setText(QCoreApplication::translate("intermediateWindow", "future data", nullptr));
+        future_data_btn->setText(QCoreApplication::translate("intermediateWindow", "View Insights", nullptr));
         futureLocation->setText(QCoreApplication::translate("intermediateWindow", "Location", nullptr));
         futureTemp->setText(QCoreApplication::translate("intermediateWindow", "Temperature", nullptr));
         futureHumidity->setText(QCoreApplication::translate("intermediateWindow", "Humidity", nullptr));

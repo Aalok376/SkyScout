@@ -23,7 +23,8 @@ SOURCES += \
     presentgraph.cpp \
     qcustomplot.cpp \
     todaysweather.cpp \
-    weatherdata.cpp
+    weatherdata.cpp \
+    worldmap.cpp
 
 HEADERS += \
     fetchcurrentaddress.h \
@@ -38,14 +39,16 @@ HEADERS += \
     presentgraph.h \
     qcustomplot.h \
     todaysweather.h \
-    weatherdata.h
+    weatherdata.h \
+    worldmap.h
 
 FORMS += \
     futuregraph.ui \
     intermediatewindow.ui \
     mainwindow.ui \
     pastgraph.ui \
-    presentgraph.ui
+    presentgraph.ui \
+    worldmap.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

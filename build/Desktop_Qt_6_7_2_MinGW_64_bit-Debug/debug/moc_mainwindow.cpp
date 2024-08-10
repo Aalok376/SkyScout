@@ -53,7 +53,9 @@ constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::string
     "arg1",
     "on_seemore_btn_clicked",
     "showMainWindow",
-    "on_light_btn_clicked"
+    "on_light_btn_clicked",
+    "on_map_btn_clicked",
+    "showMainWindowM"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -66,7 +68,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      13,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -74,19 +76,21 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    2,   80,    2, 0x06,    1 /* Public */,
+       1,    2,   92,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       5,    0,   85,    2, 0x08,    4 /* Private */,
-       6,    0,   86,    2, 0x08,    5 /* Private */,
-       7,    0,   87,    2, 0x08,    6 /* Private */,
-       8,    1,   88,    2, 0x08,    7 /* Private */,
-      11,    1,   91,    2, 0x08,    9 /* Private */,
-      12,    1,   94,    2, 0x08,   11 /* Private */,
-      13,    1,   97,    2, 0x08,   13 /* Private */,
-      15,    0,  100,    2, 0x08,   15 /* Private */,
-      16,    0,  101,    2, 0x08,   16 /* Private */,
-      17,    0,  102,    2, 0x08,   17 /* Private */,
+       5,    0,   97,    2, 0x08,    4 /* Private */,
+       6,    0,   98,    2, 0x08,    5 /* Private */,
+       7,    0,   99,    2, 0x08,    6 /* Private */,
+       8,    1,  100,    2, 0x08,    7 /* Private */,
+      11,    1,  103,    2, 0x08,    9 /* Private */,
+      12,    1,  106,    2, 0x08,   11 /* Private */,
+      13,    1,  109,    2, 0x08,   13 /* Private */,
+      15,    0,  112,    2, 0x08,   15 /* Private */,
+      16,    0,  113,    2, 0x08,   16 /* Private */,
+      17,    0,  114,    2, 0x08,   17 /* Private */,
+      18,    0,  115,    2, 0x08,   18 /* Private */,
+      19,    0,  116,    2, 0x08,   19 /* Private */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QVariant, QMetaType::QVariant,    3,    4,
@@ -99,6 +103,8 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSMainWindowENDCLASS[] = {
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, 0x80000000 | 9,   10,
     QMetaType::Void, QMetaType::QString,   14,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -142,6 +148,10 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'showMainWindow'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_light_btn_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_map_btn_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'showMainWindowM'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -164,6 +174,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 8: _t->on_seemore_btn_clicked(); break;
         case 9: _t->showMainWindow(); break;
         case 10: _t->on_light_btn_clicked(); break;
+        case 11: _t->on_map_btn_clicked(); break;
+        case 12: _t->showMainWindowM(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -215,13 +227,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 13;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 13;
     }
     return _id;
 }

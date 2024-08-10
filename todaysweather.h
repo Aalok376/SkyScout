@@ -24,6 +24,8 @@ public:
 
     static int findLowestId();
 
+    static QString fetchCity(int);
+
     static QString fetchWeatherStatus(int);
     static double fetchTemp(int);
     static int fetchHour(int);

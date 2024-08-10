@@ -146,6 +146,21 @@ int todaysWeather::findLowestId() {
     }
 }
 
+QString todaysWeather::fetchCity(int id) {
+    QSqlQuery query;
+    QString city;
+    query.prepare("SELECT city FROM currentWeather WHERE id = :id");
+    query.bindValue(":id",id);
+    if(query.exec()){
+        if(query.next()){
+            city = query.value(0).toString();
+        }
+    }else{
+        qDebug()<<"error in fetching current city";
+    }
+    return city;
+}
+
 QString todaysWeather::fetchWeatherStatus(int id) {
     QSqlQuery query;
     QString status;

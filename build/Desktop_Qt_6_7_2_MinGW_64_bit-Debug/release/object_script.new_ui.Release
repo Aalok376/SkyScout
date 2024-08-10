@@ -11,6 +11,7 @@ release/presentgraph.o
 release/qcustomplot.o
 release/todaysweather.o
 release/weatherdata.o
+release/worldmap.o
 release/qrc_resouces.o
 release/moc_fetchcurrentaddress.o
 release/moc_futuregraph.o
@@ -19,3 +20,4 @@ release/moc_mainwindow.o
 release/moc_pastgraph.o
 release/moc_presentgraph.o
 release/moc_qcustomplot.o
+release/moc_worldmap.o

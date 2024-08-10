@@ -38,9 +38,9 @@ public:
     QWidget *widget;
     QVBoxLayout *verticalLayout_14;
     QVBoxLayout *verticalLayout_17;
-    QLabel *label_2;
+    QLabel *wIcon;
     QVBoxLayout *verticalLayout_8;
-    QPushButton *pushButton_2;
+    QPushButton *map_btn;
     QPushButton *pushButton_flag;
     QPushButton *seemore_btn;
     QSpacerItem *verticalSpacer;
@@ -69,7 +69,7 @@ public:
     QLabel *feelslike1;
     QLabel *windspeed1;
     QVBoxLayout *verticalLayout_23;
-    QLabel *label_3;
+    QLabel *todaysLocation;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QHBoxLayout *horizontalLayout_20;
@@ -213,30 +213,31 @@ public:
         verticalLayout_17 = new QVBoxLayout();
         verticalLayout_17->setSpacing(120);
         verticalLayout_17->setObjectName("verticalLayout_17");
-        label_2 = new QLabel(widget);
-        label_2->setObjectName("label_2");
+        wIcon = new QLabel(widget);
+        wIcon->setObjectName("wIcon");
+        wIcon->setStyleSheet(QString::fromUtf8("background:transparent;"));
 
-        verticalLayout_17->addWidget(label_2);
+        verticalLayout_17->addWidget(wIcon);
 
         verticalLayout_8 = new QVBoxLayout();
         verticalLayout_8->setSpacing(0);
         verticalLayout_8->setObjectName("verticalLayout_8");
-        pushButton_2 = new QPushButton(widget);
-        pushButton_2->setObjectName("pushButton_2");
+        map_btn = new QPushButton(widget);
+        map_btn->setObjectName("map_btn");
         QSizePolicy sizePolicy1(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
-        pushButton_2->setSizePolicy(sizePolicy1);
-        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        sizePolicy1.setHeightForWidth(map_btn->sizePolicy().hasHeightForWidth());
+        map_btn->setSizePolicy(sizePolicy1);
+        map_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "border:none;\n"
 "background:transparent;\n"
 "}\n"
 "QPushButton:hover{\n"
-"background-color:rgb(65,125,198);\n"
+"background : rgba(255,255,255,0.1);\n"
 "}"));
 
-        verticalLayout_8->addWidget(pushButton_2);
+        verticalLayout_8->addWidget(map_btn);
 
         pushButton_flag = new QPushButton(widget);
         pushButton_flag->setObjectName("pushButton_flag");
@@ -246,8 +247,11 @@ public:
         sizePolicy2.setHeightForWidth(pushButton_flag->sizePolicy().hasHeightForWidth());
         pushButton_flag->setSizePolicy(sizePolicy2);
         pushButton_flag->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border:none;\n"
+"border:none;\n"
 "background:transparent;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background : rgba(255,255,255,0.1);\n"
 "}"));
 
         verticalLayout_8->addWidget(pushButton_flag);
@@ -257,12 +261,11 @@ public:
         sizePolicy.setHeightForWidth(seemore_btn->sizePolicy().hasHeightForWidth());
         seemore_btn->setSizePolicy(sizePolicy);
         seemore_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"color:black;\n"
 "border:none;\n"
 "background:transparent;\n"
 "}\n"
 "QPushButton:hover{\n"
-"color:white;\n"
+"background : rgba(255,255,255,0.1);\n"
 "}"));
 
         verticalLayout_8->addWidget(seemore_btn);
@@ -496,14 +499,17 @@ public:
         verticalLayout_23 = new QVBoxLayout();
         verticalLayout_23->setSpacing(0);
         verticalLayout_23->setObjectName("verticalLayout_23");
-        label_3 = new QLabel(centralwidget);
-        label_3->setObjectName("label_3");
-        label_3->setStyleSheet(QString::fromUtf8("border-top-left-radius:12%;\n"
+        todaysLocation = new QLabel(centralwidget);
+        todaysLocation->setObjectName("todaysLocation");
+        todaysLocation->setStyleSheet(QString::fromUtf8("border-top-left-radius:12%;\n"
 "border-top-right-radius:12%;\n"
 "border -color: rgba(255, 255, 255, .2);\n"
-"background:rgba(255, 255, 255, .06);"));
+"background:rgba(255, 255, 255, .07);\n"
+"font: 10pt \"Segoe UI\";\n"
+"color:rgb(0, 0, 0);\n"
+"padding-left:10px;"));
 
-        verticalLayout_23->addWidget(label_3);
+        verticalLayout_23->addWidget(todaysLocation);
 
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName("scrollArea");
@@ -523,7 +529,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 287, 339));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 293, 317));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -1265,7 +1271,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 25));
+        menubar->setGeometry(QRect(0, 0, 1247, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -1279,8 +1285,8 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        label_2->setText(QString());
-        pushButton_2->setText(QString());
+        wIcon->setText(QString());
+        map_btn->setText(QString());
         pushButton_flag->setText(QString());
         seemore_btn->setText(QString());
         pushButton_search->setText(QString());
@@ -1288,7 +1294,7 @@ public:
 #if QT_CONFIG(tooltip)
         label_currentWeather->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
-        label_currentWeather->setText(QCoreApplication::translate("MainWindow", "clouds", nullptr));
+        label_currentWeather->setText(QString());
         label_alert->setText(QString());
 #if QT_CONFIG(tooltip)
         label_temp->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\">36</p></body></html>", nullptr));
@@ -1301,7 +1307,7 @@ public:
         humidity1->setText(QString());
         feelslike1->setText(QString());
         windspeed1->setText(QString());
-        label_3->setText(QCoreApplication::translate("MainWindow", "Kathmandu", nullptr));
+        todaysLocation->setText(QString());
         icon1->setText(QString());
         weather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp1->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
