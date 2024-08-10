@@ -32,15 +32,17 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout_29;
+    QHBoxLayout *horizontalLayout_30;
     QHBoxLayout *horizontalLayout_11;
     QVBoxLayout *verticalLayout_15;
     QWidget *widget;
     QVBoxLayout *verticalLayout_14;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_3;
+    QVBoxLayout *verticalLayout_17;
+    QLabel *label_2;
+    QVBoxLayout *verticalLayout_8;
     QPushButton *pushButton_2;
-    QPushButton *pushButton;
+    QPushButton *pushButton_flag;
+    QPushButton *seemore_btn;
     QSpacerItem *verticalSpacer;
     QVBoxLayout *verticalLayout_10;
     QVBoxLayout *verticalLayout_9;
@@ -66,6 +68,8 @@ public:
     QLabel *humidity1;
     QLabel *feelslike1;
     QLabel *windspeed1;
+    QVBoxLayout *verticalLayout_23;
+    QLabel *label_3;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QHBoxLayout *horizontalLayout_20;
@@ -105,14 +109,12 @@ public:
     QHBoxLayout *horizontalLayout_12;
     QSpacerItem *horizontalSpacer;
     QHBoxLayout *horizontalLayout_14;
-    QPushButton *seemore_btn;
     QHBoxLayout *horizontalLayout_15;
     QPushButton *light_btn;
-    QPushButton *pushButton_flag;
+    QLabel *label_gif;
     QHBoxLayout *horizontalLayout_17;
     QSpacerItem *horizontalSpacer_3;
     QLabel *label;
-    QLabel *label_gif;
     QHBoxLayout *horizontalLayout_28;
     QQuickWidget *quickWidget;
     QWidget *widget_2;
@@ -186,9 +188,9 @@ public:
 "background-size: cover;"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        horizontalLayout_29 = new QHBoxLayout(centralwidget);
-        horizontalLayout_29->setObjectName("horizontalLayout_29");
-        horizontalLayout_29->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_30 = new QHBoxLayout(centralwidget);
+        horizontalLayout_30->setObjectName("horizontalLayout_30");
+        horizontalLayout_30->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setSpacing(20);
         horizontalLayout_11->setObjectName("horizontalLayout_11");
@@ -205,42 +207,25 @@ public:
 "\n"
 ""));
         verticalLayout_14 = new QVBoxLayout(widget);
-        verticalLayout_14->setSpacing(20);
+        verticalLayout_14->setSpacing(30);
         verticalLayout_14->setObjectName("verticalLayout_14");
-        verticalLayout_14->setContentsMargins(0, 80, 0, 0);
-        pushButton_4 = new QPushButton(widget);
-        pushButton_4->setObjectName("pushButton_4");
+        verticalLayout_14->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_17 = new QVBoxLayout();
+        verticalLayout_17->setSpacing(120);
+        verticalLayout_17->setObjectName("verticalLayout_17");
+        label_2 = new QLabel(widget);
+        label_2->setObjectName("label_2");
+
+        verticalLayout_17->addWidget(label_2);
+
+        verticalLayout_8 = new QVBoxLayout();
+        verticalLayout_8->setSpacing(0);
+        verticalLayout_8->setObjectName("verticalLayout_8");
+        pushButton_2 = new QPushButton(widget);
+        pushButton_2->setObjectName("pushButton_2");
         QSizePolicy sizePolicy1(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
-        pushButton_4->setSizePolicy(sizePolicy1);
-        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"border:none;\n"
-"background:transparent;\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:rgb(65,125,198);\n"
-"}"));
-
-        verticalLayout_14->addWidget(pushButton_4);
-
-        pushButton_3 = new QPushButton(widget);
-        pushButton_3->setObjectName("pushButton_3");
-        sizePolicy1.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
-        pushButton_3->setSizePolicy(sizePolicy1);
-        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"border:none;\n"
-"background:transparent;\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color:rgb(65,125,198);\n"
-"}"));
-
-        verticalLayout_14->addWidget(pushButton_3);
-
-        pushButton_2 = new QPushButton(widget);
-        pushButton_2->setObjectName("pushButton_2");
         sizePolicy1.setHeightForWidth(pushButton_2->sizePolicy().hasHeightForWidth());
         pushButton_2->setSizePolicy(sizePolicy1);
         pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
@@ -251,31 +236,54 @@ public:
 "background-color:rgb(65,125,198);\n"
 "}"));
 
-        verticalLayout_14->addWidget(pushButton_2);
+        verticalLayout_8->addWidget(pushButton_2);
 
-        pushButton = new QPushButton(widget);
-        pushButton->setObjectName("pushButton");
-        sizePolicy1.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy1);
-        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        pushButton_flag = new QPushButton(widget);
+        pushButton_flag->setObjectName("pushButton_flag");
+        QSizePolicy sizePolicy2(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::MinimumExpanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(pushButton_flag->sizePolicy().hasHeightForWidth());
+        pushButton_flag->setSizePolicy(sizePolicy2);
+        pushButton_flag->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	border:none;\n"
+"background:transparent;\n"
+"}"));
+
+        verticalLayout_8->addWidget(pushButton_flag);
+
+        seemore_btn = new QPushButton(widget);
+        seemore_btn->setObjectName("seemore_btn");
+        sizePolicy.setHeightForWidth(seemore_btn->sizePolicy().hasHeightForWidth());
+        seemore_btn->setSizePolicy(sizePolicy);
+        seemore_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"color:black;\n"
 "border:none;\n"
 "background:transparent;\n"
 "}\n"
 "QPushButton:hover{\n"
-"background-color:rgb(65,125,198);\n"
+"color:white;\n"
 "}"));
 
-        verticalLayout_14->addWidget(pushButton);
+        verticalLayout_8->addWidget(seemore_btn);
+
+        verticalLayout_8->setStretch(0, 1);
+        verticalLayout_8->setStretch(1, 1);
+        verticalLayout_8->setStretch(2, 1);
+
+        verticalLayout_17->addLayout(verticalLayout_8);
+
+        verticalLayout_17->setStretch(0, 1);
+        verticalLayout_17->setStretch(1, 4);
+
+        verticalLayout_14->addLayout(verticalLayout_17);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
         verticalLayout_14->addItem(verticalSpacer);
 
-        verticalLayout_14->setStretch(0, 1);
-        verticalLayout_14->setStretch(1, 1);
-        verticalLayout_14->setStretch(2, 1);
-        verticalLayout_14->setStretch(3, 1);
-        verticalLayout_14->setStretch(4, 6);
+        verticalLayout_14->setStretch(0, 6);
+        verticalLayout_14->setStretch(1, 7);
 
         verticalLayout_15->addWidget(widget);
 
@@ -294,11 +302,11 @@ public:
         horizontalLayout_7->setContentsMargins(-1, 5, -1, 5);
         pushButton_search = new QPushButton(centralwidget);
         pushButton_search->setObjectName("pushButton_search");
-        QSizePolicy sizePolicy2(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(pushButton_search->sizePolicy().hasHeightForWidth());
-        pushButton_search->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy3(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(pushButton_search->sizePolicy().hasHeightForWidth());
+        pushButton_search->setSizePolicy(sizePolicy3);
         pushButton_search->setMinimumSize(QSize(1, 2));
         pushButton_search->setStyleSheet(QString::fromUtf8("background-color: rgb(217, 217, 217);\n"
 "border-top-left-radius:12%;\n"
@@ -309,8 +317,8 @@ public:
 
         lineEdit_searchbar = new QLineEdit(centralwidget);
         lineEdit_searchbar->setObjectName("lineEdit_searchbar");
-        sizePolicy2.setHeightForWidth(lineEdit_searchbar->sizePolicy().hasHeightForWidth());
-        lineEdit_searchbar->setSizePolicy(sizePolicy2);
+        sizePolicy3.setHeightForWidth(lineEdit_searchbar->sizePolicy().hasHeightForWidth());
+        lineEdit_searchbar->setSizePolicy(sizePolicy3);
         lineEdit_searchbar->setStyleSheet(QString::fromUtf8("background-color: rgb(217, 217, 217);\n"
 "color: rgb(0, 0, 0);\n"
 "border-top-right-radius:12%;\n"
@@ -331,6 +339,8 @@ public:
 
         verticalLayout_9->addWidget(label_recentSearch);
 
+        verticalLayout_9->setStretch(0, 2);
+        verticalLayout_9->setStretch(1, 1);
 
         verticalLayout_10->addLayout(verticalLayout_9);
 
@@ -483,24 +493,37 @@ public:
 
         verticalLayout_10->addWidget(frame);
 
+        verticalLayout_23 = new QVBoxLayout();
+        verticalLayout_23->setSpacing(0);
+        verticalLayout_23->setObjectName("verticalLayout_23");
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName("label_3");
+        label_3->setStyleSheet(QString::fromUtf8("border-top-left-radius:12%;\n"
+"border-top-right-radius:12%;\n"
+"border -color: rgba(255, 255, 255, .2);\n"
+"background:rgba(255, 255, 255, .06);"));
+
+        verticalLayout_23->addWidget(label_3);
+
         scrollArea = new QScrollArea(centralwidget);
         scrollArea->setObjectName("scrollArea");
-        QSizePolicy sizePolicy3(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(2);
-        sizePolicy3.setHeightForWidth(scrollArea->sizePolicy().hasHeightForWidth());
-        scrollArea->setSizePolicy(sizePolicy3);
+        QSizePolicy sizePolicy4(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(2);
+        sizePolicy4.setHeightForWidth(scrollArea->sizePolicy().hasHeightForWidth());
+        scrollArea->setSizePolicy(sizePolicy4);
         scrollArea->setStyleSheet(QString::fromUtf8("/*background-color: rgba(255, 255, 255, .1);*/\n"
 "border -color: rgba(255, 255, 255, .2);\n"
 "background:rgba(255, 255, 255, .06);\n"
-"border-radius:12%;"));
+"border-bottom-left-radius:12%;\n"
+"border-bottom-right-radius:12%;"));
         scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         scrollArea->setSizeAdjustPolicy(QAbstractScrollArea::AdjustIgnored);
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 295, 361));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 287, 339));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -756,11 +779,16 @@ public:
 
         scrollArea->setWidget(scrollAreaWidgetContents);
 
-        verticalLayout_10->addWidget(scrollArea);
+        verticalLayout_23->addWidget(scrollArea);
+
+        verticalLayout_23->setStretch(0, 1);
+        verticalLayout_23->setStretch(1, 7);
+
+        verticalLayout_10->addLayout(verticalLayout_23);
 
         verticalLayout_10->setStretch(0, 3);
-        verticalLayout_10->setStretch(1, 6);
-        verticalLayout_10->setStretch(2, 8);
+        verticalLayout_10->setStretch(1, 7);
+        verticalLayout_10->setStretch(2, 9);
 
         horizontalLayout_11->addLayout(verticalLayout_10);
 
@@ -779,21 +807,6 @@ public:
 
         horizontalLayout_14 = new QHBoxLayout();
         horizontalLayout_14->setObjectName("horizontalLayout_14");
-        seemore_btn = new QPushButton(centralwidget);
-        seemore_btn->setObjectName("seemore_btn");
-        sizePolicy.setHeightForWidth(seemore_btn->sizePolicy().hasHeightForWidth());
-        seemore_btn->setSizePolicy(sizePolicy);
-        seemore_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"color:black;\n"
-"border:none;\n"
-"background:transparent;\n"
-"}\n"
-"QPushButton:hover{\n"
-"color:white;\n"
-"}"));
-
-        horizontalLayout_14->addWidget(seemore_btn);
-
         horizontalLayout_15 = new QHBoxLayout();
         horizontalLayout_15->setObjectName("horizontalLayout_15");
         light_btn = new QPushButton(centralwidget);
@@ -806,32 +819,25 @@ public:
 
         horizontalLayout_15->addWidget(light_btn);
 
-        pushButton_flag = new QPushButton(centralwidget);
-        pushButton_flag->setObjectName("pushButton_flag");
-        QSizePolicy sizePolicy4(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::MinimumExpanding);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(pushButton_flag->sizePolicy().hasHeightForWidth());
-        pushButton_flag->setSizePolicy(sizePolicy4);
-        pushButton_flag->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border:none;\n"
-"background:transparent;\n"
-"}"));
+        label_gif = new QLabel(centralwidget);
+        label_gif->setObjectName("label_gif");
+        label_gif->setStyleSheet(QString::fromUtf8("border-top-right-radius:12%;\n"
+"border-bottom-right-radius:12%;\n"
+"background:transparent;"));
 
-        horizontalLayout_15->addWidget(pushButton_flag);
+        horizontalLayout_15->addWidget(label_gif);
 
         horizontalLayout_15->setStretch(0, 1);
-        horizontalLayout_15->setStretch(1, 2);
+        horizontalLayout_15->setStretch(1, 1);
 
         horizontalLayout_14->addLayout(horizontalLayout_15);
 
-        horizontalLayout_14->setStretch(0, 1);
-        horizontalLayout_14->setStretch(1, 2);
+        horizontalLayout_14->setStretch(0, 2);
 
         horizontalLayout_12->addLayout(horizontalLayout_14);
 
-        horizontalLayout_12->setStretch(0, 4);
-        horizontalLayout_12->setStretch(1, 5);
+        horizontalLayout_12->setStretch(0, 5);
+        horizontalLayout_12->setStretch(1, 1);
 
         verticalLayout_7->addLayout(horizontalLayout_12);
 
@@ -851,17 +857,8 @@ public:
 
         horizontalLayout_17->addWidget(label);
 
-        label_gif = new QLabel(centralwidget);
-        label_gif->setObjectName("label_gif");
-        label_gif->setStyleSheet(QString::fromUtf8("border-top-right-radius:12%;\n"
-"border-bottom-right-radius:12%;\n"
-"background:transparent;"));
-
-        horizontalLayout_17->addWidget(label_gif);
-
         horizontalLayout_17->setStretch(0, 6);
         horizontalLayout_17->setStretch(1, 5);
-        horizontalLayout_17->setStretch(2, 1);
 
         verticalLayout_7->addLayout(horizontalLayout_17);
 
@@ -1056,7 +1053,7 @@ public:
         current_time->setObjectName("current_time");
         current_time->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
-"font: 15pt \"Segoe UI\";\n"
+"font: 13pt \"Segoe UI\";\n"
 "padding-left:20px;"));
 
         verticalLayout_20->addWidget(current_time);
@@ -1065,7 +1062,7 @@ public:
         currentlocation->setObjectName("currentlocation");
         currentlocation->setStyleSheet(QString::fromUtf8("color:black;\n"
 "background:transparent;\n"
-"font: 16pt \"Segoe UI\";\n"
+"font: 14pt \"Segoe UI\";\n"
 "padding-left:15px;"));
 
         verticalLayout_20->addWidget(currentlocation);
@@ -1263,12 +1260,12 @@ public:
         horizontalLayout_11->setStretch(1, 6);
         horizontalLayout_11->setStretch(2, 17);
 
-        horizontalLayout_29->addLayout(horizontalLayout_11);
+        horizontalLayout_30->addLayout(horizontalLayout_11);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 21));
+        menubar->setGeometry(QRect(0, 0, 1247, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -1282,10 +1279,10 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        pushButton_4->setText(QString());
-        pushButton_3->setText(QString());
+        label_2->setText(QString());
         pushButton_2->setText(QString());
-        pushButton->setText(QString());
+        pushButton_flag->setText(QString());
+        seemore_btn->setText(QString());
         pushButton_search->setText(QString());
         label_recentSearch->setText(QString());
 #if QT_CONFIG(tooltip)
@@ -1304,6 +1301,7 @@ public:
         humidity1->setText(QString());
         feelslike1->setText(QString());
         windspeed1->setText(QString());
+        label_3->setText(QCoreApplication::translate("MainWindow", "Kathmandu", nullptr));
         icon1->setText(QString());
         weather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp1->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
@@ -1324,11 +1322,9 @@ public:
         weather5->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         temp5->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));
         time5->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
-        seemore_btn->setText(QString());
         light_btn->setText(QString());
-        pushButton_flag->setText(QString());
-        label->setText(QString());
         label_gif->setText(QString());
+        label->setText(QString());
         label_18->setText(QCoreApplication::translate("MainWindow", "3 Days Forecast", nullptr));
         fIcon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
         fWeather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));

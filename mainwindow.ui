@@ -25,7 +25,7 @@ background-image: url(&quot;:/new/prefix1/image/mainbackground.png&quot;);
 background-size: cover;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_29">
+   <layout class="QHBoxLayout" name="horizontalLayout_30">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -69,15 +69,15 @@ border-color: rgba(255, 255, 255, 0.2);
 
 </string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_14" stretch="1,1,1,1,6">
+          <layout class="QVBoxLayout" name="verticalLayout_14" stretch="6,7">
            <property name="spacing">
-            <number>20</number>
+            <number>30</number>
            </property>
            <property name="leftMargin">
             <number>0</number>
            </property>
            <property name="topMargin">
-            <number>80</number>
+            <number>0</number>
            </property>
            <property name="rightMargin">
             <number>0</number>
@@ -86,92 +86,89 @@ border-color: rgba(255, 255, 255, 0.2);
             <number>0</number>
            </property>
            <item>
-            <widget class="QPushButton" name="pushButton_4">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
+            <layout class="QVBoxLayout" name="verticalLayout_17" stretch="1,4">
+             <property name="spacing">
+              <number>120</number>
              </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton{
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,1,1">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="pushButton_2">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
 border:none;
 background:transparent;
 }
 QPushButton:hover{
 background-color:rgb(65,125,198);
 }</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_3">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton{
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_flag">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	border:none;
+background:transparent;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="seemore_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+color:black;
 border:none;
 background:transparent;
 }
 QPushButton:hover{
-background-color:rgb(65,125,198);
+color:white;
 }</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton_2">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton{
-border:none;
-background:transparent;
-}
-QPushButton:hover{
-background-color:rgb(65,125,198);
-}</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="pushButton">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="styleSheet">
-              <string notr="true">QPushButton{
-border:none;
-background:transparent;
-}
-QPushButton:hover{
-background-color:rgb(65,125,198);
-}</string>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
            </item>
            <item>
             <spacer name="verticalSpacer">
@@ -192,7 +189,7 @@ background-color:rgb(65,125,198);
        </layout>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_10" stretch="3,6,8">
+       <layout class="QVBoxLayout" name="verticalLayout_10" stretch="3,7,9">
         <property name="spacing">
          <number>20</number>
         </property>
@@ -203,7 +200,7 @@ background-color:rgb(65,125,198);
          <number>20</number>
         </property>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_9" stretch="0,0">
+         <layout class="QVBoxLayout" name="verticalLayout_9" stretch="2,1">
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,8">
             <property name="spacing">
@@ -501,403 +498,424 @@ font: 8pt 'Segoe UI';</string>
          </widget>
         </item>
         <item>
-         <widget class="QScrollArea" name="scrollArea">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>2</verstretch>
-           </sizepolicy>
+         <layout class="QVBoxLayout" name="verticalLayout_23" stretch="1,7">
+          <property name="spacing">
+           <number>0</number>
           </property>
-          <property name="styleSheet">
-           <string notr="true">/*background-color: rgba(255, 255, 255, .1);*/
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="styleSheet">
+             <string notr="true">border-top-left-radius:12%;
+border-top-right-radius:12%;
+border -color: rgba(255, 255, 255, .2);
+background:rgba(255, 255, 255, .06);</string>
+            </property>
+            <property name="text">
+             <string>Kathmandu</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QScrollArea" name="scrollArea">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>2</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">/*background-color: rgba(255, 255, 255, .1);*/
 border -color: rgba(255, 255, 255, .2);
 background:rgba(255, 255, 255, .06);
-border-radius:12%;</string>
-          </property>
-          <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-          <property name="horizontalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOff</enum>
-          </property>
-          <property name="sizeAdjustPolicy">
-           <enum>QAbstractScrollArea::AdjustIgnored</enum>
-          </property>
-          <property name="widgetResizable">
-           <bool>true</bool>
-          </property>
-          <widget class="QWidget" name="scrollAreaWidgetContents">
-           <property name="geometry">
-            <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>295</width>
-             <height>361</height>
-            </rect>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_20">
-            <item>
-             <layout class="QVBoxLayout" name="verticalLayout_5">
-              <property name="spacing">
-               <number>10</number>
-              </property>
+border-bottom-left-radius:12%;
+border-bottom-right-radius:12%;</string>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOff</enum>
+            </property>
+            <property name="sizeAdjustPolicy">
+             <enum>QAbstractScrollArea::AdjustIgnored</enum>
+            </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>287</width>
+               <height>339</height>
+              </rect>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_20">
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,2,1">
+               <layout class="QVBoxLayout" name="verticalLayout_5">
                 <property name="spacing">
-                 <number>0</number>
+                 <number>10</number>
                 </property>
                 <item>
-                 <widget class="QLabel" name="icon1">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_3">
-                  <item>
-                   <widget class="QLabel" name="weather1">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">color:black;
-background:transparent;
-font: 10pt 'Segoe UI';</string>
-                    </property>
-                    <property name="text">
-                     <string>weather</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="temp1">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="styleSheet">
-                     <string notr="true">color:black;
-background:transparent;
-font: 10pt 'Segoe UI';</string>
-                    </property>
-                    <property name="text">
-                     <string>temp</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <widget class="QLabel" name="time1">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
-background:transparent;
-font: 10pt 'Segoe UI';</string>
-                  </property>
-                  <property name="text">
-                   <string>time</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,2,1">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QLabel" name="icon2">
-                  <property name="styleSheet">
-                   <string notr="true">
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_2">
-                  <item>
-                   <widget class="QLabel" name="weather2">
-                    <property name="styleSheet">
-                     <string notr="true">color:black;
-background:transparent;
-font: 10pt 'Segoe UI';</string>
-                    </property>
-                    <property name="text">
-                     <string>weather</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="temp2">
-                    <property name="styleSheet">
-                     <string notr="true">color:black;
-background:transparent;
-font: 10pt 'Segoe UI';</string>
-                    </property>
-                    <property name="text">
-                     <string>temp</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <widget class="QLabel" name="time2">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
-background:transparent;
-font: 10pt 'Segoe UI';</string>
-                  </property>
-                  <property name="locale">
-                   <locale language="English" country="UnitedStates"/>
-                  </property>
-                  <property name="lineWidth">
+                 <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,2,1">
+                  <property name="spacing">
                    <number>0</number>
                   </property>
-                  <property name="text">
-                   <string>time</string>
-                  </property>
-                 </widget>
+                  <item>
+                   <widget class="QLabel" name="icon1">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">background:transparent;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_3">
+                    <item>
+                     <widget class="QLabel" name="weather1">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
+                      </property>
+                      <property name="text">
+                       <string>weather</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="temp1">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
+                      </property>
+                      <property name="text">
+                       <string>temp</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="time1">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
+                    </property>
+                    <property name="text">
+                     <string>time</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,2,1">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
                 <item>
-                 <widget class="QLabel" name="icon3">
-                  <property name="styleSheet">
-                   <string notr="true">
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_4">
+                 <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,2,1">
                   <property name="spacing">
-                   <number>7</number>
+                   <number>0</number>
                   </property>
                   <item>
-                   <widget class="QLabel" name="weather3">
+                   <widget class="QLabel" name="icon2">
                     <property name="styleSheet">
-                     <string notr="true">color:black;
-background:transparent;
-font: 10pt 'Segoe UI';</string>
+                     <string notr="true">
+background:transparent;</string>
                     </property>
                     <property name="text">
-                     <string>weather</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
+                     <string/>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="temp3">
+                   <layout class="QVBoxLayout" name="verticalLayout_2">
+                    <item>
+                     <widget class="QLabel" name="weather2">
+                      <property name="styleSheet">
+                       <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
+                      </property>
+                      <property name="text">
+                       <string>weather</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="temp2">
+                      <property name="styleSheet">
+                       <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
+                      </property>
+                      <property name="text">
+                       <string>temp</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="time2">
                     <property name="styleSheet">
                      <string notr="true">color:black;
 background:transparent;
 font: 10pt 'Segoe UI';</string>
                     </property>
-                    <property name="text">
-                     <string>temp</string>
+                    <property name="locale">
+                     <locale language="English" country="UnitedStates"/>
                     </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
+                    <property name="lineWidth">
+                     <number>0</number>
+                    </property>
+                    <property name="text">
+                     <string>time</string>
                     </property>
                    </widget>
                   </item>
                  </layout>
                 </item>
                 <item>
-                 <widget class="QLabel" name="time3">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
+                 <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,2,1">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="icon3">
+                    <property name="styleSheet">
+                     <string notr="true">
+background:transparent;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_4">
+                    <property name="spacing">
+                     <number>7</number>
+                    </property>
+                    <item>
+                     <widget class="QLabel" name="weather3">
+                      <property name="styleSheet">
+                       <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
+                      </property>
+                      <property name="text">
+                       <string>weather</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="temp3">
+                      <property name="styleSheet">
+                       <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
+                      </property>
+                      <property name="text">
+                       <string>temp</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="time3">
+                    <property name="styleSheet">
+                     <string notr="true">color:black;
 font: 10pt 'Segoe UI';
 background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string>time</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="1,2,1">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QLabel" name="icon4">
-                  <property name="styleSheet">
-                   <string notr="true">
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_13">
-                  <item>
-                   <widget class="QLabel" name="weather4">
-                    <property name="styleSheet">
-                     <string notr="true">color:black;
-background:transparent;
-font: 10pt 'Segoe UI';</string>
                     </property>
                     <property name="text">
-                     <string>weather</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="temp4">
-                    <property name="styleSheet">
-                     <string notr="true">color:black;
-background:transparent;
-font: 10pt 'Segoe UI';</string>
-                    </property>
-                    <property name="text">
-                     <string>temp</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
+                     <string>time</string>
                     </property>
                    </widget>
                   </item>
                  </layout>
                 </item>
                 <item>
-                 <widget class="QLabel" name="time4">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
-background:transparent;
-font: 10pt 'Segoe UI';</string>
+                 <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="1,2,1">
+                  <property name="spacing">
+                   <number>0</number>
                   </property>
-                  <property name="text">
-                   <string>time</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,2,1">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QLabel" name="icon5">
-                  <property name="styleSheet">
-                   <string notr="true">
-background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QVBoxLayout" name="verticalLayout_12">
                   <item>
-                   <widget class="QLabel" name="weather5">
+                   <widget class="QLabel" name="icon4">
                     <property name="styleSheet">
-                     <string notr="true">color:black;
-background:transparent;
-font: 10pt 'Segoe UI';</string>
+                     <string notr="true">
+background:transparent;</string>
                     </property>
                     <property name="text">
-                     <string>weather</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
+                     <string/>
                     </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="temp5">
+                   <layout class="QVBoxLayout" name="verticalLayout_13">
+                    <item>
+                     <widget class="QLabel" name="weather4">
+                      <property name="styleSheet">
+                       <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
+                      </property>
+                      <property name="text">
+                       <string>weather</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="temp4">
+                      <property name="styleSheet">
+                       <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
+                      </property>
+                      <property name="text">
+                       <string>temp</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="time4">
                     <property name="styleSheet">
                      <string notr="true">color:black;
 background:transparent;
 font: 10pt 'Segoe UI';</string>
                     </property>
                     <property name="text">
-                     <string>temp</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignCenter</set>
+                     <string>time</string>
                     </property>
                    </widget>
                   </item>
                  </layout>
                 </item>
                 <item>
-                 <widget class="QLabel" name="time5">
-                  <property name="styleSheet">
-                   <string notr="true">color:black;
+                 <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,2,1">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QLabel" name="icon5">
+                    <property name="styleSheet">
+                     <string notr="true">
+background:transparent;</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_12">
+                    <item>
+                     <widget class="QLabel" name="weather5">
+                      <property name="styleSheet">
+                       <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
+                      </property>
+                      <property name="text">
+                       <string>weather</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="temp5">
+                      <property name="styleSheet">
+                       <string notr="true">color:black;
+background:transparent;
+font: 10pt 'Segoe UI';</string>
+                      </property>
+                      <property name="text">
+                       <string>temp</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="time5">
+                    <property name="styleSheet">
+                     <string notr="true">color:black;
 font: 10pt 'Segoe UI';
 background:transparent;</string>
-                  </property>
-                  <property name="text">
-                   <string>time</string>
-                  </property>
-                 </widget>
+                    </property>
+                    <property name="text">
+                     <string>time</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </item>
                </layout>
               </item>
              </layout>
-            </item>
-           </layout>
-          </widget>
-         </widget>
+            </widget>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
@@ -915,7 +933,7 @@ background:transparent;</string>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_7" stretch="2,2,9">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="4,5">
+           <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="5,1">
             <property name="spacing">
              <number>0</number>
             </property>
@@ -936,32 +954,9 @@ background:transparent;</string>
              </spacer>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="1,2">
+             <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="2">
               <item>
-               <widget class="QPushButton" name="seemore_btn">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton{
-color:black;
-border:none;
-background:transparent;
-}
-QPushButton:hover{
-color:white;
-}</string>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="1,2">
+               <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="1,1">
                 <item>
                  <widget class="QPushButton" name="light_btn">
                   <property name="sizePolicy">
@@ -981,18 +976,11 @@ background:transparent;</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton_flag">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
+                 <widget class="QLabel" name="label_gif">
                   <property name="styleSheet">
-                   <string notr="true">QPushButton{
-	border:none;
-background:transparent;
-}</string>
+                   <string notr="true">border-top-right-radius:12%;
+border-bottom-right-radius:12%;
+background:transparent;</string>
                   </property>
                   <property name="text">
                    <string/>
@@ -1006,7 +994,7 @@ background:transparent;
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="6,5,1">
+           <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="6,5">
             <property name="spacing">
              <number>0</number>
             </property>
@@ -1031,18 +1019,6 @@ background:transparent;
               <property name="styleSheet">
                <string notr="true">border-top-left-radius:12%;
 border-bottom-left-radius:12%;
-background:transparent;</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label_gif">
-              <property name="styleSheet">
-               <string notr="true">border-top-right-radius:12%;
-border-bottom-right-radius:12%;
 background:transparent;</string>
               </property>
               <property name="text">
@@ -1293,7 +1269,7 @@ background:rgba(255,255,255,.1);</string>
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
-font: 15pt &quot;Segoe UI&quot;;
+font: 13pt &quot;Segoe UI&quot;;
 padding-left:20px;</string>
                    </property>
                    <property name="text">
@@ -1306,7 +1282,7 @@ padding-left:20px;</string>
                    <property name="styleSheet">
                     <string notr="true">color:black;
 background:transparent;
-font: 16pt &quot;Segoe UI&quot;;
+font: 14pt &quot;Segoe UI&quot;;
 padding-left:15px;</string>
                    </property>
                    <property name="text">
@@ -1554,7 +1530,7 @@ padding-left:220px;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

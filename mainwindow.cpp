@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/np.png"));
     int x= ui->pushButton_flag->width();
     int y =ui->pushButton_flag->height();
-    ui->pushButton_flag->setIconSize(QSize(x,y));
+    ui->pushButton_flag->setIconSize(QSize(y,y));
 
 
     ui->light_btn->setIcon(QIcon(":/new/prefix1/image/dark.svg"));
@@ -34,9 +34,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->light_btn->setIconSize(QSize(x,y));
 
     ui->seemore_btn->setIcon(QIcon(":/new/prefix1/image/more.png"));
-    x= ui->seemore_btn->width();
+    //x= ui->seemore_btn->width();
     y =ui->seemore_btn->height();
-    ui->seemore_btn->setIconSize(QSize(x,y));
+    ui->seemore_btn->setIconSize(QSize(y,y));
 
     /////// animation
     gifAnimation= new QMovie(":/new/prefix1/image/icons8-notification.gif");
@@ -67,7 +67,7 @@ MainWindow::MainWindow(QWidget *parent)
  // //   map integration
    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/MapView.qml")));
     ui->quickWidget->show();
-    int wid = 350,hei = 180;
+    int wid = 350,hei = 170;
       int radius = 12;
      //int wid=ui->widget_2->width();
       //int hei=ui->widget_2->height();
@@ -385,7 +385,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     //int cw = ui->currentsta->width();
                     //int che = ui->currentsta->height();
                     //qDebug()<<"hold on wait a minute"<<cw<<" and "<<che;
-                    ui->currentsta->setPixmap(cicon.pixmap(QSize(85,51)));
+                    ui->currentsta->setPixmap(cicon.pixmap(QSize(65,40)));
 
                     ui->currentTemp_2->setText(QString::number(temp)+"°C");
                     ui->currentHum_2->setText(QString::number(humidity)+"%");
@@ -701,9 +701,9 @@ void MainWindow::on_light_btn_clicked()
         ui->light_btn->setIcon(QIcon(":/new/prefix1/image/light.svg"));
         ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/maindarkbackground.png');");
 
-        ui->label_18->setStyleSheet("color:#F0EFF9; background:transparent; font: 15pt 'Segoe UI';");
-        ui->label_temp->setStyleSheet("color:#F0EFF9; background:transparent; font: 15pt 'Segoe UI'");
-        ui->label_currentWeather->setStyleSheet("color:#F0EFF9; background:transparent; font: 15pt 'Segoe UI'");
+        ui->label_18->setStyleSheet("color:#F0EFF9; background:transparent; font: 13pt 'Segoe UI';");
+        ui->label_temp->setStyleSheet("color:#F0EFF9; background:transparent; font: 13pt 'Segoe UI'");
+        ui->label_currentWeather->setStyleSheet("color:#F0EFF9; background:transparent; font: 13pt 'Segoe UI'");
         ui->label_alert->setStyleSheet("color:#F0EFF9; background:transparent; font: 9pt 'Segoe UI'");
         ui->label_recentSearch->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI'");
         ui->lineEdit_searchbar->setStyleSheet("background-color: rgb(217, 217, 217);color: #F0EFF9;"
@@ -746,8 +746,8 @@ void MainWindow::on_light_btn_clicked()
         ui->fTemp3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
         ui->fDate3->setStyleSheet("color:#F0EFF9; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->currentlocation->setStyleSheet("color:#F0EFF9;background:transparent;font: 16pt 'Segoe UI';padding-left:15px;");
-        ui->current_time->setStyleSheet("color:#F0EFF9;background:transparent;font: 15pt 'Segoe UI';padding-left:20px;");
+        ui->currentlocation->setStyleSheet("color:#F0EFF9;background:transparent;font: 14pt 'Segoe UI';padding-left:15px;");
+        ui->current_time->setStyleSheet("color:#F0EFF9;background:transparent;font: 13pt 'Segoe UI';padding-left:20px;");
         ui->currentTemp->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
         ui->currentTemp_2->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
         ui->currentHum->setStyleSheet("color:#F0EFF9;background:transparent;font: 10pt 'Segoe UI';");
@@ -766,8 +766,8 @@ void MainWindow::on_light_btn_clicked()
         ui->light_btn->setIcon(QIcon(":/new/prefix1/image/dark.svg"));
         ui->centralwidget->setStyleSheet("background-image: url(':/new/prefix1/image/mainbackground.png');");
 
-        ui->label_18->setStyleSheet("color:black; background:transparent; font: 15pt 'Segoe UI';");
-        ui->label_temp->setStyleSheet("color:black; background:transparent; font: 15pt 'Segoe UI'");
+        ui->label_18->setStyleSheet("color:black; background:transparent; font: 13pt 'Segoe UI';");
+        ui->label_temp->setStyleSheet("color:black; background:transparent; font: 13pt 'Segoe UI'");
         ui->label_currentWeather->setStyleSheet("color:black; background:transparent; font: 15pt 'Segoe UI'");
         ui->label_alert->setStyleSheet("color:black; background:transparent; font: 9pt 'Segoe UI'");
         ui->label_recentSearch->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI'");
@@ -810,8 +810,8 @@ void MainWindow::on_light_btn_clicked()
         ui->fTemp3->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
         ui->fDate3->setStyleSheet("color:black; background:transparent; font: 10pt 'Segoe UI';");
 
-        ui->currentlocation->setStyleSheet("color:black;background:transparent;font: 16pt 'Segoe UI';padding-left:15px;");
-        ui->current_time->setStyleSheet("color:black;background:transparent;font: 15pt 'Segoe UI';padding-left:20px;");
+        ui->currentlocation->setStyleSheet("color:black;background:transparent;font: 14pt 'Segoe UI';padding-left:15px;");
+        ui->current_time->setStyleSheet("color:black;background:transparent;font: 13pt 'Segoe UI';padding-left:20px;");
         ui->currentTemp->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
         ui->currentTemp_2->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';padding-left:220px;");
         ui->currentHum->setStyleSheet("color:black;background:transparent;font: 10pt 'Segoe UI';");
