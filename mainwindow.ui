@@ -555,8 +555,8 @@ border-bottom-right-radius:12%;</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>293</width>
-               <height>317</height>
+               <width>287</width>
+               <height>339</height>
               </rect>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -1023,7 +1023,7 @@ background:transparent;</string>
              </spacer>
             </item>
             <item>
-             <widget class="QLabel" name="label">
+             <widget class="QLabel" name="label_notification">
               <property name="styleSheet">
                <string notr="true">border-top-left-radius:12%;
 border-bottom-left-radius:12%;
@@ -1538,7 +1538,7 @@ padding-left:220px;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

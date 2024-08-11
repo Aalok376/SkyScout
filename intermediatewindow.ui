@@ -36,7 +36,7 @@
     <widget class="QWidget" name="centralWidget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,12">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,5,5,5">
           <item>
@@ -63,6 +63,12 @@ QPushButton:hover{
           </item>
           <item>
            <widget class="QPushButton" name="btnPast">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
 	font: 10pt 'Segoe UI';
@@ -81,6 +87,12 @@ QPushButton:hover{
           </item>
           <item>
            <widget class="QPushButton" name="btnPresent">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
 	font: 10pt 'Segoe UI';
@@ -99,6 +111,12 @@ QPushButton:hover{
           </item>
           <item>
            <widget class="QPushButton" name="btnFuture">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
 	font: 10pt 'Segoe UI';
@@ -697,7 +715,7 @@ font: 10pt 'Segoe UI';</string>
              <rect>
               <x>40</x>
               <y>310</y>
-              <width>71</width>
+              <width>81</width>
               <height>21</height>
              </rect>
             </property>

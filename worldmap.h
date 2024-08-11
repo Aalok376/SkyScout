@@ -3,7 +3,9 @@
 
 #include <QDialog>
 #include "mainwindow.h"
-
+#include<QGeoCoordinate>
+#include<QQuickItem>
+#include<QRegion>
 namespace Ui {
 class worldMap;
 }
@@ -17,7 +19,7 @@ public:
     ~worldMap();
 signals:
     void returnToMainWindow();
-
+      void updateMap(QVariant latitude, QVariant longitude);
 private slots:
     void on_pushButton_clicked();
 

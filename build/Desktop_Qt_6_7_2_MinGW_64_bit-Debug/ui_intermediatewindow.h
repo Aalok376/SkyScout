@@ -142,6 +142,8 @@ public:
 
         btnPast = new QPushButton(centralWidget);
         btnPast->setObjectName("btnPast");
+        sizePolicy.setHeightForWidth(btnPast->sizePolicy().hasHeightForWidth());
+        btnPast->setSizePolicy(sizePolicy);
         btnPast->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 10pt 'Segoe UI';\n"
 "	color:black;\n"
@@ -156,6 +158,8 @@ public:
 
         btnPresent = new QPushButton(centralWidget);
         btnPresent->setObjectName("btnPresent");
+        sizePolicy.setHeightForWidth(btnPresent->sizePolicy().hasHeightForWidth());
+        btnPresent->setSizePolicy(sizePolicy);
         btnPresent->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 10pt 'Segoe UI';\n"
 "	color:black;\n"
@@ -170,6 +174,8 @@ public:
 
         btnFuture = new QPushButton(centralWidget);
         btnFuture->setObjectName("btnFuture");
+        sizePolicy.setHeightForWidth(btnFuture->sizePolicy().hasHeightForWidth());
+        btnFuture->setSizePolicy(sizePolicy);
         btnFuture->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "	font: 10pt 'Segoe UI';\n"
 "	color:black;\n"
@@ -391,7 +397,7 @@ public:
 "font: 10pt 'Segoe UI';"));
         presentLon = new QLabel(page_2);
         presentLon->setObjectName("presentLon");
-        presentLon->setGeometry(QRect(40, 310, 71, 21));
+        presentLon->setGeometry(QRect(40, 310, 81, 21));
         presentLon->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "font: 10pt 'Segoe UI';"));
         presentLocation_2 = new QLabel(page_2);
@@ -560,6 +566,8 @@ public:
 
         verticalLayout_2->addWidget(stackedWidget);
 
+        verticalLayout_2->setStretch(0, 1);
+        verticalLayout_2->setStretch(1, 10);
 
         horizontalLayout->addLayout(verticalLayout_2);
 

@@ -114,7 +114,7 @@ public:
     QLabel *label_gif;
     QHBoxLayout *horizontalLayout_17;
     QSpacerItem *horizontalSpacer_3;
-    QLabel *label;
+    QLabel *label_notification;
     QHBoxLayout *horizontalLayout_28;
     QQuickWidget *quickWidget;
     QWidget *widget_2;
@@ -529,7 +529,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 293, 317));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 287, 339));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -855,13 +855,13 @@ public:
 
         horizontalLayout_17->addItem(horizontalSpacer_3);
 
-        label = new QLabel(centralwidget);
-        label->setObjectName("label");
-        label->setStyleSheet(QString::fromUtf8("border-top-left-radius:12%;\n"
+        label_notification = new QLabel(centralwidget);
+        label_notification->setObjectName("label_notification");
+        label_notification->setStyleSheet(QString::fromUtf8("border-top-left-radius:12%;\n"
 "border-bottom-left-radius:12%;\n"
 "background:transparent;"));
 
-        horizontalLayout_17->addWidget(label);
+        horizontalLayout_17->addWidget(label_notification);
 
         horizontalLayout_17->setStretch(0, 6);
         horizontalLayout_17->setStretch(1, 5);
@@ -1271,7 +1271,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 21));
+        menubar->setGeometry(QRect(0, 0, 1247, 25));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -1330,7 +1330,7 @@ public:
         time5->setText(QCoreApplication::translate("MainWindow", "time", nullptr));
         light_btn->setText(QString());
         label_gif->setText(QString());
-        label->setText(QString());
+        label_notification->setText(QString());
         label_18->setText(QCoreApplication::translate("MainWindow", "3 Days Forecast", nullptr));
         fIcon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
         fWeather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));

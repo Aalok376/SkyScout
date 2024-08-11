@@ -25,8 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
     int x= ui->pushButton_flag->width();
     int y =ui->pushButton_flag->height();
     ui->pushButton_flag->setIconSize(QSize(y-4,y-4));
-
-
+    //////////////////////////////////
     ui->light_btn->setIcon(QIcon(":/new/prefix1/image/dark.svg"));
 
     x= ui->light_btn->width();
