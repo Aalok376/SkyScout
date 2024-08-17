@@ -111,7 +111,7 @@ public:
     QHBoxLayout *horizontalLayout_14;
     QHBoxLayout *horizontalLayout_15;
     QPushButton *light_btn;
-    QLabel *label_gif;
+    QPushButton *label_gif;
     QHBoxLayout *horizontalLayout_17;
     QSpacerItem *horizontalSpacer_3;
     QLabel *label_notification;
@@ -120,7 +120,7 @@ public:
     QWidget *widget_2;
     QHBoxLayout *horizontalLayout_16;
     QVBoxLayout *verticalLayout_16;
-    QLabel *label_18;
+    QLabel *labelFuture;
     QVBoxLayout *verticalLayout_6;
     QHBoxLayout *horizontalLayout_8;
     QLabel *fIcon1;
@@ -529,7 +529,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 287, 339));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 293, 317));
         horizontalLayout_20 = new QHBoxLayout(scrollAreaWidgetContents);
         horizontalLayout_20->setObjectName("horizontalLayout_20");
         verticalLayout_5 = new QVBoxLayout();
@@ -825,16 +825,14 @@ public:
 
         horizontalLayout_15->addWidget(light_btn);
 
-        label_gif = new QLabel(centralwidget);
+        label_gif = new QPushButton(centralwidget);
         label_gif->setObjectName("label_gif");
-        label_gif->setStyleSheet(QString::fromUtf8("border-top-right-radius:12%;\n"
-"border-bottom-right-radius:12%;\n"
-"background:transparent;"));
+        label_gif->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"border:none;"));
 
         horizontalLayout_15->addWidget(label_gif);
 
         horizontalLayout_15->setStretch(0, 1);
-        horizontalLayout_15->setStretch(1, 1);
 
         horizontalLayout_14->addLayout(horizontalLayout_15);
 
@@ -887,13 +885,13 @@ public:
         horizontalLayout_16->setObjectName("horizontalLayout_16");
         verticalLayout_16 = new QVBoxLayout();
         verticalLayout_16->setObjectName("verticalLayout_16");
-        label_18 = new QLabel(widget_2);
-        label_18->setObjectName("label_18");
-        label_18->setStyleSheet(QString::fromUtf8("color:black;\n"
+        labelFuture = new QLabel(widget_2);
+        labelFuture->setObjectName("labelFuture");
+        labelFuture->setStyleSheet(QString::fromUtf8("color:black;\n"
 "font: 15pt \"Segoe UI\";\n"
 "background:transparent;"));
 
-        verticalLayout_16->addWidget(label_18);
+        verticalLayout_16->addWidget(labelFuture);
 
         verticalLayout_6 = new QVBoxLayout();
         verticalLayout_6->setSpacing(0);
@@ -1271,7 +1269,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1247, 25));
+        menubar->setGeometry(QRect(0, 0, 1247, 21));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -1331,7 +1329,7 @@ public:
         light_btn->setText(QString());
         label_gif->setText(QString());
         label_notification->setText(QString());
-        label_18->setText(QCoreApplication::translate("MainWindow", "3 Days Forecast", nullptr));
+        labelFuture->setText(QCoreApplication::translate("MainWindow", "3 Days Forecast", nullptr));
         fIcon1->setText(QCoreApplication::translate("MainWindow", "icon", nullptr));
         fWeather1->setText(QCoreApplication::translate("MainWindow", "weather", nullptr));
         fTemp1->setText(QCoreApplication::translate("MainWindow", "temp", nullptr));

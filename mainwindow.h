@@ -66,9 +66,11 @@ private slots:
     void on_map_btn_clicked();
     void showMainWindowM();
 
+    void on_label_gif_clicked();
+
 private:
     Ui::MainWindow *ui;
-    bool check = true;
+    bool notCheck = true;
     QNetworkAccessManager *networkManager;
     QNetworkAccessManager *NetworkManager;
     QCompleter *completer;

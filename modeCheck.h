@@ -9,5 +9,6 @@ public:
 };
 
 extern bool checkLight;
+extern bool check;
 
 #endif // MODECHECK_H

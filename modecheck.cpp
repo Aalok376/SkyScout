@@ -2,3 +2,4 @@
 
 modeCheck::modeCheck() {}
 bool checkLight = true;
+bool check = true;
