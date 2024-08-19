@@ -36,8 +36,10 @@
         <file>image/mapIcon.svg</file>
         <file>image/Usa.svg</file>
         <file>image/Nepal.svg</file>
+        <file>image/notification.png</file>
     </qresource>
     <qresource prefix="/">
         <file>MapView.qml</file>
+        <file>mapintegration.qml</file>
     </qresource>
 </RCC>

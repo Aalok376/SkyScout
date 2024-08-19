@@ -211,8 +211,9 @@ public:
         verticalLayout_14->setObjectName("verticalLayout_14");
         verticalLayout_14->setContentsMargins(0, 0, 0, 0);
         verticalLayout_17 = new QVBoxLayout();
-        verticalLayout_17->setSpacing(120);
+        verticalLayout_17->setSpacing(80);
         verticalLayout_17->setObjectName("verticalLayout_17");
+        verticalLayout_17->setContentsMargins(-1, 24, -1, -1);
         wIcon = new QLabel(widget);
         wIcon->setObjectName("wIcon");
         wIcon->setStyleSheet(QString::fromUtf8("background:transparent;"));
@@ -220,7 +221,7 @@ public:
         verticalLayout_17->addWidget(wIcon);
 
         verticalLayout_8 = new QVBoxLayout();
-        verticalLayout_8->setSpacing(0);
+        verticalLayout_8->setSpacing(6);
         verticalLayout_8->setObjectName("verticalLayout_8");
         map_btn = new QPushButton(widget);
         map_btn->setObjectName("map_btn");
@@ -277,7 +278,7 @@ public:
         verticalLayout_17->addLayout(verticalLayout_8);
 
         verticalLayout_17->setStretch(0, 1);
-        verticalLayout_17->setStretch(1, 4);
+        verticalLayout_17->setStretch(1, 5);
 
         verticalLayout_14->addLayout(verticalLayout_17);
 
@@ -285,8 +286,6 @@ public:
 
         verticalLayout_14->addItem(verticalSpacer);
 
-        verticalLayout_14->setStretch(0, 6);
-        verticalLayout_14->setStretch(1, 7);
 
         verticalLayout_15->addWidget(widget);
 
@@ -803,6 +802,7 @@ public:
         verticalLayout_11->setObjectName("verticalLayout_11");
         verticalLayout_11->setContentsMargins(-1, 20, -1, 20);
         verticalLayout_7 = new QVBoxLayout();
+        verticalLayout_7->setSpacing(5);
         verticalLayout_7->setObjectName("verticalLayout_7");
         horizontalLayout_12 = new QHBoxLayout();
         horizontalLayout_12->setSpacing(0);
@@ -827,12 +827,15 @@ public:
 
         label_gif = new QPushButton(centralwidget);
         label_gif->setObjectName("label_gif");
+        sizePolicy1.setHeightForWidth(label_gif->sizePolicy().hasHeightForWidth());
+        label_gif->setSizePolicy(sizePolicy1);
         label_gif->setStyleSheet(QString::fromUtf8("background:transparent;\n"
 "border:none;"));
 
         horizontalLayout_15->addWidget(label_gif);
 
         horizontalLayout_15->setStretch(0, 1);
+        horizontalLayout_15->setStretch(1, 1);
 
         horizontalLayout_14->addLayout(horizontalLayout_15);
 
@@ -848,7 +851,7 @@ public:
         horizontalLayout_17 = new QHBoxLayout();
         horizontalLayout_17->setSpacing(0);
         horizontalLayout_17->setObjectName("horizontalLayout_17");
-        horizontalLayout_17->setContentsMargins(-1, -1, 20, -1);
+        horizontalLayout_17->setContentsMargins(-1, -1, 7, -1);
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout_17->addItem(horizontalSpacer_3);
@@ -1037,7 +1040,7 @@ public:
 
         verticalLayout_7->setStretch(0, 2);
         verticalLayout_7->setStretch(1, 2);
-        verticalLayout_7->setStretch(2, 9);
+        verticalLayout_7->setStretch(2, 8);
 
         verticalLayout_11->addLayout(verticalLayout_7);
 

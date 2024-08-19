@@ -73,7 +73,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButton_search->setIcon(QIcon(":/new/prefix1/image/search--v1.png"));
     ui->lineEdit_searchbar->setPlaceholderText("enter the location");
 
-    ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Usa.svg"));
+    ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Nepal.svg"));
     int x= ui->pushButton_flag->width();
     int y =ui->pushButton_flag->height();
     ui->pushButton_flag->setIconSize(QSize(y-4,y-4));
@@ -84,8 +84,10 @@ MainWindow::MainWindow(QWidget *parent)
     y =ui->light_btn->height();
     ui->light_btn->setIconSize(QSize(x,y));
 
-    ui->label_gif->setIcon(QIcon(":/new/prefix1/image/icons8-notification.gif"));
-    ui->light_btn->setIconSize(QSize(x,y));
+    ui->label_gif->setIcon(QIcon(":/new/prefix1/image/notification.png"));
+    x=ui->label_gif->width();
+    y=ui->label_gif->height();
+    ui->label_gif->setIconSize(QSize(x-5,y-3));
 
 
     //Sidebar
@@ -630,7 +632,7 @@ void MainWindow::on_pushButton_flag_clicked()
 {
     if(check)
     {
-        ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Nepal.svg"));
+        ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Usa.svg"));
         ui->lineEdit_searchbar->setPlaceholderText("स्थान प्रविष्ट गर्नुहोस्");
         ui->labelFuture->setText("मौसम पूर्वानुमान");
         QString Tempr;
@@ -2310,7 +2312,7 @@ void MainWindow::on_pushButton_flag_clicked()
         ui->lineEdit_searchbar->setPlaceholderText("Enter the location");
         ui->labelFuture->setText("3 Days Forecast");
         ui->label_temp->setText(temperature+"°C");
-        ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Usa.svg"));
+        ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Nepal.svg"));
         ui->label_currentWeather->setText(weatherStatus);
         if(weatherStatus=="Clouds")
         {

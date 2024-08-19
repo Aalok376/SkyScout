@@ -56,13 +56,17 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         location = new QLabel(centralWidget);
         location->setObjectName("location");
-        location->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        location->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"color:black;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout->addWidget(location);
 
         label = new QLabel(centralWidget);
         label->setObjectName("label");
-        label->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        label->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"color:black;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout->addWidget(label);
 
@@ -73,8 +77,15 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(return_btn_2->sizePolicy().hasHeightForWidth());
         return_btn_2->setSizePolicy(sizePolicy);
-        return_btn_2->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"border:none;"));
+        return_btn_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background:transparent;\n"
+"	border:none;\n"
+"	border-radius:12%;\n"
+"	background:rgba(255,255,255,0.1);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background:rgba(255,255,255,0.3);\n"
+"}"));
 
         horizontalLayout->addWidget(return_btn_2);
 
@@ -105,7 +116,7 @@ public:
     {
         pastGraph->setWindowTitle(QCoreApplication::translate("pastGraph", "Dialog", nullptr));
         location->setText(QCoreApplication::translate("pastGraph", "Location:", nullptr));
-        label->setText(QCoreApplication::translate("pastGraph", "past graph", nullptr));
+        label->setText(QCoreApplication::translate("pastGraph", "Past Weather View", nullptr));
         return_btn_2->setText(QString());
     } // retranslateUi
 

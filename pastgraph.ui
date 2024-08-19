@@ -51,7 +51,9 @@
           <item>
            <widget class="QLabel" name="location">
             <property name="styleSheet">
-             <string notr="true">background:transparent;</string>
+             <string notr="true">background:transparent;
+color:black;
+font: 10pt 'Segoe UI';</string>
             </property>
             <property name="text">
              <string>Location:</string>
@@ -61,10 +63,12 @@
           <item>
            <widget class="QLabel" name="label">
             <property name="styleSheet">
-             <string notr="true">background:transparent;</string>
+             <string notr="true">background:transparent;
+color:black;
+font: 10pt 'Segoe UI';</string>
             </property>
             <property name="text">
-             <string>past graph</string>
+             <string>Past Weather View</string>
             </property>
            </widget>
           </item>
@@ -77,8 +81,15 @@
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">background:transparent;
-border:none;</string>
+             <string notr="true">QPushButton{
+	background:transparent;
+	border:none;
+	border-radius:12%;
+	background:rgba(255,255,255,0.1);
+}
+QPushButton:hover{
+	background:rgba(255,255,255,0.3);
+}</string>
             </property>
             <property name="text">
              <string/>

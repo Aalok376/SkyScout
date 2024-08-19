@@ -69,7 +69,7 @@ border-color: rgba(255, 255, 255, 0.2);
 
 </string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_14" stretch="6,7">
+          <layout class="QVBoxLayout" name="verticalLayout_14" stretch="0,0">
            <property name="spacing">
             <number>30</number>
            </property>
@@ -86,9 +86,12 @@ border-color: rgba(255, 255, 255, 0.2);
             <number>0</number>
            </property>
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_17" stretch="1,4">
+            <layout class="QVBoxLayout" name="verticalLayout_17" stretch="1,5">
              <property name="spacing">
-              <number>120</number>
+              <number>80</number>
+             </property>
+             <property name="topMargin">
+              <number>24</number>
              </property>
              <item>
               <widget class="QLabel" name="wIcon">
@@ -103,7 +106,7 @@ border-color: rgba(255, 255, 255, 0.2);
              <item>
               <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,1,1">
                <property name="spacing">
-                <number>0</number>
+                <number>6</number>
                </property>
                <item>
                 <widget class="QPushButton" name="map_btn">
@@ -939,7 +942,10 @@ background:transparent;</string>
          <number>20</number>
         </property>
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_7" stretch="2,2,9">
+         <layout class="QVBoxLayout" name="verticalLayout_7" stretch="2,2,8">
+          <property name="spacing">
+           <number>5</number>
+          </property>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="5,1">
             <property name="spacing">
@@ -964,7 +970,7 @@ background:transparent;</string>
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="2">
               <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="1,0">
+               <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="1,1">
                 <item>
                  <widget class="QPushButton" name="light_btn">
                   <property name="sizePolicy">
@@ -985,6 +991,12 @@ background:transparent;</string>
                 </item>
                 <item>
                  <widget class="QPushButton" name="label_gif">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">background:transparent;
 border:none;</string>
@@ -1006,7 +1018,7 @@ border:none;</string>
              <number>0</number>
             </property>
             <property name="rightMargin">
-             <number>20</number>
+             <number>7</number>
             </property>
             <item>
              <spacer name="horizontalSpacer_3">

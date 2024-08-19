@@ -56,13 +56,17 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         label = new QLabel(centralWidget);
         label->setObjectName("label");
-        label->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        label->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"color:black;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout->addWidget(label);
 
         location = new QLabel(centralWidget);
         location->setObjectName("location");
-        location->setStyleSheet(QString::fromUtf8("background:transparent;"));
+        location->setStyleSheet(QString::fromUtf8("background:transparent;\n"
+"color:black;\n"
+"font: 10pt 'Segoe UI';"));
 
         horizontalLayout->addWidget(location);
 
@@ -73,8 +77,15 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(return_btn_4->sizePolicy().hasHeightForWidth());
         return_btn_4->setSizePolicy(sizePolicy);
-        return_btn_4->setStyleSheet(QString::fromUtf8("background:transparent;\n"
-"border:none;"));
+        return_btn_4->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"	background:transparent;\n"
+"	border:none;\n"
+"	border-radius:12%;\n"
+"	background:rgba(255,255,255,0.1);\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background:rgba(255,255,255,0.3);\n"
+"}"));
 
         horizontalLayout->addWidget(return_btn_4);
 
@@ -103,7 +114,7 @@ public:
     void retranslateUi(QDialog *presentGraph)
     {
         presentGraph->setWindowTitle(QCoreApplication::translate("presentGraph", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("presentGraph", "present graph", nullptr));
+        label->setText(QString());
         location->setText(QCoreApplication::translate("presentGraph", "Location:", nullptr));
         return_btn_4->setText(QString());
     } // retranslateUi

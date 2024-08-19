@@ -24,11 +24,15 @@ futureGraph::futureGraph(QWidget *parent)
     if(checkLight==false)
     {
         ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
+        ui->label->setStyleSheet("background:transparent;color:#F0EFF9;font: 10pt 'Segoe UI';");
+        ui->location->setStyleSheet("background:transparent;color:#F0EFF9;font: 10pt 'Segoe UI';");
     }
     else
     {
 
         ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
+        ui->label->setStyleSheet("background:transparent;color:black;font: 10pt 'Segoe UI';");
+        ui->location->setStyleSheet("background:transparent;color:black;font: 10pt 'Segoe UI';");
 
     }
     // Set axis labels

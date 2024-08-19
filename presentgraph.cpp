@@ -35,12 +35,15 @@ presentGraph::presentGraph(QWidget *parent)
     if(checkLight==false)
     {
         ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/dark_bg.png');");
+        ui->label->setStyleSheet("background:transparent;color:#F0EFF9;font: 10pt 'Segoe UI';");
+        ui->location->setStyleSheet("background:transparent;color:#F0EFF9;font: 10pt 'Segoe UI';");
     }
     else
     {
 
         ui->centralWidget->setStyleSheet("background-image: url(':/new/prefix1/image/background.png');");
-
+        ui->label->setStyleSheet("background:transparent;color:black;font: 10pt 'Segoe UI';");
+        ui->location->setStyleSheet("background:transparent;color:black;font: 10pt 'Segoe UI';");
     }
     QVector <double> temp;
     QVector <double> hr;
@@ -88,13 +91,20 @@ presentGraph::presentGraph(QWidget *parent)
     ui->presentplot->update();
 
     int lowestId = todaysWeather::findLowestId();
-    query.prepare("SELECT city FROM currentWeather WHERE id=:lowestId");
+    query.prepare("SELECT city,year,month,date FROM currentWeather WHERE id=:lowestId");
     query.bindValue(":lowestId",lowestId);
     query.exec();
     query.next();
     QString city = query.value(0).toString();
+    int year = query.value(1).toInt();
+    int mon = query.value(2).toInt();
+    int day = query.value(3).toInt();
+
+    QString m = logicMaths::checkDigit(mon);
+    QString d = logicMaths::checkDigit(day);
 
     ui->location->setText("Location: "+city);
+    ui->label->setText(d+"/"+m+"/"+QString::number(year));
 }
 
 presentGraph::~presentGraph()

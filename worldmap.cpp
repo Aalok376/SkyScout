@@ -17,7 +17,7 @@ worldMap::worldMap(QWidget *parent)
     resize(800,600);
     setFixedSize(size());
     // //   map integration
-    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/MapView.qml")));
+    ui->quickWidget->setSource(QUrl(QStringLiteral("qrc:/mapintegration.qml")));
     ui->quickWidget->show();
   //  int wid = 350,hei = 170;
   //  int radius = 12;
