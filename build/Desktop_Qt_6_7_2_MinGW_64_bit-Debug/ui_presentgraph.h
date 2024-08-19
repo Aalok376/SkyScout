@@ -98,7 +98,7 @@ public:
         verticalLayout->addWidget(presentplot);
 
         verticalLayout->setStretch(0, 1);
-        verticalLayout->setStretch(1, 5);
+        verticalLayout->setStretch(1, 12);
 
         horizontalLayout_2->addLayout(verticalLayout);
 

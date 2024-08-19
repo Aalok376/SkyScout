@@ -109,7 +109,7 @@ public:
     {
         if (intermediateWindow->objectName().isEmpty())
             intermediateWindow->setObjectName("intermediateWindow");
-        intermediateWindow->resize(753, 434);
+        intermediateWindow->resize(758, 480);
         intermediateWindow->setStyleSheet(QString::fromUtf8("background-image: url(\":/new/prefix1/image/background.png\");"));
         horizontalLayout_2 = new QHBoxLayout(intermediateWindow);
         horizontalLayout_2->setSpacing(0);
@@ -567,7 +567,7 @@ public:
         verticalLayout_2->addWidget(stackedWidget);
 
         verticalLayout_2->setStretch(0, 1);
-        verticalLayout_2->setStretch(1, 10);
+        verticalLayout_2->setStretch(1, 13);
 
         horizontalLayout->addLayout(verticalLayout_2);
 

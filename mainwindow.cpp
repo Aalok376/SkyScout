@@ -82,12 +82,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->light_btn->setIcon(QIcon(":/new/prefix1/image/dark.svg"));
     x= ui->light_btn->width();
     y =ui->light_btn->height();
-    ui->light_btn->setIconSize(QSize(x,y));
+    ui->light_btn->setIconSize(QSize(y,y));
 
     ui->label_gif->setIcon(QIcon(":/new/prefix1/image/notification.png"));
     x=ui->label_gif->width();
     y=ui->label_gif->height();
-    ui->label_gif->setIconSize(QSize(x-5,y-3));
+    ui->label_gif->setIconSize(QSize(y,y));
 
 
     //Sidebar

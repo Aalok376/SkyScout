@@ -558,8 +558,8 @@ border-bottom-right-radius:12%;</string>
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>293</width>
-               <height>317</height>
+               <width>287</width>
+               <height>339</height>
               </rect>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -971,6 +971,9 @@ background:transparent;</string>
              <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="2">
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="1,1">
+                <property name="spacing">
+                 <number>8</number>
+                </property>
                 <item>
                  <widget class="QPushButton" name="light_btn">
                   <property name="sizePolicy">
@@ -1549,7 +1552,7 @@ padding-left:220px;</string>
      <x>0</x>
      <y>0</y>
      <width>1247</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

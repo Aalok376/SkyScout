@@ -30,12 +30,12 @@
     <number>0</number>
    </property>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout" stretch="1,11">
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="1,12">
      <property name="spacing">
       <number>0</number>
      </property>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
        <item>
         <widget class="QPushButton" name="pushButton">
          <property name="sizePolicy">

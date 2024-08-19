@@ -36,7 +36,7 @@
     <widget class="QWidget" name="centralWidget" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout" stretch="1,5">
+       <layout class="QVBoxLayout" name="verticalLayout" stretch="1,12">
         <property name="spacing">
          <number>20</number>
         </property>
