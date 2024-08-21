@@ -12,6 +12,13 @@ int sunrise;
 int sunset;
 int currentTime;
 QString temperature;
+QString currenthour;
+QString currentmin;
+QString currentWindSpeed;
+QString currentHumidity;
+QString currentFeelslike;
+QString CurrentLongitude;
+QString currentLatitude;
 
 //For 5 weather of todays.....
 QString weather1;
@@ -73,7 +80,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->pushButton_search->setIcon(QIcon(":/new/prefix1/image/search--v1.png"));
     ui->lineEdit_searchbar->setPlaceholderText("enter the location");
 
-    ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Nepal.svg"));
+    ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Usa.svg"));
     int x= ui->pushButton_flag->width();
     int y =ui->pushButton_flag->height();
     ui->pushButton_flag->setIconSize(QSize(y-4,y-4));
@@ -231,7 +238,6 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
         }
 
 
-
     }else if(url.toString().contains("/weather")){
 
         if(reply->error()==QNetworkReply::NoError)
@@ -247,18 +253,23 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                 temperature=QString::number(temp);
 
                 double humidity=mainObj.value("humidity").toDouble();
+                currentHumidity=QString::number(humidity);
                 double feelsLike = mainObj.value("feels_like").toDouble();
                 feelsLike = logicMaths::tempConversion(feelsLike);
+                currentFeelslike=QString::number(feelsLike);
 
                 QJsonObject windObj = JsonObj.value("wind").toObject();
                 double windSpeed = windObj.value("speed").toDouble();
                 windSpeed = std::round(windSpeed*3.6);
+                currentWindSpeed=QString::number(windSpeed);
 
                 ui->label_temp->setText(QString::number(temp)+"°C");
 
                 QJsonObject coordObj = JsonObj.value("coord").toObject();
                 double lat = coordObj.value("lat").toDouble();
+                currentLatitude=QString::number(lat);
                 double lon = coordObj.value("lon").toDouble();
+                CurrentLongitude=QString::number(lon);
 
                 int ts = dateTime::getTimeZone(lat,lon);
                 emit updateMap(lat , lon);
@@ -387,6 +398,12 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                         ui->label_alert->setText("A squall is \n approaching");
                     }
 
+                    ui->currentTemp->setText("      Temperature");
+                    ui->currentHum->setText("      Humidity");
+                    ui->currentfl->setText("      Feels Like");
+                    ui->currentlat->setText("      Latitude");
+                    ui->currentlon->setText("      Longitude");
+
                     //small icons
                     int iWidth = 27;
                     int iHeight = 25;
@@ -407,11 +424,13 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
                     //bottom right
                     int chr = dateTime::fetchHour(ts);
                     QString current_hour = logicMaths::checkDigit(chr);
+                    currenthour = logicMaths::checkDigit(chr);
 
                     int cmin = dateTime::fetchMin(ts);
                     QString current_min = logicMaths::checkDigit(cmin);
+                    currentmin = logicMaths::checkDigit(cmin);
 
-                    ui->current_time->setText(current_hour+":"+current_min);
+                    ui->current_time->setText(currenthour+":"+currentmin);
                     ui->currentlocation->setText(location);
 
                     QIcon cicon = logicMaths::getStatusIcon(weatherStatus,currentTime,sunrise,sunset);
@@ -628,11 +647,12 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
     }
 
 }
+
 void MainWindow::on_pushButton_flag_clicked()
 {
     if(check)
     {
-        ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Usa.svg"));
+        ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Nepal.svg"));
         ui->lineEdit_searchbar->setPlaceholderText("स्थान प्रविष्ट गर्नुहोस्");
         ui->labelFuture->setText("मौसम पूर्वानुमान");
         QString Tempr;
@@ -684,6 +704,12 @@ void MainWindow::on_pushButton_flag_clicked()
             }
         }
         ui->label_temp->setText(Tempr+"°C");
+        ui->currentTemp_2->setText(Tempr+"°C");
+        ui->currentTemp->setText("      तापक्रम");
+        ui->currentHum->setText("      आर्द्रता");
+        ui->currentfl->setText("      महसुस हुन्छ");
+        ui->currentlat->setText("      अक्षांश");
+        ui->currentlon->setText("      देशान्तर");
 
         if(weatherStatus=="Clouds")
         {
@@ -755,6 +781,350 @@ void MainWindow::on_pushButton_flag_clicked()
             ui->label_alert->setText("तीव्र हावा र \n वर्षाको अपेक्षा !");
         }
 
+        //For current time....
+        QString cuh;
+        for(int i=0;i<currenthour.length();i++)
+        {
+            if(currenthour[i]=='0')
+            {
+                cuh=cuh+"०";
+            }
+            if(currenthour[i]=='1')
+            {
+                cuh=cuh+"१";
+            }
+            if(currenthour[i]=='2')
+            {
+                cuh=cuh+"२";
+            }
+            if(currenthour[i]=='3')
+            {
+                cuh=cuh+"३";
+            }
+            if(currenthour[i]=='4')
+            {
+                cuh=cuh+"४";
+            }
+            if(currenthour[i]=='5')
+            {
+                cuh=cuh+"५";
+            }
+            if(currenthour[i]=='6')
+            {
+                cuh=cuh+"६";
+            }
+            if(currenthour[i]=='7')
+            {
+                cuh=cuh+"७";
+            }
+            if(currenthour[i]=='8')
+            {
+                cuh=cuh+"८";
+            }
+            if(currenthour[i]=='9')
+            {
+                cuh=cuh+"९";
+            }
+        }
+
+        QString cum;
+        for(int i=0;i<currentmin.length();i++)
+        {
+            if(currentmin[i]=='0')
+            {
+                cum=cum+"०";
+            }
+            if(currentmin[i]=='1')
+            {
+                cum=cum+"१";
+            }
+            if(currentmin[i]=='2')
+            {
+                cum=cum+"२";
+            }
+            if(currentmin[i]=='3')
+            {
+                cum=cum+"३";
+            }
+            if(currentmin[i]=='4')
+            {
+                cum=cum+"४";
+            }
+            if(currentmin[i]=='5')
+            {
+                cum=cum+"५";
+            }
+            if(currentmin[i]=='6')
+            {
+                cum=cum+"६";
+            }
+            if(currentmin[i]=='7')
+            {
+                cum=cum+"७";
+            }
+            if(currentmin[i]=='8')
+            {
+                cum=cum+"८";
+            }
+            if(currentmin[i]=='9')
+            {
+                cum=cum+"९";
+            }
+        }
+        ui->current_time->setText(cuh+":"+cum);
+
+        //For wind speed....
+        QString cws;
+        for(int i=0;i<currentWindSpeed.length();i++)
+        {
+            if(currentWindSpeed[i]=='0')
+            {
+                cws=cws+"०";
+            }
+            if(currentWindSpeed[i]=='1')
+            {
+                cws=cws+"१";
+            }
+            if(currentWindSpeed[i]=='2')
+            {
+                cws=cws+"२";
+            }
+            if(currentWindSpeed[i]=='3')
+            {
+                cws=cws+"३";
+            }
+            if(currentWindSpeed[i]=='4')
+            {
+                cws=cws+"४";
+            }
+            if(currentWindSpeed[i]=='5')
+            {
+                cws=cws+"५";
+            }
+            if(currentWindSpeed[i]=='6')
+            {
+                cws=cws+"६";
+            }
+            if(currentWindSpeed[i]=='7')
+            {
+                cws=cws+"७";
+            }
+            if(currentWindSpeed[i]=='8')
+            {
+                cws=cws+"८";
+            }
+            if(currentWindSpeed[i]=='9')
+            {
+                cws=cws+"९";
+            }
+        }
+        ui->windspeed1->setText(cws+"कि/घ");
+
+        //For humidity....
+        QString hum;
+        for(int i=0;i<currentHumidity.length();i++)
+        {
+            if(currentHumidity[i]=='0')
+            {
+                hum=hum+"०";
+            }
+            if(currentHumidity[i]=='1')
+            {
+                hum=hum+"१";
+            }
+            if(currentHumidity[i]=='2')
+            {
+                hum=hum+"२";
+            }
+            if(currentHumidity[i]=='3')
+            {
+                hum=hum+"३";
+            }
+            if(currentHumidity[i]=='4')
+            {
+                hum=hum+"४";
+            }
+            if(currentHumidity[i]=='5')
+            {
+                hum=hum+"५";
+            }
+            if(currentHumidity[i]=='6')
+            {
+                hum=hum+"६";
+            }
+            if(currentHumidity[i]=='7')
+            {
+                hum=hum+"७";
+            }
+            if(currentHumidity[i]=='8')
+            {
+                hum=hum+"८";
+            }
+            if(currentHumidity[i]=='9')
+            {
+                hum=hum+"९";
+            }
+            if(currentHumidity[i]=='.')
+            {
+                hum=hum+".";
+            }
+        }
+        ui->humidity1->setText(hum+"%");
+        ui->currentHum_2->setText(hum+"%");
+
+        //For feelslike....
+        QString fl;
+        for(int i=0;i<currentFeelslike.length();i++)
+        {
+            if(currentFeelslike[i]=='0')
+            {
+                fl=fl+"०";
+            }
+            if(currentFeelslike[i]=='1')
+            {
+                fl=fl+"१";
+            }
+            if(currentFeelslike[i]=='2')
+            {
+                fl=fl+"२";
+            }
+            if(currentFeelslike[i]=='3')
+            {
+                fl=fl+"३";
+            }
+            if(currentFeelslike[i]=='4')
+            {
+                fl=fl+"४";
+            }
+            if(currentFeelslike[i]=='5')
+            {
+                fl=fl+"५";
+            }
+            if(currentFeelslike[i]=='6')
+            {
+                fl=fl+"६";
+            }
+            if(currentFeelslike[i]=='7')
+            {
+                fl=fl+"७";
+            }
+            if(currentFeelslike[i]=='8')
+            {
+                fl=fl+"८";
+            }
+            if(currentFeelslike[i]=='9')
+            {
+                fl=fl+"९";
+            }
+            if(currentFeelslike[i]=='.')
+            {
+                fl=fl+".";
+            }
+        }
+        ui->feelslike1->setText(fl+"°C");
+        ui->currentfl_2->setText(fl+"°C");
+
+        //For current latitude....
+        QString lati;
+        for(int i=0;i<currentLatitude.length();i++)
+        {
+            if(currentLatitude[i]=='0')
+            {
+                lati=lati+"०";
+            }
+            if(currentLatitude[i]=='1')
+            {
+                lati=lati+"१";
+            }
+            if(currentLatitude[i]=='2')
+            {
+                lati=lati+"२";
+            }
+            if(currentLatitude[i]=='3')
+            {
+                lati=lati+"३";
+            }
+            if(currentLatitude[i]=='4')
+            {
+                lati=lati+"४";
+            }
+            if(currentLatitude[i]=='5')
+            {
+                lati=lati+"५";
+            }
+            if(currentLatitude[i]=='6')
+            {
+                lati=lati+"६";
+            }
+            if(currentLatitude[i]=='7')
+            {
+                lati=lati+"७";
+            }
+            if(currentLatitude[i]=='8')
+            {
+                lati=lati+"८";
+            }
+            if(currentLatitude[i]=='9')
+            {
+                lati=lati+"९";
+            }
+            if(currentLatitude[i]=='.')
+            {
+                lati=lati+".";
+            }
+        }
+        ui->currentlat_2->setText(lati);
+
+        //For current longitude....
+        QString longi;
+        for(int i=0;i<CurrentLongitude.length();i++)
+        {
+            if(CurrentLongitude[i]=='0')
+            {
+                longi=longi+"०";
+            }
+            if(CurrentLongitude[i]=='1')
+            {
+                longi=longi+"१";
+            }
+            if(CurrentLongitude[i]=='2')
+            {
+                longi=longi+"२";
+            }
+            if(CurrentLongitude[i]=='3')
+            {
+                longi=longi+"३";
+            }
+            if(CurrentLongitude[i]=='4')
+            {
+                longi=longi+"४";
+            }
+            if(CurrentLongitude[i]=='5')
+            {
+                longi=longi+"५";
+            }
+            if(CurrentLongitude[i]=='6')
+            {
+                longi=longi+"६";
+            }
+            if(CurrentLongitude[i]=='7')
+            {
+                longi=longi+"७";
+            }
+            if(CurrentLongitude[i]=='8')
+            {
+                longi=longi+"८";
+            }
+            if(CurrentLongitude[i]=='9')
+            {
+                longi=longi+"९";
+            }
+            if(CurrentLongitude[i]=='.')
+            {
+                longi=longi+".";
+            }
+        }
+        ui->currentlon_2->setText(longi);
 
         //for future weather1....
         QString Ft1;
@@ -2305,6 +2675,58 @@ void MainWindow::on_pushButton_flag_clicked()
             ui->time5->setText("-");
         }
 
+        if(notCheck==false)
+        {
+            if(status_string == "Clouds"){
+                ui->label_notification->setText("गम्भीर मौसमको अपेक्षा छैन।\n तापक्रम चिसो महसुस हुन सक्छ।");
+            }
+            if(status_string == "Thunderstorm")
+            {
+                ui->label_notification->setText("क्षेत्रमा मेघगर्जनको सम्भावना छ।\nभित्रै बस्नुहोस् र बाहिरी गतिविधिहरूबाट टाढा रहनुहोस्।");
+            }
+            if(status_string == "Drizzle")
+            {
+                ui->label_notification->setText("हल्का पानी पर्न सक्ने सम्भावना छ।\nछाता लिनुहोस्।\n सडकहरू चिप्लन सक्छन्।");
+            }
+            if(status_string == "Mist" || status_string == "Haze" || status_string == "Fog")
+            {
+                ui->label_notification->setText("दृश्यता थोरै घट्न सक्दछ।\n ध्यानपूर्वक चलाउनुहोस्।");
+            }
+            if(status_string == "Rain")
+            {
+                ui->label_notification->setText("क्षेत्रमा मध्यम वर्षा भइरहेको छ।\n चिप्लने सडक र घटेको दृश्यताका लागि तयार रहनुहोस्।\n गाडी चलाउँदा सतर्क रहनुहोस्।");
+            }
+            if(status_string == "Clear")
+            {
+                ui->label_notification->setText("गम्भीर मौसमको अपेक्षा छैन।\n मौसमको मजा लिनुहोस्।");
+            }
+            if(status_string == "Smoke")
+            {
+                ui->label_notification->setText("क्षेत्रमा हल्का धुँवा छ।\n हवाई गुणस्तर प्रभावित हुन सक्दछ।\n बाहिरी गतिविधिहरू सीमित गर्नुहोस्।");
+            }
+            if(status_string == "Snow")
+            {
+                ui->label_notification->setText("चिप्लने सडकका लागि तयार हुनुहोस्।\n सावधानीपूर्वक गाडी चलाउनुहोस् र न्यानो लुगा लगाउनुहोस्।");
+            }
+            if(status_string=="Dust" || status_string=="Sand" || status_string=="Ash")
+            {
+                ui->label_notification->setText("क्षेत्रमा हल्का धूलो छ।\n हवाई गुणस्तर प्रभावित हुन सक्दछ।\n बाहिरी गतिविधिहरू सीमित गर्नुहोस्।");
+            }
+            if(status_string=="Tornado")
+            {
+                ui->label_notification->setText("तूफान निगरानी प्रभावी छ।\n सम्भावित तूफान का लागि तयार रहनुहोस्।\n मौसम अपडेटहरू अनुगमन गर्नुहोस् र आपतकालीन योजना तयार गर्नुहोस्।");
+            }
+            if(status_string=="Squall")
+            {
+                ui->label_notification->setText("हल्का तुफान नजिकै आइरहेको छ। संक्षिप्त तीव्र हावा र सम्भावित वर्षाका लागि तयार हुनुहोस्।");
+            }
+        }
+        else
+        {
+
+            ui->label_notification->setText("");
+            ui->label_notification->setStyleSheet("background:transparent;");
+        }
         check=false;
     }
     else
@@ -2312,7 +2734,90 @@ void MainWindow::on_pushButton_flag_clicked()
         ui->lineEdit_searchbar->setPlaceholderText("Enter the location");
         ui->labelFuture->setText("3 Days Forecast");
         ui->label_temp->setText(temperature+"°C");
-        ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Nepal.svg"));
+        ui->currentTemp_2->setText(temperature+"°C");
+        ui->currentTemp->setText("      Temperature");
+
+        ui->currentHum->setText("      Humidity");
+        ui->currentfl->setText("      Feels Like");
+        ui->humidity1->setText(currentHumidity+"%");
+        ui->feelslike1->setText(currentFeelslike+"°C");
+        ui->currentHum_2->setText(currentHumidity+"%");
+        ui->currentfl_2->setText(currentFeelslike+"°C");
+
+        ui->currentlat->setText("      Latitude");
+        ui->currentlon->setText("      Longitude");
+        ui->currentlat_2->setText(currentLatitude);
+        ui->currentlon_2->setText(CurrentLongitude);
+
+        ui->windspeed1->setText(currentWindSpeed+"km/h");
+        ui->current_time->setText(currenthour+":"+currentmin);
+
+        if(notCheck==false)
+        {
+            if(status_string == "Clouds"){
+                ui->label_notification->setText("No severe weather expected.\nTemperatures may feel cooler.");
+            }
+            if(status_string == "Thunderstorm")
+            {
+                ui->label_notification->setText("Thunderstorm in the area.\n"
+                                                "Stay indoors and avoid outdoor activities.");
+            }
+            if(status_string == "Drizzle")
+            {
+                ui->label_notification->setText("Light drizzle expected.\n"
+                                                "Carry an umbrella. Roads may be slippery.");
+            }
+            if(status_string == "Mist" || status_string == "Haze" || status_string == "Fog")
+            {
+                ui->label_notification->setText("Visibility may be slightly reduced.\nDrive carefully.");
+            }
+            if(status_string == "Rain")
+            {
+                ui->label_notification->setText("Moderate rain in the area.\n"
+                                                "Prepare for slippery roads and reduced visibility.\n"
+                                                "Be cautious while driving.");
+            }
+            if(status_string == "Clear")
+            {
+                ui->label_notification->setText("No severe weather expected.\nEnjoy the weather.");
+            }
+            if(status_string == "Smoke")
+            {
+                ui->label_notification->setText("Light smoke in the area.\n"
+                                                "Air quality may be affected.\n"
+                                                "Limit outdoor activities.");
+            }
+            if(status_string == "Snow")
+            {
+                ui->label_notification->setText("Prepare for slippery roads.\n"
+                                                "Drive cautiously and dress warmly.");
+            }
+            if(status_string=="Dust" || status_string=="Sand" || status_string=="Ash")
+            {
+                ui->label_notification->setText("Light dust in the area.\n"
+                                                "Air quality may be affected.\n"
+                                                "Limit outdoor activities.");
+            }
+            if(status_string=="Tornado")
+            {
+                ui->label_notification->setText("Tornado Watch in effect.\n"
+                                                "Be prepared for possible tornado.\n"
+                                                "Monitor weather updates and have an emergency plan in place.");
+            }
+            if(status_string=="Squall")
+            {
+                ui->label_notification->setText("Light squall approaching.\n"
+                                                "Prepare for brief gusty winds and possible rain.");
+            }
+        }
+        else
+        {
+
+            ui->label_notification->setText("");
+            ui->label_notification->setStyleSheet("background:transparent;");
+        }
+
+        ui->pushButton_flag->setIcon(QIcon(":/new/prefix1/image/Usa.svg"));
         ui->label_currentWeather->setText(weatherStatus);
         if(weatherStatus=="Clouds")
         {
@@ -2729,60 +3234,109 @@ void MainWindow::showMainWindowM() {
 void MainWindow::on_label_gif_clicked()
 {
     if(notCheck){
-        if(status_string == "Clouds"){
-            ui->label_notification->setText("No severe weather expected.\nTemperatures may feel cooler.");
-        }
-        if(status_string == "Thunderstorm")
+        if(check==false)
         {
-            ui->label_notification->setText("Thunderstorm in the area.\n"
-                                            "Stay indoors and avoid outdoor activities.");
+            if(status_string == "Clouds"){
+                ui->label_notification->setText("गम्भीर मौसमको अपेक्षा छैन।\n तापक्रम चिसो महसुस हुन सक्छ।");
+            }
+            if(status_string == "Thunderstorm")
+            {
+                ui->label_notification->setText("क्षेत्रमा मेघगर्जनको सम्भावना छ।\nभित्रै बस्नुहोस् र बाहिरी गतिविधिहरूबाट टाढा रहनुहोस्।");
+            }
+            if(status_string == "Drizzle")
+            {
+                ui->label_notification->setText("हल्का पानी पर्न सक्ने सम्भावना छ।\nछाता लिनुहोस्।\n सडकहरू चिप्लन सक्छन्।");
+            }
+            if(status_string == "Mist" || status_string == "Haze" || status_string == "Fog")
+            {
+                ui->label_notification->setText("दृश्यता थोरै घट्न सक्दछ।\n ध्यानपूर्वक चलाउनुहोस्।");
+            }
+            if(status_string == "Rain")
+            {
+                ui->label_notification->setText("क्षेत्रमा मध्यम वर्षा भइरहेको छ।\n चिप्लने सडक र घटेको दृश्यताका लागि तयार रहनुहोस्।\n गाडी चलाउँदा सतर्क रहनुहोस्।");
+            }
+            if(status_string == "Clear")
+            {
+                ui->label_notification->setText("गम्भीर मौसमको अपेक्षा छैन।\n मौसमको मजा लिनुहोस्।");
+            }
+            if(status_string == "Smoke")
+            {
+                ui->label_notification->setText("क्षेत्रमा हल्का धुँवा छ।\n हवाई गुणस्तर प्रभावित हुन सक्दछ।\n बाहिरी गतिविधिहरू सीमित गर्नुहोस्।");
+            }
+            if(status_string == "Snow")
+            {
+                ui->label_notification->setText("चिप्लने सडकका लागि तयार हुनुहोस्।\n सावधानीपूर्वक गाडी चलाउनुहोस् र न्यानो लुगा लगाउनुहोस्।");
+            }
+            if(status_string=="Dust" || status_string=="Sand" || status_string=="Ash")
+            {
+                ui->label_notification->setText("क्षेत्रमा हल्का धूलो छ।\n हवाई गुणस्तर प्रभावित हुन सक्दछ।\n बाहिरी गतिविधिहरू सीमित गर्नुहोस्।");
+            }
+            if(status_string=="Tornado")
+            {
+                ui->label_notification->setText("तूफान निगरानी प्रभावी छ।\n सम्भावित तूफान का लागि तयार रहनुहोस्।\n मौसम अपडेटहरू अनुगमन गर्नुहोस् र आपतकालीन योजना तयार गर्नुहोस्।");
+            }
+            if(status_string=="Squall")
+            {
+                ui->label_notification->setText("हल्का तुफान नजिकै आइरहेको छ। संक्षिप्त तीव्र हावा र सम्भावित वर्षाका लागि तयार हुनुहोस्।");
+            }
         }
-        if(status_string == "Drizzle")
+        else
         {
-            ui->label_notification->setText("Light drizzle expected.\n"
-                                            "Carry an umbrella. Roads may be slippery.");
-        }
-        if(status_string == "Mist" || status_string == "Haze" || status_string == "Fog")
-        {
-            ui->label_notification->setText("Visibility may be slightly reduced.\nDrive carefully.");
-        }
-        if(status_string == "Rain")
-        {
-            ui->label_notification->setText("Moderate rain in the area.\n"
-                                            "Prepare for slippery roads and reduced visibility.\n"
-                                            "Be cautious while driving.");
-        }
-        if(status_string == "Clear")
-        {
-            ui->label_notification->setText("No severe weather expected.\nEnjoy the weather.");
-        }
-        if(status_string == "Smoke")
-        {
-            ui->label_notification->setText("Light smoke in the area.\n"
-                                            "Air quality may be affected.\n"
-                                            "Limit outdoor activities.");
-        }
-        if(status_string == "Snow")
-        {
-            ui->label_notification->setText("Prepare for slippery roads.\n"
-                                            "Drive cautiously and dress warmly.");
-        }
-        if(status_string=="Dust" || status_string=="Sand" || status_string=="Ash")
-        {
-            ui->label_notification->setText("Light dust in the area.\n"
-                                            "Air quality may be affected.\n"
-                                            "Limit outdoor activities.");
-        }
-        if(status_string=="Tornado")
-        {
-            ui->label_notification->setText("Tornado Watch in effect.\n"
-                                            "Be prepared for possible tornado.\n"
-                                            "Monitor weather updates and have an emergency plan in place.");
-        }
-        if(status_string=="Squall")
-        {
-            ui->label_notification->setText("Light squall approaching.\n"
-                                            "Prepare for brief gusty winds and possible rain.");
+            if(status_string == "Clouds"){
+                ui->label_notification->setText("No severe weather expected.\nTemperatures may feel cooler.");
+            }
+            if(status_string == "Thunderstorm")
+            {
+                ui->label_notification->setText("Thunderstorm in the area.\n"
+                                                "Stay indoors and avoid outdoor activities.");
+            }
+            if(status_string == "Drizzle")
+            {
+                ui->label_notification->setText("Light drizzle expected.\n"
+                                                "Carry an umbrella. Roads may be slippery.");
+            }
+            if(status_string == "Mist" || status_string == "Haze" || status_string == "Fog")
+            {
+                ui->label_notification->setText("Visibility may be slightly reduced.\nDrive carefully.");
+            }
+            if(status_string == "Rain")
+            {
+                ui->label_notification->setText("Moderate rain in the area.\n"
+                                                "Prepare for slippery roads and reduced visibility.\n"
+                                                "Be cautious while driving.");
+            }
+            if(status_string == "Clear")
+            {
+                ui->label_notification->setText("No severe weather expected.\nEnjoy the weather.");
+            }
+            if(status_string == "Smoke")
+            {
+                ui->label_notification->setText("Light smoke in the area.\n"
+                                                "Air quality may be affected.\n"
+                                                "Limit outdoor activities.");
+            }
+            if(status_string == "Snow")
+            {
+                ui->label_notification->setText("Prepare for slippery roads.\n"
+                                                "Drive cautiously and dress warmly.");
+            }
+            if(status_string=="Dust" || status_string=="Sand" || status_string=="Ash")
+            {
+                ui->label_notification->setText("Light dust in the area.\n"
+                                                "Air quality may be affected.\n"
+                                                "Limit outdoor activities.");
+            }
+            if(status_string=="Tornado")
+            {
+                ui->label_notification->setText("Tornado Watch in effect.\n"
+                                                "Be prepared for possible tornado.\n"
+                                                "Monitor weather updates and have an emergency plan in place.");
+            }
+            if(status_string=="Squall")
+            {
+                ui->label_notification->setText("Light squall approaching.\n"
+                                                "Prepare for brief gusty winds and possible rain.");
+            }
         }
 
         if(!checkLight){

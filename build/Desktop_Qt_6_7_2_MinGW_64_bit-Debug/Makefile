@@ -121,8 +121,6 @@ Makefile: ../../new_ui.pro C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++/qmake.conf C:/
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_charts_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_chartsqml.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_chartsqml_private.pri \
-		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_coap.pri \
-		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_coap_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_concurrent.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_concurrent_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_core.pri \
@@ -135,8 +133,6 @@ Makefile: ../../new_ui.pro C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++/qmake.conf C:/
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_datavisualizationqml_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_dbus.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_dbus_private.pri \
-		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_declarativeopcua.pri \
-		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_declarativeopcua_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_designer.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_designer_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
@@ -180,8 +176,6 @@ Makefile: ../../new_ui.pro C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++/qmake.conf C:/
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_linguist.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_location.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_location_private.pri \
-		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_mqtt.pri \
-		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_mqtt_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_multimedia.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_multimedia_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_multimediaquick_private.pri \
@@ -193,8 +187,6 @@ Makefile: ../../new_ui.pro C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++/qmake.conf C:/
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_networkauth_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_nfc.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_nfc_private.pri \
-		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_opcua.pri \
-		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_opcua_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_opengl.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_opengl_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_openglwidgets.pri \
@@ -230,7 +222,6 @@ Makefile: ../../new_ui.pro C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++/qmake.conf C:/
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlbuiltins_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlcompiler.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlcompiler_private.pri \
-		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlcompilerplus_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlcore.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlcore_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
@@ -373,9 +364,6 @@ Makefile: ../../new_ui.pro C:/Qt/6.7.2/mingw_64/mkspecs/win32-g++/qmake.conf C:/
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_virtualkeyboardsettings.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_virtualkeyboardsettings_private.pri \
-		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_vncserver.pri \
-		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_vncserver_private.pri \
-		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_vncserverquick_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_webchannel.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_webchannel_private.pri \
 		C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_webchannelquick.pri \
@@ -492,8 +480,6 @@ C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_charts.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_charts_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_chartsqml.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_chartsqml_private.pri:
-C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_coap.pri:
-C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_coap_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_concurrent.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_concurrent_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_core.pri:
@@ -506,8 +492,6 @@ C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_datavisualizationqml.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_datavisualizationqml_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_dbus.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_dbus_private.pri:
-C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_declarativeopcua.pri:
-C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_declarativeopcua_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_designer.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_designer_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_designercomponents_private.pri:
@@ -551,8 +535,6 @@ C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_languageserver_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_linguist.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_location.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_location_private.pri:
-C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_mqtt.pri:
-C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_mqtt_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_multimedia.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_multimedia_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_multimediaquick_private.pri:
@@ -564,8 +546,6 @@ C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_networkauth.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_networkauth_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_nfc.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_nfc_private.pri:
-C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_opcua.pri:
-C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_opcua_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_opengl.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_opengl_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_openglwidgets.pri:
@@ -601,7 +581,6 @@ C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlbuiltins.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlbuiltins_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlcompiler.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlcompiler_private.pri:
-C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlcompilerplus_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlcore.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmlcore_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_qmldebug_private.pri:
@@ -744,9 +723,6 @@ C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_virtualkeyboard.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_virtualkeyboard_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_virtualkeyboardsettings.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_virtualkeyboardsettings_private.pri:
-C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_vncserver.pri:
-C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_vncserver_private.pri:
-C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_vncserverquick_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_webchannel.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_webchannel_private.pri:
 C:/Qt/6.7.2/mingw_64/mkspecs/modules/qt_lib_webchannelquick.pri:
