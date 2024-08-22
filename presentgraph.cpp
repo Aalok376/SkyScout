@@ -97,14 +97,159 @@ presentGraph::presentGraph(QWidget *parent)
     query.next();
     QString city = query.value(0).toString();
     int year = query.value(1).toInt();
+    QString yearr=QString::number(year);
     int mon = query.value(2).toInt();
     int day = query.value(3).toInt();
 
     QString m = logicMaths::checkDigit(mon);
     QString d = logicMaths::checkDigit(day);
 
+    // ui->location->setText("Location: "+city);
+    // ui->label->setText(d+"/"+m+"/"+QString::number(year));
+
+    QString D3;
+    for(int i=0;i<m.length();i++)
+    {
+        if(m[i]=='0')
+        {
+            D3=D3+"०";
+        }
+        if(m[i]=='1')
+        {
+            D3=D3+"१";
+        }
+        if(m[i]=='2')
+        {
+            D3=D3+"२";
+        }
+        if(m[i]=='3')
+        {
+            D3=D3+"३";
+        }
+        if(m[i]=='4')
+        {
+            D3=D3+"४";
+        }
+        if(m[i]=='5')
+        {
+            D3=D3+"५";
+        }
+        if(m[i]=='6')
+        {
+            D3=D3+"६";
+        }
+        if(m[i]=='7')
+        {
+            D3=D3+"७";
+        }
+        if(m[i]=='8')
+        {
+            D3=D3+"८";
+        }
+        if(m[i]=='9')
+        {
+            D3=D3+"९";
+        }
+    }
+    QString D;
+    for(int i=0;i<d.length();i++)
+    {
+        if(d[i]=='0')
+        {
+            D=D+"०";
+        }
+        if(d[i]=='1')
+        {
+            D=D+"१";
+        }
+        if(d[i]=='2')
+        {
+            D=D+"२";
+        }
+        if(d[i]=='3')
+        {
+            D=D+"३";
+        }
+        if(d[i]=='4')
+        {
+            D=D+"४";
+        }
+        if(d[i]=='5')
+        {
+            D=D+"५";
+        }
+        if(d[i]=='6')
+        {
+            D=D+"६";
+        }
+        if(d[i]=='7')
+        {
+            D=D+"७";
+        }
+        if(d[i]=='8')
+        {
+            D=D+"८";
+        }
+        if(d[i]=='9')
+        {
+            D=D+"९";
+        }
+    }
+    QString D31;
+    for(int i=0;i<yearr.length();i++)
+    {
+        if(yearr[i]=='0')
+        {
+            D31=D31+"०";
+        }
+        if(yearr[i]=='1')
+        {
+            D31=D31+"१";
+        }
+        if(yearr[i]=='2')
+        {
+            D31=D31+"२";
+        }
+        if(yearr[i]=='3')
+        {
+            D31=D31+"३";
+        }
+        if(yearr[i]=='4')
+        {
+            D31=D31+"४";
+        }
+        if(yearr[i]=='5')
+        {
+            D31=D31+"५";
+        }
+        if(yearr[i]=='6')
+        {
+            D31=D31+"६";
+        }
+        if(yearr[i]=='7')
+        {
+            D31=D31+"७";
+        }
+        if(yearr[i]=='8')
+        {
+            D31=D31+"८";
+        }
+        if(yearr[i]=='9')
+        {
+            D31=D31+"९";
+        }
+    }
+
+    if(check==false)
+    {
+    ui->location->setText("स्थान: "+city);
+    ui->label->setText(D+"/"+D3+"/"+D31);
+    }
+    else
+    {
     ui->location->setText("Location: "+city);
     ui->label->setText(d+"/"+m+"/"+QString::number(year));
+    }
 }
 
 presentGraph::~presentGraph()

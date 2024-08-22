@@ -110,7 +110,16 @@ futureGraph::futureGraph(QWidget *parent)
 
     QString city = query.value(0).toString();
 
-    ui->location->setText("Location: "+city);
+    if(check==false)
+    {
+        ui->label->setText("पूर्वानुमानित मौसम");
+        ui->location->setText("स्थान: "+city);
+    }
+    else
+    {
+        ui->label->setText("Forecast Weather");
+        ui->location->setText("Location: "+city);
+    }
 }
 
 futureGraph::~futureGraph()

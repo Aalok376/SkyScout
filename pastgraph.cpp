@@ -127,7 +127,16 @@ pastGraph::pastGraph(QWidget *parent)
     query.next();
     QString city = query.value(0).toString();
 
-    ui->location->setText("Location: "+city);
+    if(check==false)
+    {
+        ui->label->setText("विगतको मौसम दृश्य");
+        ui->location->setText("स्थान: "+city);
+    }
+    else
+    {
+        ui->label->setText("Past Weather View");
+        ui->location->setText("Location: "+city);
+    }
 }
 
 pastGraph::~pastGraph()
