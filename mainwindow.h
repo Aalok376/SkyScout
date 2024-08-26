@@ -76,6 +76,7 @@ private:
     QCompleter *completer;
     QStringListModel *model;
     QMovie *gifAnimation ;
+    QNetworkAccessManager * manager;
     //intermediateWindow *intermediate;
 // public:
 //    static Ui* getUi(Ui* ui){

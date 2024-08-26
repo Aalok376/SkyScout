@@ -72,7 +72,7 @@ int H=35;
 FetchCurrentAddress *addressObj;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow),networkManager(new QNetworkAccessManager(this)),NetworkManager(new QNetworkAccessManager(this))
+    , ui(new Ui::MainWindow),networkManager(new QNetworkAccessManager(this)),NetworkManager(new QNetworkAccessManager(this)) , manager(new QNetworkAccessManager(this))
 {
     ui->setupUi(this);
     setWindowTitle("Sky Scout");
@@ -121,9 +121,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     addressObj = new FetchCurrentAddress(this);
 
-    connect(addressObj, &FetchCurrentAddress::locationFetched, this, &MainWindow::onCurrentLocationFetched);
-    connect(networkManager,&QNetworkAccessManager::finished ,this , &MainWindow::onWeatherDataRecieved);
-    connect(NetworkManager, &QNetworkAccessManager::finished , this , &MainWindow::onLocationRecieved);
+    connect(addressObj, &FetchCurrentAddress::locationFetched, this, &MainWindow::onCurrentLocationFetched);  /// for current location
+    connect(networkManager,&QNetworkAccessManager::finished ,this , &MainWindow::onWeatherDataRecieved);      //// for weather data
+    connect(NetworkManager, &QNetworkAccessManager::finished , this , &MainWindow::onLocationRecieved);       /// for search suggestion
 
     //setting fixed size
     resize(920,600);
@@ -2891,6 +2891,267 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
             QMessageBox::information(this ,"message","Error:"+reply->errorString());
         }
     }
+    if(check){
+        {
+            QUrl url("https://api.mymemory.translated.net/get");
+
+            // Set up the query parameters
+            QUrlQuery query;
+            QString text = ui->currentlocation->text();
+            query.addQueryItem("q", text);
+            query.addQueryItem("langpair", "ne|en");  // Translate from English to Nepali
+            query.addQueryItem("de", "swastikbhandari2006@gmail.com"); // Replace with your email
+            query.addQueryItem("key", "dcc26af79e83d9c08b01");
+
+            // Attach query to the URL
+            url.setQuery(query);
+
+            // Send the GET request
+            QNetworkRequest request(url);
+            QNetworkReply* reply = manager->get(request);
+
+            QObject::connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+                if (reply->error() == QNetworkReply::NoError) {
+                    // Parse the JSON response
+                    QByteArray response_data = reply->readAll();
+                    qDebug() << "Response Data: " << response_data;
+
+                    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+                    QJsonObject json_obj = json_doc.object();
+                    QJsonObject responseData = json_obj["responseData"].toObject();
+                    QString translated_text = responseData["translatedText"].toString();
+
+                    if (!translated_text.isEmpty()) {
+                        // Update the QLabel with the translated text
+                        ui->currentlocation->setText(translated_text);
+                    } else {
+                        ui->currentlocation->setText("Translation Error: Empty response");
+                    }
+                } else {
+                    qDebug() << "API Request Error: " << reply->errorString();
+                    ui->currentlocation->setText("Translation Error: " + reply->errorString());
+                }
+                reply->deleteLater();
+            });
+        }
+
+    {
+        QUrl url("https://api.mymemory.translated.net/get");
+
+        // Set up the query parameters
+        QUrlQuery query;
+        QString text = ui->todaysLocation->text();
+        query.addQueryItem("q", text);
+        query.addQueryItem("langpair", "ne|en");  // Translate from English to Nepali
+        query.addQueryItem("de", "swastikbhandari2006@gmail.com"); // Replace with your email
+        query.addQueryItem("key", "dcc26af79e83d9c08b01");
+
+        // Attach query to the URL
+        url.setQuery(query);
+
+        // Send the GET request
+        QNetworkRequest request(url);
+        QNetworkReply* reply = manager->get(request);
+
+        QObject::connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+            if (reply->error() == QNetworkReply::NoError) {
+                // Parse the JSON response
+                QByteArray response_data = reply->readAll();
+                qDebug() << "Response Data: " << response_data;
+
+                QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+                QJsonObject json_obj = json_doc.object();
+                QJsonObject responseData = json_obj["responseData"].toObject();
+                QString translated_text = responseData["translatedText"].toString();
+
+                if (!translated_text.isEmpty()) {
+                    // Update the QLabel with the translated text
+                    ui->todaysLocation->setText(translated_text);
+                } else {
+                    ui->todaysLocation->setText("Translation Error: Empty response");
+                }
+            } else {
+                qDebug() << "API Request Error: " << reply->errorString();
+                ui->todaysLocation->setText("Translation Error: " + reply->errorString());
+            }
+            reply->deleteLater();
+        });
+    }
+
+     {
+        QUrl url("https://api.mymemory.translated.net/get");
+
+        // Set up the query parameters
+        QUrlQuery query;
+        QString text = ui->label_recentSearch->text();
+        query.addQueryItem("q", text);
+        query.addQueryItem("langpair", "ne|en");  // Translate from English to Nepali
+        query.addQueryItem("de", "swastikbhandari2006@gmail.com"); // Replace with your email
+        query.addQueryItem("key", "dcc26af79e83d9c08b01");
+
+        // Attach query to the URL
+        url.setQuery(query);
+
+        // Send the GET request
+        QNetworkRequest request(url);
+        QNetworkReply* reply = manager->get(request);
+
+        QObject::connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+            if (reply->error() == QNetworkReply::NoError) {
+                // Parse the JSON response
+                QByteArray response_data = reply->readAll();
+                qDebug() << "Response Data: " << response_data;
+
+                QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+                QJsonObject json_obj = json_doc.object();
+                QJsonObject responseData = json_obj["responseData"].toObject();
+                QString translated_text = responseData["translatedText"].toString();
+
+                if (!translated_text.isEmpty()) {
+                    // Update the QLabel with the translated text
+                    ui->label_recentSearch->setText(translated_text);
+                } else {
+                    ui->label_recentSearch->setText("Translation Error: Empty response");
+                }
+            } else {
+                qDebug() << "API Request Error: " << reply->errorString();
+                ui->label_recentSearch->setText("Translation Error: " + reply->errorString());
+            }
+            reply->deleteLater();
+        });
+    }
+    }
+    else
+    {
+        {
+            QUrl url("https://api.mymemory.translated.net/get");
+
+            // Set up the query parameters
+            QUrlQuery query;
+            QString text = ui->currentlocation->text();
+            query.addQueryItem("q", text);
+            query.addQueryItem("langpair", "en|ne");  // Translate from English to Nepali
+            query.addQueryItem("de", "swastikbhandari2006@gmail.com"); // Replace with your email
+            query.addQueryItem("key", "dcc26af79e83d9c08b01");
+
+            // Attach query to the URL
+            url.setQuery(query);
+
+            // Send the GET request
+            QNetworkRequest request(url);
+            QNetworkReply* reply = manager->get(request);
+
+            QObject::connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+                if (reply->error() == QNetworkReply::NoError) {
+                    // Parse the JSON response
+                    QByteArray response_data = reply->readAll();
+                    qDebug() << "Response Data: " << response_data;
+
+                    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+                    QJsonObject json_obj = json_doc.object();
+                    QJsonObject responseData = json_obj["responseData"].toObject();
+                    QString translated_text = responseData["translatedText"].toString();
+
+                    if (!translated_text.isEmpty()) {
+                        // Update the QLabel with the translated text
+                        ui->currentlocation->setText(translated_text);
+                    } else {
+                        ui->currentlocation->setText("Translation Error: Empty response");
+                    }
+                } else {
+                    qDebug() << "API Request Error: " << reply->errorString();
+                    ui->currentlocation->setText("Translation Error: " + reply->errorString());
+                }
+                reply->deleteLater();
+            });
+        }
+
+    {
+        QUrl url("https://api.mymemory.translated.net/get");
+
+        // Set up the query parameters
+        QUrlQuery query;
+        QString text = ui->todaysLocation->text();
+        query.addQueryItem("q", text);
+        query.addQueryItem("langpair", "en|ne");  // Translate from English to Nepali
+        query.addQueryItem("de", "swastikbhandari2006@gmail.com"); // Replace with your email
+        query.addQueryItem("key", "dcc26af79e83d9c08b01");
+
+        // Attach query to the URL
+        url.setQuery(query);
+
+        // Send the GET request
+        QNetworkRequest request(url);
+        QNetworkReply* reply = manager->get(request);
+
+        QObject::connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+            if (reply->error() == QNetworkReply::NoError) {
+                // Parse the JSON response
+                QByteArray response_data = reply->readAll();
+                qDebug() << "Response Data: " << response_data;
+
+                QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+                QJsonObject json_obj = json_doc.object();
+                QJsonObject responseData = json_obj["responseData"].toObject();
+                QString translated_text = responseData["translatedText"].toString();
+
+                if (!translated_text.isEmpty()) {
+                    // Update the QLabel with the translated text
+                    ui->todaysLocation->setText(translated_text);
+                } else {
+                    ui->todaysLocation->setText("Translation Error: Empty response");
+                }
+            } else {
+                qDebug() << "API Request Error: " << reply->errorString();
+                ui->todaysLocation->setText("Translation Error: " + reply->errorString());
+            }
+            reply->deleteLater();
+        });
+    }
+
+     {
+        QUrl url("https://api.mymemory.translated.net/get");
+
+        // Set up the query parameters
+        QUrlQuery query;
+        QString text = ui->label_recentSearch->text();
+        query.addQueryItem("q", text);
+        query.addQueryItem("langpair", "en|ne");  // Translate from English to Nepali
+        query.addQueryItem("de", "swastikbhandari2006@gmail.com"); // Replace with your email
+        query.addQueryItem("key", "dcc26af79e83d9c08b01");
+
+        // Attach query to the URL
+        url.setQuery(query);
+
+        // Send the GET request
+        QNetworkRequest request(url);
+        QNetworkReply* reply = manager->get(request);
+
+        QObject::connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+            if (reply->error() == QNetworkReply::NoError) {
+                // Parse the JSON response
+                QByteArray response_data = reply->readAll();
+                qDebug() << "Response Data: " << response_data;
+
+                QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+                QJsonObject json_obj = json_doc.object();
+                QJsonObject responseData = json_obj["responseData"].toObject();
+                QString translated_text = responseData["translatedText"].toString();
+
+                if (!translated_text.isEmpty()) {
+                    // Update the QLabel with the translated text
+                    ui->label_recentSearch->setText(translated_text);
+                } else {
+                    ui->label_recentSearch->setText("Translation Error: Empty response");
+                }
+            } else {
+                qDebug() << "API Request Error: " << reply->errorString();
+                ui->label_recentSearch->setText("Translation Error: " + reply->errorString());
+            }
+            reply->deleteLater();
+        });
+    }
+    }
 
 }
 
@@ -4973,6 +5234,134 @@ void MainWindow::on_pushButton_flag_clicked()
             ui->label_notification->setText("");
             ui->label_notification->setStyleSheet("background:transparent;");
         }
+        {
+            QUrl url("https://api.mymemory.translated.net/get");
+
+            // Set up the query parameters
+            QUrlQuery query;
+            QString text = ui->currentlocation->text();
+            query.addQueryItem("q", text);
+            query.addQueryItem("langpair", "en|ne");  // Translate from English to Nepali
+            query.addQueryItem("de", "swastikbhandari2006@gmail.com"); // Replace with your email
+            query.addQueryItem("key", "dcc26af79e83d9c08b01");
+
+            // Attach query to the URL
+            url.setQuery(query);
+
+            // Send the GET request
+            QNetworkRequest request(url);
+            QNetworkReply* reply = manager->get(request);
+
+            QObject::connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+                if (reply->error() == QNetworkReply::NoError) {
+                    // Parse the JSON response
+                    QByteArray response_data = reply->readAll();
+                    qDebug() << "Response Data: " << response_data;
+
+                    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+                    QJsonObject json_obj = json_doc.object();
+                    QJsonObject responseData = json_obj["responseData"].toObject();
+                    QString translated_text = responseData["translatedText"].toString();
+
+                    if (!translated_text.isEmpty()) {
+                        // Update the QLabel with the translated text
+                        ui->currentlocation->setText(translated_text);
+                    } else {
+                        ui->currentlocation->setText("Translation Error: Empty response");
+                    }
+                } else {
+                    qDebug() << "API Request Error: " << reply->errorString();
+                    ui->currentlocation->setText("Translation Error: " + reply->errorString());
+                }
+                reply->deleteLater();
+            });
+        }
+
+    {
+        QUrl url("https://api.mymemory.translated.net/get");
+
+        // Set up the query parameters
+        QUrlQuery query;
+        QString text = ui->todaysLocation->text();
+        query.addQueryItem("q", text);
+        query.addQueryItem("langpair", "en|ne");  // Translate from English to Nepali
+        query.addQueryItem("de", "swastikbhandari2006@gmail.com"); // Replace with your email
+        query.addQueryItem("key", "dcc26af79e83d9c08b01");
+
+        // Attach query to the URL
+        url.setQuery(query);
+
+        // Send the GET request
+        QNetworkRequest request(url);
+        QNetworkReply* reply = manager->get(request);
+
+        QObject::connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+            if (reply->error() == QNetworkReply::NoError) {
+                // Parse the JSON response
+                QByteArray response_data = reply->readAll();
+                qDebug() << "Response Data: " << response_data;
+
+                QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+                QJsonObject json_obj = json_doc.object();
+                QJsonObject responseData = json_obj["responseData"].toObject();
+                QString translated_text = responseData["translatedText"].toString();
+
+                if (!translated_text.isEmpty()) {
+                    // Update the QLabel with the translated text
+                    ui->todaysLocation->setText(translated_text);
+                } else {
+                    ui->todaysLocation->setText("Translation Error: Empty response");
+                }
+            } else {
+                qDebug() << "API Request Error: " << reply->errorString();
+                ui->todaysLocation->setText("Translation Error: " + reply->errorString());
+            }
+            reply->deleteLater();
+        });
+    }
+
+     {
+        QUrl url("https://api.mymemory.translated.net/get");
+
+        // Set up the query parameters
+        QUrlQuery query;
+        QString text = ui->label_recentSearch->text();
+        query.addQueryItem("q", text);
+        query.addQueryItem("langpair", "en|ne");  // Translate from English to Nepali
+        query.addQueryItem("de", "swastikbhandari2006@gmail.com"); // Replace with your email
+        query.addQueryItem("key", "dcc26af79e83d9c08b01");
+
+        // Attach query to the URL
+        url.setQuery(query);
+
+        // Send the GET request
+        QNetworkRequest request(url);
+        QNetworkReply* reply = manager->get(request);
+
+        QObject::connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+            if (reply->error() == QNetworkReply::NoError) {
+                // Parse the JSON response
+                QByteArray response_data = reply->readAll();
+                qDebug() << "Response Data: " << response_data;
+
+                QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+                QJsonObject json_obj = json_doc.object();
+                QJsonObject responseData = json_obj["responseData"].toObject();
+                QString translated_text = responseData["translatedText"].toString();
+
+                if (!translated_text.isEmpty()) {
+                    // Update the QLabel with the translated text
+                    ui->label_recentSearch->setText(translated_text);
+                } else {
+                    ui->label_recentSearch->setText("Translation Error: Empty response");
+                }
+            } else {
+                qDebug() << "API Request Error: " << reply->errorString();
+                ui->label_recentSearch->setText("Translation Error: " + reply->errorString());
+            }
+            reply->deleteLater();
+        });
+    }
         check=false;
     }
     else
@@ -5208,13 +5597,140 @@ void MainWindow::on_pushButton_flag_clicked()
             ui->temp5->setText("-");
             ui->time5->setText("-");
         }
+        {
+            QUrl url("https://api.mymemory.translated.net/get");
 
+            // Set up the query parameters
+            QUrlQuery query;
+            QString text = ui->currentlocation->text();
+            query.addQueryItem("q", text);
+            query.addQueryItem("langpair", "ne|en");  // Translate from English to Nepali
+            query.addQueryItem("de", "swastikbhandari2006@gmail.com"); // Replace with your email
+            query.addQueryItem("key", "dcc26af79e83d9c08b01");
+
+            // Attach query to the URL
+            url.setQuery(query);
+
+            // Send the GET request
+            QNetworkRequest request(url);
+            QNetworkReply* reply = manager->get(request);
+
+            QObject::connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+                if (reply->error() == QNetworkReply::NoError) {
+                    // Parse the JSON response
+                    QByteArray response_data = reply->readAll();
+                    qDebug() << "Response Data: " << response_data;
+
+                    QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+                    QJsonObject json_obj = json_doc.object();
+                    QJsonObject responseData = json_obj["responseData"].toObject();
+                    QString translated_text = responseData["translatedText"].toString();
+
+                    if (!translated_text.isEmpty()) {
+                        // Update the QLabel with the translated text
+                        ui->currentlocation->setText(translated_text);
+                    } else {
+                        ui->currentlocation->setText("Translation Error: Empty response");
+                    }
+                } else {
+                    qDebug() << "API Request Error: " << reply->errorString();
+                    ui->currentlocation->setText("Translation Error: " + reply->errorString());
+                }
+                reply->deleteLater();
+            });
+        }
+
+    {
+        QUrl url("https://api.mymemory.translated.net/get");
+
+        // Set up the query parameters
+        QUrlQuery query;
+        QString text = ui->todaysLocation->text();
+        query.addQueryItem("q", text);
+        query.addQueryItem("langpair", "ne|en");  // Translate from English to Nepali
+        query.addQueryItem("de", "swastikbhandari2006@gmail.com"); // Replace with your email
+        query.addQueryItem("key", "dcc26af79e83d9c08b01");
+
+        // Attach query to the URL
+        url.setQuery(query);
+
+        // Send the GET request
+        QNetworkRequest request(url);
+        QNetworkReply* reply = manager->get(request);
+
+        QObject::connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+            if (reply->error() == QNetworkReply::NoError) {
+                // Parse the JSON response
+                QByteArray response_data = reply->readAll();
+                qDebug() << "Response Data: " << response_data;
+
+                QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+                QJsonObject json_obj = json_doc.object();
+                QJsonObject responseData = json_obj["responseData"].toObject();
+                QString translated_text = responseData["translatedText"].toString();
+
+                if (!translated_text.isEmpty()) {
+                    // Update the QLabel with the translated text
+                    ui->todaysLocation->setText(translated_text);
+                } else {
+                    ui->todaysLocation->setText("Translation Error: Empty response");
+                }
+            } else {
+                qDebug() << "API Request Error: " << reply->errorString();
+                ui->todaysLocation->setText("Translation Error: " + reply->errorString());
+            }
+            reply->deleteLater();
+        });
+    }
+
+     {
+        QUrl url("https://api.mymemory.translated.net/get");
+
+        // Set up the query parameters
+        QUrlQuery query;
+        QString text = ui->label_recentSearch->text();
+        query.addQueryItem("q", text);
+        query.addQueryItem("langpair", "ne|en");  // Translate from English to Nepali
+        query.addQueryItem("de", "swastikbhandari2006@gmail.com"); // Replace with your email
+        query.addQueryItem("key", "dcc26af79e83d9c08b01");
+
+        // Attach query to the URL
+        url.setQuery(query);
+
+        // Send the GET request
+        QNetworkRequest request(url);
+        QNetworkReply* reply = manager->get(request);
+
+        QObject::connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+            if (reply->error() == QNetworkReply::NoError) {
+                // Parse the JSON response
+                QByteArray response_data = reply->readAll();
+                qDebug() << "Response Data: " << response_data;
+
+                QJsonDocument json_doc = QJsonDocument::fromJson(response_data);
+                QJsonObject json_obj = json_doc.object();
+                QJsonObject responseData = json_obj["responseData"].toObject();
+                QString translated_text = responseData["translatedText"].toString();
+
+                if (!translated_text.isEmpty()) {
+                    // Update the QLabel with the translated text
+                    ui->label_recentSearch->setText(translated_text);
+                } else {
+                    ui->label_recentSearch->setText("Translation Error: Empty response");
+                }
+            } else {
+                qDebug() << "API Request Error: " << reply->errorString();
+                ui->label_recentSearch->setText("Translation Error: " + reply->errorString());
+            }
+            reply->deleteLater();
+        });
+    }
         check=true;
     }
 }
 void MainWindow::on_lineEdit_searchbar_returnPressed()
 {
-    if (completer->currentCompletion()!=""){
+    if (completer->currentCompletion()!="" && completer->currentCompletion().length()<23 ){
         location=completer->currentCompletion();
     }
     else
@@ -5244,36 +5760,49 @@ void MainWindow::on_pushButton_search_clicked()
 
 void MainWindow::on_lineEdit_searchbar_textChanged(const QString &str)
 {
-    QString location = QString("https://maps.googleapis.com/maps/api/place/autocomplete/json?input=%1&key=AIzaSyDZTOjo8YOEFGI7FodHX5fpfteFw_bQ9bg").arg(str);
-    //qDebug() <<"location:" << location;
+    if (str.isEmpty()) {
+        // Clear the model when the search bar is empty
+        model->setStringList(QStringList());
+        return;
+    }
+
+    QString location = QString("https://nominatim.openstreetmap.org/search?q=%1&format=json&accept-language=en").arg(str);
     QUrl url(location);
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::UserAgentHeader, "MyApp/1.0 (MyOrganization)");
     request.setRawHeader("Accept", "application/json");
-    NetworkManager->get(request);
+
+    QNetworkReply *reply = NetworkManager->get(request);
 }
+
 void MainWindow::onLocationRecieved(QNetworkReply *reply)
 {
-    if(reply->error()==QNetworkReply::NoError)
-    {
-        QStringList locationlist;
-        QByteArray rawdata = reply->readAll();
-        QJsonDocument Jsondoc = QJsonDocument::fromJson(rawdata);
-        if (!Jsondoc.isNull() && Jsondoc.isObject()) {
-            QJsonObject rootObj = Jsondoc.object();
-            if (rootObj.contains("predictions") && rootObj.value("predictions").isArray()) {
-                QJsonArray Jsonarr = rootObj.value("predictions").toArray();
-                for (const QJsonValue &jsonvalue : Jsonarr){
-                    QJsonObject obj = jsonvalue.toObject();
-                    locationlist << obj.value("description").toString();
-                }
-            }
-        }
-        //updating model with new StringList
-        model->setStringList(QStringList());
-        model->setStringList(locationlist);
 
+    if (!reply) {
+        return;
     }
+
+    if (reply->error() != QNetworkReply::NoError) {
+        qDebug() << "Error:" << reply->errorString();
+        reply->deleteLater();
+        return;
+    }
+
+    QByteArray rawData = reply->readAll();
+    QJsonDocument jsonDoc = QJsonDocument::fromJson(rawData);
+    if (!jsonDoc.isNull() && jsonDoc.isArray()) {
+        QJsonArray jsonArray = jsonDoc.array();
+        QStringList locationlist;
+        for (const QJsonValue &jsonValue : jsonArray) {
+            QJsonObject obj = jsonValue.toObject();
+            locationlist << obj.value("display_name").toString();
+        }
+        model->setStringList(locationlist);
+    } else {
+        qDebug() << "Invalid JSON response";
+    }
+
+    reply->deleteLater();
 }
 
 intermediateWindow *intermediate;
