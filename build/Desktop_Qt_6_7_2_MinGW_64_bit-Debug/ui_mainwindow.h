@@ -405,7 +405,6 @@ public:
 
         verticalLayout->addWidget(label_temp);
 
-        verticalLayout->setStretch(0, 2);
         verticalLayout->setStretch(1, 2);
         verticalLayout->setStretch(2, 3);
 

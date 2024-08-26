@@ -299,7 +299,7 @@ border-radius:12%;</string>
                 <number>0</number>
                </property>
                <item>
-                <layout class="QVBoxLayout" name="verticalLayout" stretch="2,2,3">
+                <layout class="QVBoxLayout" name="verticalLayout" stretch="0,2,3">
                  <property name="spacing">
                   <number>0</number>
                  </property>

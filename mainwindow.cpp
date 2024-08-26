@@ -2892,6 +2892,7 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
         }
     }
     if(check){
+      if(location!="pokhara") {
         {
             QUrl url("https://api.mymemory.translated.net/get");
 
@@ -3020,9 +3021,15 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
             reply->deleteLater();
         });
     }
+        }
+      else {
+          ui->label_recentSearch->setText("pokhara");
+          ui->currentlocation->setText("pokhara");
+      }
+
     }
     else
-    {
+    { if(location!="pokhara") {
         {
             QUrl url("https://api.mymemory.translated.net/get");
 
@@ -3152,7 +3159,12 @@ void MainWindow::onWeatherDataRecieved(QNetworkReply *reply)
         });
     }
     }
-
+        else
+        {
+            ui->currentlocation->setText("पोखरा");
+            ui->label_recentSearch->setText("पोखरा");
+        }
+}
 }
 
 void MainWindow::on_pushButton_flag_clicked()
@@ -5234,6 +5246,7 @@ void MainWindow::on_pushButton_flag_clicked()
             ui->label_notification->setText("");
             ui->label_notification->setStyleSheet("background:transparent;");
         }
+ if(location!="pokhara") {
         {
             QUrl url("https://api.mymemory.translated.net/get");
 
@@ -5276,8 +5289,8 @@ void MainWindow::on_pushButton_flag_clicked()
                 reply->deleteLater();
             });
         }
-
     {
+
         QUrl url("https://api.mymemory.translated.net/get");
 
         // Set up the query parameters
@@ -5361,7 +5374,12 @@ void MainWindow::on_pushButton_flag_clicked()
             }
             reply->deleteLater();
         });
-    }
+    }}
+       else
+      {
+     ui->label_recentSearch->setText("पोखरा");
+      ui->currentlocation->setText("पोखरा");
+ }
         check=false;
     }
     else
